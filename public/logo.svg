@@ -1,0 +1,5 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" fill="#1a2332" rx="20"/>
+  <text x="100" y="100" text-anchor="middle" dominant-baseline="middle" fill="#FF6600" font-size="60" font-weight="bold" font-family="Arial, sans-serif">AM</text>
+  <text x="100" y="140" text-anchor="middle" dominant-baseline="middle" fill="#FFFFFF" font-size="16" font-family="Arial, sans-serif">IP AGENTS</text>
+</svg>

@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(test:*)",
+      "Bash(npx shadcn@latest add button card input label textarea select dropdown-menu toast sonner tooltip badge dialog scroll-area tabs carousel --yes)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

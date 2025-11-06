@@ -1,0 +1,99 @@
+/* Focus Management */
+:focus-visible {
+  @apply outline-none ring-2 ring-primary/50 ring-offset-2 ring-offset-white;
+}
+
+.dark :focus-visible {
+  @apply ring-offset-gray-900;
+}
+
+/* Skip Link */
+.skip-link {
+  @apply sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-primary focus:shadow-lg;
+}
+
+/* Improved Touch Targets */
+.touch-target {
+  @apply min-h-[44px] min-w-[44px];
+}
+
+/* Loading States */
+.loading {
+  @apply relative cursor-wait opacity-70;
+}
+
+.loading::after {
+  content: "";
+  @apply absolute inset-0 flex items-center justify-center bg-white/10 backdrop-blur-sm;
+}
+
+/* Improved Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    @apply !transform-none !transition-none !animate-none;
+  }
+}
+
+/* Dark Mode Enhancements */
+[data-theme="dark"] {
+  --background: #0F172A;
+  --card-bg: #1E293B;
+  --text-primary: #F8FAFC;
+  --text-muted: #94A3B8;
+  --primary-light: #F97316;
+}
+
+/* Responsive Improvements */
+@media (max-width: 640px) {
+  .service-card {
+    @apply px-4 py-6;
+  }
+
+  .hero-title {
+    @apply text-4xl;
+  }
+
+  .hero-subtitle {
+    @apply text-lg;
+  }
+
+  .timeline-item {
+    @apply flex-col;
+  }
+}
+
+/* Enhanced Button States */
+.button-loading {
+  @apply relative overflow-hidden;
+}
+
+.button-loading::after {
+  content: "";
+  @apply absolute inset-0 bg-current opacity-20;
+  animation: button-loading 1s infinite;
+}
+
+@keyframes button-loading {
+  0% { transform: translateX(-100%); }
+  50% { transform: translateX(100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Improved Card Interactions */
+.card-interactive {
+  @apply transition-transform duration-200 hover:scale-[0.98] active:scale-[0.96];
+}
+
+/* Better Form Validation */
+.form-field-error {
+  @apply ring-2 ring-red-500/50;
+}
+
+.error-message {
+  @apply mt-1 text-sm text-red-500;
+}
+
+/* Tooltip */
+.tooltip {
+  @apply invisible absolute z-50 rounded bg-gray-900 px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:visible group-hover:opacity-100;
+}

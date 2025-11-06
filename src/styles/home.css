@@ -1,0 +1,362 @@
+.section-spacing {
+  @apply py-12 sm:py-16 md:py-20 lg:py-24;
+}
+
+.section-title {
+  @apply text-3xl font-bold text-navy-deep md:text-4xl lg:text-5xl;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  max-width: 100%;
+}
+
+.section-subtitle {
+  @apply text-sm text-muted-foreground sm:text-base md:text-lg;
+  line-height: 1.6;
+  font-weight: 400;
+  max-width: 48rem;
+}
+
+.service-card {
+  @apply rounded-2xl bg-white transition-all duration-300 hover:shadow-lg focus-within:ring-2 focus-within:ring-primary/50 focus-within:outline-none;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.service-card-content {
+  @apply space-y-4 p-6;
+}
+
+.hero-title {
+  @apply text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-6xl;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  @apply text-base sm:text-lg md:text-xl;
+  line-height: 1.6;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 42rem;
+}
+
+.hero-eyebrow {
+  @apply text-xs font-bold uppercase tracking-wider;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.15em;
+}
+
+.section-heading {
+  @apply mb-8 md:mb-12 space-y-3;
+  text-align: center;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-eyebrow {
+  @apply text-xs font-bold uppercase tracking-wider text-primary;
+  letter-spacing: 0.15em;
+}
+
+.value-card {
+  @apply rounded-3xl transition-all duration-300 hover:shadow-lg;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.feature-chip {
+  @apply flex items-center gap-3 rounded-xl bg-white px-4 py-3 text-base font-medium text-navy-deep transition-colors duration-200 hover:bg-primary/10;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: none;
+}
+
+.case-card {
+  @apply rounded-2xl bg-white focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.insight-metric {
+  @apply px-6 py-6 text-center;
+  background: transparent;
+  border: none;
+}
+
+.insight-metric span {
+  @apply block text-3xl font-bold text-navy-deep md:text-4xl;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.insight-metric p {
+  @apply mt-2 text-sm font-medium text-muted-foreground;
+  line-height: 1.4;
+}
+
+.timeline {
+  @apply mt-16 flex flex-col gap-0;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 42px;
+  top: 60px;
+  bottom: 60px;
+  width: 2px;
+  background: linear-gradient(to bottom,
+    rgba(231, 93, 43, 0.2),
+    rgba(231, 93, 43, 0.5),
+    rgba(231, 93, 43, 0.2));
+}
+
+.timeline-item {
+  @apply flex flex-col gap-6 p-8 transition-all duration-300 sm:flex-row sm:items-start;
+  background: transparent;
+  border: none;
+  position: relative;
+}
+
+.timeline-index {
+  @apply flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-full bg-white text-3xl font-bold text-primary;
+  box-shadow: 0 8px 24px rgba(231, 93, 43, 0.15);
+  border: 3px solid rgba(231, 93, 43, 0.1);
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-content h3 {
+  @apply text-2xl font-bold text-navy-deep;
+  letter-spacing: -0.02em;
+}
+
+.timeline-content p {
+  @apply mt-3 text-base leading-relaxed text-muted-foreground;
+}
+
+.cta-band {
+  @apply relative overflow-hidden bg-gradient-to-r from-navy-deep via-navy-deep to-navy-light py-16 md:py-20;
+}
+
+.button-focus {
+  @apply focus:ring-2 focus:ring-primary/50 focus:outline-none transition-shadow duration-200;
+}
+
+.interactive-card {
+  @apply focus-within:ring-2 focus-within:ring-primary/50 focus-within:outline-none transition-shadow duration-200;
+}
+
+.cta-band::before {
+  content: "";
+  @apply absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.12),_transparent_60%)];
+}
+
+.cta-content {
+  @apply relative flex flex-col gap-6 md:gap-8 lg:gap-10 rounded-3xl border border-white/15 bg-white/5 p-6 md:p-8 backdrop-blur-xl lg:flex-row lg:items-center lg:justify-between;
+}
+
+.texture-blueprint {
+  background-color: #f7f7fb;
+  background-image:
+    linear-gradient(rgba(26, 32, 44, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 32, 44, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  position: relative;
+  z-index: 0;
+}
+
+.texture-blueprint::after {
+  content: "";
+  @apply absolute inset-0;
+  z-index: 0;
+  background-image: radial-gradient(circle at 20% 20%, rgba(231, 93, 43, 0.08), transparent 55%),
+    radial-gradient(circle at 80% 30%, rgba(26, 32, 44, 0.07), transparent 50%);
+  pointer-events: none;
+}
+
+.texture-blueprint > * {
+  position: relative;
+  z-index: 1;
+}
+
+.clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.clamp-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.breaker-light {
+  @apply relative overflow-hidden bg-[#f7f7f7] py-24;
+}
+
+.breaker-light::after {
+  content: "";
+  @apply absolute inset-0;
+  z-index: 0;
+  background-image: radial-gradient(circle at top right, rgba(231, 93, 43, 0.08), transparent 60%);
+  pointer-events: none;
+}
+
+.breaker-light > * {
+  position: relative;
+  z-index: 1;
+}
+
+.breaker-dark {
+  @apply relative overflow-hidden py-28 text-white;
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.94), rgba(17, 24, 39, 0.75));
+}
+
+.breaker-dark::after {
+  content: "";
+  @apply absolute inset-0;
+  z-index: 0;
+  background: radial-gradient(circle at 25% 20%, rgba(255, 255, 255, 0.08), transparent 55%),
+    radial-gradient(circle at 75% 80%, rgba(231, 93, 43, 0.15), transparent 55%);
+  pointer-events: none;
+}
+
+.breaker-dark > * {
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-card {
+  @apply relative rounded-3xl border border-border bg-white p-10 shadow-xl md:p-12;
+}
+
+.testimonial-card::before {
+  content: "\201C";
+  @apply absolute -top-10 left-10 text-[120px] font-serif text-primary/10;
+}
+
+.testimonial-body {
+  @apply text-lg leading-relaxed text-navy-deep md:text-xl;
+}
+
+.testimonial-meta {
+  @apply mt-6 flex flex-wrap items-center gap-4 text-sm uppercase tracking-[0.25em] text-muted-foreground;
+}
+
+.team-grid {
+  @apply grid gap-6 sm:grid-cols-2 lg:grid-cols-3;
+}
+
+.team-card {
+  @apply flex flex-col items-center rounded-3xl border border-border bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 hover:shadow-xl;
+}
+
+.team-card img {
+  @apply mb-5 h-28 w-28 rounded-full object-cover shadow-lg transition-transform duration-300 group-hover:scale-105;
+}
+
+.team-card h3 {
+  @apply text-lg font-semibold text-navy-deep;
+}
+
+.team-card p {
+  @apply mt-1 text-sm text-muted-foreground;
+}
+
+.team-card a {
+  @apply mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors duration-200 hover:text-primary/80;
+}
+
+.icon-panel {
+  @apply grid gap-8 md:grid-cols-2 lg:grid-cols-3;
+}
+
+.icon-panel-card {
+  @apply relative flex flex-col gap-5 rounded-3xl bg-white p-10 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl;
+  border: none;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.icon-panel-card svg {
+  @apply h-8 w-8 text-primary;
+  opacity: 0.85;
+}
+
+.gradient-outline {
+  background: transparent;
+  border-radius: 24px;
+  padding: 0;
+  position: relative;
+}
+
+.gradient-outline:focus-within {
+  outline: 2px solid hsl(14 100% 60%);
+  outline-offset: 2px;
+}
+
+.gradient-outline-inner {
+  @apply h-full w-full rounded-3xl bg-white p-10;
+  border: none;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.gradient-outline:hover .gradient-outline-inner {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  transform: translateY(-4px);
+}
+
+.reveal-element {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+  animation: reveal-fallback 0.01s ease 2s forwards;
+}
+
+.reveal-element.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: none;
+}
+
+@keyframes reveal-fallback {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 768px) {
+  .reveal-element {
+    transform: translateY(8px);
+  }
+
+  .timeline::before {
+    left: 1.75rem;
+    top: 2.5rem;
+    bottom: 2.5rem;
+  }
+
+  .timeline-item {
+    padding: 1.5rem;
+  }
+
+  .timeline-index {
+    height: 3.5rem;
+    width: 3.5rem;
+    font-size: 1.5rem;
+  }
+}

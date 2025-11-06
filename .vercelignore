@@ -1,0 +1,32 @@
+# Vercel deployment ignore
+node_modules
+.git
+.github
+*.log
+*.md
+.vscode
+.idea
+coverage
+dist
+
+# Test files
+**/__tests__
+**/*.test.ts
+**/*.test.tsx
+*.test.ts
+*.test.tsx
+vitest.config.ts
+src/test
+
+# Documentation
+TESTING.md
+TESTING_INSTALL.md
+DEVELOPER_SETUP.md
+ISSUES_FIXED.md
+FIXES_COMPLETE_SUMMARY.md
+QUICK_REFERENCE.md
+BUG_FIXES.md
+AUDIT_FIXES_COMPLETED.md
+*.tmp
+*.new
+repopack-output.txt

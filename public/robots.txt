@@ -1,0 +1,10 @@
+# Robots.txt for Al Marsa IP
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://almarsapro.com/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 10
