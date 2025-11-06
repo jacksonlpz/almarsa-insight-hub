@@ -190,23 +190,154 @@ export const translations = {
       title: 'Our Story',
       subtitle: 'Building Trust Through Excellence',
       hero: {
-        title: 'Our Story & Leadership',
-        subtitle: 'Two decades of protecting innovation across the Middle East'
+        badge: 'About Al Marsa',
+        title: 'Your Global Partner in Intellectual Property',
+        subtitle: 'Rooted in Kuwait, connected globally. We deliver precision IP protection with commercial insight and strategic enforcement.',
+        features: {
+          leadership: {
+            title: 'Dedicated Client Leadership',
+            description: 'Multi-jurisdictional mandates coordinated end-to-end'
+          },
+          strategy: {
+            title: 'Integrated Strategy',
+            description: 'Prosecution, enforcement, and commercialization aligned'
+          },
+          reporting: {
+            title: 'Transparent Reporting',
+            description: 'Leadership informed at every critical milestone'
+          }
+        },
+        cta: {
+          contact: 'Get In Touch',
+          services: 'Our Services'
+        }
       },
-      milestones: {
-        title: 'Our Journey',
-        subtitle: 'Key milestones that shaped our practice'
+      trust: {
+        eyebrow: 'Our Track Record',
+        title: 'Trusted By Leaders',
+        insights: {
+          experience: {
+            metric: '20+',
+            label: 'Years of combined GCC experience'
+          },
+          jurisdictions: {
+            metric: '150+',
+            label: 'Jurisdictions coordinated through partners'
+          },
+          retention: {
+            metric: '92%',
+            label: 'Matters retained through client referrals'
+          }
+        }
       },
-      values: {
-        title: 'Our Core Values',
-        subtitle: 'The principles that guide everything we do'
+      foundation: {
+        eyebrow: 'Our Foundation',
+        title: 'Delivering Tailored IP Strategies for Unparalleled Protection and Growth',
+        subtitle: 'Every engagement is anchored by collaborative planning, success metrics, and regional roadmaps that accelerate decision-making.',
+        vision: {
+          badge: 'Founding Vision',
+          title: 'Strategic IP Partner for Ambitious Leaders',
+          description: 'We combine prosecution excellence, contentious expertise, and commercial fluency. Our teams steward portfolios that power IPOs, franchise expansions, and cross-border investments.'
+        },
+        commitment: {
+          badge: 'Our Commitment',
+          title: 'Measurable Outcomes at Every Stage',
+          description: 'Every mandate includes defined deliverables, exposure mitigation plans, and reporting cadences that keep general counsel and leadership aligned from day one.'
+        }
       },
-      team: {
-        title: 'Leadership Team',
-        subtitle: 'Meet the experts behind our success'
+      journey: {
+        eyebrow: 'Our Journey',
+        title: 'Two Decades of Excellence',
+        subtitle: 'Sustained growth, diversified expertise, and client wins across the GCC, MENA, and global innovation corridors.',
+        milestones: {
+          2004: {
+            year: '2004',
+            title: 'Foundation',
+            description: 'Al Marsa IP was established with a vision to deliver world-class intellectual property services across the Middle East.'
+          },
+          2010: {
+            year: '2010',
+            title: 'Regional Expansion',
+            description: 'We broadened our reach throughout the GCC, building alliances with leading IP firms to fast-track cross-border filings.'
+          },
+          2015: {
+            year: '2015',
+            title: 'Global Network',
+            description: 'A vetted network spanning 150+ jurisdictions enabled clients to manage portfolios through a single strategic partner.'
+          },
+          2020: {
+            year: '2020',
+            title: 'Digital Innovation',
+            description: 'We debuted a digital client portal for transparent mandate tracking and streamlined document collaboration.'
+          },
+          2024: {
+            year: '2024',
+            title: 'Excellence Recognised',
+            description: 'Serving 500+ clients with over 2,000 successful registrations cemented our reputation for precision and responsiveness.'
+          }
+        }
+      },
+      principles: {
+        eyebrow: 'Our Principles',
+        title: 'Values That Drive Excellence',
+        subtitle: 'These tenets ensure advice that is commercially viable, culturally informed, and defensible in every forum.',
+        values: {
+          integrity: {
+            title: 'Integrity & Trust',
+            description: 'Transparent counsel and ethical practice are the foundations of every engagement.'
+          },
+          clientFocus: {
+            title: 'Client Focus',
+            description: 'We measure success by the commercial outcomes our clients achieve.'
+          },
+          globalOutlook: {
+            title: 'Global Outlook',
+            description: 'Forward-looking strategies anticipate multi-jurisdictional opportunities and challenges.'
+          },
+          innovation: {
+            title: 'Innovation',
+            description: 'We invest in tools and training that keep us at the forefront of evolving IP landscapes.'
+          }
+        }
+      },
+      leadership: {
+        eyebrow: 'Leadership Team',
+        title: 'Integrated Expertise',
+        team: {
+          hassan: {
+            name: 'Hassan Al Sabah',
+            role: 'Managing Partner',
+            bio: 'Strategic advisor across multi-jurisdictional filings with 20 years guiding GCC innovators.',
+            location: 'Kuwait City'
+          },
+          noor: {
+            name: 'Noor Al Farsi',
+            role: 'Director, Enforcement',
+            bio: 'Leads dispute resolution and enforcement with a focus on customs, litigation, and negotiated settlements.',
+            location: 'Kuwait City'
+          },
+          omar: {
+            name: 'Omar Al Saeed',
+            role: 'Head of Client Programmes',
+            bio: 'Architects operating playbooks and reporting cadences that keep leadership informed at every stage.',
+            location: 'Kuwait City'
+          }
+        }
       },
       testimonial: {
-        title: 'What Our Clients Say'
+        title: 'What Our Clients Say',
+        quote: 'The Al Marsa team integrates legal, technical, and commercial advisors in a way that gives our board total confidence in every IP decision.',
+        author: 'Chief Legal Officer',
+        company: 'Regional Industrial Group'
+      },
+      finalCta: {
+        eyebrow: 'Ready to Start?',
+        title: 'Advance Your IP Strategy',
+        subtitle: 'Whether formalising a first filing or rationalising a global portfolio, we align protection with growth targets and governance requirements.',
+        cta: {
+          consultation: 'Schedule a Consultation',
+          services: 'Explore Our Services'
+        }
       }
     },
     servicesPage: {
@@ -509,23 +640,154 @@ export const translations = {
       title: 'قصتنا',
       subtitle: 'بناء الثقة من خلال التميز',
       hero: {
-        title: 'قصتنا وقيادتنا',
-        subtitle: 'عقدان من حماية الابتكار عبر الشرق الأوسط'
+        badge: 'عن المرسى',
+        title: 'شريكك العالمي في الملكية الفكرية',
+        subtitle: 'متجذرون في الكويت، متصلون عالميًا. نقدم حماية دقيقة للملكية الفكرية مع رؤية تجارية وإنفاذ استراتيجي.',
+        features: {
+          leadership: {
+            title: 'قيادة مخصصة للعملاء',
+            description: 'تنسيق الولايات متعددة الاختصاصات من البداية إلى النهاية'
+          },
+          strategy: {
+            title: 'استراتيجية متكاملة',
+            description: 'مواءمة الملاحقة والإنفاذ والتسويق'
+          },
+          reporting: {
+            title: 'إعداد تقارير شفافة',
+            description: 'إبلاغ القيادة في كل مرحلة حرجة'
+          }
+        },
+        cta: {
+          contact: 'تواصل معنا',
+          services: 'خدماتنا'
+        }
       },
-      milestones: {
-        title: 'رحلتنا',
-        subtitle: 'المعالم الرئيسية التي شكلت ممارستنا'
+      trust: {
+        eyebrow: 'سجلنا الحافل',
+        title: 'موثوق به من قبل القادة',
+        insights: {
+          experience: {
+            metric: '20+',
+            label: 'سنوات من الخبرة المشتركة في دول مجلس التعاون الخليجي'
+          },
+          jurisdictions: {
+            metric: '150+',
+            label: 'ولايات قضائية منسقة من خلال الشركاء'
+          },
+          retention: {
+            metric: '92%',
+            label: 'قضايا محتفظ بها من خلال إحالات العملاء'
+          }
+        }
       },
-      values: {
-        title: 'قيمنا الأساسية',
-        subtitle: 'المبادئ التي توجه كل ما نقوم به'
+      foundation: {
+        eyebrow: 'أساسنا',
+        title: 'تقديم استراتيجيات ملكية فكرية مصممة خصيصًا لحماية ونمو لا مثيل لهما',
+        subtitle: 'كل مشاركة مرتكزة على التخطيط التعاوني ومقاييس النجاح وخرائط الطريق الإقليمية التي تسرع صنع القرار.',
+        vision: {
+          badge: 'رؤية التأسيس',
+          title: 'شريك استراتيجي في الملكية الفكرية للقادة الطموحين',
+          description: 'نجمع بين التميز في الملاحقة والخبرة في المنازعات والطلاقة التجارية. تدير فرقنا محافظ تدعم الطروحات العامة الأولية وتوسع الامتيازات والاستثمارات عبر الحدود.'
+        },
+        commitment: {
+          badge: 'التزامنا',
+          title: 'نتائج قابلة للقياس في كل مرحلة',
+          description: 'كل ولاية تتضمن نتائج محددة وخطط تخفيف التعرض وإيقاعات إعداد التقارير التي تبقي المستشار العام والقيادة متوافقين منذ اليوم الأول.'
+        }
       },
-      team: {
-        title: 'فريق القيادة',
-        subtitle: 'تعرف على الخبراء وراء نجاحنا'
+      journey: {
+        eyebrow: 'رحلتنا',
+        title: 'عقدان من التميز',
+        subtitle: 'نمو مستدام وخبرة متنوعة ونجاحات العملاء عبر دول مجلس التعاون الخليجي والشرق الأوسط وشمال أفريقيا وممرات الابتكار العالمية.',
+        milestones: {
+          2004: {
+            year: '2004',
+            title: 'التأسيس',
+            description: 'تأسست المرسى للملكية الفكرية برؤية لتقديم خدمات ملكية فكرية عالمية المستوى عبر الشرق الأوسط.'
+          },
+          2010: {
+            year: '2010',
+            title: 'التوسع الإقليمي',
+            description: 'وسعنا نطاق وصولنا في جميع أنحاء دول مجلس التعاون الخليجي، وبناء تحالفات مع شركات الملكية الفكرية الرائدة لتسريع التسجيلات عبر الحدود.'
+          },
+          2015: {
+            year: '2015',
+            title: 'الشبكة العالمية',
+            description: 'شبكة موثوقة تمتد عبر أكثر من 150 ولاية قضائية مكّنت العملاء من إدارة المحافظ من خلال شريك استراتيجي واحد.'
+          },
+          2020: {
+            year: '2020',
+            title: 'الابتكار الرقمي',
+            description: 'أطلقنا بوابة عملاء رقمية لتتبع الولايات بشفافية والتعاون المبسط في المستندات.'
+          },
+          2024: {
+            year: '2024',
+            title: 'التميز المعترف به',
+            description: 'خدمة أكثر من 500 عميل مع أكثر من 2,000 تسجيل ناجح عززت سمعتنا في الدقة والاستجابة.'
+          }
+        }
+      },
+      principles: {
+        eyebrow: 'مبادئنا',
+        title: 'القيم التي تدفع التميز',
+        subtitle: 'هذه المبادئ تضمن نصيحة قابلة للتطبيق تجاريًا ومستنيرة ثقافيًا وقابلة للدفاع عنها في كل منتدى.',
+        values: {
+          integrity: {
+            title: 'النزاهة والثقة',
+            description: 'المشورة الشفافة والممارسة الأخلاقية هي أساس كل مشاركة.'
+          },
+          clientFocus: {
+            title: 'التركيز على العميل',
+            description: 'نقيس النجاح بالنتائج التجارية التي يحققها عملاؤنا.'
+          },
+          globalOutlook: {
+            title: 'نظرة عالمية',
+            description: 'استراتيجيات تطلعية تتوقع الفرص والتحديات متعددة الولايات القضائية.'
+          },
+          innovation: {
+            title: 'الابتكار',
+            description: 'نستثمر في الأدوات والتدريب الذي يبقينا في طليعة المشاهد المتطورة للملكية الفكرية.'
+          }
+        }
+      },
+      leadership: {
+        eyebrow: 'فريق القيادة',
+        title: 'الخبرة المتكاملة',
+        team: {
+          hassan: {
+            name: 'حسن الصباح',
+            role: 'الشريك الإداري',
+            bio: 'مستشار استراتيجي عبر التسجيلات متعددة الولايات القضائية مع 20 عامًا من توجيه المبتكرين في دول مجلس التعاون الخليجي.',
+            location: 'مدينة الكويت'
+          },
+          noor: {
+            name: 'نور الفارسي',
+            role: 'مدير، الإنفاذ',
+            bio: 'يقود حل النزاعات والإنفاذ مع التركيز على الجمارك والتقاضي والتسويات المتفاوض عليها.',
+            location: 'مدينة الكويت'
+          },
+          omar: {
+            name: 'عمر السعيد',
+            role: 'رئيس برامج العملاء',
+            bio: 'يصمم كتيبات التشغيل وإيقاعات إعداد التقارير التي تبقي القيادة مطلعة في كل مرحلة.',
+            location: 'مدينة الكويت'
+          }
+        }
       },
       testimonial: {
-        title: 'ما يقوله عملاؤنا'
+        title: 'ما يقوله عملاؤنا',
+        quote: 'يدمج فريق المرسى المستشارين القانونيين والتقنيين والتجاريين بطريقة تمنح مجلس إدارتنا ثقة تامة في كل قرار متعلق بالملكية الفكرية.',
+        author: 'كبير المستشارين القانونيين',
+        company: 'مجموعة صناعية إقليمية'
+      },
+      finalCta: {
+        eyebrow: 'هل أنت مستعد للبدء؟',
+        title: 'تطوير استراتيجية الملكية الفكرية الخاصة بك',
+        subtitle: 'سواء كنت تقوم بإضفاء الطابع الرسمي على أول تسجيل أو ترشيد محفظة عالمية، فإننا نوائم الحماية مع أهداف النمو ومتطلبات الحوكمة.',
+        cta: {
+          consultation: 'جدولة استشارة',
+          services: 'استكشف خدماتنا'
+        }
       }
     },
     servicesPage: {
