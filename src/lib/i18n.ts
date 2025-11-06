@@ -341,22 +341,153 @@ export const translations = {
       }
     },
     servicesPage: {
+      skipLink: 'Skip to main content',
       hero: {
-        title: 'Comprehensive IP Execution',
-        subtitle: 'Empowering Your Innovation Journey',
-        description: 'End-to-end IP solutions orchestrating filings, renewals, enforcement, and commercialization programs that keep your strategy ahead of market momentum.'
+        eyebrow: 'Our Services',
+        title: 'Comprehensive IP Execution.',
+        titleLine2: 'Empowering Your Innovation Journey.',
+        subtitle: 'End-to-end IP solutions orchestrating filings, renewals, enforcement, and commercialization programs that keep your strategy ahead of market momentum.',
+        metrics: {
+          response: {
+            metric: '24h',
+            label: 'Average response for regional filings'
+          },
+          jurisdictions: {
+            metric: '60+',
+            label: 'Jurisdictions coordinated each year'
+          },
+          retention: {
+            metric: '94%',
+            label: 'Mandates retained through renewals'
+          }
+        },
+        cta: {
+          getStarted: 'Get Started',
+          viewCoverage: 'View Coverage Areas'
+        }
       },
       pillars: {
+        eyebrow: 'Our Service Offering',
         title: 'Six Core Service Pillars',
-        subtitle: 'Our Service Offering'
+        intro: 'We organize our offerings into six core service pillars. Whether you\'re launching a new brand, defending your patent, or expanding internationally — we have the expertise to guide you.',
+        loadingMessage: 'Loading services...',
+        whyItMattersLabel: 'Why it matters:',
+        items: {
+          registration: {
+            title: 'IP Registration & Protection',
+            tagline: 'Secure your intellectual property before it can be challenged.',
+            services: [
+              'Trademark Registration & Management',
+              'Patent Filing & Prosecution',
+              'Industrial Design Registration',
+              'Trade Secret Safeguards'
+            ],
+            whyItMatters: 'Proper registration is your foundational shield.'
+          },
+          enforcement: {
+            title: 'Enforcement & Litigation',
+            tagline: 'Your rights matter — and we help you enforce them.',
+            services: [
+              'Infringement actions and remedies',
+              'Cease & Desist Notices',
+              'Opposition / Cancellation proceedings',
+              'Customs recordation & border enforcement',
+              'Civil & criminal litigation',
+              'Domain name dispute resolution'
+            ],
+            whyItMatters: 'Strong enforcement protects your competitive advantage.'
+          },
+          licensing: {
+            title: 'Licensing & Assignment',
+            tagline: 'Turn your IP into revenue or strategic partnerships.',
+            services: [
+              'Drafting licensing agreements',
+              'Assigning ownership rights',
+              'Franchise & brand expansion contracts',
+              'Technology transfer & joint ventures'
+            ],
+            whyItMatters: 'Strategic licensing maximizes your IP\'s commercial value.'
+          },
+          antiCounterfeiting: {
+            title: 'Anti-Counterfeiting & Market Surveillance',
+            tagline: 'Stay ahead of threats in the market before they escalate.',
+            services: [
+              'Brand protection programs',
+              'Market monitoring & investigations',
+              'Coordination with customs, law enforcement & regulators'
+            ],
+            whyItMatters: 'Proactive surveillance prevents revenue loss and brand damage.'
+          },
+          contracts: {
+            title: 'IP Contracts & Agreements',
+            tagline: 'Clear, enforceable contracts protect your creative and technical assets.',
+            services: [
+              'Non-Disclosure / Confidentiality Agreements',
+              'Software licensing & digital IP contracts',
+              'Technology transfer clauses',
+              'Custom IP-specific legal agreements'
+            ],
+            whyItMatters: 'Airtight contracts prevent disputes before they arise.'
+          },
+          advisory: {
+            title: 'IP Strategy & Advisory',
+            tagline: 'Plan, evaluate, and leverage your IP as strategic capital.',
+            services: [
+              'IP portfolio audits & optimization',
+              'Valuation & monetization assessments',
+              'Market entry & jurisdictional planning',
+              'Risk assessment & due diligence in transactions'
+            ],
+            whyItMatters: 'Strategic IP planning drives long-term business growth.'
+          }
+        }
       },
       process: {
-        title: 'Our Service Process',
-        subtitle: 'How We Deliver Excellence'
+        eyebrow: 'Our Process',
+        title: 'From Ideation to Protection & Growth',
+        subtitle: 'Clear. Transparent. Client-centric.',
+        loadingMessage: 'Loading process steps...',
+        steps: {
+          discovery: {
+            step: '01',
+            title: 'Initial Discovery & Needs Assessment',
+            description: 'We analyze your IP assets, business goals, and competitive landscape.'
+          },
+          search: {
+            step: '02',
+            title: 'Prior Art / Conflict Search',
+            description: 'Deep due diligence to identify risks, clashes, or opportunities.'
+          },
+          roadmap: {
+            step: '03',
+            title: 'Strategic Roadmap',
+            description: 'We craft a custom protection plan aligned with your business vision.'
+          },
+          filing: {
+            step: '04',
+            title: 'Application Preparation & Filing',
+            description: 'Precise drafting, documentation, and filing with relevant authorities.'
+          },
+          prosecution: {
+            step: '05',
+            title: 'Prosecution, Office Actions & Responses',
+            description: 'We handle all examiner queries, objections, and amendments.'
+          },
+          monitoring: {
+            step: '06',
+            title: 'Monitoring, Maintenance & Enforcement',
+            description: 'Ongoing surveillance, renewals, enforcement, and portfolio health checks.'
+          }
+        }
       },
-      cta: {
-        getStarted: 'Get Started',
-        viewCoverage: 'View Coverage Areas'
+      finalCta: {
+        eyebrow: 'Ready to Begin?',
+        title: 'Protect and Scale Your IP Portfolio',
+        subtitle: 'Deploy a tailored IP roadmap that aligns filings with commercial goals and activates enforcement strategies safeguarding enterprise value.',
+        cta: {
+          getStarted: 'Get Started',
+          learnAboutUs: 'Learn About Us'
+        }
       }
     },
     jurisdictions: {
@@ -791,22 +922,153 @@ export const translations = {
       }
     },
     servicesPage: {
+      skipLink: 'انتقل إلى المحتوى الرئيسي',
       hero: {
-        title: 'تنفيذ شامل للملكية الفكرية',
-        subtitle: 'تمكين رحلة الابتكار الخاصة بك',
-        description: 'حلول شاملة للملكية الفكرية تنسق التسجيلات والتجديدات والإنفاذ وبرامج التسويق التي تبقي استراتيجيتك في صدارة زخم السوق.'
+        eyebrow: 'خدماتنا',
+        title: 'تنفيذ شامل للملكية الفكرية.',
+        titleLine2: 'تمكين رحلة الابتكار الخاصة بك.',
+        subtitle: 'حلول شاملة للملكية الفكرية تنسق التسجيلات والتجديدات والإنفاذ وبرامج التسويق التي تبقي استراتيجيتك في صدارة زخم السوق.',
+        metrics: {
+          response: {
+            metric: '24 ساعة',
+            label: 'متوسط الاستجابة للتسجيلات الإقليمية'
+          },
+          jurisdictions: {
+            metric: '+60',
+            label: 'ولاية قضائية منسقة كل عام'
+          },
+          retention: {
+            metric: '94%',
+            label: 'ولايات محتفظ بها من خلال التجديدات'
+          }
+        },
+        cta: {
+          getStarted: 'ابدأ الآن',
+          viewCoverage: 'عرض مناطق التغطية'
+        }
       },
       pillars: {
+        eyebrow: 'عرض خدماتنا',
         title: 'ستة ركائز خدمة أساسية',
-        subtitle: 'عرض خدماتنا'
+        intro: 'ننظم عروضنا في ستة ركائز خدمة أساسية. سواء كنت تطلق علامة تجارية جديدة، أو تدافع عن براءة اختراعك، أو تتوسع دوليًا - لدينا الخبرة لإرشادك.',
+        loadingMessage: 'جارٍ تحميل الخدمات...',
+        whyItMattersLabel: 'لماذا هذا مهم:',
+        items: {
+          registration: {
+            title: 'تسجيل وحماية الملكية الفكرية',
+            tagline: 'تأمين ملكيتك الفكرية قبل أن يتم الطعن فيها.',
+            services: [
+              'تسجيل وإدارة العلامات التجارية',
+              'تقديم ومتابعة براءات الاختراع',
+              'تسجيل التصاميم الصناعية',
+              'حماية الأسرار التجارية'
+            ],
+            whyItMatters: 'التسجيل الصحيح هو درعك الأساسي.'
+          },
+          enforcement: {
+            title: 'الإنفاذ والتقاضي',
+            tagline: 'حقوقك مهمة - ونحن نساعدك على إنفاذها.',
+            services: [
+              'إجراءات وسبل الانتصاف من الانتهاك',
+              'إشعارات الكف والامتناع',
+              'إجراءات المعارضة / الإلغاء',
+              'تسجيل الجمارك وإنفاذ الحدود',
+              'التقاضي المدني والجنائي',
+              'حل نزاعات أسماء النطاقات'
+            ],
+            whyItMatters: 'الإنفاذ القوي يحمي ميزتك التنافسية.'
+          },
+          licensing: {
+            title: 'الترخيص والتنازل',
+            tagline: 'حوّل ملكيتك الفكرية إلى إيرادات أو شراكات استراتيجية.',
+            services: [
+              'صياغة اتفاقيات الترخيص',
+              'التنازل عن حقوق الملكية',
+              'عقود الامتياز وتوسيع العلامة التجارية',
+              'نقل التكنولوجيا والمشاريع المشتركة'
+            ],
+            whyItMatters: 'الترخيص الاستراتيجي يعظم القيمة التجارية لملكيتك الفكرية.'
+          },
+          antiCounterfeiting: {
+            title: 'مكافحة التزييف ومراقبة السوق',
+            tagline: 'ابق في صدارة التهديدات في السوق قبل أن تتصاعد.',
+            services: [
+              'برامج حماية العلامة التجارية',
+              'مراقبة السوق والتحقيقات',
+              'التنسيق مع الجمارك وإنفاذ القانون والجهات التنظيمية'
+            ],
+            whyItMatters: 'المراقبة الاستباقية تمنع خسارة الإيرادات والإضرار بالعلامة التجارية.'
+          },
+          contracts: {
+            title: 'عقود واتفاقيات الملكية الفكرية',
+            tagline: 'عقود واضحة وقابلة للتنفيذ تحمي أصولك الإبداعية والتقنية.',
+            services: [
+              'اتفاقيات عدم الإفصاح / السرية',
+              'ترخيص البرمجيات وعقود الملكية الفكرية الرقمية',
+              'بنود نقل التكنولوجيا',
+              'اتفاقيات قانونية مخصصة للملكية الفكرية'
+            ],
+            whyItMatters: 'العقود المحكمة تمنع النزاعات قبل نشوئها.'
+          },
+          advisory: {
+            title: 'استراتيجية واستشارات الملكية الفكرية',
+            tagline: 'خطط، قيّم، واستفد من ملكيتك الفكرية كرأسمال استراتيجي.',
+            services: [
+              'تدقيق وتحسين محفظة الملكية الفكرية',
+              'تقييمات التقييم والتسييل',
+              'دخول السوق والتخطيط الاختصاصي',
+              'تقييم المخاطر والعناية الواجبة في المعاملات'
+            ],
+            whyItMatters: 'التخطيط الاستراتيجي للملكية الفكرية يدفع النمو التجاري طويل الأجل.'
+          }
+        }
       },
       process: {
-        title: 'عملية خدمتنا',
-        subtitle: 'كيف نقدم التميز'
+        eyebrow: 'عمليتنا',
+        title: 'من الفكرة إلى الحماية والنمو',
+        subtitle: 'واضح. شفاف. يركز على العميل.',
+        loadingMessage: 'جارٍ تحميل خطوات العملية...',
+        steps: {
+          discovery: {
+            step: '01',
+            title: 'الاكتشاف الأولي وتقييم الاحتياجات',
+            description: 'نحلل أصول الملكية الفكرية الخاصة بك، والأهداف التجارية، والمشهد التنافسي.'
+          },
+          search: {
+            step: '02',
+            title: 'البحث عن الفن السابق / تضارب المصالح',
+            description: 'العناية الواجبة العميقة لتحديد المخاطر والتضاربات أو الفرص.'
+          },
+          roadmap: {
+            step: '03',
+            title: 'خارطة الطريق الاستراتيجية',
+            description: 'نصمم خطة حماية مخصصة تتماشى مع رؤيتك التجارية.'
+          },
+          filing: {
+            step: '04',
+            title: 'إعداد الطلب والتسجيل',
+            description: 'الصياغة الدقيقة والتوثيق والتسجيل لدى السلطات المختصة.'
+          },
+          prosecution: {
+            step: '05',
+            title: 'الملاحقة، إجراءات المكتب والردود',
+            description: 'نتعامل مع جميع استفسارات الفاحص والاعتراضات والتعديلات.'
+          },
+          monitoring: {
+            step: '06',
+            title: 'المراقبة والصيانة والإنفاذ',
+            description: 'المراقبة المستمرة والتجديدات والإنفاذ وفحوصات صحة المحفظة.'
+          }
+        }
       },
-      cta: {
-        getStarted: 'ابدأ الآن',
-        viewCoverage: 'عرض مناطق التغطية'
+      finalCta: {
+        eyebrow: 'هل أنت مستعد للبدء؟',
+        title: 'حماية وتوسيع محفظة الملكية الفكرية الخاصة بك',
+        subtitle: 'نشر خارطة طريق مخصصة للملكية الفكرية تتماشى مع التسجيلات مع الأهداف التجارية وتفعيل استراتيجيات الإنفاذ لحماية قيمة المؤسسة.',
+        cta: {
+          getStarted: 'ابدأ الآن',
+          learnAboutUs: 'تعرف علينا'
+        }
       }
     },
     jurisdictions: {

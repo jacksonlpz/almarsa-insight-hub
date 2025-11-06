@@ -5,32 +5,22 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { ArrowRight, Check } from "lucide-react";
 import { renderAlMarsaIcon } from "@/components/icons/al-marsa";
-import { SERVICE_INTRO, SERVICE_PILLARS, SERVICE_PROCESS } from "@/data/servicesData";
+import { getServiceIntro, getServicePillars, getServiceProcess } from "@/data/servicesData";
 import useScrollReveal from "@/hooks/useScrollReveal";
 import "@/styles/home.css";
 import "@/styles/accessibility.css";
 import { usePageSEO } from "@/hooks/usePageSEO";
 import { buildCanonicalUrl } from "@/lib/seo";
-
-const SERVICE_METRICS = [
-  {
-    metric: "24h",
-    label: "Average response for regional filings"
-  },
-  {
-    metric: "60+",
-    label: "Jurisdictions coordinated each year"
-  },
-  {
-    metric: "94%",
-    label: "Mandates retained through renewals"
-  }
-];
+import { useLanguage } from "@/hooks/useLanguage";
+import { cn } from "@/lib/utils";
 
 const Services = () => {
+  const { language, t } = useLanguage();
+  const isRTL = language === "ar";
+
   usePageSEO({
-    title: "Intellectual Property Services Portfolio",
-    description: "Explore Al Marsa IP's trademark, patent, enforcement, anti-counterfeiting, and advisory services tailored for GCC and global mandates.",
+    title: t('servicesPage.hero.title') + ' ' + t('servicesPage.hero.titleLine2'),
+    description: t('servicesPage.hero.subtitle'),
     keywords: [
       "IP services Kuwait",
       "trademark enforcement GCC",
@@ -42,11 +32,34 @@ const Services = () => {
   });
 
   useScrollReveal();
+
+  // Get service metrics from translations
+  const serviceMetrics = [
+    {
+      metric: t('servicesPage.hero.metrics.response.metric'),
+      label: t('servicesPage.hero.metrics.response.label')
+    },
+    {
+      metric: t('servicesPage.hero.metrics.jurisdictions.metric'),
+      label: t('servicesPage.hero.metrics.jurisdictions.label')
+    },
+    {
+      metric: t('servicesPage.hero.metrics.retention.metric'),
+      label: t('servicesPage.hero.metrics.retention.label')
+    }
+  ];
+
+  // Get dynamic data using translations
+  const SERVICE_INTRO = getServiceIntro(t);
+  const SERVICE_PILLARS = getServicePillars(t);
+  const SERVICE_PROCESS = getServiceProcess(t);
+
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <a href="#main-content" className="skip-link">Skip to main content</a>
+    <div className={cn("min-h-screen bg-background text-foreground", isRTL && "dir-rtl")}>
+      <a href="#main-content" className="skip-link">{t('servicesPage.skipLink')}</a>
       <Header />
       <main role="main" id="main-content">
+        {/* Hero Section */}
         <section aria-label="Services Overview" className="relative overflow-hidden bg-navy-deep text-white" data-animate>
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-br from-[#1a202c] via-[#1e293b] to-[#0f172a]" />
@@ -55,16 +68,16 @@ const Services = () => {
           <div className="container-responsive relative z-10 py-20 md:py-28">
             <div className="max-w-4xl mx-auto text-center space-y-10">
               <div className="space-y-6">
-                <span className="hero-eyebrow">Our Services</span>
+                <span className="hero-eyebrow">{t('servicesPage.hero.eyebrow')}</span>
                 <h1 className="hero-title text-white mx-auto">
-                  Comprehensive IP Execution.<br />Empowering Your Innovation Journey.
+                  {t('servicesPage.hero.title')}<br />{t('servicesPage.hero.titleLine2')}
                 </h1>
                 <p className="hero-subtitle mx-auto">
-                  End-to-end IP solutions orchestrating filings, renewals, enforcement, and commercialization programs that keep your strategy ahead of market momentum.
+                  {t('servicesPage.hero.subtitle')}
                 </p>
               </div>
               <div className="flex items-center justify-center gap-8 text-sm text-white/80 flex-wrap">
-                {SERVICE_METRICS.map((metric, index) => (
+                {serviceMetrics.map((metric, index) => (
                   <div key={metric.label} className="flex items-center gap-2">
                     {index > 0 && <span className="text-white/30">•</span>}
                     <span className="font-bold text-white text-lg">{metric.metric}</span>
@@ -75,7 +88,7 @@ const Services = () => {
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center justify-center">
                 <Button asChild size="lg">
                   <Link to="/contact" className="flex items-center gap-2">
-                    <span>Get Started</span>
+                    <span>{t('servicesPage.hero.cta.getStarted')}</span>
                     <ArrowRight className="h-5 w-5" />
                   </Link>
                 </Button>
@@ -84,18 +97,19 @@ const Services = () => {
                   variant="secondary"
                   size="lg"
                 >
-                  <Link to="/jurisdictions">View Coverage Areas</Link>
+                  <Link to="/jurisdictions">{t('servicesPage.hero.cta.viewCoverage')}</Link>
                 </Button>
               </div>
             </div>
           </div>
         </section>
 
+        {/* Service Pillars Section */}
         <section className="section-spacing bg-white" data-animate>
           <div className="container-responsive">
             <div className="section-heading">
-              <span className="section-eyebrow">Our Service Offering</span>
-              <h2 className="section-title mt-6">Six Core Service Pillars</h2>
+              <span className="section-eyebrow">{t('servicesPage.pillars.eyebrow')}</span>
+              <h2 className="section-title mt-6">{t('servicesPage.pillars.title')}</h2>
               <p className="section-subtitle mt-6">
                 {SERVICE_INTRO}
               </p>
@@ -135,7 +149,7 @@ const Services = () => {
 
                       <div className="pt-4 border-t border-border/50">
                         <p className="text-xs font-semibold text-primary">
-                          <span className="text-muted-foreground">Why it matters:</span> {pillar.whyItMatters}
+                          <span className="text-muted-foreground">{t('servicesPage.pillars.whyItMattersLabel')}</span> {pillar.whyItMatters}
                         </p>
                       </div>
                     </CardContent>
@@ -144,20 +158,21 @@ const Services = () => {
                 })
               ) : (
                 <div className="col-span-full text-center text-muted-foreground">
-                  Loading services...
+                  {t('servicesPage.pillars.loadingMessage')}
                 </div>
               )}
             </div>
           </div>
         </section>
 
+        {/* Process Section */}
         <section className="section-spacing bg-white" data-animate>
           <div className="container-responsive">
             <div className="section-heading">
-              <span className="section-eyebrow">Our Process</span>
-              <h2 className="section-title mt-6">From Ideation to Protection & Growth</h2>
+              <span className="section-eyebrow">{t('servicesPage.process.eyebrow')}</span>
+              <h2 className="section-title mt-6">{t('servicesPage.process.title')}</h2>
               <p className="section-subtitle mt-6">
-                Clear. Transparent. Client-centric.
+                {t('servicesPage.process.subtitle')}
               </p>
             </div>
             <ol className="timeline max-w-4xl mx-auto">
@@ -173,31 +188,32 @@ const Services = () => {
                 ))
               ) : (
                 <div className="text-center text-muted-foreground">
-                  Loading process steps...
+                  {t('servicesPage.process.loadingMessage')}
                 </div>
               )}
             </ol>
           </div>
         </section>
 
+        {/* Final CTA Section */}
         <section className="relative overflow-hidden py-24 md:py-32" data-animate>
           <div className="absolute inset-0 bg-gradient-to-br from-navy-deep via-[#1e293b] to-navy-deep" />
           <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_50%_50%,_rgba(231,93,43,0.3),_transparent_70%)]" />
           <div className="container-responsive relative z-10">
             <div className="max-w-4xl mx-auto text-center space-y-10">
               <div className="space-y-6">
-                <span className="hero-eyebrow">Ready to Begin?</span>
+                <span className="hero-eyebrow">{t('servicesPage.finalCta.eyebrow')}</span>
                 <h2 className="hero-title text-white">
-                  Protect and Scale Your IP Portfolio
+                  {t('servicesPage.finalCta.title')}
                 </h2>
                 <p className="hero-subtitle mx-auto">
-                  Deploy a tailored IP roadmap that aligns filings with commercial goals and activates enforcement strategies safeguarding enterprise value.
+                  {t('servicesPage.finalCta.subtitle')}
                 </p>
               </div>
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center justify-center">
                 <Button asChild size="lg">
                   <Link to="/contact" className="flex items-center gap-2">
-                    <span>Get Started</span>
+                    <span>{t('servicesPage.finalCta.cta.getStarted')}</span>
                     <ArrowRight className="h-5 w-5" />
                   </Link>
                 </Button>
@@ -206,7 +222,7 @@ const Services = () => {
                   size="lg"
                   variant="secondary"
                 >
-                  <Link to="/our-story">Learn About Us</Link>
+                  <Link to="/our-story">{t('servicesPage.finalCta.cta.learnAboutUs')}</Link>
                 </Button>
               </div>
             </div>
