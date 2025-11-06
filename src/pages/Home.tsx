@@ -10,54 +10,81 @@ import ImageOptimized from "@/components/ImageOptimized";
 import CountUp from "@/components/CountUp";
 import heroImage from "@/assets/hero-bg.jpg";
 import { renderAlMarsaIcon } from "@/components/icons/al-marsa";
-import { features as homeFeatures, services as homeServices, stats as homeStats } from "@/data/homeData";
+import { getHomeFeatures, getHomeServices, getHomeStats } from "@/data/homeData";
 import useScrollReveal from "@/hooks/useScrollReveal";
 import "@/styles/home.css";
 import { usePageSEO } from "@/hooks/usePageSEO";
 import { useLanguage } from "@/hooks/useLanguage";
 import { APP_CONFIG, COMPANY_INFO } from "@/lib/constants";
 import { buildCanonicalUrl } from "@/lib/seo";
-const TIMELINE_PHASES = [
-  {
-    title: "Consultation & IP audit",
-    description: "Immersion sessions to surface current assets, exposure points, and the jurisdictions that require immediate mobilisation.",
-    icon: "audit" as const,
-  },
-  {
-    title: "Strategy architecture",
-    description: "Scenario planning, filing roadmaps, and budget modelling that translate commercial goals into actionable programmes.",
-    icon: "strategy" as const,
-  },
-  {
-    title: "Execution & monitoring",
-    description: "Coordinated filings, renewals, and ongoing watch services documented through decision-grade dashboards.",
-    icon: "execution" as const,
-  },
-  {
-    title: "Enforcement & defence",
-    description: "Litigation support, oppositions, and negotiated settlements that protect enterprise value at pace.",
-    icon: "defence" as const,
-  },
-];
-const TESTIMONIALS = [
-  {
-    quote:
-      "AL Marsa’s programme management is meticulous. Every filing decision arrives with clear exposure analysis and governance-ready documentation.",
-    name: "Group General Counsel",
-    firm: "Regional Food & Beverage Conglomerate",
-  },
-  {
-    quote:
-      "Our expansion into new jurisdictions would not have met board timelines without their structured roadmap and associate coordination.",
-    name: "Managing Director",
-    firm: "Technology Holdings Company",
-  },
-];
 
 const Home = () => {
   const { language, t } = useLanguage();
   const isRTL = language === 'ar';
   useScrollReveal();
+
+  // Get dynamic data from translations
+  const homeServices = getHomeServices(t);
+  const homeFeatures = getHomeFeatures(t);
+  const homeStats = getHomeStats(t);
+
+  // Get timeline phases from translations
+  const timelinePhases = [
+    {
+      title: t('homePage.timeline.phases.consultation.title'),
+      description: t('homePage.timeline.phases.consultation.description'),
+      icon: "audit" as const,
+    },
+    {
+      title: t('homePage.timeline.phases.strategy.title'),
+      description: t('homePage.timeline.phases.strategy.description'),
+      icon: "strategy" as const,
+    },
+    {
+      title: t('homePage.timeline.phases.execution.title'),
+      description: t('homePage.timeline.phases.execution.description'),
+      icon: "execution" as const,
+    },
+    {
+      title: t('homePage.timeline.phases.enforcement.title'),
+      description: t('homePage.timeline.phases.enforcement.description'),
+      icon: "defence" as const,
+    },
+  ];
+
+  // Get testimonials from translations
+  const testimonials = [
+    {
+      quote: t('homePage.testimonials.gcounsel.quote'),
+      name: t('homePage.testimonials.gcounsel.name'),
+      firm: t('homePage.testimonials.gcounsel.firm'),
+    },
+    {
+      quote: t('homePage.testimonials.managingDirector.quote'),
+      name: t('homePage.testimonials.managingDirector.name'),
+      firm: t('homePage.testimonials.managingDirector.firm'),
+    },
+  ];
+
+  // Get hero card features from translations
+  const heroCardFeatures = [
+    {
+      label: t('homePage.heroCard.features.network.label'),
+      description: t('homePage.heroCard.features.network.description'),
+      icon: "advantage-network" as const,
+    },
+    {
+      label: t('homePage.heroCard.features.governance.label'),
+      description: t('homePage.heroCard.features.governance.description'),
+      icon: "advantage-governance" as const,
+    },
+    {
+      label: t('homePage.heroCard.features.reporting.label'),
+      description: t('homePage.heroCard.features.reporting.description'),
+      icon: "strategy" as const,
+    },
+  ];
+
   const structuredData = useMemo(() => ({
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
@@ -105,7 +132,7 @@ const Home = () => {
   usePageSEO(seoConfig);
 
   return (
-    <div className={cn("min-h-screen bg-background text-foreground", isRTL && "dir-rtl")}> 
+    <div className={cn("min-h-screen bg-background text-foreground", isRTL && "dir-rtl")}>
       <Header />
       <main>
         <section className="relative overflow-hidden bg-navy-deep text-white" data-animate>
@@ -154,29 +181,13 @@ const Home = () => {
                 <CardContent className="space-y-6 p-8 lg:p-10">
                   <div className="inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-white/80">
                     <Award className="h-4 w-4" />
-                    Trusted Partner
+                    {t('homePage.heroCard.badge')}
                   </div>
                   <p className="text-base leading-relaxed text-white/80">
-                    “Clients rely on us for responsive counsel, clear filing pathways, and measured defence strategies that stand up in every jurisdiction.”
+                    {t('homePage.heroCard.quote')}
                   </p>
                   <div className="space-y-4">
-                    {[
-                      {
-                        label: "Dedicated regional experts",
-                        description: "Direct access to partners across MENA, Europe, and key global IP offices.",
-                        icon: "advantage-network",
-                      },
-                      {
-                        label: "ISO-aligned quality management",
-                        description: "Cross-functional reviews keep filings, renewals, and enforcement audit-ready.",
-                        icon: "advantage-governance",
-                      },
-                      {
-                        label: "Decision-grade reporting",
-                        description: "Dashboards summarise exposure, deadlines, and next actions in real time.",
-                        icon: "strategy",
-                      },
-                    ].map((item) => (
+                    {heroCardFeatures.map((item) => (
                       <div key={item.label} className="flex items-start gap-4 rounded-xl bg-white/5 p-4">
                         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/15 text-primary">
                           {renderAlMarsaIcon(item.icon, { className: "h-6 w-6" })}
@@ -226,7 +237,7 @@ const Home = () => {
                 ))
               ) : (
                 <div className="col-span-full text-center text-muted-foreground">
-                  Loading statistics...
+                  {t('homePage.loadingStats')}
                 </div>
               )}
             </div>
@@ -273,7 +284,7 @@ const Home = () => {
                           to="/services"
                           className="inline-flex items-center gap-2 text-primary font-semibold group/link"
                         >
-                          Explore our IP services
+                          {t('homePage.exploreServices')}
                           <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-1" />
                         </Link>
                       </div>
@@ -282,7 +293,7 @@ const Home = () => {
                 ))
               ) : (
                 <div className="col-span-full text-center text-muted-foreground">
-                  Loading services...
+                  {t('homePage.loadingServices')}
                 </div>
               )}
             </div>
@@ -312,7 +323,7 @@ const Home = () => {
                 ))
               ) : (
                 <div className="col-span-full text-center text-muted-foreground">
-                  Loading features...
+                  {t('homePage.loadingFeatures')}
                 </div>
               )}
             </div>
@@ -329,7 +340,7 @@ const Home = () => {
               </p>
             </div>
             <ol className="timeline max-w-4xl mx-auto">
-              {TIMELINE_PHASES.map((phase, index) => (
+              {timelinePhases.map((phase, index) => (
                 <li key={phase.title} className="timeline-item" data-animate>
                   <div className="timeline-index">{String(index + 1).padStart(2, '0')}</div>
                   <div className="timeline-content">

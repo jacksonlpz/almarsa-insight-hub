@@ -6,73 +6,100 @@ type ServiceItem = {
   description: string;
 };
 
-export const services: ServiceItem[] = [
-  {
-    icon: "trademark",
-    title: "Trademark Registration & Protection",
-    description: "From search and filing to renewals, oppositions, and watch services"
-  },
-  {
-    icon: "patent",
-    title: "Patent Application & Prosecution",
-    description: "Technical drafting, filings, and prosecution across priority jurisdictions"
-  },
-  {
-    icon: "strategy",
-    title: "Trade Secret Advisory",
-    description: "Programmes that harden confidential processes and govern sensitive know-how"
-  },
-  {
-    icon: "disputes",
-    title: "IP Disputes & Enforcement",
-    description: "Infringement response, negotiated settlements, and litigation support"
-  },
-  {
-    icon: "advantage-network",
-    title: "Global & Cross-Border IP",
-    description: "Madrid, PCT, and local counsel coordination with unified governance"
-  },
-  {
-    icon: "industrial",
-    title: "Industrial Design & Model Protection",
-    description: "Design registration, renewals, and anti-counterfeit programmes"
-  }
-];
-
 type FeatureItem = {
   icon: AlMarsaIconName;
   label: string;
   description: string;
 };
 
-export const features: FeatureItem[] = [
-  {
-    icon: "advantage-insight",
-    label: "Local expertise, global visibility",
-    description: "Sector-specific attorneys embedded across the GCC provide nuanced counsel the moment priorities shift.",
-  },
-  {
-    icon: "advantage-network",
-    label: "Tailored, proactive programmes",
-    description: "Lifecycle strategies built around launches, renewals, and disputes so decisions are always timely and informed.",
-  },
-  {
-    icon: "advantage-governance",
-    label: "Audit-ready governance & reporting",
-    description: "Evidence frameworks, dashboards, and board-ready updates that withstand scrutiny across jurisdictions.",
-  },
-  {
-    icon: "defence",
-    label: "Rapid enforcement & defence posture",
-    description: "Escalation playbooks let you intervene quickly—administratively, commercially, or litigiously—without losing momentum.",
-  },
-];
+type StatItem = {
+  number: string;
+  label: string;
+};
 
-export const stats = [
-  { number: "50+", label: "Matters Managed" },
-  { number: "25+", label: "Global Jurisdictions" },
-  { number: "100%", label: "Client Satisfaction" }
-];
+type TranslationFunction = (key: string) => string;
+
+export const getHomeServices = (t: TranslationFunction): ServiceItem[] => {
+  return [
+    {
+      icon: "trademark",
+      title: t('homePage.homeServices.trademark.title'),
+      description: t('homePage.homeServices.trademark.description')
+    },
+    {
+      icon: "patent",
+      title: t('homePage.homeServices.patent.title'),
+      description: t('homePage.homeServices.patent.description')
+    },
+    {
+      icon: "strategy",
+      title: t('homePage.homeServices.tradeSecret.title'),
+      description: t('homePage.homeServices.tradeSecret.description')
+    },
+    {
+      icon: "disputes",
+      title: t('homePage.homeServices.disputes.title'),
+      description: t('homePage.homeServices.disputes.description')
+    },
+    {
+      icon: "advantage-network",
+      title: t('homePage.homeServices.global.title'),
+      description: t('homePage.homeServices.global.description')
+    },
+    {
+      icon: "industrial",
+      title: t('homePage.homeServices.industrial.title'),
+      description: t('homePage.homeServices.industrial.description')
+    }
+  ];
+};
+
+export const getHomeFeatures = (t: TranslationFunction): FeatureItem[] => {
+  return [
+    {
+      icon: "advantage-insight",
+      label: t('homePage.homeFeatures.expertise.label'),
+      description: t('homePage.homeFeatures.expertise.description')
+    },
+    {
+      icon: "advantage-network",
+      label: t('homePage.homeFeatures.tailored.label'),
+      description: t('homePage.homeFeatures.tailored.description')
+    },
+    {
+      icon: "advantage-governance",
+      label: t('homePage.homeFeatures.governance.label'),
+      description: t('homePage.homeFeatures.governance.description')
+    },
+    {
+      icon: "defence",
+      label: t('homePage.homeFeatures.enforcement.label'),
+      description: t('homePage.homeFeatures.enforcement.description')
+    }
+  ];
+};
+
+export const getHomeStats = (t: TranslationFunction): StatItem[] => {
+  return [
+    {
+      number: t('homePage.homeStats.matters.number'),
+      label: t('homePage.homeStats.matters.label')
+    },
+    {
+      number: t('homePage.homeStats.jurisdictions.number'),
+      label: t('homePage.homeStats.jurisdictions.label')
+    },
+    {
+      number: t('homePage.homeStats.satisfaction.number'),
+      label: t('homePage.homeStats.satisfaction.label')
+    }
+  ];
+};
+
+// For backwards compatibility - these will be removed after refactoring
+export const services: ServiceItem[] = [];
+export const features: FeatureItem[] = [];
+export const stats: StatItem[] = [];
 
 // Default exports with fallbacks
 export default {

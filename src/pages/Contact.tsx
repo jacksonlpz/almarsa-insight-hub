@@ -19,6 +19,8 @@ import { Link } from "react-router-dom";
 import "@/styles/home.css";
 import { usePageSEO } from "@/hooks/usePageSEO";
 import { buildCanonicalUrl } from "@/lib/seo";
+import { useLanguage } from "@/hooks/useLanguage";
+import { cn } from "@/lib/utils";
 
 const contactSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
@@ -33,7 +35,7 @@ const contactSchema = z.object({
 
 type ContactFormValues = z.infer<typeof contactSchema>;
 
-const CONTACT_METRICS = [
+const contactMetrics = [
   { value: "24h", label: "Response time", icon: "defence" as const },
   { value: "92%", label: "Client retention", icon: "advantage-network" as const },
   { value: "150+", label: "Jurisdictions covered", icon: "advantage-insight" as const },
@@ -41,7 +43,7 @@ const CONTACT_METRICS = [
 
 import { COMPANY_INFO } from "@/lib/constants";
 
-const CONTACT_INFORMATION = [
+const contactInformation = [
   {
     icon: MapPin,
     title: "Office location",
@@ -71,18 +73,9 @@ const CONTACT_INFORMATION = [
   }
 ];
 
-const SERVICES = [
-  "Trademark Registration",
-  "Patent Applications",
-  "IP Litigation",
-  "IP Strategy Consulting",
-  "Licensing & Transactions",
-  "Brand Protection",
-  "Other"
-];
 
 
-const PARTNERSHIP_PILLARS = [
+const partnershipPillars = [
   {
     title: "Dedicated engagement lead",
     description: "A single point of contact coordinates every mandate and escalation.",
@@ -101,6 +94,8 @@ const PARTNERSHIP_PILLARS = [
 ];
 
 const Contact = () => {
+  const { language, t } = useLanguage();
+  const isRTL = language === "ar";
   usePageSEO({
     title: "Contact Al Marsa Intellectual Property Agents",
     description:
@@ -115,6 +110,63 @@ const Contact = () => {
 
   const { toast } = useToast();
   useScrollReveal();
+
+  // Get metrics from translations
+  const contactMetrics = [
+    { value: t("contact.metrics.response.value"), label: t("contact.metrics.response.label"), icon: "defence" as const },
+    { value: t("contact.metrics.retention.value"), label: t("contact.metrics.retention.label"), icon: "advantage-network" as const },
+    { value: t("contact.metrics.jurisdictions.value"), label: t("contact.metrics.jurisdictions.label"), icon: "advantage-insight" as const },
+  ];
+
+  // Get contact information from translations
+  const contactInformation = [
+    {
+      icon: MapPin,
+      title: t("contact.info.location"),
+      details: [
+        COMPANY_INFO.address.building,
+        `${COMPANY_INFO.address.street}`,
+        `${COMPANY_INFO.address.floor}, ${COMPANY_INFO.address.area} ${COMPANY_INFO.address.country}`
+      ]
+    },
+    {
+      icon: Phone,
+      title: t("contact.info.phoneWhatsapp"),
+      details: [`${COMPANY_INFO.phone} (Main)`, `${COMPANY_INFO.phone} (WhatsApp)`]
+    },
+    {
+      icon: Mail,
+      title: t("contact.info.emailAddress"),
+      details: [COMPANY_INFO.email]
+    },
+    {
+      icon: Clock,
+      title: t("contact.info.businessHours"),
+      details: [
+        COMPANY_INFO.businessHours.weekdays,
+        COMPANY_INFO.businessHours.weekend
+      ]
+    }
+  ];
+
+  // Get partnership pillars from translations
+  const partnershipPillars = [
+    {
+      title: t("contact.pillars.engagement.title"),
+      description: t("contact.pillars.engagement.description"),
+      icon: "strategy" as const,
+    },
+    {
+      title: t("contact.pillars.confidential.title"),
+      description: t("contact.pillars.confidential.description"),
+      icon: "advantage-governance" as const,
+    },
+    {
+      title: t("contact.pillars.multilingual.title"),
+      description: t("contact.pillars.multilingual.description"),
+      icon: "advantage-network" as const,
+    },
+  ];
 
   const {
     control,
@@ -173,7 +225,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className={cn("min-h-screen bg-background text-foreground", isRTL && "dir-rtl")}>
       <Header />
       <main>
         {/* Hero Section */}
@@ -194,7 +246,7 @@ const Contact = () => {
                 </p>
               </div>
               <div className="grid gap-4 sm:grid-cols-3 sm:gap-6">
-                {CONTACT_METRICS.map((metric) => (
+                {contactMetrics.map((metric) => (
                   <div key={metric.label} className="group rounded-lg border border-white/10 bg-white/5 p-3 backdrop-blur-sm transition-all hover:border-white/20 hover:bg-white/10">
                     <div className="flex items-center gap-2.5">
                       <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary ring-1 ring-white/10">
@@ -218,7 +270,7 @@ const Contact = () => {
                   Dedicated engagement lead coordinating with our specialists for response within one business day.
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 text-xs text-white/70">
-                  {PARTNERSHIP_PILLARS.map((pillar) => (
+                  {partnershipPillars.map((pillar) => (
                     <div key={pillar.title} className="flex items-center gap-1.5">
                       <div className="flex h-3.5 w-3.5 flex-shrink-0 items-center justify-center rounded-full bg-primary/20">
                         <div className="h-1 w-1 rounded-full bg-primary" />
@@ -381,7 +433,7 @@ const Contact = () => {
                 </CardContent>
               </Card>
               <div className="space-y-2.5">
-                {CONTACT_INFORMATION.map((info) => (
+                {contactInformation.map((info) => (
                   <Card key={info.title} className="border-gray-200">
                     <CardContent className="p-3.5">
                       <div className="flex items-start gap-2.5">
