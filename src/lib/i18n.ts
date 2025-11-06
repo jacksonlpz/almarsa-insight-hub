@@ -190,42 +190,304 @@ export const translations = {
       title: 'Our Story',
       subtitle: 'Building Trust Through Excellence',
       hero: {
-        title: 'Our Story & Leadership',
-        subtitle: 'Two decades of protecting innovation across the Middle East'
+        badge: 'About Al Marsa',
+        title: 'Your Global Partner in Intellectual Property',
+        subtitle: 'Rooted in Kuwait, connected globally. We deliver precision IP protection with commercial insight and strategic enforcement.',
+        features: {
+          leadership: {
+            title: 'Dedicated Client Leadership',
+            description: 'Multi-jurisdictional mandates coordinated end-to-end'
+          },
+          strategy: {
+            title: 'Integrated Strategy',
+            description: 'Prosecution, enforcement, and commercialization aligned'
+          },
+          reporting: {
+            title: 'Transparent Reporting',
+            description: 'Leadership informed at every critical milestone'
+          }
+        },
+        cta: {
+          contact: 'Get In Touch',
+          services: 'Our Services'
+        }
       },
-      milestones: {
-        title: 'Our Journey',
-        subtitle: 'Key milestones that shaped our practice'
+      trust: {
+        eyebrow: 'Our Track Record',
+        title: 'Trusted By Leaders',
+        insights: {
+          experience: {
+            metric: '20+',
+            label: 'Years of combined GCC experience'
+          },
+          jurisdictions: {
+            metric: '150+',
+            label: 'Jurisdictions coordinated through partners'
+          },
+          retention: {
+            metric: '92%',
+            label: 'Matters retained through client referrals'
+          }
+        }
       },
-      values: {
-        title: 'Our Core Values',
-        subtitle: 'The principles that guide everything we do'
+      foundation: {
+        eyebrow: 'Our Foundation',
+        title: 'Delivering Tailored IP Strategies for Unparalleled Protection and Growth',
+        subtitle: 'Every engagement is anchored by collaborative planning, success metrics, and regional roadmaps that accelerate decision-making.',
+        vision: {
+          badge: 'Founding Vision',
+          title: 'Strategic IP Partner for Ambitious Leaders',
+          description: 'We combine prosecution excellence, contentious expertise, and commercial fluency. Our teams steward portfolios that power IPOs, franchise expansions, and cross-border investments.'
+        },
+        commitment: {
+          badge: 'Our Commitment',
+          title: 'Measurable Outcomes at Every Stage',
+          description: 'Every mandate includes defined deliverables, exposure mitigation plans, and reporting cadences that keep general counsel and leadership aligned from day one.'
+        }
       },
-      team: {
-        title: 'Leadership Team',
-        subtitle: 'Meet the experts behind our success'
+      journey: {
+        eyebrow: 'Our Journey',
+        title: 'Two Decades of Excellence',
+        subtitle: 'Sustained growth, diversified expertise, and client wins across the GCC, MENA, and global innovation corridors.',
+        milestones: {
+          2004: {
+            year: '2004',
+            title: 'Foundation',
+            description: 'Al Marsa IP was established with a vision to deliver world-class intellectual property services across the Middle East.'
+          },
+          2010: {
+            year: '2010',
+            title: 'Regional Expansion',
+            description: 'We broadened our reach throughout the GCC, building alliances with leading IP firms to fast-track cross-border filings.'
+          },
+          2015: {
+            year: '2015',
+            title: 'Global Network',
+            description: 'A vetted network spanning 150+ jurisdictions enabled clients to manage portfolios through a single strategic partner.'
+          },
+          2020: {
+            year: '2020',
+            title: 'Digital Innovation',
+            description: 'We debuted a digital client portal for transparent mandate tracking and streamlined document collaboration.'
+          },
+          2024: {
+            year: '2024',
+            title: 'Excellence Recognised',
+            description: 'Serving 500+ clients with over 2,000 successful registrations cemented our reputation for precision and responsiveness.'
+          }
+        }
+      },
+      principles: {
+        eyebrow: 'Our Principles',
+        title: 'Values That Drive Excellence',
+        subtitle: 'These tenets ensure advice that is commercially viable, culturally informed, and defensible in every forum.',
+        values: {
+          integrity: {
+            title: 'Integrity & Trust',
+            description: 'Transparent counsel and ethical practice are the foundations of every engagement.'
+          },
+          clientFocus: {
+            title: 'Client Focus',
+            description: 'We measure success by the commercial outcomes our clients achieve.'
+          },
+          globalOutlook: {
+            title: 'Global Outlook',
+            description: 'Forward-looking strategies anticipate multi-jurisdictional opportunities and challenges.'
+          },
+          innovation: {
+            title: 'Innovation',
+            description: 'We invest in tools and training that keep us at the forefront of evolving IP landscapes.'
+          }
+        }
+      },
+      leadership: {
+        eyebrow: 'Leadership Team',
+        title: 'Integrated Expertise',
+        team: {
+          hassan: {
+            name: 'Hassan Al Sabah',
+            role: 'Managing Partner',
+            bio: 'Strategic advisor across multi-jurisdictional filings with 20 years guiding GCC innovators.',
+            location: 'Kuwait City'
+          },
+          noor: {
+            name: 'Noor Al Farsi',
+            role: 'Director, Enforcement',
+            bio: 'Leads dispute resolution and enforcement with a focus on customs, litigation, and negotiated settlements.',
+            location: 'Kuwait City'
+          },
+          omar: {
+            name: 'Omar Al Saeed',
+            role: 'Head of Client Programmes',
+            bio: 'Architects operating playbooks and reporting cadences that keep leadership informed at every stage.',
+            location: 'Kuwait City'
+          }
+        }
       },
       testimonial: {
-        title: 'What Our Clients Say'
+        title: 'What Our Clients Say',
+        quote: 'The Al Marsa team integrates legal, technical, and commercial advisors in a way that gives our board total confidence in every IP decision.',
+        author: 'Chief Legal Officer',
+        company: 'Regional Industrial Group'
+      },
+      finalCta: {
+        eyebrow: 'Ready to Start?',
+        title: 'Advance Your IP Strategy',
+        subtitle: 'Whether formalising a first filing or rationalising a global portfolio, we align protection with growth targets and governance requirements.',
+        cta: {
+          consultation: 'Schedule a Consultation',
+          services: 'Explore Our Services'
+        }
       }
     },
     servicesPage: {
+      skipLink: 'Skip to main content',
       hero: {
-        title: 'Comprehensive IP Execution',
-        subtitle: 'Empowering Your Innovation Journey',
-        description: 'End-to-end IP solutions orchestrating filings, renewals, enforcement, and commercialization programs that keep your strategy ahead of market momentum.'
+        eyebrow: 'Our Services',
+        title: 'Comprehensive IP Execution.',
+        titleLine2: 'Empowering Your Innovation Journey.',
+        subtitle: 'End-to-end IP solutions orchestrating filings, renewals, enforcement, and commercialization programs that keep your strategy ahead of market momentum.',
+        metrics: {
+          response: {
+            metric: '24h',
+            label: 'Average response for regional filings'
+          },
+          jurisdictions: {
+            metric: '60+',
+            label: 'Jurisdictions coordinated each year'
+          },
+          retention: {
+            metric: '94%',
+            label: 'Mandates retained through renewals'
+          }
+        },
+        cta: {
+          getStarted: 'Get Started',
+          viewCoverage: 'View Coverage Areas'
+        }
       },
       pillars: {
+        eyebrow: 'Our Service Offering',
         title: 'Six Core Service Pillars',
-        subtitle: 'Our Service Offering'
+        intro: 'We organize our offerings into six core service pillars. Whether you\'re launching a new brand, defending your patent, or expanding internationally — we have the expertise to guide you.',
+        loadingMessage: 'Loading services...',
+        whyItMattersLabel: 'Why it matters:',
+        items: {
+          registration: {
+            title: 'IP Registration & Protection',
+            tagline: 'Secure your intellectual property before it can be challenged.',
+            services: [
+              'Trademark Registration & Management',
+              'Patent Filing & Prosecution',
+              'Industrial Design Registration',
+              'Trade Secret Safeguards'
+            ],
+            whyItMatters: 'Proper registration is your foundational shield.'
+          },
+          enforcement: {
+            title: 'Enforcement & Litigation',
+            tagline: 'Your rights matter — and we help you enforce them.',
+            services: [
+              'Infringement actions and remedies',
+              'Cease & Desist Notices',
+              'Opposition / Cancellation proceedings',
+              'Customs recordation & border enforcement',
+              'Civil & criminal litigation',
+              'Domain name dispute resolution'
+            ],
+            whyItMatters: 'Strong enforcement protects your competitive advantage.'
+          },
+          licensing: {
+            title: 'Licensing & Assignment',
+            tagline: 'Turn your IP into revenue or strategic partnerships.',
+            services: [
+              'Drafting licensing agreements',
+              'Assigning ownership rights',
+              'Franchise & brand expansion contracts',
+              'Technology transfer & joint ventures'
+            ],
+            whyItMatters: 'Strategic licensing maximizes your IP\'s commercial value.'
+          },
+          antiCounterfeiting: {
+            title: 'Anti-Counterfeiting & Market Surveillance',
+            tagline: 'Stay ahead of threats in the market before they escalate.',
+            services: [
+              'Brand protection programs',
+              'Market monitoring & investigations',
+              'Coordination with customs, law enforcement & regulators'
+            ],
+            whyItMatters: 'Proactive surveillance prevents revenue loss and brand damage.'
+          },
+          contracts: {
+            title: 'IP Contracts & Agreements',
+            tagline: 'Clear, enforceable contracts protect your creative and technical assets.',
+            services: [
+              'Non-Disclosure / Confidentiality Agreements',
+              'Software licensing & digital IP contracts',
+              'Technology transfer clauses',
+              'Custom IP-specific legal agreements'
+            ],
+            whyItMatters: 'Airtight contracts prevent disputes before they arise.'
+          },
+          advisory: {
+            title: 'IP Strategy & Advisory',
+            tagline: 'Plan, evaluate, and leverage your IP as strategic capital.',
+            services: [
+              'IP portfolio audits & optimization',
+              'Valuation & monetization assessments',
+              'Market entry & jurisdictional planning',
+              'Risk assessment & due diligence in transactions'
+            ],
+            whyItMatters: 'Strategic IP planning drives long-term business growth.'
+          }
+        }
       },
       process: {
-        title: 'Our Service Process',
-        subtitle: 'How We Deliver Excellence'
+        eyebrow: 'Our Process',
+        title: 'From Ideation to Protection & Growth',
+        subtitle: 'Clear. Transparent. Client-centric.',
+        loadingMessage: 'Loading process steps...',
+        steps: {
+          discovery: {
+            step: '01',
+            title: 'Initial Discovery & Needs Assessment',
+            description: 'We analyze your IP assets, business goals, and competitive landscape.'
+          },
+          search: {
+            step: '02',
+            title: 'Prior Art / Conflict Search',
+            description: 'Deep due diligence to identify risks, clashes, or opportunities.'
+          },
+          roadmap: {
+            step: '03',
+            title: 'Strategic Roadmap',
+            description: 'We craft a custom protection plan aligned with your business vision.'
+          },
+          filing: {
+            step: '04',
+            title: 'Application Preparation & Filing',
+            description: 'Precise drafting, documentation, and filing with relevant authorities.'
+          },
+          prosecution: {
+            step: '05',
+            title: 'Prosecution, Office Actions & Responses',
+            description: 'We handle all examiner queries, objections, and amendments.'
+          },
+          monitoring: {
+            step: '06',
+            title: 'Monitoring, Maintenance & Enforcement',
+            description: 'Ongoing surveillance, renewals, enforcement, and portfolio health checks.'
+          }
+        }
       },
-      cta: {
-        getStarted: 'Get Started',
-        viewCoverage: 'View Coverage Areas'
+      finalCta: {
+        eyebrow: 'Ready to Begin?',
+        title: 'Protect and Scale Your IP Portfolio',
+        subtitle: 'Deploy a tailored IP roadmap that aligns filings with commercial goals and activates enforcement strategies safeguarding enterprise value.',
+        cta: {
+          getStarted: 'Get Started',
+          learnAboutUs: 'Learn About Us'
+        }
       }
     },
     jurisdictions: {
@@ -509,42 +771,304 @@ export const translations = {
       title: 'قصتنا',
       subtitle: 'بناء الثقة من خلال التميز',
       hero: {
-        title: 'قصتنا وقيادتنا',
-        subtitle: 'عقدان من حماية الابتكار عبر الشرق الأوسط'
+        badge: 'عن المرسى',
+        title: 'شريكك العالمي في الملكية الفكرية',
+        subtitle: 'متجذرون في الكويت، متصلون عالميًا. نقدم حماية دقيقة للملكية الفكرية مع رؤية تجارية وإنفاذ استراتيجي.',
+        features: {
+          leadership: {
+            title: 'قيادة مخصصة للعملاء',
+            description: 'تنسيق الولايات متعددة الاختصاصات من البداية إلى النهاية'
+          },
+          strategy: {
+            title: 'استراتيجية متكاملة',
+            description: 'مواءمة الملاحقة والإنفاذ والتسويق'
+          },
+          reporting: {
+            title: 'إعداد تقارير شفافة',
+            description: 'إبلاغ القيادة في كل مرحلة حرجة'
+          }
+        },
+        cta: {
+          contact: 'تواصل معنا',
+          services: 'خدماتنا'
+        }
       },
-      milestones: {
-        title: 'رحلتنا',
-        subtitle: 'المعالم الرئيسية التي شكلت ممارستنا'
+      trust: {
+        eyebrow: 'سجلنا الحافل',
+        title: 'موثوق به من قبل القادة',
+        insights: {
+          experience: {
+            metric: '20+',
+            label: 'سنوات من الخبرة المشتركة في دول مجلس التعاون الخليجي'
+          },
+          jurisdictions: {
+            metric: '150+',
+            label: 'ولايات قضائية منسقة من خلال الشركاء'
+          },
+          retention: {
+            metric: '92%',
+            label: 'قضايا محتفظ بها من خلال إحالات العملاء'
+          }
+        }
       },
-      values: {
-        title: 'قيمنا الأساسية',
-        subtitle: 'المبادئ التي توجه كل ما نقوم به'
+      foundation: {
+        eyebrow: 'أساسنا',
+        title: 'تقديم استراتيجيات ملكية فكرية مصممة خصيصًا لحماية ونمو لا مثيل لهما',
+        subtitle: 'كل مشاركة مرتكزة على التخطيط التعاوني ومقاييس النجاح وخرائط الطريق الإقليمية التي تسرع صنع القرار.',
+        vision: {
+          badge: 'رؤية التأسيس',
+          title: 'شريك استراتيجي في الملكية الفكرية للقادة الطموحين',
+          description: 'نجمع بين التميز في الملاحقة والخبرة في المنازعات والطلاقة التجارية. تدير فرقنا محافظ تدعم الطروحات العامة الأولية وتوسع الامتيازات والاستثمارات عبر الحدود.'
+        },
+        commitment: {
+          badge: 'التزامنا',
+          title: 'نتائج قابلة للقياس في كل مرحلة',
+          description: 'كل ولاية تتضمن نتائج محددة وخطط تخفيف التعرض وإيقاعات إعداد التقارير التي تبقي المستشار العام والقيادة متوافقين منذ اليوم الأول.'
+        }
       },
-      team: {
-        title: 'فريق القيادة',
-        subtitle: 'تعرف على الخبراء وراء نجاحنا'
+      journey: {
+        eyebrow: 'رحلتنا',
+        title: 'عقدان من التميز',
+        subtitle: 'نمو مستدام وخبرة متنوعة ونجاحات العملاء عبر دول مجلس التعاون الخليجي والشرق الأوسط وشمال أفريقيا وممرات الابتكار العالمية.',
+        milestones: {
+          2004: {
+            year: '2004',
+            title: 'التأسيس',
+            description: 'تأسست المرسى للملكية الفكرية برؤية لتقديم خدمات ملكية فكرية عالمية المستوى عبر الشرق الأوسط.'
+          },
+          2010: {
+            year: '2010',
+            title: 'التوسع الإقليمي',
+            description: 'وسعنا نطاق وصولنا في جميع أنحاء دول مجلس التعاون الخليجي، وبناء تحالفات مع شركات الملكية الفكرية الرائدة لتسريع التسجيلات عبر الحدود.'
+          },
+          2015: {
+            year: '2015',
+            title: 'الشبكة العالمية',
+            description: 'شبكة موثوقة تمتد عبر أكثر من 150 ولاية قضائية مكّنت العملاء من إدارة المحافظ من خلال شريك استراتيجي واحد.'
+          },
+          2020: {
+            year: '2020',
+            title: 'الابتكار الرقمي',
+            description: 'أطلقنا بوابة عملاء رقمية لتتبع الولايات بشفافية والتعاون المبسط في المستندات.'
+          },
+          2024: {
+            year: '2024',
+            title: 'التميز المعترف به',
+            description: 'خدمة أكثر من 500 عميل مع أكثر من 2,000 تسجيل ناجح عززت سمعتنا في الدقة والاستجابة.'
+          }
+        }
+      },
+      principles: {
+        eyebrow: 'مبادئنا',
+        title: 'القيم التي تدفع التميز',
+        subtitle: 'هذه المبادئ تضمن نصيحة قابلة للتطبيق تجاريًا ومستنيرة ثقافيًا وقابلة للدفاع عنها في كل منتدى.',
+        values: {
+          integrity: {
+            title: 'النزاهة والثقة',
+            description: 'المشورة الشفافة والممارسة الأخلاقية هي أساس كل مشاركة.'
+          },
+          clientFocus: {
+            title: 'التركيز على العميل',
+            description: 'نقيس النجاح بالنتائج التجارية التي يحققها عملاؤنا.'
+          },
+          globalOutlook: {
+            title: 'نظرة عالمية',
+            description: 'استراتيجيات تطلعية تتوقع الفرص والتحديات متعددة الولايات القضائية.'
+          },
+          innovation: {
+            title: 'الابتكار',
+            description: 'نستثمر في الأدوات والتدريب الذي يبقينا في طليعة المشاهد المتطورة للملكية الفكرية.'
+          }
+        }
+      },
+      leadership: {
+        eyebrow: 'فريق القيادة',
+        title: 'الخبرة المتكاملة',
+        team: {
+          hassan: {
+            name: 'حسن الصباح',
+            role: 'الشريك الإداري',
+            bio: 'مستشار استراتيجي عبر التسجيلات متعددة الولايات القضائية مع 20 عامًا من توجيه المبتكرين في دول مجلس التعاون الخليجي.',
+            location: 'مدينة الكويت'
+          },
+          noor: {
+            name: 'نور الفارسي',
+            role: 'مدير، الإنفاذ',
+            bio: 'يقود حل النزاعات والإنفاذ مع التركيز على الجمارك والتقاضي والتسويات المتفاوض عليها.',
+            location: 'مدينة الكويت'
+          },
+          omar: {
+            name: 'عمر السعيد',
+            role: 'رئيس برامج العملاء',
+            bio: 'يصمم كتيبات التشغيل وإيقاعات إعداد التقارير التي تبقي القيادة مطلعة في كل مرحلة.',
+            location: 'مدينة الكويت'
+          }
+        }
       },
       testimonial: {
-        title: 'ما يقوله عملاؤنا'
+        title: 'ما يقوله عملاؤنا',
+        quote: 'يدمج فريق المرسى المستشارين القانونيين والتقنيين والتجاريين بطريقة تمنح مجلس إدارتنا ثقة تامة في كل قرار متعلق بالملكية الفكرية.',
+        author: 'كبير المستشارين القانونيين',
+        company: 'مجموعة صناعية إقليمية'
+      },
+      finalCta: {
+        eyebrow: 'هل أنت مستعد للبدء؟',
+        title: 'تطوير استراتيجية الملكية الفكرية الخاصة بك',
+        subtitle: 'سواء كنت تقوم بإضفاء الطابع الرسمي على أول تسجيل أو ترشيد محفظة عالمية، فإننا نوائم الحماية مع أهداف النمو ومتطلبات الحوكمة.',
+        cta: {
+          consultation: 'جدولة استشارة',
+          services: 'استكشف خدماتنا'
+        }
       }
     },
     servicesPage: {
+      skipLink: 'انتقل إلى المحتوى الرئيسي',
       hero: {
-        title: 'تنفيذ شامل للملكية الفكرية',
-        subtitle: 'تمكين رحلة الابتكار الخاصة بك',
-        description: 'حلول شاملة للملكية الفكرية تنسق التسجيلات والتجديدات والإنفاذ وبرامج التسويق التي تبقي استراتيجيتك في صدارة زخم السوق.'
+        eyebrow: 'خدماتنا',
+        title: 'تنفيذ شامل للملكية الفكرية.',
+        titleLine2: 'تمكين رحلة الابتكار الخاصة بك.',
+        subtitle: 'حلول شاملة للملكية الفكرية تنسق التسجيلات والتجديدات والإنفاذ وبرامج التسويق التي تبقي استراتيجيتك في صدارة زخم السوق.',
+        metrics: {
+          response: {
+            metric: '24 ساعة',
+            label: 'متوسط الاستجابة للتسجيلات الإقليمية'
+          },
+          jurisdictions: {
+            metric: '+60',
+            label: 'ولاية قضائية منسقة كل عام'
+          },
+          retention: {
+            metric: '94%',
+            label: 'ولايات محتفظ بها من خلال التجديدات'
+          }
+        },
+        cta: {
+          getStarted: 'ابدأ الآن',
+          viewCoverage: 'عرض مناطق التغطية'
+        }
       },
       pillars: {
+        eyebrow: 'عرض خدماتنا',
         title: 'ستة ركائز خدمة أساسية',
-        subtitle: 'عرض خدماتنا'
+        intro: 'ننظم عروضنا في ستة ركائز خدمة أساسية. سواء كنت تطلق علامة تجارية جديدة، أو تدافع عن براءة اختراعك، أو تتوسع دوليًا - لدينا الخبرة لإرشادك.',
+        loadingMessage: 'جارٍ تحميل الخدمات...',
+        whyItMattersLabel: 'لماذا هذا مهم:',
+        items: {
+          registration: {
+            title: 'تسجيل وحماية الملكية الفكرية',
+            tagline: 'تأمين ملكيتك الفكرية قبل أن يتم الطعن فيها.',
+            services: [
+              'تسجيل وإدارة العلامات التجارية',
+              'تقديم ومتابعة براءات الاختراع',
+              'تسجيل التصاميم الصناعية',
+              'حماية الأسرار التجارية'
+            ],
+            whyItMatters: 'التسجيل الصحيح هو درعك الأساسي.'
+          },
+          enforcement: {
+            title: 'الإنفاذ والتقاضي',
+            tagline: 'حقوقك مهمة - ونحن نساعدك على إنفاذها.',
+            services: [
+              'إجراءات وسبل الانتصاف من الانتهاك',
+              'إشعارات الكف والامتناع',
+              'إجراءات المعارضة / الإلغاء',
+              'تسجيل الجمارك وإنفاذ الحدود',
+              'التقاضي المدني والجنائي',
+              'حل نزاعات أسماء النطاقات'
+            ],
+            whyItMatters: 'الإنفاذ القوي يحمي ميزتك التنافسية.'
+          },
+          licensing: {
+            title: 'الترخيص والتنازل',
+            tagline: 'حوّل ملكيتك الفكرية إلى إيرادات أو شراكات استراتيجية.',
+            services: [
+              'صياغة اتفاقيات الترخيص',
+              'التنازل عن حقوق الملكية',
+              'عقود الامتياز وتوسيع العلامة التجارية',
+              'نقل التكنولوجيا والمشاريع المشتركة'
+            ],
+            whyItMatters: 'الترخيص الاستراتيجي يعظم القيمة التجارية لملكيتك الفكرية.'
+          },
+          antiCounterfeiting: {
+            title: 'مكافحة التزييف ومراقبة السوق',
+            tagline: 'ابق في صدارة التهديدات في السوق قبل أن تتصاعد.',
+            services: [
+              'برامج حماية العلامة التجارية',
+              'مراقبة السوق والتحقيقات',
+              'التنسيق مع الجمارك وإنفاذ القانون والجهات التنظيمية'
+            ],
+            whyItMatters: 'المراقبة الاستباقية تمنع خسارة الإيرادات والإضرار بالعلامة التجارية.'
+          },
+          contracts: {
+            title: 'عقود واتفاقيات الملكية الفكرية',
+            tagline: 'عقود واضحة وقابلة للتنفيذ تحمي أصولك الإبداعية والتقنية.',
+            services: [
+              'اتفاقيات عدم الإفصاح / السرية',
+              'ترخيص البرمجيات وعقود الملكية الفكرية الرقمية',
+              'بنود نقل التكنولوجيا',
+              'اتفاقيات قانونية مخصصة للملكية الفكرية'
+            ],
+            whyItMatters: 'العقود المحكمة تمنع النزاعات قبل نشوئها.'
+          },
+          advisory: {
+            title: 'استراتيجية واستشارات الملكية الفكرية',
+            tagline: 'خطط، قيّم، واستفد من ملكيتك الفكرية كرأسمال استراتيجي.',
+            services: [
+              'تدقيق وتحسين محفظة الملكية الفكرية',
+              'تقييمات التقييم والتسييل',
+              'دخول السوق والتخطيط الاختصاصي',
+              'تقييم المخاطر والعناية الواجبة في المعاملات'
+            ],
+            whyItMatters: 'التخطيط الاستراتيجي للملكية الفكرية يدفع النمو التجاري طويل الأجل.'
+          }
+        }
       },
       process: {
-        title: 'عملية خدمتنا',
-        subtitle: 'كيف نقدم التميز'
+        eyebrow: 'عمليتنا',
+        title: 'من الفكرة إلى الحماية والنمو',
+        subtitle: 'واضح. شفاف. يركز على العميل.',
+        loadingMessage: 'جارٍ تحميل خطوات العملية...',
+        steps: {
+          discovery: {
+            step: '01',
+            title: 'الاكتشاف الأولي وتقييم الاحتياجات',
+            description: 'نحلل أصول الملكية الفكرية الخاصة بك، والأهداف التجارية، والمشهد التنافسي.'
+          },
+          search: {
+            step: '02',
+            title: 'البحث عن الفن السابق / تضارب المصالح',
+            description: 'العناية الواجبة العميقة لتحديد المخاطر والتضاربات أو الفرص.'
+          },
+          roadmap: {
+            step: '03',
+            title: 'خارطة الطريق الاستراتيجية',
+            description: 'نصمم خطة حماية مخصصة تتماشى مع رؤيتك التجارية.'
+          },
+          filing: {
+            step: '04',
+            title: 'إعداد الطلب والتسجيل',
+            description: 'الصياغة الدقيقة والتوثيق والتسجيل لدى السلطات المختصة.'
+          },
+          prosecution: {
+            step: '05',
+            title: 'الملاحقة، إجراءات المكتب والردود',
+            description: 'نتعامل مع جميع استفسارات الفاحص والاعتراضات والتعديلات.'
+          },
+          monitoring: {
+            step: '06',
+            title: 'المراقبة والصيانة والإنفاذ',
+            description: 'المراقبة المستمرة والتجديدات والإنفاذ وفحوصات صحة المحفظة.'
+          }
+        }
       },
-      cta: {
-        getStarted: 'ابدأ الآن',
-        viewCoverage: 'عرض مناطق التغطية'
+      finalCta: {
+        eyebrow: 'هل أنت مستعد للبدء؟',
+        title: 'حماية وتوسيع محفظة الملكية الفكرية الخاصة بك',
+        subtitle: 'نشر خارطة طريق مخصصة للملكية الفكرية تتماشى مع التسجيلات مع الأهداف التجارية وتفعيل استراتيجيات الإنفاذ لحماية قيمة المؤسسة.',
+        cta: {
+          getStarted: 'ابدأ الآن',
+          learnAboutUs: 'تعرف علينا'
+        }
       }
     },
     jurisdictions: {
