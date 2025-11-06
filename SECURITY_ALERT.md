@@ -12,9 +12,9 @@ A Google Maps API key was accidentally committed to the git repository in the `.
 
 ✅ **Completed:**
 1. Added `.env` to `.gitignore` to prevent future commits
-2. Removed the exposed API key from `.env` file
-3. Replaced with placeholder value
-4. Will remove `.env` from git tracking (keeps local file)
+2. Removed `.env` from git tracking
+3. **Deleted `.env` file completely from the repository**
+4. `.env.example` remains as template (no secrets)
 
 ## 🔴 CRITICAL: Actions You Must Take Immediately
 
@@ -46,14 +46,17 @@ A Google Maps API key was accidentally committed to the git repository in the `.
      - Places API (if needed)
      - Geocoding API (if needed)
 
-### 3. Update Your Local Environment
+### 3. Create Your Local Environment File
 
-1. Copy your new API key
-2. Edit your local `.env` file:
+1. Copy the example file:
+   ```bash
+   cp .env.example .env
+   ```
+2. Edit your new `.env` file and add your new API key:
    ```bash
    VITE_GOOGLE_MAPS_API_KEY=your_new_api_key_here
    ```
-3. **Never commit this file to git** (it's now in `.gitignore`)
+3. **Never commit this file to git** (it's in `.gitignore`)
 
 ### 4. Share Key with Team Securely
 
