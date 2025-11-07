@@ -1,26 +1,30 @@
+import type { TranslationFunction } from "@/lib/i18n";
+
 export type ResourceMetric = {
   value: string;
   label: string;
   icon: string;
 };
 
-export const RESOURCE_METRICS: ResourceMetric[] = [
-  {
-    value: "GCC-focused",
-    label: "Guides & templates",
-    icon: "advantage-insight" as const,
-  },
-  {
-    value: "Video explainers",
-    label: "Learning modules",
-    icon: "strategy" as const,
-  },
-  {
-    value: "Prompt follow-up",
-    label: "Form submissions",
-    icon: "defence" as const,
-  }
-];
+export const getResourceMetrics = (t: TranslationFunction): ResourceMetric[] => {
+  return [
+    {
+      value: t('insights.metrics.guides.value'),
+      label: t('insights.metrics.guides.label'),
+      icon: "advantage-insight" as const,
+    },
+    {
+      value: t('insights.metrics.modules.value'),
+      label: t('insights.metrics.modules.label'),
+      icon: "strategy" as const,
+    },
+    {
+      value: t('insights.metrics.submissions.value'),
+      label: t('insights.metrics.submissions.label'),
+      icon: "defence" as const,
+    }
+  ];
+};
 
 export type FeaturedResource = {
   title: string;
@@ -33,53 +37,52 @@ export type FeaturedResource = {
   pdfUrl: string;
 };
 
-export const FEATURED_RESOURCES: FeaturedResource[] = [
-  {
-    title: "Oman Industrial Design Law",
-    description:
-      "Complete legal framework governing industrial design protection in Oman.",
-    category: "Legal",
-    type: "PDF",
-    topic: "Industrial Design",
-    icon: "patent" as const,
-    highlights: [
-      "Comprehensive coverage of industrial design registration requirements.",
-      "Detailed procedural guidelines for Oman IP filings.",
-      "Protection duration, renewal terms, and enforcement provisions.",
-    ],
-    pdfUrl: "https://app.box.com/s/dyuat0ucmkh7tij1e5hb4wjwdbzixzjo",
-  },
-  {
-    title: "Oman Patent Law",
-    description:
-      "Comprehensive patent legislation and regulations for Oman jurisdiction.",
-    category: "Legal",
-    type: "PDF",
-    topic: "Patent Law",
-    icon: "patent" as const,
-    highlights: [
-      "Complete patent filing requirements and examination procedures.",
-      "Priority claims, novelty standards, and patentability criteria.",
-      "Patent term duration, licensing provisions, and infringement remedies.",
-    ],
-    pdfUrl: "https://app.box.com/s/dyuat0ucmkh7tij1e5hb4wjwdbzixzjo",
-  },
-  {
-    title: "Oman Trademark Law",
-    description:
-      "Official trademark law and procedural requirements for Oman trademark registration.",
-    category: "Legal",
-    type: "PDF",
-    topic: "Trademark Law",
-    icon: "trademark" as const,
-    highlights: [
-      "Trademark classification, examination, and opposition procedures.",
-      "Registration requirements, renewal terms, and use obligations.",
-      "Enforcement mechanisms and infringement remedies in Oman.",
-    ],
-    pdfUrl: "https://app.box.com/s/dyuat0ucmkh7tij1e5hb4wjwdbzixzjo",
-  }
-];
+export const getFeaturedResources = (t: TranslationFunction): FeaturedResource[] => {
+  return [
+    {
+      title: t('insights.resources.omanIndustrialDesign.title'),
+      description: t('insights.resources.omanIndustrialDesign.description'),
+      category: t('insights.categories.legal'),
+      type: t('insights.actions.download'),
+      topic: t('insights.resources.omanIndustrialDesign.topic'),
+      icon: "patent" as const,
+      highlights: [
+        t('insights.resources.omanIndustrialDesign.highlights.0'),
+        t('insights.resources.omanIndustrialDesign.highlights.1'),
+        t('insights.resources.omanIndustrialDesign.highlights.2'),
+      ],
+      pdfUrl: "https://app.box.com/s/dyuat0ucmkh7tij1e5hb4wjwdbzixzjo",
+    },
+    {
+      title: t('insights.resources.omanPatent.title'),
+      description: t('insights.resources.omanPatent.description'),
+      category: t('insights.categories.legal'),
+      type: t('insights.actions.download'),
+      topic: t('insights.resources.omanPatent.topic'),
+      icon: "patent" as const,
+      highlights: [
+        t('insights.resources.omanPatent.highlights.0'),
+        t('insights.resources.omanPatent.highlights.1'),
+        t('insights.resources.omanPatent.highlights.2'),
+      ],
+      pdfUrl: "https://app.box.com/s/dyuat0ucmkh7tij1e5hb4wjwdbzixzjo",
+    },
+    {
+      title: t('insights.resources.omanTrademark.title'),
+      description: t('insights.resources.omanTrademark.description'),
+      category: t('insights.categories.legal'),
+      type: t('insights.actions.download'),
+      topic: t('insights.resources.omanTrademark.topic'),
+      icon: "trademark" as const,
+      highlights: [
+        t('insights.resources.omanTrademark.highlights.0'),
+        t('insights.resources.omanTrademark.highlights.1'),
+        t('insights.resources.omanTrademark.highlights.2'),
+      ],
+      pdfUrl: "https://app.box.com/s/dyuat0ucmkh7tij1e5hb4wjwdbzixzjo",
+    }
+  ];
+};
 
 export type InsightResource = {
   title: string;

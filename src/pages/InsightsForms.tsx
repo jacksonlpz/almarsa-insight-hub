@@ -14,15 +14,20 @@ import "@/styles/home.css";
 import type { CountryDetailedGuide } from "@/data/insightsResources";
 import { usePageSEO } from "@/hooks/usePageSEO";
 import { buildCanonicalUrl } from "@/lib/seo";
+import { useLanguage } from "@/hooks/useLanguage";
+import { cn } from "@/lib/utils";
 import {
-  RESOURCE_METRICS,
-  FEATURED_RESOURCES,
+  getResourceMetrics,
+  getFeaturedResources,
   ALL_INSIGHTS,
   LEARNING_MODULES,
   COUNTRY_GUIDES,
 } from "@/data/insightsResources";
 
 const InsightsForms = () => {
+  const { language, t } = useLanguage();
+  const isRTL = language === "ar";
+
   usePageSEO({
     title: "Insights Library & IP Forms",
     description: "Access Al Marsa's downloadable IP templates, jurisdictional guides, and market analysis modules for brand and patent teams.",
@@ -37,15 +42,19 @@ const InsightsForms = () => {
   useScrollReveal();
   const [activeGuide, setActiveGuide] = useState<{ country: string; guide: CountryDetailedGuide; type: string } | null>(null);
 
+  // Get dynamic data from translations
+  const resourceMetrics = getResourceMetrics(t);
+  const featuredResources = getFeaturedResources(t);
+
   const allContent = useMemo(
-    () => [...FEATURED_RESOURCES, ...ALL_INSIGHTS],
-    []
+    () => [...featuredResources, ...ALL_INSIGHTS],
+    [featuredResources]
   );
 
   const filteredContent = allContent;
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className={cn("min-h-screen bg-background text-foreground", isRTL && "dir-rtl")}>
       <Header />
       <main id="main-content" role="main">
         <section className="relative overflow-hidden bg-gradient-to-br from-navy-deep via-[#1a2332] to-navy-light text-white" data-animate>
@@ -56,19 +65,19 @@ const InsightsForms = () => {
               <div className="space-y-4">
                 <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-3 py-1.5 backdrop-blur-sm">
                   <div className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-                  <span className="text-label-xs font-semibold uppercase tracking-widest text-white/90">Insights & Resources</span>
+                  <span className="text-label-xs font-semibold uppercase tracking-widest text-white/90">{t('insights.hero.badge')}</span>
                 </div>
                 <h1 className="hero-title text-white">
-                  Actionable IP Intelligence
+                  {t('insights.hero.title')}
                 </h1>
                 <p className="hero-subtitle mx-auto text-white/75">
-                  Curated library of intelligence, templates, and analyst briefings for confident IP strategy across the GCC region.
+                  {t('insights.hero.subtitle')}
                 </p>
               </div>
 
               {/* Metrics Grid - Compact */}
               <div className="grid gap-3 sm:grid-cols-3 lg:gap-4">
-                {RESOURCE_METRICS.map((metric) => (
+                {resourceMetrics.map((metric) => (
                   <div
                     key={metric.label}
                     className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm transition-all duration-base ease-emphasis hover:border-white/20 hover:bg-white/10"
@@ -92,30 +101,30 @@ const InsightsForms = () => {
               <div className="rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
                 <div className="mb-3 flex items-center justify-center gap-2">
                   <div className="h-px w-6 bg-gradient-to-r from-transparent to-primary" />
-                  <span className="text-label-xs font-semibold uppercase tracking-wide text-primary">Quality Assurance</span>
+                  <span className="text-label-xs font-semibold uppercase tracking-wide text-primary">{t('insights.quality.badge')}</span>
                   <div className="h-px w-6 bg-gradient-to-l from-transparent to-primary" />
                 </div>
                 <p className="mb-3 text-body-xs leading-relaxed text-white/75 md:text-body">
-                  Materials written by IP professionals and reviewed regularly to reflect GCC, MENA, and international changes.
+                  {t('insights.quality.description')}
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-body-xs text-white/70">
                   <div className="flex items-center gap-2">
                     <div className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-primary/20">
                       <div className="h-1.5 w-1.5 rounded-full bg-primary" />
                     </div>
-                    <span>Categorized content</span>
+                    <span>{t('insights.quality.features.categorized')}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-primary/20">
                       <div className="h-1.5 w-1.5 rounded-full bg-primary" />
                     </div>
-                    <span>Regional templates</span>
+                    <span>{t('insights.quality.features.templates')}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-primary/20">
                       <div className="h-1.5 w-1.5 rounded-full bg-primary" />
                     </div>
-                    <span>Specialist routing</span>
+                    <span>{t('insights.quality.features.routing')}</span>
                   </div>
                 </div>
               </div>
@@ -127,11 +136,11 @@ const InsightsForms = () => {
           <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8">
             <div className="mb-8 md:mb-12 space-y-3 text-center mx-auto max-w-3xl">
               <div className="space-y-3">
-                <span className="section-eyebrow">Country intelligence</span>
-                <h2 className="section-title">Country Guides</h2>
+                <span className="section-eyebrow">{t('insights.sections.countryIntelligence')}</span>
+                <h2 className="section-title">{t('insights.sections.countryGuides')}</h2>
               </div>
               <p className="section-subtitle">
-                Practical overviews of filing procedures, timelines, and requirements by country.
+                {t('insights.sections.countryGuidesDescription')}
               </p>
             </div>
             <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -143,7 +152,7 @@ const InsightsForms = () => {
                   <CardContent className="flex flex-col gap-4 p-4">
                     <div className="space-y-3">
                       <Badge variant="outline" className="uppercase tracking-widest text-label-xs">
-                        Country guide
+                        {t('insights.sections.countryGuide')}
                       </Badge>
                       <div className="space-y-2">
                         <h3 className="text-heading-sm font-semibold text-navy-deep leading-tight">{guide.country}</h3>
@@ -315,15 +324,15 @@ const InsightsForms = () => {
           <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8">
             <div className="mb-8 md:mb-12 space-y-3 text-center mx-auto max-w-3xl">
               <div className="space-y-3">
-                <span className="section-eyebrow">Legal Framework Repository</span>
-                <h2 className="section-title text-navy-deep">GCC IP Legislation & Regulatory Documents</h2>
+                <span className="section-eyebrow">{t('insights.sections.legalFramework')}</span>
+                <h2 className="section-title text-navy-deep">{t('insights.sections.gccLegislation')}</h2>
               </div>
               <p className="section-subtitle">
-                Access comprehensive trademark, patent, and industrial design legislation across Kuwait, Bahrain, Qatar, Saudi Arabia, and the UAE.
+                {t('insights.sections.legislationDescription')}
               </p>
             </div>
             {filteredContent.length === 0 ? (
-              <Card className="p-8 text-center text-muted-foreground">No resources match your current filters.</Card>
+              <Card className="p-8 text-center text-muted-foreground">{t('insights.sections.noResources')}</Card>
             ) : filteredContent && filteredContent.length > 0 ? (
               <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
                 {filteredContent.map((insight) => {
@@ -363,7 +372,7 @@ const InsightsForms = () => {
                         <div className="flex items-center justify-between pt-2 border-t border-border/50">
                           <span className="text-label-xs font-semibold text-primary uppercase tracking-wide">{insight.type}</span>
                           <div className="flex items-center gap-1 text-body-xs text-primary">
-                            <span className="hidden sm:inline">{'pdfUrl' in insight ? 'Open PDF' : 'View'}</span>
+                            <span className="hidden sm:inline">{'pdfUrl' in insight ? t('insights.actions.openPDF') : t('insights.actions.view')}</span>
                             <ArrowRight className="h-4 w-4" />
                           </div>
                         </div>
@@ -374,7 +383,7 @@ const InsightsForms = () => {
               </div>
             ) : (
               <div className="text-center text-muted-foreground py-12">
-                Loading resources...
+                {t('insights.sections.loadingResources')}
               </div>
             )}
           </div>
@@ -383,11 +392,11 @@ const InsightsForms = () => {
           <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8">
             <div className="mb-8 md:mb-12 space-y-3 text-center mx-auto max-w-3xl">
               <div className="space-y-3">
-                <span className="section-eyebrow">On-demand learning</span>
-                <h2 className="section-title text-navy-deep">IP Knowledge Center: learn, apply, protect</h2>
+                <span className="section-eyebrow">{t('insights.sections.learningEyebrow')}</span>
+                <h2 className="section-title text-navy-deep">{t('insights.sections.knowledgeCenter')}</h2>
               </div>
               <p className="section-subtitle">
-                Short explainer modules with actionable guidance to help you understand intellectual property, trademarks, patents, and design rights.
+                {t('insights.sections.knowledgeCenterDescription')}
               </p>
             </div>
             <div className="grid gap-5 md:grid-cols-3">
@@ -432,12 +441,12 @@ const InsightsForms = () => {
           <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 md:px-8">
             <div className="cta-content">
               <div className="space-y-3">
-                <span className="text-label-xs font-semibold uppercase tracking-widest text-white/60">Next steps</span>
+                <span className="text-label-xs font-semibold uppercase tracking-widest text-white/60">{t('insights.cta.eyebrow')}</span>
                 <h2 className="text-display-md font-heading font-semibold text-white sm:text-display-lg">
-                  Coordinate your next IP intelligence briefing
+                  {t('insights.cta.title')}
                 </h2>
                 <p className="max-w-2xl text-body sm:text-body text-white/75">
-                  Partner with our analysts to review upcoming filings, regional enforcement activity, or governance updates tailored to your organisation.
+                  {t('insights.cta.description')}
                 </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row">
@@ -447,7 +456,7 @@ const InsightsForms = () => {
                   variant="outline"
                   className="border-white/40 text-navy-deep"
                 >
-                  <Link to="/news-events">Subscribe for intelligence updates</Link>
+                  <Link to="/news-events">{t('insights.cta.button')}</Link>
                 </Button>
               </div>
             </div>

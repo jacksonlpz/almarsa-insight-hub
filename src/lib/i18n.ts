@@ -672,15 +672,124 @@ export const translations = {
       title: 'Insights & Forms',
       subtitle: 'Resources & Tools',
       description: 'Access our library of IP resources, guides, and downloadable forms',
+      hero: {
+        badge: 'Insights & Resources',
+        title: 'Actionable IP Intelligence',
+        subtitle: 'Curated library of intelligence, templates, and analyst briefings for confident IP strategy across the GCC region.'
+      },
+      metrics: {
+        guides: {
+          value: 'GCC-focused',
+          label: 'Guides & templates'
+        },
+        modules: {
+          value: 'Video explainers',
+          label: 'Learning modules'
+        },
+        submissions: {
+          value: 'Prompt follow-up',
+          label: 'Form submissions'
+        }
+      },
+      quality: {
+        badge: 'Quality Assurance',
+        description: 'Materials written by IP professionals and reviewed regularly to reflect GCC, MENA, and international changes.',
+        features: {
+          categorized: 'Categorized content',
+          templates: 'Regional templates',
+          routing: 'Specialist routing'
+        }
+      },
       categories: {
+        all: 'All Resources',
         guides: 'Guides & Whitepapers',
         forms: 'Downloadable Forms',
         articles: 'Articles & Analysis',
-        webinars: 'Webinars & Videos'
+        webinars: 'Webinars & Videos',
+        legal: 'Legal',
+        educational: 'Educational',
+        templates: 'Templates'
       },
-      download: 'Download',
-      view: 'View',
-      watch: 'Watch'
+      actions: {
+        download: 'Download',
+        view: 'View',
+        watch: 'Watch',
+        viewDetails: 'View Details',
+        viewGuide: 'View Full Guide',
+        downloadPDF: 'Download PDF',
+        openPDF: 'Open PDF',
+        close: 'Close'
+      },
+      sections: {
+        featured: 'Featured Resources',
+        allInsights: 'All Insights & Resources',
+        learningModules: 'Learning Modules',
+        countryGuides: 'Country Guides',
+        countryGuide: 'Country guide',
+        countryIntelligence: 'Country intelligence',
+        countryGuidesDescription: 'Practical overviews of filing procedures, timelines, and requirements by country.',
+        legalFramework: 'Legal Framework Repository',
+        gccLegislation: 'GCC IP Legislation & Regulatory Documents',
+        legislationDescription: 'Access comprehensive trademark, patent, and industrial design legislation across Kuwait, Bahrain, Qatar, Saudi Arabia, and the UAE.',
+        noResources: 'No resources match your current filters.',
+        loadingResources: 'Loading resources...',
+        learningEyebrow: 'On-demand learning',
+        knowledgeCenter: 'IP Knowledge Center: learn, apply, protect',
+        knowledgeCenterDescription: 'Short explainer modules with actionable guidance to help you understand intellectual property, trademarks, patents, and design rights.'
+      },
+      filters: {
+        category: 'Category',
+        type: 'Type',
+        topic: 'Topic'
+      },
+      resources: {
+        omanIndustrialDesign: {
+          title: 'Oman Industrial Design Law',
+          description: 'Complete legal framework governing industrial design protection in Oman.',
+          category: 'Legal',
+          type: 'PDF',
+          topic: 'Industrial Design',
+          highlights: [
+            'Comprehensive coverage of industrial design registration requirements.',
+            'Detailed procedural guidelines for Oman IP filings.',
+            'Protection duration, renewal terms, and enforcement provisions.'
+          ]
+        },
+        omanPatent: {
+          title: 'Oman Patent Law',
+          description: 'Comprehensive patent legislation and regulations for Oman jurisdiction.',
+          category: 'Legal',
+          type: 'PDF',
+          topic: 'Patent Law',
+          highlights: [
+            'Complete patent filing requirements and examination procedures.',
+            'Priority claims, novelty standards, and patentability criteria.',
+            'Patent term duration, licensing provisions, and infringement remedies.'
+          ]
+        },
+        omanTrademark: {
+          title: 'Oman Trademark Law',
+          description: 'Official trademark law and procedural requirements for Oman trademark registration.',
+          category: 'Legal',
+          type: 'PDF',
+          topic: 'Trademark Law',
+          highlights: [
+            'Trademark classification, examination, and opposition procedures.',
+            'Registration requirements, renewal terms, and use obligations.',
+            'Enforcement mechanisms and infringement remedies in Oman.'
+          ]
+        }
+      },
+      empty: {
+        title: 'No resources found',
+        description: 'Try adjusting your filters or search criteria'
+      },
+      cta: {
+        eyebrow: 'Next steps',
+        title: 'Coordinate your next IP intelligence briefing',
+        description: 'Partner with our analysts to review upcoming filings, regional enforcement activity, or governance updates tailored to your organisation.',
+        button: 'Subscribe for intelligence updates'
+      }
     },
     common: {
       loading: 'Loading...',
@@ -1395,15 +1504,124 @@ export const translations = {
       title: 'الرؤى والنماذج',
       subtitle: 'الموارد والأدوات',
       description: 'الوصول إلى مكتبتنا من موارد الملكية الفكرية والأدلة والنماذج القابلة للتنزيل',
+      hero: {
+        badge: 'الرؤى والموارد',
+        title: 'ذكاء قابل للتنفيذ في الملكية الفكرية',
+        subtitle: 'مكتبة منسقة من المعلومات والقوالب والإحاطات التحليلية لاستراتيجية ملكية فكرية واثقة عبر منطقة دول مجلس التعاون الخليجي.'
+      },
+      metrics: {
+        guides: {
+          value: 'تركيز على دول الخليج',
+          label: 'أدلة وقوالب'
+        },
+        modules: {
+          value: 'شروحات فيديو',
+          label: 'وحدات تعليمية'
+        },
+        submissions: {
+          value: 'متابعة فورية',
+          label: 'تقديمات النماذج'
+        }
+      },
+      quality: {
+        badge: 'ضمان الجودة',
+        description: 'مواد مكتوبة من قبل متخصصي الملكية الفكرية ومراجعة بانتظام لتعكس التغييرات في دول مجلس التعاون الخليجي ومنطقة الشرق الأوسط وشمال أفريقيا والدولية.',
+        features: {
+          categorized: 'محتوى مصنف',
+          templates: 'قوالب إقليمية',
+          routing: 'توجيه متخصص'
+        }
+      },
       categories: {
+        all: 'جميع الموارد',
         guides: 'الأدلة والمستندات البيضاء',
         forms: 'النماذج القابلة للتنزيل',
         articles: 'المقالات والتحليلات',
-        webinars: 'الندوات ومقاطع الفيديو'
+        webinars: 'الندوات ومقاطع الفيديو',
+        legal: 'قانوني',
+        educational: 'تعليمي',
+        templates: 'قوالب'
       },
-      download: 'تحميل',
-      view: 'عرض',
-      watch: 'مشاهدة'
+      actions: {
+        download: 'تحميل',
+        view: 'عرض',
+        watch: 'مشاهدة',
+        viewDetails: 'عرض التفاصيل',
+        viewGuide: 'عرض الدليل الكامل',
+        downloadPDF: 'تحميل PDF',
+        openPDF: 'فتح PDF',
+        close: 'إغلاق'
+      },
+      sections: {
+        featured: 'موارد مميزة',
+        allInsights: 'جميع الرؤى والموارد',
+        learningModules: 'وحدات التعلم',
+        countryGuides: 'أدلة الدول',
+        countryGuide: 'دليل الدولة',
+        countryIntelligence: 'معلومات الدول',
+        countryGuidesDescription: 'نظرات عامة عملية على إجراءات التقديم والجداول الزمنية والمتطلبات حسب الدولة.',
+        legalFramework: 'مستودع الإطار القانوني',
+        gccLegislation: 'تشريعات ووثائق تنظيمية للملكية الفكرية في دول مجلس التعاون الخليجي',
+        legislationDescription: 'الوصول إلى التشريعات الشاملة للعلامات التجارية وبراءات الاختراع والتصاميم الصناعية في الكويت والبحرين وقطر والسعودية والإمارات.',
+        noResources: 'لا توجد موارد تطابق المرشحات الحالية.',
+        loadingResources: 'جاري تحميل الموارد...',
+        learningEyebrow: 'تعلم عند الطلب',
+        knowledgeCenter: 'مركز المعرفة بالملكية الفكرية: تعلّم، طبّق، احمِ',
+        knowledgeCenterDescription: 'وحدات شرح قصيرة مع إرشادات قابلة للتنفيذ لمساعدتك على فهم الملكية الفكرية والعلامات التجارية وبراءات الاختراع وحقوق التصميم.'
+      },
+      filters: {
+        category: 'الفئة',
+        type: 'النوع',
+        topic: 'الموضوع'
+      },
+      resources: {
+        omanIndustrialDesign: {
+          title: 'قانون التصاميم الصناعية في عُمان',
+          description: 'الإطار القانوني الكامل الذي يحكم حماية التصاميم الصناعية في عُمان.',
+          category: 'قانوني',
+          type: 'PDF',
+          topic: 'التصاميم الصناعية',
+          highlights: [
+            'تغطية شاملة لمتطلبات تسجيل التصاميم الصناعية.',
+            'إرشادات إجرائية مفصلة لتسجيلات الملكية الفكرية في عُمان.',
+            'مدة الحماية وشروط التجديد وأحكام الإنفاذ.'
+          ]
+        },
+        omanPatent: {
+          title: 'قانون براءات الاختراع في عُمان',
+          description: 'تشريعات ولوائح براءات الاختراع الشاملة لولاية عُمان القضائية.',
+          category: 'قانوني',
+          type: 'PDF',
+          topic: 'قانون البراءات',
+          highlights: [
+            'متطلبات تقديم براءات الاختراع الكاملة وإجراءات الفحص.',
+            'مطالبات الأولوية ومعايير الجدة ومعايير قابلية براءة الاختراع.',
+            'مدة براءة الاختراع وأحكام الترخيص وسبل الانتصاف من الانتهاك.'
+          ]
+        },
+        omanTrademark: {
+          title: 'قانون العلامات التجارية في عُمان',
+          description: 'قانون العلامات التجارية الرسمي والمتطلبات الإجرائية لتسجيل العلامات التجارية في عُمان.',
+          category: 'قانوني',
+          type: 'PDF',
+          topic: 'قانون العلامات التجارية',
+          highlights: [
+            'تصنيف العلامات التجارية والفحص وإجراءات المعارضة.',
+            'متطلبات التسجيل وشروط التجديد والتزامات الاستخدام.',
+            'آليات الإنفاذ وسبل الانتصاف من الانتهاك في عُمان.'
+          ]
+        }
+      },
+      empty: {
+        title: 'لم يتم العثور على موارد',
+        description: 'حاول ضبط معايير التصفية أو البحث'
+      },
+      cta: {
+        eyebrow: 'الخطوات التالية',
+        title: 'نسّق جلسة الإحاطة التالية حول استخبارات الملكية الفكرية',
+        description: 'شارك مع محللينا لمراجعة الطلبات القادمة أو نشاط الإنفاذ الإقليمي أو تحديثات الحوكمة المخصصة لمؤسستك.',
+        button: 'اشترك في تحديثات الاستخبارات'
+      }
     },
     common: {
       loading: 'جارٍ التحميل...',
