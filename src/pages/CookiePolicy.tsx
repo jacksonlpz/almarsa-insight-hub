@@ -4,10 +4,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { COMPANY_INFO } from "@/lib/constants";
 import { usePageSEO } from "@/hooks/usePageSEO";
 import { buildCanonicalUrl } from "@/lib/seo";
+import { useLanguage } from "@/hooks/useLanguage";
+import { cn } from "@/lib/utils";
 
 const CookiePolicy = () => {
+  const { language, t } = useLanguage();
+  const isRTL = language === "ar";
+
   usePageSEO({
-    title: "Cookie Policy",
+    title: t('legal.cookiePolicy.title'),
     description: "Al Marsa Intellectual Property Agents cookie policy and usage information.",
     url: buildCanonicalUrl("/cookie-policy"),
   });
@@ -15,7 +20,7 @@ const CookiePolicy = () => {
   const formattedAddress = `${COMPANY_INFO.address.street}, ${COMPANY_INFO.address.floor}, ${COMPANY_INFO.address.building}, ${COMPANY_INFO.address.area} ${COMPANY_INFO.address.country}`;
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className={cn("min-h-screen bg-background text-foreground", isRTL && "dir-rtl")}>
       <Header />
       <main id="main-content" role="main">
 
@@ -23,150 +28,159 @@ const CookiePolicy = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="section-title text-navy-deep mb-6">
-              Cookie Policy
+              {t('legal.cookiePolicy.title')}
             </h1>
             <p className="text-body text-text-muted">
-              Last updated: {new Date().toLocaleDateString()}
+              {t('legal.cookiePolicy.lastUpdated')}: {new Date().toLocaleDateString(isRTL ? 'ar-KW' : 'en-US')}
             </p>
           </div>
 
           <Card>
             <CardContent className="p-8 space-y-8">
               <section>
-                <h2 className="text-heading-lg font-semibold text-navy-deep mb-4">1. What Are Cookies</h2>
+                <h2 className="text-heading-lg font-semibold text-navy-deep mb-4">
+                  1. {t('legal.cookiePolicy.sections.whatAreCookies.title')}
+                </h2>
                 <p className="text-body leading-relaxed text-foreground mb-4">
-                  Cookies are small text files that are placed on your computer or mobile device when you visit our website.
-                  They are widely used to make websites work more efficiently and provide information to website owners.
+                  {t('legal.cookiePolicy.sections.whatAreCookies.paragraph1')}
                 </p>
                 <p className="text-body leading-relaxed text-foreground">
-                  {COMPANY_INFO.name} uses cookies to enhance your browsing experience, analyze site traffic, and understand
-                  where our visitors are coming from.
+                  {t('legal.cookiePolicy.sections.whatAreCookies.paragraph2').replace('{companyName}', COMPANY_INFO.name)}
                 </p>
               </section>
 
               <section>
-                <h2 className="text-heading-lg font-semibold text-navy-deep mb-4">2. Types of Cookies We Use</h2>
+                <h2 className="text-heading-lg font-semibold text-navy-deep mb-4">
+                  2. {t('legal.cookiePolicy.sections.typesOfCookies.title')}
+                </h2>
 
                 <div className="space-y-4">
                   <div>
-                    <h3 className="text-heading-sm font-semibold text-navy-deep mb-2">Essential Cookies</h3>
+                    <h3 className="text-heading-sm font-semibold text-navy-deep mb-2">
+                      {t('legal.cookiePolicy.sections.typesOfCookies.essential.title')}
+                    </h3>
                     <p className="text-body leading-relaxed text-foreground">
-                      These cookies are necessary for the website to function properly. They enable core functionality
-                      such as security, network management, and accessibility.
+                      {t('legal.cookiePolicy.sections.typesOfCookies.essential.description')}
                     </p>
                   </div>
 
                   <div>
-                    <h3 className="text-heading-sm font-semibold text-navy-deep mb-2">Analytics Cookies</h3>
+                    <h3 className="text-heading-sm font-semibold text-navy-deep mb-2">
+                      {t('legal.cookiePolicy.sections.typesOfCookies.analytics.title')}
+                    </h3>
                     <p className="text-body leading-relaxed text-foreground">
-                      We use analytics cookies to understand how visitors interact with our website. This helps us
-                      improve our services and user experience. These cookies collect information anonymously.
+                      {t('legal.cookiePolicy.sections.typesOfCookies.analytics.description')}
                     </p>
                   </div>
 
                   <div>
-                    <h3 className="text-heading-sm font-semibold text-navy-deep mb-2">Functionality Cookies</h3>
+                    <h3 className="text-heading-sm font-semibold text-navy-deep mb-2">
+                      {t('legal.cookiePolicy.sections.typesOfCookies.functionality.title')}
+                    </h3>
                     <p className="text-body leading-relaxed text-foreground">
-                      These cookies allow our website to remember choices you make (such as language preferences)
-                      and provide enhanced, more personalized features.
+                      {t('legal.cookiePolicy.sections.typesOfCookies.functionality.description')}
                     </p>
                   </div>
 
                   <div>
-                    <h3 className="text-heading-sm font-semibold text-navy-deep mb-2">Performance Cookies</h3>
+                    <h3 className="text-heading-sm font-semibold text-navy-deep mb-2">
+                      {t('legal.cookiePolicy.sections.typesOfCookies.performance.title')}
+                    </h3>
                     <p className="text-body leading-relaxed text-foreground">
-                      These cookies help us understand how effective our content is, what interests our users,
-                      and to improve how our website works.
+                      {t('legal.cookiePolicy.sections.typesOfCookies.performance.description')}
                     </p>
                   </div>
                 </div>
               </section>
 
               <section>
-                <h2 className="text-heading-lg font-semibold text-navy-deep mb-4">3. Third-Party Cookies</h2>
+                <h2 className="text-heading-lg font-semibold text-navy-deep mb-4">
+                  3. {t('legal.cookiePolicy.sections.thirdPartyCookies.title')}
+                </h2>
                 <p className="text-body leading-relaxed text-foreground mb-4">
-                  In addition to our own cookies, we may use various third-party cookies to report usage statistics
-                  of our website and deliver advertisements on and through our website.
+                  {t('legal.cookiePolicy.sections.thirdPartyCookies.paragraph1')}
                 </p>
                 <p className="text-body leading-relaxed text-foreground">
-                  These third-party services may include:
+                  {t('legal.cookiePolicy.sections.thirdPartyCookies.paragraph2')}
                 </p>
                 <ul className="mt-4 list-disc space-y-2 pl-6 text-body text-foreground">
-                  <li>Google Analytics for website analytics</li>
-                  <li>Social media platforms for content sharing features</li>
-                  <li>Marketing and advertising platforms</li>
+                  <li>{t('legal.cookiePolicy.sections.thirdPartyCookies.services.analytics')}</li>
+                  <li>{t('legal.cookiePolicy.sections.thirdPartyCookies.services.social')}</li>
+                  <li>{t('legal.cookiePolicy.sections.thirdPartyCookies.services.marketing')}</li>
                 </ul>
               </section>
 
               <section>
-                <h2 className="text-heading-lg font-semibold text-navy-deep mb-4">4. Managing Cookies</h2>
+                <h2 className="text-heading-lg font-semibold text-navy-deep mb-4">
+                  4. {t('legal.cookiePolicy.sections.managingCookies.title')}
+                </h2>
                 <p className="text-body leading-relaxed text-foreground mb-4">
-                  Most web browsers allow you to control cookies through their settings preferences. However,
-                  limiting cookies may impact your experience of our website and prevent you from enjoying all
-                  its features.
+                  {t('legal.cookiePolicy.sections.managingCookies.paragraph1')}
                 </p>
                 <p className="text-body leading-relaxed text-foreground mb-4">
-                  You can set your browser to:
+                  {t('legal.cookiePolicy.sections.managingCookies.paragraph2')}
                 </p>
                 <ul className="list-disc space-y-2 pl-6 text-body text-foreground">
-                  <li>Accept all cookies</li>
-                  <li>Reject all cookies</li>
-                  <li>Notify you when a cookie is set</li>
-                  <li>Delete cookies after your browsing session</li>
+                  <li>{t('legal.cookiePolicy.sections.managingCookies.options.accept')}</li>
+                  <li>{t('legal.cookiePolicy.sections.managingCookies.options.reject')}</li>
+                  <li>{t('legal.cookiePolicy.sections.managingCookies.options.notify')}</li>
+                  <li>{t('legal.cookiePolicy.sections.managingCookies.options.delete')}</li>
                 </ul>
                 <p className="text-body leading-relaxed text-foreground mt-4">
-                  For more information on how to manage cookies in popular browsers, please visit:
+                  {t('legal.cookiePolicy.sections.managingCookies.paragraph3')}
                 </p>
                 <ul className="mt-4 list-disc space-y-2 pl-6 text-body text-foreground">
-                  <li>Google Chrome: <a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Chrome Cookie Settings</a></li>
-                  <li>Mozilla Firefox: <a href="https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Firefox Cookie Settings</a></li>
-                  <li>Safari: <a href="https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Safari Cookie Settings</a></li>
-                  <li>Microsoft Edge: <a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Edge Cookie Settings</a></li>
+                  <li>Google Chrome: <a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{t('legal.cookiePolicy.sections.managingCookies.browsers.chrome')}</a></li>
+                  <li>Mozilla Firefox: <a href="https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{t('legal.cookiePolicy.sections.managingCookies.browsers.firefox')}</a></li>
+                  <li>Safari: <a href="https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{t('legal.cookiePolicy.sections.managingCookies.browsers.safari')}</a></li>
+                  <li>Microsoft Edge: <a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{t('legal.cookiePolicy.sections.managingCookies.browsers.edge')}</a></li>
                 </ul>
               </section>
 
               <section>
-                <h2 className="text-heading-lg font-semibold text-navy-deep mb-4">5. Cookie Retention</h2>
+                <h2 className="text-heading-lg font-semibold text-navy-deep mb-4">
+                  5. {t('legal.cookiePolicy.sections.cookieRetention.title')}
+                </h2>
                 <p className="text-body leading-relaxed text-foreground">
-                  Session cookies are temporary and are deleted when you close your browser. Persistent cookies
-                  remain on your device until they expire or you delete them. The retention period varies depending
-                  on the purpose of the cookie.
+                  {t('legal.cookiePolicy.sections.cookieRetention.description')}
                 </p>
               </section>
 
               <section>
-                <h2 className="text-heading-lg font-semibold text-navy-deep mb-4">6. Updates to This Policy</h2>
+                <h2 className="text-heading-lg font-semibold text-navy-deep mb-4">
+                  6. {t('legal.cookiePolicy.sections.updates.title')}
+                </h2>
                 <p className="text-body leading-relaxed text-foreground">
-                  We may update this Cookie Policy from time to time to reflect changes in technology, legislation,
-                  our operations, or for other operational, legal, or regulatory reasons. We encourage you to review
-                  this policy periodically.
+                  {t('legal.cookiePolicy.sections.updates.description')}
                 </p>
               </section>
 
               <section>
-                <h2 className="text-heading-lg font-semibold text-navy-deep mb-4">7. Contact Us</h2>
+                <h2 className="text-heading-lg font-semibold text-navy-deep mb-4">
+                  7. {t('legal.cookiePolicy.sections.contactUs.title')}
+                </h2>
                 <p className="text-body leading-relaxed text-foreground mb-4">
-                  If you have any questions about our use of cookies or this Cookie Policy, please contact us:
+                  {t('legal.cookiePolicy.sections.contactUs.paragraph1')}
                 </p>
                 <div className="space-y-2 rounded-lg bg-muted/50 p-6">
                   <p className="text-body text-foreground">
-                    <strong>Email:</strong> <a href={`mailto:${COMPANY_INFO.email}`} className="text-primary hover:underline">{COMPANY_INFO.email}</a>
+                    <strong>{t('legal.cookiePolicy.sections.contactUs.email')}</strong> <a href={`mailto:${COMPANY_INFO.email}`} className="text-primary hover:underline">{COMPANY_INFO.email}</a>
                   </p>
                   <p className="text-body text-foreground">
-                    <strong>Phone:</strong> <a href={`tel:${COMPANY_INFO.phone}`} className="text-primary hover:underline">{COMPANY_INFO.phone}</a>
+                    <strong>{t('legal.cookiePolicy.sections.contactUs.phone')}</strong> <a href={`tel:${COMPANY_INFO.phone}`} className="text-primary hover:underline">{COMPANY_INFO.phone}</a>
                   </p>
                   <p className="text-body text-foreground">
-                    <strong>Address:</strong> {formattedAddress}
+                    <strong>{t('legal.cookiePolicy.sections.contactUs.address')}</strong> {formattedAddress}
                   </p>
                 </div>
               </section>
 
               <section>
-                <h2 className="text-heading-lg font-semibold text-navy-deep mb-4">8. Your Consent</h2>
+                <h2 className="text-heading-lg font-semibold text-navy-deep mb-4">
+                  8. {t('legal.cookiePolicy.sections.consent.title')}
+                </h2>
                 <p className="text-body leading-relaxed text-foreground">
-                  By continuing to use our website, you consent to our use of cookies as described in this Cookie Policy.
-                  If you do not agree to our use of cookies, you should set your browser settings accordingly or
-                  refrain from using our website.
+                  {t('legal.cookiePolicy.sections.consent.description')}
                 </p>
               </section>
             </CardContent>

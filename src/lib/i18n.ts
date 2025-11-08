@@ -572,15 +572,191 @@ export const translations = {
     legal: {
       privacyPolicy: {
         title: 'Privacy Policy',
-        lastUpdated: 'Last Updated'
+        lastUpdated: 'Last Updated',
+        sections: {
+          informationCollection: {
+            title: 'Information We Collect',
+            paragraph1: 'Al Marsa Intellectual Property Agents collects information you provide directly to us, such as when you:',
+            items: {
+              forms: 'Fill out our contact forms or request consultation',
+              newsletter: 'Subscribe to our newsletter or updates',
+              services: 'Engage our IP services',
+              communication: 'Communicate with us via email, phone, or other channels'
+            }
+          },
+          howWeUse: {
+            title: 'How We Use Your Information',
+            paragraph1: 'We use the information we collect to:',
+            items: {
+              provide: 'Provide, maintain, and improve our IP services',
+              process: 'Process and respond to your inquiries and requests',
+              updates: 'Send you updates about our services and industry news',
+              comply: 'Comply with legal and regulatory requirements',
+              protect: 'Protect our rights and prevent fraud'
+            }
+          },
+          sharing: {
+            title: 'Information Sharing and Disclosure',
+            paragraph1: 'We do not sell, trade, or otherwise transfer your personal information to third parties except:',
+            items: {
+              consent: 'With your explicit consent',
+              providers: 'To trusted service providers who assist in our operations',
+              legal: 'When required by law or to protect our legal rights',
+              business: 'In connection with a business transfer or merger'
+            }
+          },
+          security: {
+            title: 'Data Security',
+            description: 'We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet or electronic storage is 100% secure.'
+          },
+          rights: {
+            title: 'Your Rights',
+            paragraph1: 'Depending on your location, you may have the following rights regarding your personal information:',
+            items: {
+              access: 'Access and obtain a copy of your personal information',
+              rectify: 'Rectify inaccurate or incomplete information',
+              delete: 'Request deletion of your personal information',
+              object: 'Object to or restrict the processing of your information',
+              portability: 'Data portability rights'
+            }
+          },
+          contactUs: {
+            title: 'Contact Us',
+            paragraph1: 'If you have any questions about this Privacy Policy or our data practices, please contact us at:'
+          }
+        }
       },
       termsOfService: {
         title: 'Terms of Service',
-        lastUpdated: 'Last Updated'
+        lastUpdated: 'Last Updated',
+        sections: {
+          acceptance: {
+            title: 'Acceptance of Terms',
+            description: 'By accessing and using the services of Al Marsa Intellectual Property Agents ("Al Marsa," "we," "us," or "our"), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.'
+          },
+          servicesDescription: {
+            title: 'Services Description',
+            paragraph1: 'Al Marsa provides intellectual property services including but not limited to:',
+            items: {
+              trademark: 'Trademark registration and maintenance',
+              patent: 'Patent application and prosecution',
+              litigation: 'IP litigation and enforcement',
+              consultation: 'IP consultation and strategy',
+              filing: 'International filing services'
+            }
+          },
+          professionalRelationship: {
+            title: 'Professional Relationship',
+            description: 'The establishment of an attorney-client relationship requires a formal engagement agreement. Communication through our website or initial consultations does not automatically create an attorney-client relationship. All formal engagements will be governed by separate service agreements.'
+          },
+          confidentiality: {
+            title: 'Confidentiality',
+            description: 'We maintain strict confidentiality regarding all client information and communications. However, we recommend that you avoid sharing highly sensitive information through unsecured channels such as general contact forms or email until a formal attorney-client relationship has been established.'
+          },
+          fees: {
+            title: 'Fees and Payment',
+            paragraph1: 'Our fee structure will be clearly outlined in your service agreement. General principles include:',
+            items: {
+              transparent: 'Transparent pricing with no hidden fees',
+              payment: 'Payment terms as specified in service agreements',
+              government: 'Government fees are additional to our service fees',
+              cancellation: 'Cancellation and refund policies per service agreement'
+            }
+          },
+          liability: {
+            title: 'Limitation of Liability',
+            description: 'To the fullest extent permitted by law, Al Marsa shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses.'
+          },
+          intellectualProperty: {
+            title: 'Intellectual Property Rights',
+            description: 'The content, organization, graphics, design, compilation, magnetic translation, digital conversion, and other matters related to this website are protected under applicable intellectual property laws, and other proprietary rights. All rights reserved by Al Marsa.'
+          },
+          governingLaw: {
+            title: 'Governing Law',
+            description: 'These terms and conditions are governed by and construed in accordance with the laws of Kuwait. Any disputes arising under these terms shall be subject to the exclusive jurisdiction of the courts of Kuwait.'
+          },
+          contactInformation: {
+            title: 'Contact Information',
+            paragraph1: 'For questions regarding these Terms of Service, please contact us at:'
+          }
+        }
       },
       cookiePolicy: {
         title: 'Cookie Policy',
-        lastUpdated: 'Last Updated'
+        lastUpdated: 'Last Updated',
+        sections: {
+          whatAreCookies: {
+            title: 'What Are Cookies',
+            paragraph1: 'Cookies are small text files that are placed on your computer or mobile device when you visit our website. They are widely used to make websites work more efficiently and provide information to website owners.',
+            paragraph2: '{companyName} uses cookies to enhance your browsing experience, analyze site traffic, and understand where our visitors are coming from.'
+          },
+          typesOfCookies: {
+            title: 'Types of Cookies We Use',
+            essential: {
+              title: 'Essential Cookies',
+              description: 'These cookies are necessary for the website to function properly. They enable core functionality such as security, network management, and accessibility.'
+            },
+            analytics: {
+              title: 'Analytics Cookies',
+              description: 'We use analytics cookies to understand how visitors interact with our website. This helps us improve our services and user experience. These cookies collect information anonymously.'
+            },
+            functionality: {
+              title: 'Functionality Cookies',
+              description: 'These cookies allow our website to remember choices you make (such as language preferences) and provide enhanced, more personalized features.'
+            },
+            performance: {
+              title: 'Performance Cookies',
+              description: 'These cookies help us understand how effective our content is, what interests our users, and to improve how our website works.'
+            }
+          },
+          thirdPartyCookies: {
+            title: 'Third-Party Cookies',
+            paragraph1: 'In addition to our own cookies, we may use various third-party cookies to report usage statistics of our website and deliver advertisements on and through our website.',
+            paragraph2: 'These third-party services may include:',
+            services: {
+              analytics: 'Google Analytics for website analytics',
+              social: 'Social media platforms for content sharing features',
+              marketing: 'Marketing and advertising platforms'
+            }
+          },
+          managingCookies: {
+            title: 'Managing Cookies',
+            paragraph1: 'Most web browsers allow you to control cookies through their settings preferences. However, limiting cookies may impact your experience of our website and prevent you from enjoying all its features.',
+            paragraph2: 'You can set your browser to:',
+            options: {
+              accept: 'Accept all cookies',
+              reject: 'Reject all cookies',
+              notify: 'Notify you when a cookie is set',
+              delete: 'Delete cookies after your browsing session'
+            },
+            paragraph3: 'For more information on how to manage cookies in popular browsers, please visit:',
+            browsers: {
+              chrome: 'Chrome Cookie Settings',
+              firefox: 'Firefox Cookie Settings',
+              safari: 'Safari Cookie Settings',
+              edge: 'Edge Cookie Settings'
+            }
+          },
+          cookieRetention: {
+            title: 'Cookie Retention',
+            description: 'Session cookies are temporary and are deleted when you close your browser. Persistent cookies remain on your device until they expire or you delete them. The retention period varies depending on the purpose of the cookie.'
+          },
+          updates: {
+            title: 'Updates to This Policy',
+            description: 'We may update this Cookie Policy from time to time to reflect changes in technology, legislation, our operations, or for other operational, legal, or regulatory reasons. We encourage you to review this policy periodically.'
+          },
+          contactUs: {
+            title: 'Contact Us',
+            paragraph1: 'If you have any questions about our use of cookies or this Cookie Policy, please contact us:',
+            email: 'Email:',
+            phone: 'Phone:',
+            address: 'Address:'
+          },
+          consent: {
+            title: 'Your Consent',
+            description: 'By continuing to use our website, you consent to our use of cookies as described in this Cookie Policy. If you do not agree to our use of cookies, you should set your browser settings accordingly or refrain from using our website.'
+          }
+        }
       }
     },
     notFound: {
@@ -1153,15 +1329,191 @@ export const translations = {
     legal: {
       privacyPolicy: {
         title: 'سياسة الخصوصية',
-        lastUpdated: 'آخر تحديث'
+        lastUpdated: 'آخر تحديث',
+        sections: {
+          informationCollection: {
+            title: 'المعلومات التي نجمعها',
+            paragraph1: 'تجمع المرسى لوكلاء الملكية الفكرية المعلومات التي تقدمها لنا مباشرة، مثل عندما:',
+            items: {
+              forms: 'تملأ نماذج الاتصال الخاصة بنا أو تطلب استشارة',
+              newsletter: 'تشترك في النشرة الإخبارية أو التحديثات الخاصة بنا',
+              services: 'تستخدم خدمات الملكية الفكرية الخاصة بنا',
+              communication: 'تتواصل معنا عبر البريد الإلكتروني أو الهاتف أو القنوات الأخرى'
+            }
+          },
+          howWeUse: {
+            title: 'كيف نستخدم معلوماتك',
+            paragraph1: 'نستخدم المعلومات التي نجمعها من أجل:',
+            items: {
+              provide: 'توفير خدمات الملكية الفكرية الخاصة بنا والحفاظ عليها وتحسينها',
+              process: 'معالجة استفساراتك وطلباتك والرد عليها',
+              updates: 'إرسال تحديثات حول خدماتنا وأخبار الصناعة',
+              comply: 'الامتثال للمتطلبات القانونية والتنظيمية',
+              protect: 'حماية حقوقنا ومنع الاحتيال'
+            }
+          },
+          sharing: {
+            title: 'مشاركة المعلومات والإفصاح عنها',
+            paragraph1: 'نحن لا نبيع أو نتاجر أو ننقل معلوماتك الشخصية إلى أطراف ثالثة إلا:',
+            items: {
+              consent: 'بموافقتك الصريحة',
+              providers: 'إلى مقدمي الخدمات الموثوق بهم الذين يساعدون في عملياتنا',
+              legal: 'عندما يكون مطلوبًا بموجب القانون أو لحماية حقوقنا القانونية',
+              business: 'فيما يتعلق بنقل الأعمال أو الاندماج'
+            }
+          },
+          security: {
+            title: 'أمن البيانات',
+            description: 'نطبق تدابير أمنية تقنية وتنظيمية مناسبة لحماية معلوماتك الشخصية من الوصول غير المصرح به أو التعديل أو الكشف أو التدمير. ومع ذلك، لا توجد طريقة نقل عبر الإنترنت أو تخزين إلكتروني آمنة بنسبة 100٪.'
+          },
+          rights: {
+            title: 'حقوقك',
+            paragraph1: 'اعتمادًا على موقعك، قد يكون لديك الحقوق التالية فيما يتعلق بمعلوماتك الشخصية:',
+            items: {
+              access: 'الوصول إلى معلوماتك الشخصية والحصول على نسخة منها',
+              rectify: 'تصحيح المعلومات غير الدقيقة أو غير الكاملة',
+              delete: 'طلب حذف معلوماتك الشخصية',
+              object: 'الاعتراض على معالجة معلوماتك أو تقييدها',
+              portability: 'حقوق نقل البيانات'
+            }
+          },
+          contactUs: {
+            title: 'اتصل بنا',
+            paragraph1: 'إذا كان لديك أي أسئلة حول سياسة الخصوصية هذه أو ممارسات البيانات الخاصة بنا، يرجى الاتصال بنا على:'
+          }
+        }
       },
       termsOfService: {
         title: 'شروط الخدمة',
-        lastUpdated: 'آخر تحديث'
+        lastUpdated: 'آخر تحديث',
+        sections: {
+          acceptance: {
+            title: 'قبول الشروط',
+            description: 'من خلال الوصول إلى واستخدام خدمات المرسى لوكلاء الملكية الفكرية ("المرسى" أو "نحن" أو "لنا")، فإنك تقبل وتوافق على الالتزام بشروط وأحكام هذه الاتفاقية. إذا كنت لا توافق على الالتزام بما سبق، يرجى عدم استخدام هذه الخدمة.'
+          },
+          servicesDescription: {
+            title: 'وصف الخدمات',
+            paragraph1: 'تقدم المرسى خدمات الملكية الفكرية بما في ذلك على سبيل المثال لا الحصر:',
+            items: {
+              trademark: 'تسجيل وصيانة العلامات التجارية',
+              patent: 'تقديم ومتابعة براءات الاختراع',
+              litigation: 'التقاضي وإنفاذ الملكية الفكرية',
+              consultation: 'استشارات واستراتيجية الملكية الفكرية',
+              filing: 'خدمات التسجيل الدولي'
+            }
+          },
+          professionalRelationship: {
+            title: 'العلاقة المهنية',
+            description: 'يتطلب إنشاء علاقة محامي-عميل اتفاقية التزام رسمية. التواصل من خلال موقعنا أو الاستشارات الأولية لا يخلق تلقائيًا علاقة محامي-عميل. سيتم تنظيم جميع الالتزامات الرسمية من خلال اتفاقيات خدمة منفصلة.'
+          },
+          confidentiality: {
+            title: 'السرية',
+            description: 'نحافظ على سرية صارمة فيما يتعلق بجميع معلومات العملاء والاتصالات. ومع ذلك، نوصي بتجنب مشاركة المعلومات الحساسة للغاية من خلال قنوات غير آمنة مثل نماذج الاتصال العامة أو البريد الإلكتروني حتى يتم إنشاء علاقة رسمية بين المحامي والعميل.'
+          },
+          fees: {
+            title: 'الرسوم والدفع',
+            paragraph1: 'سيتم توضيح هيكل الرسوم الخاص بنا بوضوح في اتفاقية الخدمة الخاصة بك. تشمل المبادئ العامة:',
+            items: {
+              transparent: 'تسعير شفاف بدون رسوم مخفية',
+              payment: 'شروط الدفع كما هو محدد في اتفاقيات الخدمة',
+              government: 'الرسوم الحكومية إضافية إلى رسوم خدماتنا',
+              cancellation: 'سياسات الإلغاء والاسترداد وفقًا لاتفاقية الخدمة'
+            }
+          },
+          liability: {
+            title: 'تحديد المسؤولية',
+            description: 'إلى أقصى حد يسمح به القانون، لن تكون المرسى مسؤولة عن أي أضرار غير مباشرة أو عرضية أو خاصة أو تبعية أو عقابية، أو أي خسارة في الأرباح أو الإيرادات، سواء تكبدت بشكل مباشر أو غير مباشر، أو أي فقدان للبيانات أو الاستخدام أو حسن النية أو خسائر أخرى غير ملموسة.'
+          },
+          intellectualProperty: {
+            title: 'حقوق الملكية الفكرية',
+            description: 'المحتوى والتنظيم والرسومات والتصميم والتجميع والترجمة المغناطيسية والتحويل الرقمي والأمور الأخرى المتعلقة بهذا الموقع محمية بموجب قوانين الملكية الفكرية المعمول بها والحقوق الخاصة الأخرى. جميع الحقوق محفوظة للمرسى.'
+          },
+          governingLaw: {
+            title: 'القانون الحاكم',
+            description: 'تخضع هذه الشروط والأحكام وتفسر وفقًا لقوانين الكويت. أي نزاعات تنشأ بموجب هذه الشروط تخضع للولاية القضائية الحصرية لمحاكم الكويت.'
+          },
+          contactInformation: {
+            title: 'معلومات الاتصال',
+            paragraph1: 'للأسئلة المتعلقة بشروط الخدمة هذه، يرجى الاتصال بنا على:'
+          }
+        }
       },
       cookiePolicy: {
         title: 'سياسة ملفات تعريف الارتباط',
-        lastUpdated: 'آخر تحديث'
+        lastUpdated: 'آخر تحديث',
+        sections: {
+          whatAreCookies: {
+            title: 'ما هي ملفات تعريف الارتباط',
+            paragraph1: 'ملفات تعريف الارتباط هي ملفات نصية صغيرة يتم وضعها على جهاز الكمبيوتر أو الجهاز المحمول الخاص بك عند زيارة موقعنا الإلكتروني. تُستخدم على نطاق واسع لجعل مواقع الويب تعمل بكفاءة أكبر وتوفير المعلومات لأصحاب المواقع.',
+            paragraph2: 'تستخدم {companyName} ملفات تعريف الارتباط لتحسين تجربة التصفح الخاصة بك، وتحليل حركة المرور على الموقع، وفهم من أين يأتي زوارنا.'
+          },
+          typesOfCookies: {
+            title: 'أنواع ملفات تعريف الارتباط التي نستخدمها',
+            essential: {
+              title: 'ملفات تعريف الارتباط الأساسية',
+              description: 'هذه الملفات ضرورية لكي يعمل الموقع بشكل صحيح. تتيح الوظائف الأساسية مثل الأمان وإدارة الشبكة وإمكانية الوصول.'
+            },
+            analytics: {
+              title: 'ملفات تعريف الارتباط التحليلية',
+              description: 'نستخدم ملفات تعريف الارتباط التحليلية لفهم كيفية تفاعل الزوار مع موقعنا. يساعدنا هذا في تحسين خدماتنا وتجربة المستخدم. تجمع هذه الملفات المعلومات بشكل مجهول.'
+            },
+            functionality: {
+              title: 'ملفات تعريف الارتباط الوظيفية',
+              description: 'تسمح هذه الملفات لموقعنا بتذكر الاختيارات التي تقوم بها (مثل تفضيلات اللغة) وتوفير ميزات محسّنة وأكثر تخصيصًا.'
+            },
+            performance: {
+              title: 'ملفات تعريف الارتباط للأداء',
+              description: 'تساعدنا هذه الملفات على فهم مدى فعالية المحتوى لدينا، وما يهم مستخدمينا، ولتحسين كيفية عمل موقعنا.'
+            }
+          },
+          thirdPartyCookies: {
+            title: 'ملفات تعريف الارتباط من طرف ثالث',
+            paragraph1: 'بالإضافة إلى ملفات تعريف الارتباط الخاصة بنا، قد نستخدم ملفات تعريف ارتباط مختلفة من طرف ثالث للإبلاغ عن إحصاءات استخدام موقعنا وتقديم الإعلانات على موقعنا ومن خلاله.',
+            paragraph2: 'قد تشمل هذه الخدمات من الأطراف الثالثة:',
+            services: {
+              analytics: 'Google Analytics لتحليلات الموقع',
+              social: 'منصات التواصل الاجتماعي لميزات مشاركة المحتوى',
+              marketing: 'منصات التسويق والإعلان'
+            }
+          },
+          managingCookies: {
+            title: 'إدارة ملفات تعريف الارتباط',
+            paragraph1: 'تسمح لك معظم متصفحات الويب بالتحكم في ملفات تعريف الارتباط من خلال تفضيلات الإعدادات الخاصة بها. ومع ذلك، فإن الحد من ملفات تعريف الارتباط قد يؤثر على تجربتك في موقعنا ويمنعك من الاستمتاع بجميع ميزاته.',
+            paragraph2: 'يمكنك ضبط متصفحك على:',
+            options: {
+              accept: 'قبول جميع ملفات تعريف الارتباط',
+              reject: 'رفض جميع ملفات تعريف الارتباط',
+              notify: 'إخطارك عند تعيين ملف تعريف ارتباط',
+              delete: 'حذف ملفات تعريف الارتباط بعد جلسة التصفح الخاصة بك'
+            },
+            paragraph3: 'لمزيد من المعلومات حول كيفية إدارة ملفات تعريف الارتباط في المتصفحات الشائعة، يرجى زيارة:',
+            browsers: {
+              chrome: 'إعدادات ملفات تعريف الارتباط في Chrome',
+              firefox: 'إعدادات ملفات تعريف الارتباط في Firefox',
+              safari: 'إعدادات ملفات تعريف الارتباط في Safari',
+              edge: 'إعدادات ملفات تعريف الارتباط في Edge'
+            }
+          },
+          cookieRetention: {
+            title: 'الاحتفاظ بملفات تعريف الارتباط',
+            description: 'ملفات تعريف الارتباط للجلسة مؤقتة ويتم حذفها عند إغلاق متصفحك. تظل ملفات تعريف الارتباط الدائمة على جهازك حتى تنتهي صلاحيتها أو تحذفها. تختلف فترة الاحتفاظ حسب الغرض من ملف تعريف الارتباط.'
+          },
+          updates: {
+            title: 'تحديثات هذه السياسة',
+            description: 'قد نقوم بتحديث سياسة ملفات تعريف الارتباط هذه من وقت لآخر لتعكس التغييرات في التكنولوجيا أو التشريعات أو عملياتنا أو لأسباب تشغيلية أو قانونية أو تنظيمية أخرى. نشجعك على مراجعة هذه السياسة بشكل دوري.'
+          },
+          contactUs: {
+            title: 'اتصل بنا',
+            paragraph1: 'إذا كان لديك أي أسئلة حول استخدامنا لملفات تعريف الارتباط أو سياسة ملفات تعريف الارتباط هذه، يرجى الاتصال بنا:',
+            email: 'البريد الإلكتروني:',
+            phone: 'الهاتف:',
+            address: 'العنوان:'
+          },
+          consent: {
+            title: 'موافقتك',
+            description: 'من خلال الاستمرار في استخدام موقعنا، فإنك توافق على استخدامنا لملفات تعريف الارتباط كما هو موضح في سياسة ملفات تعريف الارتباط هذه. إذا كنت لا توافق على استخدامنا لملفات تعريف الارتباط، فيجب عليك ضبط إعدادات متصفحك وفقًا لذلك أو الامتناع عن استخدام موقعنا.'
+          }
+        }
       }
     },
     notFound: {
