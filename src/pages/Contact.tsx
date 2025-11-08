@@ -21,6 +21,8 @@ import "@/styles/home.css";
 import { usePageSEO } from "@/hooks/usePageSEO";
 import { buildCanonicalUrl } from "@/lib/seo";
 import { useLanguage } from "@/hooks/useLanguage";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { AboutCard } from "@/components/ui/AboutCard";
 
 import { COMPANY_INFO } from "@/lib/constants";
 
@@ -264,208 +266,209 @@ const Contact = () => {
         </section>
 
         {/* Contact Form Section */}
-        <section className="bg-gray-50 py-10 md:py-12" data-animate>
-          <div className="mx-auto max-w-5xl px-6 md:px-8">
-            <div className="mb-8 text-center">
-              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1">
-                <Send className="h-3 w-3 text-primary" />
-                <span className="text-[10px] font-medium uppercase tracking-wider text-primary">{t('contact.form.badge')}</span>
-              </div>
-              <h2 className="mb-2 text-2xl font-bold text-navy-deep md:text-3xl">
-                {t('contact.form.heading')}
-              </h2>
-              <p className="mx-auto max-w-2xl text-sm text-muted-foreground">
-                {t('contact.form.description')}
-              </p>
-            </div>
-            <div className="grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
-              <Card className="shadow-sm h-fit border-gray-200">
-                <CardContent className="p-4">
-                  <form className="space-y-3.5" onSubmit={handleSubmit(onSubmit)} noValidate>
-                    <div className="grid gap-3.5 md:grid-cols-2">
-                      <div className="space-y-1">
-                        <Label htmlFor="firstName" className="text-xs font-medium">
-                          {t('contact.form.firstName')} <span className="text-destructive" aria-hidden="true">*</span>
-                          <span className="sr-only">{` (${t('contact.form.required')})`}</span>
-                        </Label>
-                        <Input
-                          id="firstName"
-                          placeholder={t('contact.form.placeholders.firstName')}
-                          {...register("firstName")}
-                          className="h-9"
-                          aria-invalid={errors.firstName ? "true" : "false"}
-                          aria-describedby={errors.firstName ? "firstName-error" : undefined}
-                        />
-                        {errors.firstName && (
-                          <p id="firstName-error" className="text-xs text-destructive" role="alert" aria-live="polite">
-                            {errors.firstName.message}
-                          </p>
-                        )}
-                      </div>
-                      <div className="space-y-1">
-                        <Label htmlFor="lastName" className="text-xs font-medium">
-                          {t('contact.form.lastName')} <span className="text-destructive" aria-hidden="true">*</span>
-                          <span className="sr-only">{` (${t('contact.form.required')})`}</span>
-                        </Label>
-                        <Input
-                          id="lastName"
-                          placeholder={t('contact.form.placeholders.lastName')}
-                          {...register("lastName")}
-                          className="h-9"
-                          aria-invalid={errors.lastName ? "true" : "false"}
-                          aria-describedby={errors.lastName ? "lastName-error" : undefined}
-                        />
-                        {errors.lastName && (
-                          <p id="lastName-error" className="text-xs text-destructive" role="alert" aria-live="polite">
-                            {errors.lastName.message}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                    <div className="space-y-1">
-                      <Label htmlFor="email" className="text-xs font-medium">
-                        {t('contact.form.email')} <span className="text-destructive" aria-hidden="true">*</span>
+        <section className="section-spacing bg-white" data-animate>
+          <div className="container-responsive">
+            <SectionHeading
+              eyebrow={t('contact.hero.eyebrow')}
+              title={t('contact.form.heading')}
+              subtitle={t('contact.form.description')}
+              align="center"
+              className="max-w-3xl"
+            />
+            <div className="grid gap-12 lg:grid-cols-2 max-w-6xl mx-auto">
+              <AboutCard
+                badge={t('contact.form.badge')}
+                title={t('contact.form.heading')}
+                description={t('contact.form.description')}
+                className="h-full"
+              >
+                <form className="space-y-5" onSubmit={handleSubmit(onSubmit)} noValidate>
+                  <div className="grid gap-5 md:grid-cols-2">
+                    <div className="space-y-2">
+                      <Label htmlFor="firstName" className="text-sm font-medium">
+                        {t('contact.form.firstName')} <span className="text-destructive" aria-hidden="true">*</span>
                         <span className="sr-only">{` (${t('contact.form.required')})`}</span>
                       </Label>
                       <Input
-                        id="email"
-                        type="email"
-                        placeholder={t('contact.form.placeholders.email')}
-                        {...register("email")}
-                        className="h-9"
-                        aria-invalid={errors.email ? "true" : "false"}
-                        aria-describedby={errors.email ? "email-error" : undefined}
+                        id="firstName"
+                        placeholder={t('contact.form.placeholders.firstName')}
+                        {...register('firstName')}
+                        className="h-11"
+                        aria-invalid={errors.firstName ? 'true' : 'false'}
+                        aria-describedby={errors.firstName ? 'firstName-error' : undefined}
                       />
-                      {errors.email && (
-                        <p id="email-error" className="text-xs text-destructive" role="alert" aria-live="polite">
-                          {errors.email.message}
+                      {errors.firstName && (
+                        <p id="firstName-error" className="text-sm text-destructive" role="alert" aria-live="polite">
+                          {errors.firstName.message}
                         </p>
                       )}
                     </div>
-                    <div className="grid gap-3.5 md:grid-cols-2">
-                      <div className="space-y-1">
-                        <Label htmlFor="phone" className="text-xs font-medium">
-                          {t('contact.form.phone')} <span className="text-muted-foreground">({t('contact.form.optional')})</span>
-                        </Label>
-                        <Input
-                          id="phone"
-                          type="tel"
-                          placeholder={t('contact.form.placeholders.phone')}
-                          {...register("phone")}
-                          className="h-9"
-                        />
-                      </div>
-                      <div className="space-y-1">
-                        <Label htmlFor="company" className="text-xs font-medium">
-                          {t('contact.form.company')} <span className="text-muted-foreground">({t('contact.form.optional')})</span>
-                        </Label>
-                        <Input
-                          id="company"
-                          placeholder={t('contact.form.placeholders.company')}
-                          {...register("company")}
-                          className="h-9"
-                        />
-                      </div>
-                    </div>
-                    <div className="grid gap-3.5 md:grid-cols-2">
-                      <div className="space-y-1">
-                        <Label htmlFor="service" className="text-xs font-medium">
-                          {t('contact.form.service')} <span className="text-muted-foreground">({t('contact.form.optional')})</span>
-                        </Label>
-                        <Controller
-                          name="service"
-                          control={control}
-                          render={({ field }) => (
-                            <Select onValueChange={field.onChange} value={field.value}>
-                              <SelectTrigger className="h-9">
-                                <SelectValue placeholder={t('contact.form.selectService')} />
-                              </SelectTrigger>
-                              <SelectContent>
-                                {serviceOptions.map((service) => (
-                                  <SelectItem key={service.value} value={service.value}>
-                                    {service.label}
-                                  </SelectItem>
-                                ))}
-                              </SelectContent>
-                            </Select>
-                          )}
-                        />
-                      </div>
-                      <div className="space-y-1">
-                        <Label htmlFor="urgency" className="text-xs font-medium">
-                          {t('contact.form.urgency')} <span className="text-muted-foreground">({t('contact.form.optional')})</span>
-                        </Label>
-                        <Controller
-                          name="urgency"
-                          control={control}
-                          render={({ field }) => (
-                            <Select onValueChange={field.onChange} value={field.value}>
-                              <SelectTrigger className="h-9">
-                                <SelectValue placeholder={t('contact.form.selectUrgency')} />
-                              </SelectTrigger>
-                              <SelectContent>
-                                {urgencyOptions.map((option) => (
-                                  <SelectItem key={option.value} value={option.value}>
-                                    {option.label}
-                                  </SelectItem>
-                                ))}
-                              </SelectContent>
-                            </Select>
-                          )}
-                        />
-                      </div>
-                    </div>
-                    <div className="space-y-1">
-                      <Label htmlFor="message" className="text-xs font-medium">
-                        {t('contact.form.message')} <span className="text-destructive" aria-hidden="true">*</span>
+                    <div className="space-y-2">
+                      <Label htmlFor="lastName" className="text-sm font-medium">
+                        {t('contact.form.lastName')} <span className="text-destructive" aria-hidden="true">*</span>
                         <span className="sr-only">{` (${t('contact.form.required')})`}</span>
                       </Label>
-                      <Textarea
-                        id="message"
-                        placeholder={t('contact.form.placeholders.message')}
-                        rows={4}
-                        {...register("message")}
-                        className="resize-none"
-                        aria-invalid={errors.message ? "true" : "false"}
-                        aria-describedby={errors.message ? "message-error" : undefined}
+                      <Input
+                        id="lastName"
+                        placeholder={t('contact.form.placeholders.lastName')}
+                        {...register('lastName')}
+                        className="h-11"
+                        aria-invalid={errors.lastName ? 'true' : 'false'}
+                        aria-describedby={errors.lastName ? 'lastName-error' : undefined}
                       />
-                      {errors.message && (
-                        <p id="message-error" className="text-xs text-destructive" role="alert" aria-live="polite">
-                          {errors.message.message}
+                      {errors.lastName && (
+                        <p id="lastName-error" className="text-sm text-destructive" role="alert" aria-live="polite">
+                          {errors.lastName.message}
                         </p>
                       )}
                     </div>
-                    <Button type="submit" size="default" className="w-full h-9" disabled={contactMutation.isPending}>
-                      <Send className="mr-2 h-3.5 w-3.5" />
-                      {contactMutation.isPending ? t('contact.form.sending') : t('contact.form.send')}
-                    </Button>
-                    <p className="text-[10px] text-muted-foreground text-center leading-relaxed">
-                      {t('contact.form.privacyNotice')}
-                    </p>
-                  </form>
-                </CardContent>
-              </Card>
-              <div className="space-y-2.5">
-                {contactInformation.map((info) => (
-                  <Card key={info.title} className="border-gray-200">
-                    <CardContent className="p-3.5">
-                      <div className="flex items-start gap-2.5">
-                        <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                          <info.icon className="h-3.5 w-3.5" />
-                        </div>
-                        <div className="min-w-0 flex-1">
-                          <h3 className="text-xs font-semibold text-navy-deep mb-0.5">{info.title}</h3>
-                          <div className="space-y-0.5 text-[11px] text-muted-foreground">
-                            {info.details.map((detail) => (
-                              <p key={detail} className="leading-relaxed">{detail}</p>
-                            ))}
-                          </div>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="email" className="text-sm font-medium">
+                      {t('contact.form.email')} <span className="text-destructive" aria-hidden="true">*</span>
+                      <span className="sr-only">{` (${t('contact.form.required')})`}</span>
+                    </Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder={t('contact.form.placeholders.email')}
+                      {...register('email')}
+                      className="h-11"
+                      aria-invalid={errors.email ? 'true' : 'false'}
+                      aria-describedby={errors.email ? 'email-error' : undefined}
+                    />
+                    {errors.email && (
+                      <p id="email-error" className="text-sm text-destructive" role="alert" aria-live="polite">
+                        {errors.email.message}
+                      </p>
+                    )}
+                  </div>
+                  <div className="grid gap-5 md:grid-cols-2">
+                    <div className="space-y-2">
+                      <Label htmlFor="phone" className="text-sm font-medium">
+                        {t('contact.form.phone')} <span className="text-muted-foreground">({t('contact.form.optional')})</span>
+                      </Label>
+                      <Input
+                        id="phone"
+                        type="tel"
+                        placeholder={t('contact.form.placeholders.phone')}
+                        {...register('phone')}
+                        className="h-11"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="company" className="text-sm font-medium">
+                        {t('contact.form.company')} <span className="text-muted-foreground">({t('contact.form.optional')})</span>
+                      </Label>
+                      <Input
+                        id="company"
+                        placeholder={t('contact.form.placeholders.company')}
+                        {...register('company')}
+                        className="h-11"
+                      />
+                    </div>
+                  </div>
+                  <div className="grid gap-5 md:grid-cols-2">
+                    <div className="space-y-2">
+                      <Label htmlFor="service" className="text-sm font-medium">
+                        {t('contact.form.service')} <span className="text-muted-foreground">({t('contact.form.optional')})</span>
+                      </Label>
+                      <Controller
+                        name="service"
+                        control={control}
+                        render={({ field }) => (
+                          <Select onValueChange={field.onChange} value={field.value}>
+                            <SelectTrigger className="h-11">
+                              <SelectValue placeholder={t('contact.form.selectService')} />
+                            </SelectTrigger>
+                            <SelectContent>
+                              {serviceOptions.map((service) => (
+                                <SelectItem key={service.value} value={service.value}>
+                                  {service.label}
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                        )}
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="urgency" className="text-sm font-medium">
+                        {t('contact.form.urgency')} <span className="text-muted-foreground">({t('contact.form.optional')})</span>
+                      </Label>
+                      <Controller
+                        name="urgency"
+                        control={control}
+                        render={({ field }) => (
+                          <Select onValueChange={field.onChange} value={field.value}>
+                            <SelectTrigger className="h-11">
+                              <SelectValue placeholder={t('contact.form.selectUrgency')} />
+                            </SelectTrigger>
+                            <SelectContent>
+                              {urgencyOptions.map((option) => (
+                                <SelectItem key={option.value} value={option.value}>
+                                  {option.label}
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                        )}
+                      />
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="message" className="text-sm font-medium">
+                      {t('contact.form.message')} <span className="text-destructive" aria-hidden="true">*</span>
+                      <span className="sr-only">{` (${t('contact.form.required')})`}</span>
+                    </Label>
+                    <Textarea
+                      id="message"
+                      placeholder={t('contact.form.placeholders.message')}
+                      rows={5}
+                      {...register('message')}
+                      className="resize-none"
+                      aria-invalid={errors.message ? 'true' : 'false'}
+                      aria-describedby={errors.message ? 'message-error' : undefined}
+                    />
+                    {errors.message && (
+                      <p id="message-error" className="text-sm text-destructive" role="alert" aria-live="polite">
+                        {errors.message.message}
+                      </p>
+                    )}
+                  </div>
+                  <Button type="submit" size="default" className="w-full h-12" disabled={contactMutation.isPending}>
+                    <Send className="mr-2 h-4 w-4" />
+                    {contactMutation.isPending ? t('contact.form.sending') : t('contact.form.send')}
+                  </Button>
+                  <p className="text-sm text-muted-foreground text-center leading-relaxed">
+                    {t('contact.form.privacyNotice')}
+                  </p>
+                </form>
+              </AboutCard>
+              <AboutCard
+                badge={t('contact.office.badge')}
+                title={t('contact.office.title')}
+                description={t('contact.office.description')}
+                className="h-full"
+              >
+                <div className="space-y-6">
+                  {contactInformation.map((info) => (
+                    <div key={info.title} className="flex items-start gap-4">
+                      <div className="inline-flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                        <info.icon className="h-6 w-6" />
+                      </div>
+                      <div className="space-y-2">
+                        <h3 className="text-lg font-semibold text-navy-deep">{info.title}</h3>
+                        <div className="space-y-1 text-base leading-relaxed text-muted-foreground">
+                          {info.details.map((detail) => (
+                            <p key={detail}>{detail}</p>
+                          ))}
                         </div>
                       </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
+                    </div>
+                  ))}
+                </div>
+              </AboutCard>
             </div>
           </div>
         </section>

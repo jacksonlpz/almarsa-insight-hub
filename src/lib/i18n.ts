@@ -544,6 +544,7 @@ export const translations = {
       pillars: {
         eyebrow: 'Our Service Offering',
         title: 'Six Core Service Pillars',
+        badge: 'Service Pillar',
         intro: 'We organize our offerings into six core service pillars. Whether you\'re launching a new brand, defending your patent, or expanding internationally — we have the expertise to guide you.',
         loadingMessage: 'Loading services...',
         whyItMattersLabel: 'Why it matters:',
@@ -898,6 +899,7 @@ export const translations = {
       globalFrameworks: {
         eyebrow: 'Global frameworks',
         title: 'Confidence across international systems',
+        badge: 'Global coverage',
         subtitle: 'We integrate directly with world bodies and regional offices, ensuring your IP assets remain compliant, enforceable, and optimised for expansion.',
         items: {
           wipoSystems: {
@@ -1104,6 +1106,7 @@ export const translations = {
       legislation: {
         eyebrow: 'Legal Framework Repository',
         title: 'GCC IP Legislation & Regulatory Documents',
+        badge: 'Resource',
         description: 'Access comprehensive trademark, patent, and industrial design legislation across Kuwait, Bahrain, Qatar, Saudi Arabia, and the UAE.',
         noResults: 'No resources match your current filters.',
         loading: 'Loading resources...',
@@ -1113,6 +1116,7 @@ export const translations = {
       learningModules: {
         eyebrow: 'On-demand learning',
         title: 'IP Knowledge Center: learn, apply, protect',
+        badge: 'Learning Module',
         description: 'Short explainer modules with actionable guidance to help you understand intellectual property, trademarks, patents, and design rights.',
         howToPractice: 'How to put this into practice',
         didYouKnow: 'Did you know?'
@@ -1718,6 +1722,7 @@ export const translations = {
       pillars: {
         eyebrow: 'عرض خدماتنا',
         title: 'ستة ركائز خدمة أساسية',
+        badge: 'ركن الخدمة',
         intro: 'ننظم عروضنا في ستة ركائز خدمة أساسية. سواء كنت تطلق علامة تجارية جديدة، أو تدافع عن براءة اختراعك، أو تتوسع دوليًا - لدينا الخبرة لإرشادك.',
         loadingMessage: 'جارٍ تحميل الخدمات...',
         whyItMattersLabel: 'لماذا هذا مهم:',
@@ -2072,6 +2077,7 @@ export const translations = {
       globalFrameworks: {
         eyebrow: 'الأطر العالمية',
         title: 'ثقة عبر الأنظمة الدولية',
+        badge: 'ركيزة التغطية العالمية',
         subtitle: 'نتكامل مباشرة مع الهيئات العالمية والمكاتب الإقليمية، مما يضمن بقاء أصول الملكية الفكرية الخاصة بك متوافقة وقابلة للإنفاذ ومحسّنة للتوسع.',
         items: {
           wipoSystems: {
@@ -2278,6 +2284,7 @@ export const translations = {
       legislation: {
         eyebrow: 'مستودع الإطار القانوني',
         title: 'تشريعات ووثائق الملكية الفكرية لدول مجلس التعاون الخليجي',
+        badge: 'المصدر',
         description: 'الوصول إلى تشريعات شاملة للعلامات التجارية وبراءات الاختراع والتصاميم الصناعية عبر الكويت والبحرين وقطر والمملكة العربية السعودية والإمارات العربية المتحدة.',
         noResults: 'لا توجد موارد تطابق مرشحاتك الحالية.',
         loading: 'جارٍ تحميل الموارد...',
@@ -2287,6 +2294,7 @@ export const translations = {
       learningModules: {
         eyebrow: 'التعلم عند الطلب',
         title: 'مركز المعرفة بالملكية الفكرية: التعلم والتطبيق والحماية',
+        badge: 'وحدة تعليمية',
         description: 'وحدات شرح قصيرة مع إرشادات قابلة للتنفيذ لمساعدتك على فهم الملكية الفكرية والعلامات التجارية وبراءات الاختراع وحقوق التصميم.',
         howToPractice: 'كيفية وضع هذا موضع التنفيذ',
         didYouKnow: 'هل تعلم؟'

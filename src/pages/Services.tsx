@@ -1,7 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { AboutCard } from "@/components/ui/AboutCard";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Link } from "react-router-dom";
 import { ArrowRight, Check } from "lucide-react";
 import { renderAlMarsaIcon } from "@/components/icons/al-marsa";
@@ -107,53 +108,44 @@ const Services = () => {
         {/* Service Pillars Section */}
         <section className="section-spacing bg-white" data-animate>
           <div className="container-responsive">
-            <div className="section-heading">
-              <span className="section-eyebrow">{t('servicesPage.pillars.eyebrow')}</span>
-              <h2 className="section-title mt-6">{t('servicesPage.pillars.title')}</h2>
-              <p className="section-subtitle mt-6">
-                {SERVICE_INTRO}
-              </p>
-            </div>
-            <div className="max-w-7xl mx-auto grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <SectionHeading
+              eyebrow={t('servicesPage.pillars.eyebrow')}
+              title={t('servicesPage.pillars.title')}
+              subtitle={SERVICE_INTRO}
+              align="center"
+              className="max-w-3xl"
+            />
+            <div className="grid gap-12 lg:grid-cols-2 max-w-6xl mx-auto">
               {SERVICE_PILLARS && SERVICE_PILLARS.length > 0 ? (
                 SERVICE_PILLARS.map((pillar) => {
                   const slug = pillar.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
                   return (
-                  <Card
-                    key={pillar.title}
+                    <AboutCard
+                      key={pillar.title}
                       id={slug}
-                    className="group relative overflow-hidden border border-border bg-white shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
-                    data-animate
-                  >
-                    <CardContent className="p-8 space-y-6">
-                      <div className="flex items-start justify-between">
-                        <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 text-primary shadow-md transition-all duration-300 group-hover:scale-110">
+                      badge={t('servicesPage.pillars.badge')}
+                      title={pillar.title}
+                      description={pillar.tagline}
+                    >
+                      <div className="space-y-6">
+                        <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                           {renderAlMarsaIcon(pillar.icon, { className: "h-8 w-8", strokeWidth: 1.5 })}
                         </div>
-                      </div>
-
-                      <div className="space-y-3">
-                        <h3 className="text-xl font-bold text-navy-deep">{pillar.title}</h3>
-                        <p className="text-sm text-muted-foreground italic leading-relaxed">{pillar.tagline}</p>
-                      </div>
-
-                      <ul className="space-y-2">
-                        {pillar.services.map((service) => (
-                          <li key={service} className="flex items-start gap-2 text-sm">
-                            <Check className="mt-0.5 h-4 w-4 text-primary flex-shrink-0" />
-                            <span className="text-foreground/80">{service}</span>
-                          </li>
-                        ))}
-                      </ul>
-
-                      <div className="pt-4 border-t border-border/50">
-                        <p className="text-xs font-semibold text-primary">
-                          <span className="text-muted-foreground">{t('servicesPage.pillars.whyItMattersLabel')}</span> {pillar.whyItMatters}
+                        <ul className="space-y-3 text-base text-muted-foreground">
+                          {pillar.services.map((service) => (
+                            <li key={service} className="flex items-start gap-3">
+                              <Check className="mt-1 h-5 w-5 text-primary flex-shrink-0" />
+                              <span>{service}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <p className="text-base font-semibold text-primary">
+                          {t('servicesPage.pillars.whyItMattersLabel')}{' '}
+                          <span className="font-normal text-muted-foreground">{pillar.whyItMatters}</span>
                         </p>
                       </div>
-                    </CardContent>
-                  </Card>
+                    </AboutCard>
                   );
                 })
               ) : (

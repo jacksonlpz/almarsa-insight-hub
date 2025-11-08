@@ -3,7 +3,6 @@ import type { ComponentType, SVGProps } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, FileText, Building2, Calendar, AlertCircle } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
@@ -14,6 +13,8 @@ import { AE, BH, KW, OM, QA, SA } from "country-flag-icons/react/3x2";
 import { usePageSEO } from "@/hooks/usePageSEO";
 import { buildCanonicalUrl } from "@/lib/seo";
 import { useLanguage } from "@/hooks/useLanguage";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { AboutCard } from "@/components/ui/AboutCard";
 
 type SectionItem = {
   title: string;
@@ -404,62 +405,73 @@ const NewsEvents = () => {
         </section>
 
         {/* Country Updates Section */}
-        <section className="section-spacing bg-gray-warm" data-animate>
-          <div className="mx-auto max-w-7xl px-6 md:px-8">
-            <div className="section-heading text-center mb-16">
-              <div className="space-y-4">
-                <span className="section-eyebrow">{t("newsEvents.sectionHeading.eyebrow")}</span>
-                <h2 className="section-title">{t("newsEvents.sectionHeading.title")}</h2>
-              </div>
-              <p className="section-subtitle mx-auto max-w-3xl">
-                {t("newsEvents.sectionHeading.subtitle")}
-              </p>
-            </div>
+        <section className="section-spacing bg-white" data-animate>
+          <div className="container-responsive">
+            <SectionHeading
+              eyebrow={t("newsEvents.sectionHeading.eyebrow")}
+              title={t("newsEvents.sectionHeading.title")}
+              subtitle={t("newsEvents.sectionHeading.subtitle")}
+              align="center"
+              className="max-w-3xl"
+            />
 
-            <div className="grid gap-6 md:grid-cols-2">
+            <div className="grid gap-12 lg:grid-cols-2 max-w-6xl mx-auto">
               {GCC_COUNTRIES.map((countryData) => {
                 const FlagIcon = countryData.Flag;
                 const localizedCountryName = t(`newsEvents.countries.${countryData.id}`);
 
-                return (
-                  <Card
-                    key={countryData.id}
-                    className="flex h-full flex-col overflow-hidden border-2 border-border transition-all duration-base ease-emphasis hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl"
-                  >
-                    <CardContent className="bg-white p-6">
-                      <div className="flex items-center justify-between gap-4">
-                        <div className="flex items-center gap-3">
-                          <div className="flex items-center justify-center rounded-md border border-border/40 bg-muted/60 p-1.5 shadow-sm">
-                            <FlagIcon title={t("newsEvents.countryFlagAlt", { country: localizedCountryName })} className="h-6 w-9" />
-                          </div>
-                          <h3 className="text-heading-lg font-semibold text-navy-deep md:text-display-sm">{localizedCountryName}</h3>
-                        </div>
-                        <Badge variant="secondary" className="uppercase tracking-wide text-label-xs whitespace-nowrap">
-                          {t("newsEvents.badge.latest")}
-                        </Badge>
-                      </div>
-                    </CardContent>
+                const websiteLabel = countryData.website.replace(/^https?:\/\//, "");
 
-                    <div className="bg-white/60">
-                      <CardContent className="p-6">
+                return (
+                  <AboutCard
+                    key={countryData.id}
+                    badge={t("newsEvents.badge.latest")}
+                    title={localizedCountryName}
+                    description={countryData.ministry}
+                    className="h-full"
+                  >
+                    <div className="space-y-8">
+                      <div className="flex items-center gap-4">
+                        <div className="inline-flex h-14 w-20 items-center justify-center rounded-2xl bg-primary/10">
+                          <FlagIcon
+                            title={t("newsEvents.countryFlagAlt", { country: localizedCountryName })}
+                            className="h-10 w-16"
+                          />
+                        </div>
+                        <a
+                          href={countryData.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-base font-semibold text-primary hover:underline"
+                        >
+                          {websiteLabel}
+                        </a>
+                      </div>
+
+                      <div className="space-y-8">
                         {countryData.sections.map((section, sectionIdx) => (
-                          <div key={sectionIdx}>
+                          <div key={sectionIdx} className="space-y-4">
+                            <div className="space-y-2">
+                              <p className="text-xl font-semibold text-navy-deep">{section.title}</p>
+                              <p className="text-base text-muted-foreground">{section.source}</p>
+                            </div>
+
                             {section.note && (
-                              <div className="mb-4 flex items-start gap-3 rounded-lg border border-amber-200 bg-amber-50 p-3">
-                                <AlertCircle className="h-4 w-4 text-amber-600 mt-0.5 flex-shrink-0" />
-                                <p className="text-body-xs text-amber-800">{section.note}</p>
+                              <div className="flex items-start gap-3 rounded-2xl bg-primary/10 p-4">
+                                <AlertCircle className="h-5 w-5 text-primary" />
+                                <p className="text-sm leading-relaxed text-primary">{section.note}</p>
                               </div>
                             )}
 
                             <SectionCarousel items={section.items} />
 
                             {section.completeList && (
-                              <div className="mt-4 border-t pt-4">
+                              <div className="border-t border-border/50 pt-4">
                                 <a
                                   href={section.completeList}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="inline-flex items-center gap-2 text-body font-semibold text-primary hover:underline"
+                                  className="inline-flex items-center gap-2 text-base font-semibold text-primary hover:underline"
                                 >
                                   {t("newsEvents.completeArchive")}
                                   <ExternalLink className="h-4 w-4" />
@@ -468,9 +480,9 @@ const NewsEvents = () => {
                             )}
                           </div>
                         ))}
-                      </CardContent>
+                      </div>
                     </div>
-                  </Card>
+                  </AboutCard>
                 );
               })}
             </div>
