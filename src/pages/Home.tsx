@@ -10,35 +10,14 @@ import ImageOptimized from "@/components/ImageOptimized";
 import CountUp from "@/components/CountUp";
 import heroImage from "@/assets/hero-bg.jpg";
 import { renderAlMarsaIcon } from "@/components/icons/al-marsa";
-import { features as homeFeatures, services as homeServices, stats as homeStats } from "@/data/homeData";
+// homeData is now loaded from translations
 import useScrollReveal from "@/hooks/useScrollReveal";
 import "@/styles/home.css";
 import { usePageSEO } from "@/hooks/usePageSEO";
 import { useLanguage } from "@/hooks/useLanguage";
 import { APP_CONFIG, COMPANY_INFO } from "@/lib/constants";
 import { buildCanonicalUrl } from "@/lib/seo";
-const TIMELINE_PHASES = [
-  {
-    title: "Consultation & IP audit",
-    description: "Immersion sessions to surface current assets, exposure points, and the jurisdictions that require immediate mobilisation.",
-    icon: "audit" as const,
-  },
-  {
-    title: "Strategy architecture",
-    description: "Scenario planning, filing roadmaps, and budget modelling that translate commercial goals into actionable programmes.",
-    icon: "strategy" as const,
-  },
-  {
-    title: "Execution & monitoring",
-    description: "Coordinated filings, renewals, and ongoing watch services documented through decision-grade dashboards.",
-    icon: "execution" as const,
-  },
-  {
-    title: "Enforcement & defence",
-    description: "Litigation support, oppositions, and negotiated settlements that protect enterprise value at pace.",
-    icon: "defence" as const,
-  },
-];
+// Timeline phases are now loaded from translations
 const TESTIMONIALS = [
   {
     quote:
@@ -154,26 +133,26 @@ const Home = () => {
                 <CardContent className="space-y-6 p-8 lg:p-10">
                   <div className="inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-white/80">
                     <Award className="h-4 w-4" />
-                    Trusted Partner
+                    {t('hero.card.badge')}
                   </div>
                   <p className="text-base leading-relaxed text-white/80">
-                    “Clients rely on us for responsive counsel, clear filing pathways, and measured defence strategies that stand up in every jurisdiction.”
+                    "{t('hero.card.quote')}"
                   </p>
                   <div className="space-y-4">
                     {[
                       {
-                        label: "Dedicated regional experts",
-                        description: "Direct access to partners across MENA, Europe, and key global IP offices.",
+                        label: t('hero.card.advantages.network.label'),
+                        description: t('hero.card.advantages.network.description'),
                         icon: "advantage-network",
                       },
                       {
-                        label: "ISO-aligned quality management",
-                        description: "Cross-functional reviews keep filings, renewals, and enforcement audit-ready.",
+                        label: t('hero.card.advantages.governance.label'),
+                        description: t('hero.card.advantages.governance.description'),
                         icon: "advantage-governance",
                       },
                       {
-                        label: "Decision-grade reporting",
-                        description: "Dashboards summarise exposure, deadlines, and next actions in real time.",
+                        label: t('hero.card.advantages.reporting.label'),
+                        description: t('hero.card.advantages.reporting.description'),
                         icon: "strategy",
                       },
                     ].map((item) => (
@@ -202,33 +181,29 @@ const Home = () => {
               <h2 className="section-title mt-6">{t('trust.subtitle')}</h2>
             </div>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3 max-w-4xl mx-auto">
-              {homeStats && homeStats.length > 0 ? (
-                homeStats.map((stat, index) => (
-                  <div
-                    key={index}
-                    className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-500 hover:shadow-xl hover:scale-105 hover:border-primary/30"
-                    style={{
-                      animationDelay: `${index * 150}ms`,
-                      animation: 'fadeInUp 0.6s ease-out forwards'
-                    }}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                    <div className="relative z-10 text-center">
-                      <CountUp
-                        end={stat.number}
-                        duration={2000}
-                        className="text-5xl font-bold text-navy-deep mb-3 transition-transform duration-500 group-hover:scale-110 inline-block"
-                      />
-                      <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground transition-colors duration-500 group-hover:text-primary">{stat.label}</p>
+              {[
+                { number: t('stats.home.matters.number'), label: t('stats.home.matters.label') },
+                { number: t('stats.home.globalJurisdictions.number'), label: t('stats.home.globalJurisdictions.label') },
+                { number: t('stats.home.clientSatisfaction.number'), label: t('stats.home.clientSatisfaction.label') }
+              ].map((stat, index) => (
+                <div
+                  key={index}
+                  className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-500 hover:shadow-xl hover:scale-105 hover:border-primary/30"
+                  style={{
+                    animationDelay: `${index * 150}ms`,
+                    animation: 'fadeInUp 0.6s ease-out forwards'
+                  }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  <div className="relative z-10 text-center">
+                    <div className="text-5xl font-bold text-navy-deep mb-3 transition-transform duration-500 group-hover:scale-110 inline-block">
+                      {stat.number}
                     </div>
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary/0 via-primary to-primary/0 transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100" />
+                    <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground transition-colors duration-500 group-hover:text-primary">{stat.label}</p>
                   </div>
-                ))
-              ) : (
-                <div className="col-span-full text-center text-muted-foreground">
-                  Loading statistics...
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary/0 via-primary to-primary/0 transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100" />
                 </div>
-              )}
+              ))}
             </div>
           </div>
         </section>
@@ -257,34 +232,35 @@ const Home = () => {
             </div>
 
             <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-              {homeServices && homeServices.length > 0 ? (
-                homeServices.map((service, index) => (
-                  <Card key={index} className="service-card group h-full">
-                    <CardContent className="p-8 h-full flex flex-col">
-                      <div className="flex items-center justify-center w-16 h-16 rounded-xl bg-primary/10 text-primary transition-all duration-300 group-hover:bg-primary group-hover:scale-110 flex-shrink-0">
-                        {renderAlMarsaIcon(service.icon, { className: "h-8 w-8 group-hover:text-white transition-colors", strokeWidth: 1.5 })}
-                      </div>
-                      <div className="flex-grow mt-6 space-y-4">
-                        <h3 className="text-xl font-bold text-navy-deep leading-tight">{service.title}</h3>
-                        <p className="text-base leading-relaxed text-muted-foreground">{service.description}</p>
-                      </div>
-                      <div className="mt-6 flex-shrink-0">
-                        <Link
-                          to="/services"
-                          className="inline-flex items-center gap-2 text-primary font-semibold group/link"
-                        >
-                          Explore our IP services
-                          <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-1" />
-                        </Link>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))
-              ) : (
-                <div className="col-span-full text-center text-muted-foreground">
-                  Loading services...
-                </div>
-              )}
+              {[
+                { icon: 'trademark', title: t('services.home.trademarkProtection.title'), description: t('services.home.trademarkProtection.description') },
+                { icon: 'patent', title: t('services.home.patentApplication.title'), description: t('services.home.patentApplication.description') },
+                { icon: 'strategy', title: t('services.home.tradeSecret.title'), description: t('services.home.tradeSecret.description') },
+                { icon: 'disputes', title: t('services.home.disputes.title'), description: t('services.home.disputes.description') },
+                { icon: 'advantage-network', title: t('services.home.globalIP.title'), description: t('services.home.globalIP.description') },
+                { icon: 'industrial', title: t('services.home.industrialDesign.title'), description: t('services.home.industrialDesign.description') }
+              ].map((service, index) => (
+                <Card key={index} className="service-card group h-full">
+                  <CardContent className="p-8 h-full flex flex-col">
+                    <div className="flex items-center justify-center w-16 h-16 rounded-xl bg-primary/10 text-primary transition-all duration-300 group-hover:bg-primary group-hover:scale-110 flex-shrink-0">
+                      {renderAlMarsaIcon(service.icon, { className: "h-8 w-8 group-hover:text-white transition-colors", strokeWidth: 1.5 })}
+                    </div>
+                    <div className="flex-grow mt-6 space-y-4">
+                      <h3 className="text-xl font-bold text-navy-deep leading-tight">{service.title}</h3>
+                      <p className="text-base leading-relaxed text-muted-foreground">{service.description}</p>
+                    </div>
+                    <div className="mt-6 flex-shrink-0">
+                      <Link
+                        to="/services"
+                        className="inline-flex items-center gap-2 text-primary font-semibold group/link"
+                      >
+                        {t('common.exploreServices')}
+                        <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-1" />
+                      </Link>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
@@ -300,21 +276,19 @@ const Home = () => {
             </div>
 
             <div className="grid gap-12 md:grid-cols-3 max-w-6xl mx-auto">
-              {homeFeatures && homeFeatures.length > 0 ? (
-                homeFeatures.slice(0, 3).map((feature) => (
-                  <div key={feature.label} className="text-center space-y-6">
-                    <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-primary/10 transition-all duration-300 hover:bg-primary hover:scale-110 group">
-                      {renderAlMarsaIcon(feature.icon, { className: "h-10 w-10 text-primary group-hover:text-white transition-colors", strokeWidth: 1.5 })}
-                    </div>
-                    <h3 className="text-2xl font-bold text-navy-deep">{feature.label}</h3>
-                    <p className="text-base text-muted-foreground leading-relaxed">{feature.description}</p>
+              {[
+                { icon: 'advantage-insight', label: t('features.home.localExpertise.label'), description: t('features.home.localExpertise.description') },
+                { icon: 'advantage-network', label: t('features.home.tailoredProgrammes.label'), description: t('features.home.tailoredProgrammes.description') },
+                { icon: 'advantage-governance', label: t('features.home.auditReady.label'), description: t('features.home.auditReady.description') }
+              ].map((feature) => (
+                <div key={feature.label} className="text-center space-y-6">
+                  <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-primary/10 transition-all duration-300 hover:bg-primary hover:scale-110 group">
+                    {renderAlMarsaIcon(feature.icon, { className: "h-10 w-10 text-primary group-hover:text-white transition-colors", strokeWidth: 1.5 })}
                   </div>
-                ))
-              ) : (
-                <div className="col-span-full text-center text-muted-foreground">
-                  Loading features...
+                  <h3 className="text-2xl font-bold text-navy-deep">{feature.label}</h3>
+                  <p className="text-base text-muted-foreground leading-relaxed">{feature.description}</p>
                 </div>
-              )}
+              ))}
             </div>
           </div>
         </section>
@@ -329,8 +303,13 @@ const Home = () => {
               </p>
             </div>
             <ol className="timeline max-w-4xl mx-auto">
-              {TIMELINE_PHASES.map((phase, index) => (
-                <li key={phase.title} className="timeline-item" data-animate>
+              {[
+                { key: 'consultation', title: t('process.phases.consultation.title'), description: t('process.phases.consultation.description') },
+                { key: 'strategy', title: t('process.phases.strategy.title'), description: t('process.phases.strategy.description') },
+                { key: 'execution', title: t('process.phases.execution.title'), description: t('process.phases.execution.description') },
+                { key: 'enforcement', title: t('process.phases.enforcement.title'), description: t('process.phases.enforcement.description') }
+              ].map((phase, index) => (
+                <li key={phase.key} className="timeline-item" data-animate>
                   <div className="timeline-index">{String(index + 1).padStart(2, '0')}</div>
                   <div className="timeline-content">
                     <h3>{phase.title}</h3>

@@ -25,6 +25,24 @@ export const translations = {
       cta: {
         consultation: 'Schedule a Consultation',
         explore: 'Explore Our Services'
+      },
+      card: {
+        badge: 'Trusted Partner',
+        quote: 'Clients rely on us for responsive counsel, clear filing pathways, and measured defence strategies that stand up in every jurisdiction.',
+        advantages: {
+          network: {
+            label: 'Dedicated regional experts',
+            description: 'Direct access to partners across MENA, Europe, and key global IP offices.'
+          },
+          governance: {
+            label: 'ISO-aligned quality management',
+            description: 'Cross-functional reviews keep filings, renewals, and enforcement audit-ready.'
+          },
+          reporting: {
+            label: 'Decision-grade reporting',
+            description: 'Dashboards summarise exposure, deadlines, and next actions in real time.'
+          }
+        }
       }
     },
     intro: {
@@ -34,7 +52,21 @@ export const translations = {
       founded: 'Founded',
       mattersManaged: 'Matters Managed',
       jurisdictions: 'Global Jurisdictions',
-      satisfaction: 'Client Satisfaction'
+      satisfaction: 'Client Satisfaction',
+      home: {
+        matters: {
+          number: '50+',
+          label: 'Matters Managed'
+        },
+        globalJurisdictions: {
+          number: '25+',
+          label: 'Global Jurisdictions'
+        },
+        clientSatisfaction: {
+          number: '100%',
+          label: 'Client Satisfaction'
+        }
+      }
     },
     services: {
       title: 'Our Core Services',
@@ -62,6 +94,32 @@ export const translations = {
           title: 'Industrial Design & Model Protection',
           description: 'Design registration, monitoring, and defense'
         }
+      },
+      home: {
+        trademarkProtection: {
+          title: 'Trademark Registration & Protection',
+          description: 'From search and filing to renewals, oppositions, and watch services'
+        },
+        patentApplication: {
+          title: 'Patent Application & Prosecution',
+          description: 'Technical drafting, filings, and prosecution across priority jurisdictions'
+        },
+        tradeSecret: {
+          title: 'Trade Secret Advisory',
+          description: 'Programmes that harden confidential processes and govern sensitive know-how'
+        },
+        disputes: {
+          title: 'IP Disputes & Enforcement',
+          description: 'Infringement response, negotiated settlements, and litigation support'
+        },
+        globalIP: {
+          title: 'Global & Cross-Border IP',
+          description: 'Madrid, PCT, and local counsel coordination with unified governance'
+        },
+        industrialDesign: {
+          title: 'Industrial Design & Model Protection',
+          description: 'Design registration, renewals, and anti-counterfeit programmes'
+        }
       }
     },
     features: {
@@ -72,7 +130,25 @@ export const translations = {
         'Tailored, Proactive Strategies',
         'Responsive & Transparent Communication',
         'Deep Understanding of GCC IP Landscape'
-      ]
+      ],
+      home: {
+        localExpertise: {
+          label: 'Local expertise, global visibility',
+          description: 'Sector-specific attorneys embedded across the GCC provide nuanced counsel the moment priorities shift.'
+        },
+        tailoredProgrammes: {
+          label: 'Tailored, proactive programmes',
+          description: 'Lifecycle strategies built around launches, renewals, and disputes so decisions are always timely and informed.'
+        },
+        auditReady: {
+          label: 'Audit-ready governance & reporting',
+          description: 'Evidence frameworks, dashboards, and board-ready updates that withstand scrutiny across jurisdictions.'
+        },
+        rapidEnforcement: {
+          label: 'Rapid enforcement & defence posture',
+          description: 'Escalation playbooks let you intervene quickly—administratively, commercially, or litigiously—without losing momentum.'
+        }
+      }
     },
     workflow: {
       title: 'How We Work — Our Approach',
@@ -120,7 +196,25 @@ export const translations = {
       sectionTitle: 'Our Process',
       title: 'How We Work',
       subtitle: 'A proven approach to IP protection',
-      discuss: 'Discuss your IP needs'
+      discuss: 'Discuss your IP needs',
+      phases: {
+        consultation: {
+          title: 'Consultation & IP audit',
+          description: 'Immersion sessions to surface current assets, exposure points, and the jurisdictions that require immediate mobilisation.'
+        },
+        strategy: {
+          title: 'Strategy architecture',
+          description: 'Scenario planning, filing roadmaps, and budget modelling that translate commercial goals into actionable programmes.'
+        },
+        execution: {
+          title: 'Execution & monitoring',
+          description: 'Coordinated filings, renewals, and ongoing watch services documented through decision-grade dashboards.'
+        },
+        enforcement: {
+          title: 'Enforcement & defence',
+          description: 'Litigation support, oppositions, and negotiated settlements that protect enterprise value at pace.'
+        }
+      }
     },
     footer: {
       description: 'Leading intellectual property and trademark agents providing comprehensive protection for your innovations and brands across the GCC and MENA region.',
@@ -606,6 +700,24 @@ export const translations = {
       cta: {
         consultation: 'جدولة استشارة',
         explore: 'استكشاف خدماتنا'
+      },
+      card: {
+        badge: 'شريك موثوق',
+        quote: 'يعتمد العملاء علينا للحصول على مشورة سريعة الاستجابة، ومسارات تقديم واضحة، واستراتيجيات دفاع متوازنة تصمد في كل ولاية قضائية.',
+        advantages: {
+          network: {
+            label: 'خبراء إقليميون متخصصون',
+            description: 'وصول مباشر إلى الشركاء عبر منطقة الشرق الأوسط وشمال أفريقيا وأوروبا ومكاتب الملكية الفكرية العالمية الرئيسية.'
+          },
+          governance: {
+            label: 'إدارة الجودة المتوافقة مع ISO',
+            description: 'المراجعات متعددة الوظائف تحافظ على التسجيلات والتجديدات والإنفاذ جاهزة للتدقيق.'
+          },
+          reporting: {
+            label: 'تقارير على مستوى صنع القرار',
+            description: 'لوحات المعلومات تلخص التعرض والمواعيد النهائية والإجراءات التالية في الوقت الفعلي.'
+          }
+        }
       }
     },
     intro: {
@@ -615,7 +727,21 @@ export const translations = {
       founded: 'تأسست',
       mattersManaged: 'القضايا المُدارة',
       jurisdictions: 'الولايات القضائية العالمية',
-      satisfaction: 'رضا العملاء'
+      satisfaction: 'رضا العملاء',
+      home: {
+        matters: {
+          number: '+50',
+          label: 'القضايا المُدارة'
+        },
+        globalJurisdictions: {
+          number: '+25',
+          label: 'ولايات قضائية عالمية'
+        },
+        clientSatisfaction: {
+          number: '100%',
+          label: 'رضا العملاء'
+        }
+      }
     },
     services: {
       title: 'خدماتنا الأساسية',
@@ -643,6 +769,32 @@ export const translations = {
           title: 'حماية التصاميم والنماذج الصناعية',
           description: 'تسجيل التصاميم، المراقبة، والدفاع'
         }
+      },
+      home: {
+        trademarkProtection: {
+          title: 'تسجيل وحماية العلامات التجارية',
+          description: 'من البحث والتسجيل إلى التجديدات والمعارضات وخدمات المراقبة'
+        },
+        patentApplication: {
+          title: 'تقديم ومتابعة براءات الاختراع',
+          description: 'الصياغة الفنية والتقديم والمتابعة عبر الولايات القضائية ذات الأولوية'
+        },
+        tradeSecret: {
+          title: 'الاستشارات في الأسرار التجارية',
+          description: 'برامج تعزيز العمليات السرية وإدارة المعرفة الحساسة'
+        },
+        disputes: {
+          title: 'نزاعات وإنفاذ الملكية الفكرية',
+          description: 'الرد على الانتهاكات والتسويات المتفاوض عليها ودعم التقاضي'
+        },
+        globalIP: {
+          title: 'الملكية الفكرية العالمية وعبر الحدود',
+          description: 'مدريد، معاهدة التعاون بشأن البراءات، وتنسيق المستشار المحلي مع حوكمة موحدة'
+        },
+        industrialDesign: {
+          title: 'حماية التصاميم والنماذج الصناعية',
+          description: 'تسجيل التصاميم والتجديدات وبرامج مكافحة التزييف'
+        }
       }
     },
     features: {
@@ -653,7 +805,25 @@ export const translations = {
         'استراتيجيات مخصصة واستباقية',
         'تواصل سريع وشفاف',
         'فهم عميق لمشهد الملكية الفكرية في دول مجلس التعاون الخليجي'
-      ]
+      ],
+      home: {
+        localExpertise: {
+          label: 'خبرة محلية، رؤية عالمية',
+          description: 'محامون متخصصون في القطاعات عبر دول مجلس التعاون الخليجي يقدمون مشورة دقيقة في اللحظة التي تتغير فيها الأولويات.'
+        },
+        tailoredProgrammes: {
+          label: 'برامج مخصصة واستباقية',
+          description: 'استراتيجيات دورة الحياة المبنية على الإطلاق والتجديدات والنزاعات بحيث تكون القرارات دائمًا في الوقت المناسب ومستنيرة.'
+        },
+        auditReady: {
+          label: 'الحوكمة وإعداد التقارير الجاهزة للتدقيق',
+          description: 'أطر الأدلة ولوحات المعلومات والتحديثات الجاهزة لمجلس الإدارة التي تصمد أمام التدقيق عبر الولايات القضائية.'
+        },
+        rapidEnforcement: {
+          label: 'وضع الإنفاذ والدفاع السريع',
+          description: 'كتيبات التصعيد تتيح لك التدخل بسرعة - إداريًا أو تجاريًا أو من خلال التقاضي - دون فقدان الزخم.'
+        }
+      }
     },
     workflow: {
       title: 'كيف نعمل — منهجنا',
@@ -701,7 +871,25 @@ export const translations = {
       sectionTitle: 'عمليتنا',
       title: 'كيف نعمل',
       subtitle: 'نهج مثبت لحماية الملكية الفكرية',
-      discuss: 'ناقش احتياجات الملكية الفكرية الخاصة بك'
+      discuss: 'ناقش احتياجات الملكية الفكرية الخاصة بك',
+      phases: {
+        consultation: {
+          title: 'الاستشارة وتدقيق الملكية الفكرية',
+          description: 'جلسات الانغماس لإظهار الأصول الحالية ونقاط التعرض والولايات القضائية التي تتطلب التعبئة الفورية.'
+        },
+        strategy: {
+          title: 'هيكلة الاستراتيجية',
+          description: 'تخطيط السيناريوهات وخرائط طريق التقديم ونمذجة الميزانية التي تترجم الأهداف التجارية إلى برامج قابلة للتنفيذ.'
+        },
+        execution: {
+          title: 'التنفيذ والمراقبة',
+          description: 'التسجيلات المنسقة والتجديدات وخدمات المراقبة المستمرة الموثقة من خلال لوحات معلومات على مستوى القرار.'
+        },
+        enforcement: {
+          title: 'الإنفاذ والدفاع',
+          description: 'دعم التقاضي والاعتراضات والتسويات المتفاوض عليها التي تحمي قيمة المؤسسة بسرعة.'
+        }
+      }
     },
     footer: {
       description: 'وكلاء رائدون في مجال الملكية الفكرية والعلامات التجارية يقدمون حماية شاملة لابتكاراتك وعلاماتك التجارية عبر دول مجلس التعاون الخليجي ومنطقة الشرق الأوسط وشمال أفريقيا.',
