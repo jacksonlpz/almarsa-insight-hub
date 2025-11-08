@@ -12,6 +12,7 @@ import { renderAlMarsaIcon } from "@/components/icons/al-marsa";
 import useScrollReveal from "@/hooks/useScrollReveal";
 import { useMutation } from "@tanstack/react-query";
 import { Controller, useForm } from "react-hook-form";
+import { useMemo } from "react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
@@ -21,85 +22,21 @@ import { usePageSEO } from "@/hooks/usePageSEO";
 import { buildCanonicalUrl } from "@/lib/seo";
 import { useLanguage } from "@/hooks/useLanguage";
 
-const contactSchema = z.object({
-  firstName: z.string().min(1, "First name is required"),
-  lastName: z.string().min(1, "Last name is required"),
-  email: z.string().email("Please provide a valid email address"),
-  phone: z.string().optional(),
-  company: z.string().optional(),
-  service: z.string().optional(),
-  urgency: z.string().optional(),
-  message: z.string().min(10, "Please provide at least 10 characters"),
-});
-
-type ContactFormValues = z.infer<typeof contactSchema>;
-
-const CONTACT_METRICS = [
-  { value: "24h", label: "Response time", icon: "defence" as const },
-  { value: "92%", label: "Client retention", icon: "advantage-network" as const },
-  { value: "150+", label: "Jurisdictions covered", icon: "advantage-insight" as const },
-];
-
 import { COMPANY_INFO } from "@/lib/constants";
 
-const CONTACT_INFORMATION = [
-  {
-    icon: MapPin,
-    title: "Office location",
-    details: [
-      COMPANY_INFO.address.building,
-      `${COMPANY_INFO.address.street}`,
-      `${COMPANY_INFO.address.floor}, ${COMPANY_INFO.address.area} ${COMPANY_INFO.address.country}`
-    ]
-  },
-  {
-    icon: Phone,
-    title: "Phone & WhatsApp",
-    details: [`${COMPANY_INFO.phone} (Main)`, `${COMPANY_INFO.phone} (WhatsApp)`]
-  },
-  {
-    icon: Mail,
-    title: "Email address",
-    details: [COMPANY_INFO.email]
-  },
-  {
-    icon: Clock,
-    title: "Business hours",
-    details: [
-      COMPANY_INFO.businessHours.weekdays,
-      COMPANY_INFO.businessHours.weekend
-    ]
-  }
-];
+const createContactSchema = (t: (path: string) => string) =>
+  z.object({
+    firstName: z.string().min(1, t("contact.form.errors.firstNameRequired")),
+    lastName: z.string().min(1, t("contact.form.errors.lastNameRequired")),
+    email: z.string().email(t("contact.form.errors.emailInvalid")),
+    phone: z.string().optional(),
+    company: z.string().optional(),
+    service: z.string().optional(),
+    urgency: z.string().optional(),
+    message: z.string().min(10, t("contact.form.errors.messageMin")),
+  });
 
-const SERVICES = [
-  "Trademark Registration",
-  "Patent Applications",
-  "IP Litigation",
-  "IP Strategy Consulting",
-  "Licensing & Transactions",
-  "Brand Protection",
-  "Other"
-];
-
-
-const PARTNERSHIP_PILLARS = [
-  {
-    title: "Dedicated engagement lead",
-    description: "A single point of contact coordinates every mandate and escalation.",
-    icon: "strategy" as const,
-  },
-  {
-    title: "Confidential handling",
-    description: "Secure channels, NDAs on request, and controlled data governance.",
-    icon: "advantage-governance" as const,
-  },
-  {
-    title: "Multilingual regional support",
-    description: "Teams across Arabic and English ensure swift coordination with local counsel.",
-    icon: "advantage-network" as const,
-  },
-];
+type ContactFormValues = z.infer<ReturnType<typeof createContactSchema>>;
 
 const Contact = () => {
   const { t } = useLanguage();
@@ -118,6 +55,67 @@ const Contact = () => {
 
   const { toast } = useToast();
   useScrollReveal();
+
+  const contactSchema = useMemo(() => createContactSchema(t), [t]);
+
+  const serviceOptions = useMemo(
+    () => [
+      { value: "trademark-registration", label: t("contact.services.trademark") },
+      { value: "patent-applications", label: t("contact.services.patent") },
+      { value: "ip-litigation", label: t("contact.services.litigation") },
+      { value: "ip-strategy-consulting", label: t("contact.services.strategy") },
+      { value: "licensing-transactions", label: t("contact.services.licensing") },
+      { value: "brand-protection", label: t("contact.services.brandProtection") },
+      { value: "other", label: t("contact.services.other") },
+    ],
+    [t]
+  );
+
+  const urgencyOptions = useMemo(
+    () => [
+      { value: "low", label: t("contact.urgency.low") },
+      { value: "medium", label: t("contact.urgency.medium") },
+      { value: "high", label: t("contact.urgency.high") },
+      { value: "urgent", label: t("contact.urgency.urgent") },
+    ],
+    [t]
+  );
+
+  const contactInformation = useMemo(
+    () => [
+      {
+        icon: MapPin,
+        title: t("contact.info.location"),
+        details: [
+          t("contact.info.address.line1"),
+          t("contact.info.address.line2"),
+          t("contact.info.address.line3"),
+        ],
+      },
+      {
+        icon: Phone,
+        title: t("contact.info.phoneWhatsapp"),
+        details: [
+          `${COMPANY_INFO.phone} ${t("contact.info.mainLabel")}`,
+          `${COMPANY_INFO.phone} ${t("contact.info.whatsappLabel")}`,
+        ],
+      },
+      {
+        icon: Mail,
+        title: t("contact.info.emailAddress"),
+        details: [COMPANY_INFO.email],
+      },
+      {
+        icon: Clock,
+        title: t("contact.info.businessHours"),
+        details: [
+          t("contact.info.hours.weekdays"),
+          t("contact.info.hours.weekend"),
+        ],
+      },
+    ],
+    [t]
+  );
 
   const {
     control,
@@ -161,16 +159,16 @@ const Contact = () => {
 
     if (response.success) {
       toast({
-        title: "Message sent",
-        description: response.message ?? "Our team will reach out within 24 hours.",
+        title: t('contact.toast.success.title'),
+        description: response.message ?? t('contact.toast.success.description'),
       });
       reset();
       return;
     }
 
     toast({
-      title: "Unable to send message",
-      description: response.message ?? "Please verify your details and try again.",
+      title: t('contact.toast.error.title'),
+      description: response.message ?? t('contact.toast.error.description'),
       variant: "destructive",
     });
   };
@@ -271,13 +269,13 @@ const Contact = () => {
             <div className="mb-8 text-center">
               <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1">
                 <Send className="h-3 w-3 text-primary" />
-                <span className="text-[10px] font-medium uppercase tracking-wider text-primary">Send a Message</span>
+                <span className="text-[10px] font-medium uppercase tracking-wider text-primary">{t('contact.form.badge')}</span>
               </div>
               <h2 className="mb-2 text-2xl font-bold text-navy-deep md:text-3xl">
-                Tell Us About Your IP Objectives
+                {t('contact.form.heading')}
               </h2>
               <p className="mx-auto max-w-2xl text-sm text-muted-foreground">
-                Share your requirements and we'll assemble the right team across prosecution, enforcement, and strategic advisory.
+                {t('contact.form.description')}
               </p>
             </div>
             <div className="grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
@@ -286,11 +284,14 @@ const Contact = () => {
                   <form className="space-y-3.5" onSubmit={handleSubmit(onSubmit)} noValidate>
                     <div className="grid gap-3.5 md:grid-cols-2">
                       <div className="space-y-1">
-                        <Label htmlFor="firstName" className="text-xs font-medium">First name *</Label>
-                        <Input 
-                          id="firstName" 
-                          placeholder="John" 
-                          {...register("firstName")} 
+                        <Label htmlFor="firstName" className="text-xs font-medium">
+                          {t('contact.form.firstName')} <span className="text-destructive" aria-hidden="true">*</span>
+                          <span className="sr-only">{` (${t('contact.form.required')})`}</span>
+                        </Label>
+                        <Input
+                          id="firstName"
+                          placeholder={t('contact.form.placeholders.firstName')}
+                          {...register("firstName")}
                           className="h-9"
                           aria-invalid={errors.firstName ? "true" : "false"}
                           aria-describedby={errors.firstName ? "firstName-error" : undefined}
@@ -302,11 +303,14 @@ const Contact = () => {
                         )}
                       </div>
                       <div className="space-y-1">
-                        <Label htmlFor="lastName" className="text-xs font-medium">Last name *</Label>
-                        <Input 
-                          id="lastName" 
-                          placeholder="Doe" 
-                          {...register("lastName")} 
+                        <Label htmlFor="lastName" className="text-xs font-medium">
+                          {t('contact.form.lastName')} <span className="text-destructive" aria-hidden="true">*</span>
+                          <span className="sr-only">{` (${t('contact.form.required')})`}</span>
+                        </Label>
+                        <Input
+                          id="lastName"
+                          placeholder={t('contact.form.placeholders.lastName')}
+                          {...register("lastName")}
                           className="h-9"
                           aria-invalid={errors.lastName ? "true" : "false"}
                           aria-describedby={errors.lastName ? "lastName-error" : undefined}
@@ -319,12 +323,15 @@ const Contact = () => {
                       </div>
                     </div>
                     <div className="space-y-1">
-                      <Label htmlFor="email" className="text-xs font-medium">Email address *</Label>
-                      <Input 
-                        id="email" 
-                        type="email" 
-                        placeholder="john.doe@example.com" 
-                        {...register("email")} 
+                      <Label htmlFor="email" className="text-xs font-medium">
+                        {t('contact.form.email')} <span className="text-destructive" aria-hidden="true">*</span>
+                        <span className="sr-only">{` (${t('contact.form.required')})`}</span>
+                      </Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder={t('contact.form.placeholders.email')}
+                        {...register("email")}
                         className="h-9"
                         aria-invalid={errors.email ? "true" : "false"}
                         aria-describedby={errors.email ? "email-error" : undefined}
@@ -337,28 +344,47 @@ const Contact = () => {
                     </div>
                     <div className="grid gap-3.5 md:grid-cols-2">
                       <div className="space-y-1">
-                        <Label htmlFor="phone" className="text-xs font-medium">Phone number</Label>
-                        <Input id="phone" type="tel" placeholder="+965 9009 5960" {...register("phone")} className="h-9" />
+                        <Label htmlFor="phone" className="text-xs font-medium">
+                          {t('contact.form.phone')} <span className="text-muted-foreground">({t('contact.form.optional')})</span>
+                        </Label>
+                        <Input
+                          id="phone"
+                          type="tel"
+                          placeholder={t('contact.form.placeholders.phone')}
+                          {...register("phone")}
+                          className="h-9"
+                        />
                       </div>
                       <div className="space-y-1">
-                        <Label htmlFor="company" className="text-xs font-medium">Company / Organisation</Label>
-                        <Input id="company" placeholder="Your company" {...register("company")} className="h-9" />
+                        <Label htmlFor="company" className="text-xs font-medium">
+                          {t('contact.form.company')} <span className="text-muted-foreground">({t('contact.form.optional')})</span>
+                        </Label>
+                        <Input
+                          id="company"
+                          placeholder={t('contact.form.placeholders.company')}
+                          {...register("company")}
+                          className="h-9"
+                        />
                       </div>
                     </div>
                     <div className="grid gap-3.5 md:grid-cols-2">
                       <div className="space-y-1">
-                        <Label htmlFor="service" className="text-xs font-medium">Service of interest</Label>
+                        <Label htmlFor="service" className="text-xs font-medium">
+                          {t('contact.form.service')} <span className="text-muted-foreground">({t('contact.form.optional')})</span>
+                        </Label>
                         <Controller
                           name="service"
                           control={control}
                           render={({ field }) => (
                             <Select onValueChange={field.onChange} value={field.value}>
                               <SelectTrigger className="h-9">
-                                <SelectValue placeholder="Select service" />
+                                <SelectValue placeholder={t('contact.form.selectService')} />
                               </SelectTrigger>
                               <SelectContent>
-                                {SERVICES.map((service) => (
-                                  <SelectItem key={service} value={service.toLowerCase().replace(/\s+/g, '-')}>{service}</SelectItem>
+                                {serviceOptions.map((service) => (
+                                  <SelectItem key={service.value} value={service.value}>
+                                    {service.label}
+                                  </SelectItem>
                                 ))}
                               </SelectContent>
                             </Select>
@@ -366,20 +392,23 @@ const Contact = () => {
                         />
                       </div>
                       <div className="space-y-1">
-                        <Label htmlFor="urgency" className="text-xs font-medium">Urgency level</Label>
+                        <Label htmlFor="urgency" className="text-xs font-medium">
+                          {t('contact.form.urgency')} <span className="text-muted-foreground">({t('contact.form.optional')})</span>
+                        </Label>
                         <Controller
                           name="urgency"
                           control={control}
                           render={({ field }) => (
                             <Select onValueChange={field.onChange} value={field.value}>
                               <SelectTrigger className="h-9">
-                                <SelectValue placeholder="Select urgency" />
+                                <SelectValue placeholder={t('contact.form.selectUrgency')} />
                               </SelectTrigger>
                               <SelectContent>
-                                <SelectItem value="low">Low – General inquiry</SelectItem>
-                                <SelectItem value="medium">Medium – Within a week</SelectItem>
-                                <SelectItem value="high">High – Within 2-3 days</SelectItem>
-                                <SelectItem value="urgent">Urgent – Same day</SelectItem>
+                                {urgencyOptions.map((option) => (
+                                  <SelectItem key={option.value} value={option.value}>
+                                    {option.label}
+                                  </SelectItem>
+                                ))}
                               </SelectContent>
                             </Select>
                           )}
@@ -387,12 +416,15 @@ const Contact = () => {
                       </div>
                     </div>
                     <div className="space-y-1">
-                      <Label htmlFor="message" className="text-xs font-medium">Message *</Label>
-                      <Textarea 
-                        id="message" 
-                        placeholder="Describe your IP requirements, timelines, or questions..." 
-                        rows={4} 
-                        {...register("message")} 
+                      <Label htmlFor="message" className="text-xs font-medium">
+                        {t('contact.form.message')} <span className="text-destructive" aria-hidden="true">*</span>
+                        <span className="sr-only">{` (${t('contact.form.required')})`}</span>
+                      </Label>
+                      <Textarea
+                        id="message"
+                        placeholder={t('contact.form.placeholders.message')}
+                        rows={4}
+                        {...register("message")}
                         className="resize-none"
                         aria-invalid={errors.message ? "true" : "false"}
                         aria-describedby={errors.message ? "message-error" : undefined}
@@ -405,16 +437,16 @@ const Contact = () => {
                     </div>
                     <Button type="submit" size="default" className="w-full h-9" disabled={contactMutation.isPending}>
                       <Send className="mr-2 h-3.5 w-3.5" />
-                      {contactMutation.isPending ? "Sending..." : "Send message"}
+                      {contactMutation.isPending ? t('contact.form.sending') : t('contact.form.send')}
                     </Button>
                     <p className="text-[10px] text-muted-foreground text-center leading-relaxed">
-                      By submitting, you agree to our privacy policy. All enquiries are handled securely and confidentially.
+                      {t('contact.form.privacyNotice')}
                     </p>
                   </form>
                 </CardContent>
               </Card>
               <div className="space-y-2.5">
-                {CONTACT_INFORMATION.map((info) => (
+                {contactInformation.map((info) => (
                   <Card key={info.title} className="border-gray-200">
                     <CardContent className="p-3.5">
                       <div className="flex items-start gap-2.5">
@@ -444,13 +476,13 @@ const Contact = () => {
             <div className="mx-auto max-w-2xl space-y-2.5 text-center mb-6">
               <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1">
                 <MapPin className="h-3 w-3 text-primary" />
-                <span className="text-[10px] font-medium uppercase tracking-wider text-primary">Visit Our Office</span>
+                <span className="text-[10px] font-medium uppercase tracking-wider text-primary">{t('contact.office.badge')}</span>
               </div>
               <h2 className="text-2xl font-bold text-navy-deep md:text-3xl">
-                Centrally Located in Kuwait City
+                {t('contact.office.title')}
               </h2>
               <p className="text-sm text-muted-foreground">
-                Our office serves clients across the GCC, MENA region, and international jurisdictions through our extensive partner network.
+                {t('contact.office.description')}
               </p>
             </div>
             <Card className="overflow-hidden border-gray-200 shadow-sm">
@@ -463,7 +495,7 @@ const Contact = () => {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Al Marsa IP Office Location"
+                  title={t('contact.office.mapTitle')}
                   className="grayscale hover:grayscale-0 transition-all duration-300"
                 />
               </CardContent>
@@ -478,21 +510,21 @@ const Contact = () => {
             <div className="space-y-3 mb-5">
               <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-3 py-1">
                 <div className="h-1 w-1 rounded-full bg-primary animate-pulse" />
-                <span className="text-[10px] font-medium uppercase tracking-wider text-white/70">Next Steps</span>
+                <span className="text-[10px] font-medium uppercase tracking-wider text-white/70">{t('contact.cta.badge')}</span>
               </div>
               <h2 className="hero-title text-white">
-                Partner with a team focused on safeguarding your IP
+                {t('contact.cta.title')}
               </h2>
               <p className="mx-auto max-w-xl text-sm text-white/70">
-                From first filings to cross-border enforcement, we structure programmes that align to your governance and growth ambitions.
+                {t('contact.cta.description')}
               </p>
             </div>
             <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center">
               <Button asChild size="default" className="bg-white text-navy-deep hover:bg-white/90 h-9">
-                <Link to="/services">Explore our services</Link>
+                <Link to="/services">{t('contact.cta.primary')}</Link>
               </Button>
               <Button asChild size="default" variant="outline" className="border-white/30 bg-white/10 text-white hover:bg-white/20 hover:border-white/50 h-9">
-                <Link to="/our-story">Learn about our approach</Link>
+                <Link to="/our-story">{t('contact.cta.secondary')}</Link>
               </Button>
             </div>
           </div>

@@ -270,20 +270,38 @@ export const translations = {
         }
       },
       form: {
+        badge: 'Send a Message',
+        heading: 'Tell Us About Your IP Objectives',
+        description: "Share your requirements and we'll assemble the right team across prosecution, enforcement, and strategic advisory.",
         firstName: 'First Name',
         lastName: 'Last Name',
         email: 'Email Address',
         phone: 'Phone Number',
-        company: 'Company',
-        service: 'Service Interested In',
-        urgency: 'Urgency',
+        company: 'Company / Organisation',
+        service: 'Service of interest',
+        urgency: 'Urgency level',
         message: 'Message',
-        send: 'Send Message',
+        send: 'Send message',
         sending: 'Sending...',
         selectService: 'Select a service',
         selectUrgency: 'Select urgency level',
         required: 'Required',
-        optional: 'Optional'
+        optional: 'Optional',
+        privacyNotice: 'By submitting, you agree to our privacy policy. All enquiries are handled securely and confidentially.',
+        placeholders: {
+          firstName: 'John',
+          lastName: 'Doe',
+          email: 'john.doe@example.com',
+          phone: '+965 9009 5960',
+          company: 'Your company',
+          message: 'Describe your IP requirements, timelines, or questions...'
+        },
+        errors: {
+          firstNameRequired: 'First name is required',
+          lastNameRequired: 'Last name is required',
+          emailInvalid: 'Please provide a valid email address',
+          messageMin: 'Please provide at least 10 characters'
+        }
       },
       services: {
         trademark: 'Trademark Registration',
@@ -295,15 +313,50 @@ export const translations = {
         other: 'Other'
       },
       urgency: {
-        routine: 'Routine Inquiry',
-        timeSensitive: 'Time-Sensitive',
-        urgent: 'Urgent'
+        low: 'Low – General inquiry',
+        medium: 'Medium – Within a week',
+        high: 'High – Within 2-3 days',
+        urgent: 'Urgent – Same day'
       },
       info: {
         location: 'Office location',
         phoneWhatsapp: 'Phone & WhatsApp',
         emailAddress: 'Email address',
-        businessHours: 'Business hours'
+        businessHours: 'Business hours',
+        mainLabel: '(Main)',
+        whatsappLabel: '(WhatsApp)',
+        address: {
+          line1: 'Al Sharqia Towers',
+          line2: 'Jaber Al Mubarak St Block 2, Bldg. No:29',
+          line3: 'Floor 3, Sharq, Kuwait'
+        },
+        hours: {
+          weekdays: 'Sunday - Thursday: 8:00 AM - 4:00 PM',
+          weekend: 'Friday: Closed'
+        }
+      },
+      office: {
+        badge: 'Visit Our Office',
+        title: 'Centrally Located in Kuwait City',
+        description: 'Our office serves clients across the GCC, MENA region, and international jurisdictions through our extensive partner network.',
+        mapTitle: 'Al Marsa IP Office Location'
+      },
+      cta: {
+        badge: 'Next Steps',
+        title: 'Partner with a team focused on safeguarding your IP',
+        description: 'From first filings to cross-border enforcement, we structure programmes that align to your governance and growth ambitions.',
+        primary: 'Explore our services',
+        secondary: 'Learn about our approach'
+      },
+      toast: {
+        success: {
+          title: 'Message sent',
+          description: 'Our team will reach out within 24 hours.'
+        },
+        error: {
+          title: 'Unable to send message',
+          description: 'Please verify your details and try again.'
+        }
       },
       success: 'Thank you! Your message has been sent successfully.',
       error: 'Failed to send message. Please try again.'
@@ -1391,12 +1444,15 @@ export const translations = {
         }
       },
       form: {
+        badge: 'أرسل رسالة',
+        heading: 'أخبرنا عن أهداف الملكية الفكرية الخاصة بك',
+        description: 'شارك متطلباتك وسنجمع الفريق المناسب عبر الملاحقة والتنفيذ والاستشارات الاستراتيجية.',
         firstName: 'الاسم الأول',
         lastName: 'اسم العائلة',
         email: 'عنوان البريد الإلكتروني',
         phone: 'رقم الهاتف',
-        company: 'الشركة',
-        service: 'الخدمة المهتم بها',
+        company: 'الشركة / الجهة',
+        service: 'الخدمة محل الاهتمام',
         urgency: 'مستوى الأهمية',
         message: 'الرسالة',
         send: 'إرسال الرسالة',
@@ -1404,7 +1460,22 @@ export const translations = {
         selectService: 'اختر خدمة',
         selectUrgency: 'اختر مستوى الأهمية',
         required: 'مطلوب',
-        optional: 'اختياري'
+        optional: 'اختياري',
+        privacyNotice: 'من خلال الإرسال، فإنك توافق على سياسة الخصوصية الخاصة بنا. تتم معالجة جميع الاستفسارات بأمان وسرية.',
+        placeholders: {
+          firstName: 'محمد',
+          lastName: 'العتيبي',
+          email: 'mohamed@example.com',
+          phone: '+965 9009 5960',
+          company: 'اسم الشركة',
+          message: 'صف متطلبات الملكية الفكرية والمواعيد الزمنية أو الاستفسارات...'
+        },
+        errors: {
+          firstNameRequired: 'الاسم الأول مطلوب',
+          lastNameRequired: 'اسم العائلة مطلوب',
+          emailInvalid: 'يرجى إدخال بريد إلكتروني صالح',
+          messageMin: 'يرجى إدخال ما لا يقل عن 10 أحرف'
+        }
       },
       services: {
         trademark: 'تسجيل العلامات التجارية',
@@ -1416,15 +1487,50 @@ export const translations = {
         other: 'أخرى'
       },
       urgency: {
-        routine: 'استفسار روتيني',
-        timeSensitive: 'حساس للوقت',
-        urgent: 'عاجل'
+        low: 'منخفض – استفسار عام',
+        medium: 'متوسط – خلال أسبوع',
+        high: 'مرتفع – خلال 2-3 أيام',
+        urgent: 'عاجل – في نفس اليوم'
       },
       info: {
         location: 'موقع المكتب',
         phoneWhatsapp: 'الهاتف وواتساب',
         emailAddress: 'عنوان البريد الإلكتروني',
-        businessHours: 'ساعات العمل'
+        businessHours: 'ساعات العمل',
+        mainLabel: '(الرئيسي)',
+        whatsappLabel: '(واتساب)',
+        address: {
+          line1: 'أبراج الشرقية',
+          line2: 'شارع جابر المبارك، قطعة 2، مبنى رقم 29',
+          line3: 'الطابق الثالث، شرق، الكويت'
+        },
+        hours: {
+          weekdays: 'الأحد - الخميس: 8:00 ص - 4:00 م',
+          weekend: 'الجمعة: مغلق'
+        }
+      },
+      office: {
+        badge: 'قم بزيارة مكتبنا',
+        title: 'موقع مركزي في مدينة الكويت',
+        description: 'يخدم مكتبنا العملاء في دول مجلس التعاون الخليجي ومنطقة الشرق الأوسط وشمال أفريقيا والولايات القضائية الدولية من خلال شبكة شركائنا الواسعة.',
+        mapTitle: 'موقع مكتب المرسى للملكية الفكرية'
+      },
+      cta: {
+        badge: 'الخطوات التالية',
+        title: 'تعاون مع فريق يركز على حماية ملكيتك الفكرية',
+        description: 'من أولى الطلبات إلى الإنفاذ عبر الحدود، نبني برامج تتماشى مع حوكمة مؤسستك وطموحات النمو لديك.',
+        primary: 'استكشف خدماتنا',
+        secondary: 'تعرّف على منهجنا'
+      },
+      toast: {
+        success: {
+          title: 'تم إرسال الرسالة',
+          description: 'سيتواصل فريقنا خلال 24 ساعة.'
+        },
+        error: {
+          title: 'تعذر إرسال الرسالة',
+          description: 'يرجى التحقق من بياناتك والمحاولة مرة أخرى.'
+        }
       },
       success: 'شكراً لك! تم إرسال رسالتك بنجاح.',
       error: 'فشل إرسال الرسالة. يرجى المحاولة مرة أخرى.'
