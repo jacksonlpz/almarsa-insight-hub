@@ -375,3 +375,18 @@
   margin-right: 1rem;
   margin-left: 0;
 }
+
+/* ===================================================================
+   Timeline Component RTL Support
+   =================================================================== */
+[dir="rtl"] .timeline::before {
+  left: auto;
+  right: 42px;
+}
+
+@media (max-width: 768px) {
+  [dir="rtl"] .timeline::before {
+    left: auto;
+    right: 1.75rem;
+  }
+}
