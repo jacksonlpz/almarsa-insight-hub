@@ -305,6 +305,38 @@ export const translations = {
         emailAddress: 'Email address',
         businessHours: 'Business hours'
       },
+      sections: {
+        sendMessage: {
+          eyebrow: 'Send a Message',
+          title: 'Tell Us About Your IP Objectives',
+          subtitle: 'Share your requirements and we'll assemble the right team across prosecution, enforcement, and strategic advisory.'
+        },
+        visitOffice: {
+          eyebrow: 'Visit Our Office',
+          title: 'Centrally Located in Kuwait City',
+          subtitle: 'Our office serves clients across the GCC, MENA region, and international jurisdictions through our extensive partner network.'
+        },
+        nextSteps: {
+          eyebrow: 'Next Steps',
+          title: 'Partner with a team focused on safeguarding your IP',
+          subtitle: 'From first filings to cross-border enforcement, we structure programmes that align to your governance and growth ambitions.',
+          buttons: {
+            primary: 'Explore our services',
+            secondary: 'Learn about our approach'
+          }
+        }
+      },
+      formLabels: {
+        firstNamePlaceholder: 'John',
+        lastNamePlaceholder: 'Doe',
+        emailPlaceholder: 'john.doe@example.com',
+        phonePlaceholder: '+965 9009 5960',
+        companyPlaceholder: 'Your company',
+        messagePlaceholder: 'Describe your IP requirements, timelines, or questions...',
+        submitButton: 'Send message',
+        submitting: 'Sending...',
+        privacyNotice: 'By submitting, you agree to our privacy policy. All enquiries are handled securely and confidentially.'
+      },
       success: 'Thank you! Your message has been sent successfully.',
       error: 'Failed to send message. Please try again.'
     },
@@ -727,6 +759,14 @@ export const translations = {
             label: 'Sources'
           }
         }
+      },
+      sections: {
+        officialSources: {
+          eyebrow: 'Official sources',
+          title: 'GCC Intellectual Property Updates',
+          subtitle: 'Curated updates from official government ministries and IP offices across all six GCC member states.'
+        },
+        latestUpdates: 'Latest Updates'
       }
     },
     insights: {
@@ -760,6 +800,41 @@ export const translations = {
             routing: 'Specialist routing'
           }
         }
+      },
+      sections: {
+        countryIntelligence: {
+          eyebrow: 'Country intelligence',
+          title: 'Country Guides',
+          subtitle: 'Practical overviews of filing procedures, timelines, and requirements by country.'
+        },
+        legalFramework: {
+          eyebrow: 'Legal Framework Repository',
+          title: 'GCC IP Legislation & Regulatory Documents',
+          subtitle: 'Access comprehensive trademark, patent, and industrial design legislation across Kuwait, Bahrain, Qatar, Saudi Arabia, and the UAE.'
+        },
+        onDemandLearning: {
+          eyebrow: 'On-demand learning',
+          title: 'IP Knowledge Center: learn, apply, protect',
+          subtitle: 'Short explainer modules with actionable guidance to help you understand intellectual property, trademarks, patents, and design rights.'
+        },
+        nextSteps: {
+          eyebrow: 'Next steps',
+          title: 'Coordinate your next IP intelligence briefing',
+          subtitle: 'Partner with our analysts to review upcoming filings, regional enforcement activity, or governance updates tailored to your organisation.',
+          buttons: {
+            primary: 'Subscribe for intelligence updates',
+            secondary: 'View our services'
+          }
+        }
+      },
+      labels: {
+        countryGuide: 'Country guide',
+        trademarkGuide: 'Trademark guide',
+        patentGuide: 'Patent guide',
+        designGuide: 'Design guide',
+        downloadFullGuide: 'Download full guide & checklist',
+        howToPractice: 'How to put this into practice',
+        didYouKnow: 'Did you know?'
       },
       categories: {
         guides: 'Guides & Whitepapers',
@@ -1116,6 +1191,38 @@ export const translations = {
         phoneWhatsapp: 'الهاتف وواتساب',
         emailAddress: 'عنوان البريد الإلكتروني',
         businessHours: 'ساعات العمل'
+      },
+      sections: {
+        sendMessage: {
+          eyebrow: 'إرسال رسالة',
+          title: 'أخبرنا عن أهداف الملكية الفكرية الخاصة بك',
+          subtitle: 'شارك متطلباتك وسنقوم بتجميع الفريق المناسب عبر الملاحقة والإنفاذ والاستشارات الاستراتيجية.'
+        },
+        visitOffice: {
+          eyebrow: 'زيارة مكتبنا',
+          title: 'موقع مركزي في مدينة الكويت',
+          subtitle: 'يخدم مكتبنا العملاء عبر دول مجلس التعاون الخليجي ومنطقة الشرق الأوسط وشمال أفريقيا والولايات القضائية الدولية من خلال شبكة شركائنا الواسعة.'
+        },
+        nextSteps: {
+          eyebrow: 'الخطوات التالية',
+          title: 'شارك مع فريق يركز على حماية ملكيتك الفكرية',
+          subtitle: 'من التسجيلات الأولى إلى الإنفاذ عبر الحدود، نبني برامج تتماشى مع حوكمتك وطموحات نموك.',
+          buttons: {
+            primary: 'استكشف خدماتنا',
+            secondary: 'تعرف على نهجنا'
+          }
+        }
+      },
+      formLabels: {
+        firstNamePlaceholder: 'محمد',
+        lastNamePlaceholder: 'أحمد',
+        emailPlaceholder: 'mohammad.ahmad@example.com',
+        phonePlaceholder: '+965 9009 5960',
+        companyPlaceholder: 'شركتك',
+        messagePlaceholder: 'وصف متطلبات الملكية الفكرية والجداول الزمنية أو الأسئلة الخاصة بك...',
+        submitButton: 'إرسال الرسالة',
+        submitting: 'جارٍ الإرسال...',
+        privacyNotice: 'بالإرسال، فإنك توافق على سياسة الخصوصية الخاصة بنا. يتم التعامل مع جميع الاستفسارات بشكل آمن وسري.'
       },
       success: 'شكراً لك! تم إرسال رسالتك بنجاح.',
       error: 'فشل إرسال الرسالة. يرجى المحاولة مرة أخرى.'
@@ -1539,6 +1646,14 @@ export const translations = {
             label: 'مصادر'
           }
         }
+      },
+      sections: {
+        officialSources: {
+          eyebrow: 'مصادر رسمية',
+          title: 'تحديثات الملكية الفكرية في دول مجلس التعاون الخليجي',
+          subtitle: 'تحديثات منسقة من الوزارات الحكومية الرسمية ومكاتب الملكية الفكرية عبر جميع الدول الأعضاء الست في مجلس التعاون الخليجي.'
+        },
+        latestUpdates: 'آخر التحديثات'
       }
     },
     insights: {
@@ -1572,6 +1687,41 @@ export const translations = {
             routing: 'توجيه متخصص'
           }
         }
+      },
+      sections: {
+        countryIntelligence: {
+          eyebrow: 'معلومات قطرية',
+          title: 'أدلة الدول',
+          subtitle: 'نظرة عامة عملية على إجراءات التسجيل والجداول الزمنية والمتطلبات حسب الدولة.'
+        },
+        legalFramework: {
+          eyebrow: 'مستودع الإطار القانوني',
+          title: 'تشريعات ووثائق تنظيمية للملكية الفكرية في دول مجلس التعاون الخليجي',
+          subtitle: 'الوصول إلى تشريعات شاملة للعلامات التجارية وبراءات الاختراع والتصاميم الصناعية عبر الكويت والبحرين وقطر والسعودية والإمارات.'
+        },
+        onDemandLearning: {
+          eyebrow: 'تعلم حسب الطلب',
+          title: 'مركز معرفة الملكية الفكرية: تعلم، طبق، احم',
+          subtitle: 'وحدات شرح قصيرة مع إرشادات قابلة للتنفيذ لمساعدتك على فهم الملكية الفكرية والعلامات التجارية وبراءات الاختراع وحقوق التصميم.'
+        },
+        nextSteps: {
+          eyebrow: 'الخطوات التالية',
+          title: 'نسق إحاطتك القادمة في مجال معلومات الملكية الفكرية',
+          subtitle: 'شارك مع محللينا لمراجعة التسجيلات القادمة أو نشاط الإنفاذ الإقليمي أو تحديثات الحوكمة المصممة خصيصًا لمؤسستك.',
+          buttons: {
+            primary: 'اشترك للحصول على تحديثات المعلومات',
+            secondary: 'عرض خدماتنا'
+          }
+        }
+      },
+      labels: {
+        countryGuide: 'دليل الدولة',
+        trademarkGuide: 'دليل العلامات التجارية',
+        patentGuide: 'دليل براءات الاختراع',
+        designGuide: 'دليل التصاميم',
+        downloadFullGuide: 'تنزيل الدليل الكامل وقائمة التحقق',
+        howToPractice: 'كيفية تطبيق هذا عمليًا',
+        didYouKnow: 'هل تعلم؟'
       },
       categories: {
         guides: 'الأدلة والمستندات البيضاء',
