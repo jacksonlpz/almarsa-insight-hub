@@ -637,7 +637,307 @@ export const translations = {
             metric: '2000+',
             label: 'Cross-border mandates delivered'
           }
+        },
+        buttons: {
+          getInTouch: 'Get In Touch',
+          ourServices: 'Our Services'
         }
+      },
+      strategicRegions: {
+        eyebrow: 'Strategic regions',
+        title: 'GCC Intellectual Property Landscape',
+        subtitle: 'Comprehensive IP protection across all six Gulf Cooperation Council member states with specialized knowledge of local regulations, treaties, and enforcement mechanisms.'
+      },
+      countries: {
+        qatar: {
+          name: 'Qatar',
+          capital: 'Doha',
+          ministry: 'Ministry of Commerce and Industry (MOCI)',
+          website: 'https://www.moci.gov.qa/en/',
+          description: 'Qatar offers a robust IP framework with recent accession to the Madrid Protocol, enabling streamlined international trademark protection.',
+          flagTitle: 'Qatar flag',
+          treaties: {
+            madrid: 'Yes (Joined May 3, 2024)',
+            pct: 'Yes',
+            paris: 'Yes',
+            trips: 'Yes (WTO Member)',
+            gcc: 'Yes'
+          },
+          trademarks: {
+            duration: '10 years',
+            renewable: 'Yes (10-year periods)',
+            oppositionPeriod: '60 days from publication',
+            classes: 'Nice Classification'
+          },
+          patents: {
+            duration: '20 years from filing',
+            examination: 'Substantive examination',
+            pct: 'Available',
+            types: 'Invention patents'
+          }
+        },
+        bahrain: {
+          name: 'Bahrain',
+          capital: 'Manama',
+          ministry: 'Ministry of Industry and Commerce (MOIC)',
+          website: 'https://www.moic.gov.bh/en',
+          description: 'Bahrain maintains a progressive IP regime with regular gazette publications and efficient trademark registration processes.',
+          flagTitle: 'Bahrain flag',
+          treaties: {
+            madrid: 'No',
+            pct: 'Yes',
+            paris: 'Yes',
+            trips: 'Yes (WTO Member)',
+            gcc: 'Yes'
+          },
+          trademarks: {
+            duration: '10 years',
+            renewable: 'Yes (10-year periods)',
+            oppositionPeriod: '60 days from publication',
+            classes: 'Nice Classification'
+          },
+          patents: {
+            duration: '20 years from filing',
+            examination: 'Substantive examination',
+            pct: 'Available',
+            types: 'Invention patents'
+          }
+        },
+        saudiArabia: {
+          name: 'Saudi Arabia',
+          capital: 'Riyadh',
+          ministry: 'Saudi Authority for Intellectual Property (SAIP)',
+          website: 'https://www.saip.gov.sa/en/',
+          description: 'As part of Vision 2030, Saudi Arabia has significantly modernized its IP framework with comprehensive protection mechanisms.',
+          flagTitle: 'Saudi Arabia flag',
+          treaties: {
+            madrid: 'Yes',
+            pct: 'Yes',
+            paris: 'Yes',
+            trips: 'Yes (WTO Member)',
+            gcc: 'Yes'
+          },
+          trademarks: {
+            duration: '10 years',
+            renewable: 'Yes (10-year periods)',
+            oppositionPeriod: '90 days from publication',
+            classes: 'Nice Classification'
+          },
+          patents: {
+            duration: '20 years from filing',
+            examination: 'Substantive examination',
+            pct: 'Available',
+            types: 'Invention patents, Utility models'
+          }
+        },
+        kuwait: {
+          name: 'Kuwait',
+          capital: 'Kuwait City',
+          ministry: 'Ministry of Commerce and Industry (MOCI)',
+          website: 'https://www.moci.gov.kw/en/',
+          description: 'Kuwait provides comprehensive IP protection with strong enforcement mechanisms and recent modernization of IP regulations.',
+          flagTitle: 'Kuwait flag',
+          treaties: {
+            madrid: 'No',
+            pct: 'Yes (Joined 2016)',
+            paris: 'Yes',
+            trips: 'Yes (WTO Member)',
+            gcc: 'Yes (Adopted 2015)'
+          },
+          trademarks: {
+            duration: '10 years',
+            renewable: 'Yes (10-year periods)',
+            oppositionPeriod: '60 days from publication',
+            classes: 'Nice Classification'
+          },
+          patents: {
+            duration: '20 years from filing',
+            examination: 'Substantive examination',
+            pct: 'Available',
+            types: 'Invention patents'
+          }
+        },
+        uae: {
+          name: 'UAE',
+          capital: 'Abu Dhabi',
+          ministry: 'Ministry of Economy and Tourism',
+          website: 'https://www.moet.gov.ae/en/home',
+          description: 'The UAE leads the region in IP innovation with accelerated patent programs, digital services, and strategic international partnerships.',
+          flagTitle: 'UAE flag',
+          treaties: {
+            madrid: 'Yes',
+            pct: 'Yes',
+            paris: 'Yes',
+            trips: 'Yes (WTO Member)',
+            gcc: 'Yes'
+          },
+          trademarks: {
+            duration: '10 years',
+            renewable: 'Yes (10-year periods)',
+            oppositionPeriod: '30 days from publication',
+            classes: 'Nice Classification'
+          },
+          patents: {
+            duration: '20 years from filing',
+            examination: 'Substantive examination',
+            pct: 'Available',
+            types: 'Invention patents, Utility models'
+          }
+        },
+        oman: {
+          name: 'Oman',
+          capital: 'Muscat',
+          ministry: 'Ministry of Commerce, Industry & Investment Promotion (MOCIIP)',
+          website: 'https://tejarah.gov.om/en',
+          description: 'Oman has digitized its IP services platform with significant investment in modernizing trademark and patent registration processes.',
+          flagTitle: 'Oman flag',
+          treaties: {
+            madrid: 'No',
+            pct: 'Yes',
+            paris: 'Yes',
+            trips: 'Yes (WTO Member)',
+            gcc: 'Yes'
+          },
+          trademarks: {
+            duration: '10 years',
+            renewable: 'Yes (10-year periods)',
+            oppositionPeriod: '60 days from publication',
+            classes: 'Nice Classification'
+          },
+          patents: {
+            duration: '20 years from filing',
+            examination: 'Substantive examination',
+            pct: 'Available',
+            types: 'Invention patents'
+          }
+        }
+      },
+      cardLabels: {
+        ministry: 'Ministry',
+        officialWebsite: 'Official website',
+        capitalPrefix: 'Capital •'
+      },
+      tabs: {
+        overview: 'Overview',
+        treaties: 'Treaties',
+        trademarks: 'Trademarks',
+        patents: 'Patents'
+      },
+      treatyLabels: {
+        madrid: 'Madrid Protocol',
+        pct: 'PCT',
+        paris: 'Paris Convention',
+        trips: 'TRIPS',
+        gcc: 'GCC Trademark Law'
+      },
+      trademarkLabels: {
+        duration: 'Protection Duration',
+        renewable: 'Renewable',
+        oppositionPeriod: 'Opposition Period',
+        classes: 'Classification'
+      },
+      patentLabels: {
+        duration: 'Protection Duration',
+        examination: 'Examination Type',
+        pct: 'PCT Route',
+        types: 'Patent Types'
+      },
+      globalFrameworks: {
+        eyebrow: 'Global frameworks',
+        title: 'Confidence across international systems',
+        subtitle: 'We integrate directly with world bodies and regional offices, ensuring your IP assets remain compliant, enforceable, and optimised for expansion.',
+        items: {
+          wipoSystems: {
+            title: 'WIPO systems',
+            description: 'Central management of Madrid and PCT portfolios with proactive renewal and opposition oversight.',
+            highlights: [
+              'Madrid System filings and designations',
+              'PCT national phase coordination',
+              'TRIPS-aligned advisory',
+              'Global watch and enforcement'
+            ]
+          },
+          regionalOffices: {
+            title: 'Regional offices',
+            description: 'Direct representation at GCC Patent Office, ARIPO, and OAPI with harmonised evidence preparation.',
+            highlights: [
+              'Unified document legalisation',
+              'Customs recordals',
+              'Renewal harmonisation',
+              'Intermediary payment management'
+            ]
+          },
+          localIntelligence: {
+            title: 'Local intelligence',
+            description: 'On-the-ground partners deliver language-specific advice and real-time updates on regulatory shifts.',
+            highlights: [
+              'Bespoke translation services',
+              'Market surveillance',
+              'Evidence gathering',
+              'Regulatory monitoring'
+            ]
+          }
+        }
+      },
+      deliveryRhythm: {
+        eyebrow: 'Delivery rhythm',
+        title: 'A disciplined sequence for international execution',
+        subtitle: 'Transparent governance and dependable timelines keep stakeholders aligned from initial assessment through enforcement.',
+        steps: {
+          jurisdictionMapping: {
+            title: 'Jurisdiction mapping',
+            description: 'Identify filing pathways, evidentiary requirements, and budget envelopes for each target market.'
+          },
+          localCounsel: {
+            title: 'Local counsel orchestration',
+            description: 'Mobilise vetted partners, align documentation, and manage legalisation and translation workflows.'
+          },
+          portfolioGovernance: {
+            title: 'Portfolio governance',
+            description: 'Centralised tracking covering renewals, oppositions, and prosecution milestones with executive reporting.'
+          },
+          enforcementReadiness: {
+            title: 'Enforcement readiness',
+            description: 'Deploy customs recordals, watch notices, and dispute response playbooks to protect market position.'
+          }
+        }
+      },
+      programmeGovernance: {
+        eyebrow: 'Programme governance',
+        title: 'Partnerships designed for scale',
+        subtitle: 'Stay audit-ready with programme management that delivers clarity on spend, timelines, and risk posture.',
+        pillars: {
+          coordinationHub: {
+            title: 'Single coordination hub',
+            description: 'A dedicated programme director orchestrates every jurisdiction and escalation.'
+          },
+          reporting: {
+            title: 'Reporting built for boards',
+            description: 'Custom dashboards and quarterly reviews aligned to governance requirements.'
+          },
+          financialClarity: {
+            title: 'Financial clarity',
+            description: 'Pre-approved fee schedules and transparent spend tracking across counsel and filings.'
+          }
+        }
+      },
+      ctaBand: {
+        eyebrow: 'Global reach',
+        title: 'Extend your IP protection with a single, accountable partner',
+        subtitle: 'Engage our cross-border desk to coordinate filings, renewals, enforcement, and commercialisation strategies across every jurisdiction critical to your growth.',
+        buttons: {
+          startMandate: 'Start an international mandate',
+          seeHowWeOperate: 'See how we operate'
+        }
+      },
+      seo: {
+        title: 'Global IP Jurisdictions Coverage',
+        description: 'Review Al Marsa IP\'s 150+ jurisdiction network enabling coordinated filings, renewals, and enforcement programmes worldwide.',
+        keywords: [
+          'international IP network',
+          'GCC trademark filings',
+          'global intellectual property coverage'
+        ]
       },
       details: {
         capital: 'Capital',
@@ -1440,7 +1740,307 @@ export const translations = {
             metric: '+2000',
             label: 'تكليفات عابرة للحدود منفذة'
           }
+        },
+        buttons: {
+          getInTouch: 'تواصل معنا',
+          ourServices: 'خدماتنا'
         }
+      },
+      strategicRegions: {
+        eyebrow: 'المناطق الاستراتيجية',
+        title: 'مشهد الملكية الفكرية لدول مجلس التعاون الخليجي',
+        subtitle: 'حماية شاملة للملكية الفكرية عبر جميع الدول الست الأعضاء في مجلس التعاون الخليجي مع معرفة متخصصة باللوائح المحلية والمعاهدات وآليات الإنفاذ.'
+      },
+      countries: {
+        qatar: {
+          name: 'قطر',
+          capital: 'الدوحة',
+          ministry: 'وزارة التجارة والصناعة',
+          website: 'https://www.moci.gov.qa/ar/',
+          description: 'تقدم قطر إطارًا قويًا للملكية الفكرية مع انضمامها الأخير إلى بروتوكول مدريد، مما يتيح حماية دولية مبسطة للعلامات التجارية.',
+          flagTitle: 'علم قطر',
+          treaties: {
+            madrid: 'نعم (انضمت في 3 مايو 2024)',
+            pct: 'نعم',
+            paris: 'نعم',
+            trips: 'نعم (عضو في منظمة التجارة العالمية)',
+            gcc: 'نعم'
+          },
+          trademarks: {
+            duration: '10 سنوات',
+            renewable: 'نعم (فترات 10 سنوات)',
+            oppositionPeriod: '60 يومًا من النشر',
+            classes: 'تصنيف نيس'
+          },
+          patents: {
+            duration: '20 سنة من تاريخ التقديم',
+            examination: 'فحص موضوعي',
+            pct: 'متاح',
+            types: 'براءات الاختراع'
+          }
+        },
+        bahrain: {
+          name: 'البحرين',
+          capital: 'المنامة',
+          ministry: 'وزارة الصناعة والتجارة',
+          website: 'https://www.moic.gov.bh/ar',
+          description: 'تحافظ البحرين على نظام تقدمي للملكية الفكرية مع منشورات منتظمة للجريدة الرسمية وعمليات فعالة لتسجيل العلامات التجارية.',
+          flagTitle: 'علم البحرين',
+          treaties: {
+            madrid: 'لا',
+            pct: 'نعم',
+            paris: 'نعم',
+            trips: 'نعم (عضو في منظمة التجارة العالمية)',
+            gcc: 'نعم'
+          },
+          trademarks: {
+            duration: '10 سنوات',
+            renewable: 'نعم (فترات 10 سنوات)',
+            oppositionPeriod: '60 يومًا من النشر',
+            classes: 'تصنيف نيس'
+          },
+          patents: {
+            duration: '20 سنة من تاريخ التقديم',
+            examination: 'فحص موضوعي',
+            pct: 'متاح',
+            types: 'براءات الاختراع'
+          }
+        },
+        saudiArabia: {
+          name: 'المملكة العربية السعودية',
+          capital: 'الرياض',
+          ministry: 'الهيئة السعودية للملكية الفكرية',
+          website: 'https://www.saip.gov.sa/ar/',
+          description: 'كجزء من رؤية 2030، قامت المملكة العربية السعودية بتحديث إطارها للملكية الفكرية بشكل كبير مع آليات حماية شاملة.',
+          flagTitle: 'علم المملكة العربية السعودية',
+          treaties: {
+            madrid: 'نعم',
+            pct: 'نعم',
+            paris: 'نعم',
+            trips: 'نعم (عضو في منظمة التجارة العالمية)',
+            gcc: 'نعم'
+          },
+          trademarks: {
+            duration: '10 سنوات',
+            renewable: 'نعم (فترات 10 سنوات)',
+            oppositionPeriod: '90 يومًا من النشر',
+            classes: 'تصنيف نيس'
+          },
+          patents: {
+            duration: '20 سنة من تاريخ التقديم',
+            examination: 'فحص موضوعي',
+            pct: 'متاح',
+            types: 'براءات الاختراع، النماذج النفعية'
+          }
+        },
+        kuwait: {
+          name: 'الكويت',
+          capital: 'مدينة الكويت',
+          ministry: 'وزارة التجارة والصناعة',
+          website: 'https://www.moci.gov.kw/ar/',
+          description: 'توفر الكويت حماية شاملة للملكية الفكرية مع آليات إنفاذ قوية وتحديث حديث للأنظمة المتعلقة بالملكية الفكرية.',
+          flagTitle: 'علم الكويت',
+          treaties: {
+            madrid: 'لا',
+            pct: 'نعم (انضمت في 2016)',
+            paris: 'نعم',
+            trips: 'نعم (عضو في منظمة التجارة العالمية)',
+            gcc: 'نعم (اعتمدت في 2015)'
+          },
+          trademarks: {
+            duration: '10 سنوات',
+            renewable: 'نعم (فترات 10 سنوات)',
+            oppositionPeriod: '60 يومًا من النشر',
+            classes: 'تصنيف نيس'
+          },
+          patents: {
+            duration: '20 سنة من تاريخ التقديم',
+            examination: 'فحص موضوعي',
+            pct: 'متاح',
+            types: 'براءات الاختراع'
+          }
+        },
+        uae: {
+          name: 'الإمارات العربية المتحدة',
+          capital: 'أبو ظبي',
+          ministry: 'وزارة الاقتصاد والسياحة',
+          website: 'https://www.moet.gov.ae/ar/home',
+          description: 'تقود الإمارات العربية المتحدة المنطقة في ابتكار الملكية الفكرية مع برامج براءات اختراع متسارعة وخدمات رقمية وشراكات دولية استراتيجية.',
+          flagTitle: 'علم الإمارات العربية المتحدة',
+          treaties: {
+            madrid: 'نعم',
+            pct: 'نعم',
+            paris: 'نعم',
+            trips: 'نعم (عضو في منظمة التجارة العالمية)',
+            gcc: 'نعم'
+          },
+          trademarks: {
+            duration: '10 سنوات',
+            renewable: 'نعم (فترات 10 سنوات)',
+            oppositionPeriod: '30 يومًا من النشر',
+            classes: 'تصنيف نيس'
+          },
+          patents: {
+            duration: '20 سنة من تاريخ التقديم',
+            examination: 'فحص موضوعي',
+            pct: 'متاح',
+            types: 'براءات الاختراع، النماذج النفعية'
+          }
+        },
+        oman: {
+          name: 'عمان',
+          capital: 'مسقط',
+          ministry: 'وزارة التجارة والصناعة وترويج الاستثمار',
+          website: 'https://tejarah.gov.om/ar',
+          description: 'قامت عمان برقمنة منصة خدمات الملكية الفكرية الخاصة بها مع استثمار كبير في تحديث عمليات تسجيل العلامات التجارية وبراءات الاختراع.',
+          flagTitle: 'علم عمان',
+          treaties: {
+            madrid: 'لا',
+            pct: 'نعم',
+            paris: 'نعم',
+            trips: 'نعم (عضو في منظمة التجارة العالمية)',
+            gcc: 'نعم'
+          },
+          trademarks: {
+            duration: '10 سنوات',
+            renewable: 'نعم (فترات 10 سنوات)',
+            oppositionPeriod: '60 يومًا من النشر',
+            classes: 'تصنيف نيس'
+          },
+          patents: {
+            duration: '20 سنة من تاريخ التقديم',
+            examination: 'فحص موضوعي',
+            pct: 'متاح',
+            types: 'براءات الاختراع'
+          }
+        }
+      },
+      cardLabels: {
+        ministry: 'الوزارة',
+        officialWebsite: 'الموقع الرسمي',
+        capitalPrefix: 'العاصمة •'
+      },
+      tabs: {
+        overview: 'نظرة عامة',
+        treaties: 'المعاهدات',
+        trademarks: 'العلامات التجارية',
+        patents: 'براءات الاختراع'
+      },
+      treatyLabels: {
+        madrid: 'بروتوكول مدريد',
+        pct: 'معاهدة التعاون بشأن البراءات',
+        paris: 'اتفاقية باريس',
+        trips: 'اتفاقية تريبس',
+        gcc: 'قانون العلامات التجارية لدول مجلس التعاون الخليجي'
+      },
+      trademarkLabels: {
+        duration: 'مدة الحماية',
+        renewable: 'قابل للتجديد',
+        oppositionPeriod: 'فترة المعارضة',
+        classes: 'التصنيف'
+      },
+      patentLabels: {
+        duration: 'مدة الحماية',
+        examination: 'نوع الفحص',
+        pct: 'مسار معاهدة التعاون بشأن البراءات',
+        types: 'أنواع البراءات'
+      },
+      globalFrameworks: {
+        eyebrow: 'الأطر العالمية',
+        title: 'ثقة عبر الأنظمة الدولية',
+        subtitle: 'نتكامل مباشرة مع الهيئات العالمية والمكاتب الإقليمية، مما يضمن بقاء أصول الملكية الفكرية الخاصة بك متوافقة وقابلة للإنفاذ ومحسّنة للتوسع.',
+        items: {
+          wipoSystems: {
+            title: 'أنظمة المنظمة العالمية للملكية الفكرية',
+            description: 'إدارة مركزية لمحافظ مدريد ومعاهدة التعاون بشأن البراءات مع إشراف استباقي على التجديد والمعارضة.',
+            highlights: [
+              'تقديم وتعيينات نظام مدريد',
+              'تنسيق المرحلة الوطنية لمعاهدة التعاون بشأن البراءات',
+              'استشارات متوافقة مع اتفاقية تريبس',
+              'المراقبة والإنفاذ العالمي'
+            ]
+          },
+          regionalOffices: {
+            title: 'المكاتب الإقليمية',
+            description: 'تمثيل مباشر في مكتب براءات الاختراع لمجلس التعاون الخليجي وأريبو وأوابي مع إعداد أدلة منسقة.',
+            highlights: [
+              'توثيق موحد للمستندات',
+              'تسجيلات الجمارك',
+              'مواءمة التجديدات',
+              'إدارة المدفوعات الوسيطة'
+            ]
+          },
+          localIntelligence: {
+            title: 'الذكاء المحلي',
+            description: 'يقدم الشركاء على الأرض مشورة خاصة باللغة وتحديثات فورية حول التحولات التنظيمية.',
+            highlights: [
+              'خدمات ترجمة مخصصة',
+              'مراقبة السوق',
+              'جمع الأدلة',
+              'الرصد التنظيمي'
+            ]
+          }
+        }
+      },
+      deliveryRhythm: {
+        eyebrow: 'إيقاع التسليم',
+        title: 'تسلسل منضبط للتنفيذ الدولي',
+        subtitle: 'تحافظ الحوكمة الشفافة والجداول الزمنية الموثوقة على مواءمة أصحاب المصلحة من التقييم الأولي حتى الإنفاذ.',
+        steps: {
+          jurisdictionMapping: {
+            title: 'رسم خريطة الولايات القضائية',
+            description: 'تحديد مسارات التقديم ومتطلبات الأدلة وميزانيات كل سوق مستهدف.'
+          },
+          localCounsel: {
+            title: 'تنسيق المستشار المحلي',
+            description: 'تعبئة الشركاء المعتمدين ومواءمة الوثائق وإدارة سير عمل التوثيق والترجمة.'
+          },
+          portfolioGovernance: {
+            title: 'حوكمة المحفظة',
+            description: 'تتبع مركزي يغطي التجديدات والمعارضات ومعالم الملاحقة مع تقارير تنفيذية.'
+          },
+          enforcementReadiness: {
+            title: 'الجاهزية للإنفاذ',
+            description: 'نشر تسجيلات الجمارك وإشعارات المراقبة وكتيبات الاستجابة للنزاعات لحماية موقف السوق.'
+          }
+        }
+      },
+      programmeGovernance: {
+        eyebrow: 'حوكمة البرنامج',
+        title: 'شراكات مصممة للنطاق',
+        subtitle: 'ابق جاهزًا للتدقيق مع إدارة البرامج التي توفر وضوحًا حول الإنفاق والجداول الزمنية ووضع المخاطر.',
+        pillars: {
+          coordinationHub: {
+            title: 'مركز تنسيق واحد',
+            description: 'ينسق مدير برنامج مخصص كل ولاية قضائية وتصعيد.'
+          },
+          reporting: {
+            title: 'تقارير مبنية لمجالس الإدارة',
+            description: 'لوحات معلومات مخصصة ومراجعات ربع سنوية متوافقة مع متطلبات الحوكمة.'
+          },
+          financialClarity: {
+            title: 'وضوح مالي',
+            description: 'جداول رسوم معتمدة مسبقًا وتتبع شفاف للإنفاق عبر المستشارين والتسجيلات.'
+          }
+        }
+      },
+      ctaBand: {
+        eyebrow: 'الوصول العالمي',
+        title: 'قم بتوسيع حماية الملكية الفكرية الخاصة بك مع شريك واحد مسؤول',
+        subtitle: 'تعامل مع مكتبنا عبر الحدود لتنسيق التسجيلات والتجديدات والإنفاذ واستراتيجيات التسويق عبر كل ولاية قضائية حاسمة لنموك.',
+        buttons: {
+          startMandate: 'ابدأ ولاية دولية',
+          seeHowWeOperate: 'انظر كيف نعمل'
+        }
+      },
+      seo: {
+        title: 'تغطية الولايات القضائية للملكية الفكرية العالمية',
+        description: 'راجع شبكة المرسى للملكية الفكرية التي تضم أكثر من 150 ولاية قضائية تمكّن من التسجيلات المنسقة والتجديدات وبرامج الإنفاذ في جميع أنحاء العالم.',
+        keywords: [
+          'شبكة الملكية الفكرية الدولية',
+          'تسجيلات العلامات التجارية في دول مجلس التعاون الخليجي',
+          'تغطية الملكية الفكرية العالمية'
+        ]
       },
       details: {
         capital: 'العاصمة',
