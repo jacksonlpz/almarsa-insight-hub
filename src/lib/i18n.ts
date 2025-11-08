@@ -591,6 +591,26 @@ export const translations = {
       gcc: 'GCC Countries',
       international: 'International Coverage',
       treaties: 'International Treaties',
+      hero: {
+        eyebrow: 'Global Coverage',
+        title: 'Seamless Global IP Protection.',
+        titleLine2: 'Uncompromising Reach & Expertise.',
+        subtitle: 'We translate complex cross-border rules into disciplined action, ensuring filings and enforcement remain cohesive across every territory you operate.',
+        metrics: {
+          jurisdictions: {
+            metric: '150+',
+            label: 'Jurisdictions coordinated'
+          },
+          partnerships: {
+            metric: '60+',
+            label: 'Local counsel partnerships'
+          },
+          mandates: {
+            metric: '2000+',
+            label: 'Cross-border mandates delivered'
+          }
+        }
+      },
       details: {
         capital: 'Capital',
         ministry: 'Governing Authority',
@@ -618,7 +638,26 @@ export const translations = {
       viewAll: 'View All',
       readMore: 'Read More',
       register: 'Register',
-      deadline: 'Objection deadline'
+      deadline: 'Objection deadline',
+      hero: {
+        eyebrow: 'GCC IP Intelligence',
+        title: 'Industry Updates & Official Gazette Publications',
+        subtitle: 'Real-time monitoring of official IP developments, trademark gazette publications, and regulatory updates across the GCC region.',
+        metrics: {
+          countries: {
+            metric: '6',
+            label: 'GCC Countries'
+          },
+          updates: {
+            metric: 'Daily',
+            label: 'Updates'
+          },
+          sources: {
+            metric: 'Official',
+            label: 'Sources'
+          }
+        }
+      }
     },
     insights: {
       title: 'Insights & Forms',
@@ -1266,6 +1305,26 @@ export const translations = {
       gcc: 'دول مجلس التعاون الخليجي',
       international: 'التغطية الدولية',
       treaties: 'المعاهدات الدولية',
+      hero: {
+        eyebrow: 'تغطية عالمية',
+        title: 'حماية عالمية سلسة للملكية الفكرية.',
+        titleLine2: 'وصول وخبرة لا تُقبل بالمساومة.',
+        subtitle: 'نترجم القواعد المعقدة عبر الحدود إلى إجراءات منضبطة، مما يضمن بقاء التسجيلات والإنفاذ متماسكة عبر كل إقليم تعمل فيه.',
+        metrics: {
+          jurisdictions: {
+            metric: '+150',
+            label: 'ولايات قضائية منسقة'
+          },
+          partnerships: {
+            metric: '+60',
+            label: 'شراكات استشارية محلية'
+          },
+          mandates: {
+            metric: '+2000',
+            label: 'تكليفات عابرة للحدود منفذة'
+          }
+        }
+      },
       details: {
         capital: 'العاصمة',
         ministry: 'السلطة الحاكمة',
@@ -1293,7 +1352,26 @@ export const translations = {
       viewAll: 'عرض الكل',
       readMore: 'اقرأ المزيد',
       register: 'سجل',
-      deadline: 'الموعد النهائي للاعتراض'
+      deadline: 'الموعد النهائي للاعتراض',
+      hero: {
+        eyebrow: 'ذكاء الملكية الفكرية لدول مجلس التعاون الخليجي',
+        title: 'تحديثات الصناعة ومنشورات الجريدة الرسمية',
+        subtitle: 'مراقبة فورية للتطورات الرسمية للملكية الفكرية ومنشورات جريدة العلامات التجارية والتحديثات التنظيمية عبر منطقة دول مجلس التعاون الخليجي.',
+        metrics: {
+          countries: {
+            metric: '6',
+            label: 'دول مجلس التعاون الخليجي'
+          },
+          updates: {
+            metric: 'يومي',
+            label: 'تحديثات'
+          },
+          sources: {
+            metric: 'رسمي',
+            label: 'مصادر'
+          }
+        }
+      }
     },
     insights: {
       title: 'الرؤى والنماذج',

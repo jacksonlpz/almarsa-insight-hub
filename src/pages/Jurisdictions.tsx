@@ -11,6 +11,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { usePageSEO } from "@/hooks/usePageSEO";
 import { buildCanonicalUrl } from "@/lib/seo";
 import { QA, BH, SA, KW, AE, OM } from "country-flag-icons/react/3x2";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const JURISDICTION_METRICS = [
   {
@@ -365,6 +366,8 @@ const PATENT_ITEMS = [
 const HIGHLIGHT_TREATIES = ["madrid", "pct", "gcc"] as const;
 
 const Jurisdictions = () => {
+  const { t } = useLanguage();
+
   usePageSEO({
     title: "Global IP Jurisdictions Coverage",
     description: "Review Al Marsa IP's 150+ jurisdiction network enabling coordinated filings, renewals, and enforcement programmes worldwide.",
@@ -390,22 +393,29 @@ const Jurisdictions = () => {
           <div className="container-responsive relative z-10 py-16 md:py-24 lg:py-28">
             <div className="max-w-4xl mx-auto text-center space-y-10">
               <div className="space-y-6">
-                <span className="hero-eyebrow">Global Coverage</span>
+                <span className="hero-eyebrow">{t('jurisdictions.hero.eyebrow')}</span>
                 <h1 className="hero-title text-white mx-auto">
-                  Seamless Global IP Protection.<br />Uncompromising Reach & Expertise.
+                  {t('jurisdictions.hero.title')}<br />{t('jurisdictions.hero.titleLine2')}
                 </h1>
                 <p className="hero-subtitle mx-auto">
-                  We translate complex cross-border rules into disciplined action, ensuring filings and enforcement remain cohesive across every territory you operate.
+                  {t('jurisdictions.hero.subtitle')}
                 </p>
               </div>
               <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-white/80 sm:gap-6 sm:text-sm md:gap-8 md:text-base">
-                {JURISDICTION_METRICS.map((metric, index) => (
-                  <div key={metric.label} className="flex items-center gap-2">
-                    {index > 0 && <span className="text-white/30">•</span>}
-                    <span className="font-bold text-white text-lg">{metric.metric}</span>
-                    <span>{metric.label}</span>
-                  </div>
-                ))}
+                <div className="flex items-center gap-2">
+                  <span className="font-bold text-white text-lg">{t('jurisdictions.hero.metrics.jurisdictions.metric')}</span>
+                  <span>{t('jurisdictions.hero.metrics.jurisdictions.label')}</span>
+                </div>
+                <span className="text-white/30">•</span>
+                <div className="flex items-center gap-2">
+                  <span className="font-bold text-white text-lg">{t('jurisdictions.hero.metrics.partnerships.metric')}</span>
+                  <span>{t('jurisdictions.hero.metrics.partnerships.label')}</span>
+                </div>
+                <span className="text-white/30">•</span>
+                <div className="flex items-center gap-2">
+                  <span className="font-bold text-white text-lg">{t('jurisdictions.hero.metrics.mandates.metric')}</span>
+                  <span>{t('jurisdictions.hero.metrics.mandates.label')}</span>
+                </div>
               </div>
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center justify-center">
                 <Button asChild size="lg">
