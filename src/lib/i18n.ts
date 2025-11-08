@@ -241,6 +241,34 @@ export const translations = {
       title: 'Get In Touch',
       subtitle: 'Contact Us',
       description: 'Reach out to discuss your IP protection needs',
+      hero: {
+        eyebrow: 'Get In Touch',
+        title: 'Expert IP Support Tailored to Your Needs',
+        subtitle: 'Connect with regionally focused professionals who coordinate filings, enforcement, and strategic advisory across the GCC.',
+        metrics: {
+          response: {
+            value: '24h',
+            label: 'Response time'
+          },
+          retention: {
+            value: '92%',
+            label: 'Client retention'
+          },
+          jurisdictions: {
+            value: '150+',
+            label: 'Jurisdictions covered'
+          }
+        },
+        whatToExpect: {
+          heading: 'What to Expect',
+          description: 'Dedicated engagement lead coordinating with our specialists for response within one business day.',
+          pillars: {
+            lead: 'Dedicated engagement lead',
+            confidential: 'Confidential handling',
+            multilingual: 'Multilingual regional support'
+          }
+        }
+      },
       form: {
         firstName: 'First Name',
         lastName: 'Last Name',
@@ -591,6 +619,26 @@ export const translations = {
       gcc: 'GCC Countries',
       international: 'International Coverage',
       treaties: 'International Treaties',
+      hero: {
+        eyebrow: 'Global Coverage',
+        title: 'Seamless Global IP Protection.',
+        titleLine2: 'Uncompromising Reach & Expertise.',
+        subtitle: 'We translate complex cross-border rules into disciplined action, ensuring filings and enforcement remain cohesive across every territory you operate.',
+        metrics: {
+          jurisdictions: {
+            metric: '150+',
+            label: 'Jurisdictions coordinated'
+          },
+          partnerships: {
+            metric: '60+',
+            label: 'Local counsel partnerships'
+          },
+          mandates: {
+            metric: '2000+',
+            label: 'Cross-border mandates delivered'
+          }
+        }
+      },
       details: {
         capital: 'Capital',
         ministry: 'Governing Authority',
@@ -618,12 +666,59 @@ export const translations = {
       viewAll: 'View All',
       readMore: 'Read More',
       register: 'Register',
-      deadline: 'Objection deadline'
+      deadline: 'Objection deadline',
+      hero: {
+        eyebrow: 'GCC IP Intelligence',
+        title: 'Industry Updates & Official Gazette Publications',
+        subtitle: 'Real-time monitoring of official IP developments, trademark gazette publications, and regulatory updates across the GCC region.',
+        metrics: {
+          countries: {
+            metric: '6',
+            label: 'GCC Countries'
+          },
+          updates: {
+            metric: 'Daily',
+            label: 'Updates'
+          },
+          sources: {
+            metric: 'Official',
+            label: 'Sources'
+          }
+        }
+      }
     },
     insights: {
       title: 'Insights & Forms',
       subtitle: 'Resources & Tools',
       description: 'Access our library of IP resources, guides, and downloadable forms',
+      hero: {
+        eyebrow: 'Insights & Resources',
+        title: 'Actionable IP Intelligence',
+        subtitle: 'Curated library of intelligence, templates, and analyst briefings for confident IP strategy across the GCC region.',
+        metrics: {
+          guides: {
+            value: 'GCC-focused',
+            label: 'Guides & Templates'
+          },
+          videos: {
+            value: 'Video explainers',
+            label: 'Learning Modules'
+          },
+          forms: {
+            value: 'Prompt follow-up',
+            label: 'Form Submissions'
+          }
+        },
+        quality: {
+          heading: 'Quality Assurance',
+          description: 'Materials written by IP professionals and reviewed regularly to reflect GCC, MENA, and international changes.',
+          features: {
+            categorized: 'Categorized content',
+            templates: 'Regional templates',
+            routing: 'Specialist routing'
+          }
+        }
+      },
       categories: {
         guides: 'Guides & Whitepapers',
         forms: 'Downloadable Forms',
@@ -916,6 +1011,34 @@ export const translations = {
       title: 'تواصل معنا',
       subtitle: 'اتصل بنا',
       description: 'تواصل معنا لمناقشة احتياجات حماية الملكية الفكرية الخاصة بك',
+      hero: {
+        eyebrow: 'تواصل معنا',
+        title: 'دعم خبير للملكية الفكرية مصمم لاحتياجاتك',
+        subtitle: 'تواصل مع متخصصين ذوي تركيز إقليمي ينسقون التسجيلات والإنفاذ والاستشارات الاستراتيجية عبر دول مجلس التعاون الخليجي.',
+        metrics: {
+          response: {
+            value: '24 ساعة',
+            label: 'وقت الاستجابة'
+          },
+          retention: {
+            value: '92%',
+            label: 'الاحتفاظ بالعملاء'
+          },
+          jurisdictions: {
+            value: '+150',
+            label: 'الولايات القضائية المشمولة'
+          }
+        },
+        whatToExpect: {
+          heading: 'ما يمكن توقعه',
+          description: 'قائد مشاركة مخصص ينسق مع متخصصينا للرد خلال يوم عمل واحد.',
+          pillars: {
+            lead: 'قائد مشاركة مخصص',
+            confidential: 'معالجة سرية',
+            multilingual: 'دعم إقليمي متعدد اللغات'
+          }
+        }
+      },
       form: {
         firstName: 'الاسم الأول',
         lastName: 'اسم العائلة',
@@ -1266,6 +1389,26 @@ export const translations = {
       gcc: 'دول مجلس التعاون الخليجي',
       international: 'التغطية الدولية',
       treaties: 'المعاهدات الدولية',
+      hero: {
+        eyebrow: 'تغطية عالمية',
+        title: 'حماية عالمية سلسة للملكية الفكرية.',
+        titleLine2: 'وصول وخبرة لا تُقبل بالمساومة.',
+        subtitle: 'نترجم القواعد المعقدة عبر الحدود إلى إجراءات منضبطة، مما يضمن بقاء التسجيلات والإنفاذ متماسكة عبر كل إقليم تعمل فيه.',
+        metrics: {
+          jurisdictions: {
+            metric: '+150',
+            label: 'ولايات قضائية منسقة'
+          },
+          partnerships: {
+            metric: '+60',
+            label: 'شراكات استشارية محلية'
+          },
+          mandates: {
+            metric: '+2000',
+            label: 'تكليفات عابرة للحدود منفذة'
+          }
+        }
+      },
       details: {
         capital: 'العاصمة',
         ministry: 'السلطة الحاكمة',
@@ -1293,12 +1436,59 @@ export const translations = {
       viewAll: 'عرض الكل',
       readMore: 'اقرأ المزيد',
       register: 'سجل',
-      deadline: 'الموعد النهائي للاعتراض'
+      deadline: 'الموعد النهائي للاعتراض',
+      hero: {
+        eyebrow: 'ذكاء الملكية الفكرية لدول مجلس التعاون الخليجي',
+        title: 'تحديثات الصناعة ومنشورات الجريدة الرسمية',
+        subtitle: 'مراقبة فورية للتطورات الرسمية للملكية الفكرية ومنشورات جريدة العلامات التجارية والتحديثات التنظيمية عبر منطقة دول مجلس التعاون الخليجي.',
+        metrics: {
+          countries: {
+            metric: '6',
+            label: 'دول مجلس التعاون الخليجي'
+          },
+          updates: {
+            metric: 'يومي',
+            label: 'تحديثات'
+          },
+          sources: {
+            metric: 'رسمي',
+            label: 'مصادر'
+          }
+        }
+      }
     },
     insights: {
       title: 'الرؤى والنماذج',
       subtitle: 'الموارد والأدوات',
       description: 'الوصول إلى مكتبتنا من موارد الملكية الفكرية والأدلة والنماذج القابلة للتنزيل',
+      hero: {
+        eyebrow: 'الرؤى والموارد',
+        title: 'ذكاء قابل للتنفيذ في الملكية الفكرية',
+        subtitle: 'مكتبة منسقة من المعلومات والقوالب والإحاطات التحليلية لاستراتيجية واثقة للملكية الفكرية عبر منطقة دول مجلس التعاون الخليجي.',
+        metrics: {
+          guides: {
+            value: 'متخصص في دول الخليج',
+            label: 'الأدلة والقوالب'
+          },
+          videos: {
+            value: 'شروحات فيديو',
+            label: 'وحدات التعلم'
+          },
+          forms: {
+            value: 'متابعة سريعة',
+            label: 'تقديم النماذج'
+          }
+        },
+        quality: {
+          heading: 'ضمان الجودة',
+          description: 'مواد مكتوبة من قبل متخصصين في الملكية الفكرية ويتم مراجعتها بانتظام لتعكس التغييرات في دول مجلس التعاون الخليجي والشرق الأوسط وشمال أفريقيا والدولية.',
+          features: {
+            categorized: 'محتوى مصنف',
+            templates: 'قوالب إقليمية',
+            routing: 'توجيه متخصص'
+          }
+        }
+      },
       categories: {
         guides: 'الأدلة والمستندات البيضاء',
         forms: 'النماذج القابلة للتنزيل',

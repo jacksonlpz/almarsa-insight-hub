@@ -13,6 +13,7 @@ import "@/styles/home.css";
 import { AE, BH, KW, OM, QA, SA } from "country-flag-icons/react/3x2";
 import { usePageSEO } from "@/hooks/usePageSEO";
 import { buildCanonicalUrl } from "@/lib/seo";
+import { useLanguage } from "@/hooks/useLanguage";
 
 type SectionItem = {
   title: string;
@@ -339,6 +340,8 @@ const GCC_COUNTRIES: CountryData[] = [
 ];
 
 const NewsEvents = () => {
+  const { t } = useLanguage();
+
   usePageSEO({
     title: "News & Regulatory IP Updates",
     description: "Stay informed on GCC trademark notices, IP enforcement trends, and Al Marsa thought leadership events.",
@@ -361,29 +364,29 @@ const NewsEvents = () => {
               <div className="space-y-6 sm:space-y-8">
                 <div className="space-y-4 sm:space-y-6">
                   <span className="inline-block text-label-xs font-semibold uppercase tracking-widest text-primary sm:text-label-sm">
-                    GCC IP Intelligence
+                    {t('newsEvents.hero.eyebrow')}
                   </span>
                   <h1 className="hero-title text-white">
-                    Industry Updates & Official Gazette Publications
+                    {t('newsEvents.hero.title')}
                   </h1>
                   <p className="hero-subtitle mx-auto text-white/80">
-                    Real-time monitoring of official IP developments, trademark gazette publications, and regulatory updates across the GCC region.
+                    {t('newsEvents.hero.subtitle')}
                   </p>
                 </div>
 
                 <div className="mx-auto mt-10 max-w-3xl sm:mt-12">
                   <div className="grid grid-cols-1 gap-6 border-t border-white/10 pt-8 sm:grid-cols-3 sm:gap-8">
                     <div className="text-center">
-                      <div className="text-display-sm font-semibold text-white sm:text-display-md">6</div>
-                      <p className="mt-2 text-label-xs font-semibold uppercase tracking-wide text-white/60 sm:text-label-sm">GCC Countries</p>
+                      <div className="text-display-sm font-semibold text-white sm:text-display-md">{t('newsEvents.hero.metrics.countries.metric')}</div>
+                      <p className="mt-2 text-label-xs font-semibold uppercase tracking-wide text-white/60 sm:text-label-sm">{t('newsEvents.hero.metrics.countries.label')}</p>
                     </div>
                     <div className="text-center border-t border-white/10 pt-6 sm:border-t-0 sm:pt-0">
-                      <div className="text-display-sm font-semibold text-white sm:text-display-md">Daily</div>
-                      <p className="mt-2 text-label-xs font-semibold uppercase tracking-wide text-white/60 sm:text-label-sm">Updates</p>
+                      <div className="text-display-sm font-semibold text-white sm:text-display-md">{t('newsEvents.hero.metrics.updates.metric')}</div>
+                      <p className="mt-2 text-label-xs font-semibold uppercase tracking-wide text-white/60 sm:text-label-sm">{t('newsEvents.hero.metrics.updates.label')}</p>
                     </div>
                     <div className="text-center border-t border-white/10 pt-6 sm:border-t-0 sm:pt-0">
-                      <div className="text-display-sm font-semibold text-white sm:text-display-md">Official</div>
-                      <p className="mt-2 text-label-xs font-semibold uppercase tracking-wide text-white/60 sm:text-label-sm">Sources</p>
+                      <div className="text-display-sm font-semibold text-white sm:text-display-md">{t('newsEvents.hero.metrics.sources.metric')}</div>
+                      <p className="mt-2 text-label-xs font-semibold uppercase tracking-wide text-white/60 sm:text-label-sm">{t('newsEvents.hero.metrics.sources.label')}</p>
                     </div>
                   </div>
                 </div>

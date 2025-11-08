@@ -19,6 +19,7 @@ import { Link } from "react-router-dom";
 import "@/styles/home.css";
 import { usePageSEO } from "@/hooks/usePageSEO";
 import { buildCanonicalUrl } from "@/lib/seo";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const contactSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
@@ -101,6 +102,8 @@ const PARTNERSHIP_PILLARS = [
 ];
 
 const Contact = () => {
+  const { t } = useLanguage();
+
   usePageSEO({
     title: "Contact Al Marsa Intellectual Property Agents",
     description:
@@ -184,48 +187,78 @@ const Contact = () => {
               <div className="space-y-3">
                 <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-3 py-1 backdrop-blur-sm">
                   <div className="h-1 w-1 rounded-full bg-primary animate-pulse" />
-                  <span className="text-[10px] font-medium uppercase tracking-wider text-white/90">Get In Touch</span>
+                  <span className="text-[10px] font-medium uppercase tracking-wider text-white/90">{t('contact.hero.eyebrow')}</span>
                 </div>
                 <h1 className="hero-title text-white">
-                  Expert IP Support Tailored to Your Needs
+                  {t('contact.hero.title')}
                 </h1>
                 <p className="hero-subtitle mx-auto text-white/80">
-                  Connect with regionally focused professionals who coordinate filings, enforcement, and strategic advisory across the GCC.
+                  {t('contact.hero.subtitle')}
                 </p>
               </div>
               <div className="grid gap-4 sm:grid-cols-3 sm:gap-6">
-                {CONTACT_METRICS.map((metric) => (
-                  <div key={metric.label} className="group rounded-lg border border-white/10 bg-white/5 p-3 backdrop-blur-sm transition-all hover:border-white/20 hover:bg-white/10">
-                    <div className="flex items-center gap-2.5">
-                      <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary ring-1 ring-white/10">
-                        {renderAlMarsaIcon(metric.icon, { className: "h-4 w-4" })}
-                      </div>
-                      <div className="text-left">
-                        <div className="text-xl font-bold text-white lg:text-2xl">{metric.value}</div>
-                        <p className="text-[9px] font-medium uppercase tracking-wide text-white/60 leading-tight">{metric.label}</p>
-                      </div>
+                <div className="group rounded-lg border border-white/10 bg-white/5 p-3 backdrop-blur-sm transition-all hover:border-white/20 hover:bg-white/10">
+                  <div className="flex items-center gap-2.5">
+                    <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary ring-1 ring-white/10">
+                      {renderAlMarsaIcon("defence", { className: "h-4 w-4" })}
+                    </div>
+                    <div className="text-left">
+                      <div className="text-xl font-bold text-white lg:text-2xl">{t('contact.hero.metrics.response.value')}</div>
+                      <p className="text-[9px] font-medium uppercase tracking-wide text-white/60 leading-tight">{t('contact.hero.metrics.response.label')}</p>
                     </div>
                   </div>
-                ))}
+                </div>
+                <div className="group rounded-lg border border-white/10 bg-white/5 p-3 backdrop-blur-sm transition-all hover:border-white/20 hover:bg-white/10">
+                  <div className="flex items-center gap-2.5">
+                    <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary ring-1 ring-white/10">
+                      {renderAlMarsaIcon("advantage-network", { className: "h-4 w-4" })}
+                    </div>
+                    <div className="text-left">
+                      <div className="text-xl font-bold text-white lg:text-2xl">{t('contact.hero.metrics.retention.value')}</div>
+                      <p className="text-[9px] font-medium uppercase tracking-wide text-white/60 leading-tight">{t('contact.hero.metrics.retention.label')}</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="group rounded-lg border border-white/10 bg-white/5 p-3 backdrop-blur-sm transition-all hover:border-white/20 hover:bg-white/10">
+                  <div className="flex items-center gap-2.5">
+                    <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary ring-1 ring-white/10">
+                      {renderAlMarsaIcon("advantage-insight", { className: "h-4 w-4" })}
+                    </div>
+                    <div className="text-left">
+                      <div className="text-xl font-bold text-white lg:text-2xl">{t('contact.hero.metrics.jurisdictions.value')}</div>
+                      <p className="text-[9px] font-medium uppercase tracking-wide text-white/60 leading-tight">{t('contact.hero.metrics.jurisdictions.label')}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
                 <div className="mb-2.5 flex items-center justify-center gap-2">
                   <div className="h-px w-6 bg-gradient-to-r from-transparent to-primary" />
-                  <span className="text-[10px] font-semibold uppercase tracking-wider text-primary">What to Expect</span>
+                  <span className="text-[10px] font-semibold uppercase tracking-wider text-primary">{t('contact.hero.whatToExpect.heading')}</span>
                   <div className="h-px w-6 bg-gradient-to-l from-transparent to-primary" />
                 </div>
                 <p className="mb-3 text-xs leading-relaxed text-white/75">
-                  Dedicated engagement lead coordinating with our specialists for response within one business day.
+                  {t('contact.hero.whatToExpect.description')}
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 text-xs text-white/70">
-                  {PARTNERSHIP_PILLARS.map((pillar) => (
-                    <div key={pillar.title} className="flex items-center gap-1.5">
-                      <div className="flex h-3.5 w-3.5 flex-shrink-0 items-center justify-center rounded-full bg-primary/20">
-                        <div className="h-1 w-1 rounded-full bg-primary" />
-                      </div>
-                      <span>{pillar.title}</span>
+                  <div className="flex items-center gap-1.5">
+                    <div className="flex h-3.5 w-3.5 flex-shrink-0 items-center justify-center rounded-full bg-primary/20">
+                      <div className="h-1 w-1 rounded-full bg-primary" />
                     </div>
-                  ))}
+                    <span>{t('contact.hero.whatToExpect.pillars.lead')}</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <div className="flex h-3.5 w-3.5 flex-shrink-0 items-center justify-center rounded-full bg-primary/20">
+                      <div className="h-1 w-1 rounded-full bg-primary" />
+                    </div>
+                    <span>{t('contact.hero.whatToExpect.pillars.confidential')}</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <div className="flex h-3.5 w-3.5 flex-shrink-0 items-center justify-center rounded-full bg-primary/20">
+                      <div className="h-1 w-1 rounded-full bg-primary" />
+                    </div>
+                    <span>{t('contact.hero.whatToExpect.pillars.multilingual')}</span>
+                  </div>
                 </div>
               </div>
             </div>
