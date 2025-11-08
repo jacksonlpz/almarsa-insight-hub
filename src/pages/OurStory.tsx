@@ -177,10 +177,10 @@ const OurStory = () => {
                       <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/20 text-primary">
                         {renderAlMarsaIcon("advantage-governance", { className: "h-5 w-5" })}
                       </div>
-                      <h3 className="text-sm font-semibold text-white">
+                      <h3 className="text-heading-sm font-semibold text-white">
                         {t('ourStory.hero.features.reporting.title')}
                       </h3>
-                      <p className="text-xs leading-relaxed text-white/70">
+                      <p className="text-body-xs leading-relaxed text-white/70">
                         {t('ourStory.hero.features.reporting.description')}
                       </p>
                     </div>
