@@ -400,11 +400,11 @@ const NewsEvents = () => {
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="section-heading text-center mb-16">
               <div className="space-y-4">
-                <span className="section-eyebrow">Official Sources</span>
-                <h2 className="section-title">GCC Intellectual Property Updates</h2>
+                <span className="section-eyebrow">{t('newsEvents.sections.officialSources.eyebrow')}</span>
+                <h2 className="section-title">{t('newsEvents.sections.officialSources.title')}</h2>
               </div>
               <p className="section-subtitle mx-auto max-w-3xl">
-                Curated updates from official government ministries, trademark offices, and IP authorities across the Gulf region.
+                {t('newsEvents.sections.officialSources.subtitle')}
               </p>
             </div>
 
@@ -426,7 +426,7 @@ const NewsEvents = () => {
                           <h3 className="text-heading-lg font-semibold text-navy-deep md:text-display-sm">{countryData.country}</h3>
                         </div>
                         <Badge variant="secondary" className="uppercase tracking-wide text-label-xs whitespace-nowrap">
-                          Latest Updates
+                          {t('newsEvents.sections.latestUpdates')}
                         </Badge>
                       </div>
                     </CardContent>

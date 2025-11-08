@@ -271,13 +271,13 @@ const Contact = () => {
             <div className="mb-8 text-center">
               <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1">
                 <Send className="h-3 w-3 text-primary" />
-                <span className="text-[10px] font-medium uppercase tracking-wider text-primary">Send a Message</span>
+                <span className="text-[10px] font-medium uppercase tracking-wider text-primary">{t('contact.sections.sendMessage.eyebrow')}</span>
               </div>
               <h2 className="mb-2 text-2xl font-bold text-navy-deep md:text-3xl">
-                Tell Us About Your IP Objectives
+                {t('contact.sections.sendMessage.title')}
               </h2>
               <p className="mx-auto max-w-2xl text-sm text-muted-foreground">
-                Share your requirements and we'll assemble the right team across prosecution, enforcement, and strategic advisory.
+                {t('contact.sections.sendMessage.subtitle')}
               </p>
             </div>
             <div className="grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
@@ -444,13 +444,13 @@ const Contact = () => {
             <div className="mx-auto max-w-2xl space-y-2.5 text-center mb-6">
               <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1">
                 <MapPin className="h-3 w-3 text-primary" />
-                <span className="text-[10px] font-medium uppercase tracking-wider text-primary">Visit Our Office</span>
+                <span className="text-[10px] font-medium uppercase tracking-wider text-primary">{t('contact.sections.visitOffice.eyebrow')}</span>
               </div>
               <h2 className="text-2xl font-bold text-navy-deep md:text-3xl">
-                Centrally Located in Kuwait City
+                {t('contact.sections.visitOffice.title')}
               </h2>
               <p className="text-sm text-muted-foreground">
-                Our office serves clients across the GCC, MENA region, and international jurisdictions through our extensive partner network.
+                {t('contact.sections.visitOffice.subtitle')}
               </p>
             </div>
             <Card className="overflow-hidden border-gray-200 shadow-sm">
@@ -478,21 +478,21 @@ const Contact = () => {
             <div className="space-y-3 mb-5">
               <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-3 py-1">
                 <div className="h-1 w-1 rounded-full bg-primary animate-pulse" />
-                <span className="text-[10px] font-medium uppercase tracking-wider text-white/70">Next Steps</span>
+                <span className="text-[10px] font-medium uppercase tracking-wider text-white/70">{t('contact.sections.nextSteps.eyebrow')}</span>
               </div>
               <h2 className="hero-title text-white">
-                Partner with a team focused on safeguarding your IP
+                {t('contact.sections.nextSteps.title')}
               </h2>
               <p className="mx-auto max-w-xl text-sm text-white/70">
-                From first filings to cross-border enforcement, we structure programmes that align to your governance and growth ambitions.
+                {t('contact.sections.nextSteps.subtitle')}
               </p>
             </div>
             <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center">
               <Button asChild size="default" className="bg-white text-navy-deep hover:bg-white/90 h-9">
-                <Link to="/services">Explore our services</Link>
+                <Link to="/services">{t('contact.sections.nextSteps.buttons.primary')}</Link>
               </Button>
               <Button asChild size="default" variant="outline" className="border-white/30 bg-white/10 text-white hover:bg-white/20 hover:border-white/50 h-9">
-                <Link to="/our-story">Learn about our approach</Link>
+                <Link to="/our-story">{t('contact.sections.nextSteps.buttons.secondary')}</Link>
               </Button>
             </div>
           </div>
