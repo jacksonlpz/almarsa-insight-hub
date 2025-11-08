@@ -439,10 +439,10 @@ const Jurisdictions = () => {
         <section className="section-spacing bg-white texture-blueprint" data-animate>
           <div className="container-responsive">
             <div className="section-heading">
-              <span className="section-eyebrow">Strategic regions</span>
-              <h2 className="section-title mt-6">GCC Intellectual Property Landscape</h2>
+              <span className="section-eyebrow">{t('jurisdictions.sections.strategicRegions.eyebrow')}</span>
+              <h2 className="section-title mt-6">{t('jurisdictions.sections.strategicRegions.title')}</h2>
               <p className="section-subtitle mt-6">
-                Comprehensive IP protection across all six Gulf Cooperation Council member states with specialized knowledge of local regulations, treaties, and enforcement mechanisms.
+                {t('jurisdictions.sections.strategicRegions.subtitle')}
               </p>
             </div>
             <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">

@@ -639,6 +639,48 @@ export const translations = {
           }
         }
       },
+      sections: {
+        strategicRegions: {
+          eyebrow: 'Strategic regions',
+          title: 'GCC Intellectual Property Landscape',
+          subtitle: 'Comprehensive IP protection across all six Gulf Cooperation Council member states with specialized knowledge of local regulations, treaties, and enforcement mechanisms.'
+        },
+        globalFrameworks: {
+          eyebrow: 'Global frameworks',
+          title: 'Confidence across international systems',
+          subtitle: 'We integrate directly with world bodies and regional offices, ensuring your IP assets remain compliant, enforceable, and optimised for expansion.'
+        },
+        deliveryRhythm: {
+          eyebrow: 'Delivery rhythm',
+          title: 'A disciplined sequence for international execution',
+          subtitle: 'Transparent governance and dependable timelines keep stakeholders aligned from initial assessment through enforcement.'
+        },
+        programmeGovernance: {
+          eyebrow: 'Programme governance',
+          title: 'Partnerships designed for scale',
+          subtitle: 'Stay audit-ready with programme management that delivers clarity on spend, timelines, and risk posture.'
+        },
+        finalCta: {
+          eyebrow: 'Global reach',
+          title: 'Extend your IP protection with a single, accountable partner',
+          subtitle: 'Engage our cross-border desk to coordinate filings, renewals, enforcement, and commercialisation strategies across every jurisdiction critical to your growth.',
+          buttons: {
+            primary: 'Start an international mandate',
+            secondary: 'See how we operate'
+          }
+        }
+      },
+      tabs: {
+        overview: 'Overview',
+        treaties: 'Treaties',
+        trademarks: 'Trademarks',
+        patents: 'Patents'
+      },
+      labels: {
+        capital: 'Capital',
+        ministry: 'Ministry',
+        officialWebsite: 'Official website'
+      },
       details: {
         capital: 'Capital',
         ministry: 'Governing Authority',
@@ -1408,6 +1450,48 @@ export const translations = {
             label: 'تكليفات عابرة للحدود منفذة'
           }
         }
+      },
+      sections: {
+        strategicRegions: {
+          eyebrow: 'مناطق استراتيجية',
+          title: 'مشهد الملكية الفكرية في دول مجلس التعاون الخليجي',
+          subtitle: 'حماية شاملة للملكية الفكرية عبر جميع الدول الأعضاء الست في مجلس التعاون الخليجي مع معرفة متخصصة باللوائح المحلية والمعاهدات وآليات الإنفاذ.'
+        },
+        globalFrameworks: {
+          eyebrow: 'أطر عمل عالمية',
+          title: 'ثقة عبر الأنظمة الدولية',
+          subtitle: 'نتكامل مباشرة مع الهيئات العالمية والمكاتب الإقليمية، مما يضمن بقاء أصول الملكية الفكرية الخاصة بك متوافقة وقابلة للإنفاذ ومحسنة للتوسع.'
+        },
+        deliveryRhythm: {
+          eyebrow: 'إيقاع التسليم',
+          title: 'تسلسل منضبط للتنفيذ الدولي',
+          subtitle: 'الحوكمة الشفافة والجداول الزمنية الموثوقة تبقي أصحاب المصلحة متوافقين من التقييم الأولي وحتى الإنفاذ.'
+        },
+        programmeGovernance: {
+          eyebrow: 'حوكمة البرنامج',
+          title: 'شراكات مصممة للتوسع',
+          subtitle: 'ابق جاهزًا للتدقيق من خلال إدارة البرنامج التي توفر الوضوح بشأن الإنفاق والجداول الزمنية ووضع المخاطر.'
+        },
+        finalCta: {
+          eyebrow: 'وصول عالمي',
+          title: 'مد حماية ملكيتك الفكرية مع شريك واحد مسؤول',
+          subtitle: 'تعاون مع مكتبنا العابر للحدود لتنسيق التسجيلات والتجديدات واستراتيجيات الإنفاذ والتسويق عبر كل ولاية قضائية حاسمة لنموك.',
+          buttons: {
+            primary: 'بدء تكليف دولي',
+            secondary: 'شاهد كيف نعمل'
+          }
+        }
+      },
+      tabs: {
+        overview: 'نظرة عامة',
+        treaties: 'المعاهدات',
+        trademarks: 'العلامات التجارية',
+        patents: 'براءات الاختراع'
+      },
+      labels: {
+        capital: 'العاصمة',
+        ministry: 'الوزارة',
+        officialWebsite: 'الموقع الرسمي'
       },
       details: {
         capital: 'العاصمة',
