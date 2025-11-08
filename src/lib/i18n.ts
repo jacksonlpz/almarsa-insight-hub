@@ -639,6 +639,62 @@ export const translations = {
           }
         }
       },
+      buttons: {
+        getInTouch: 'Get In Touch',
+        ourServices: 'Our Services',
+        startMandate: 'Start an international mandate',
+        seeOperation: 'See how we operate'
+      },
+      gccLandscape: {
+        eyebrow: 'Strategic regions',
+        title: 'GCC Intellectual Property Landscape',
+        description: 'Comprehensive IP protection across all six Gulf Cooperation Council member states with specialized knowledge of local regulations, treaties, and enforcement mechanisms.'
+      },
+      globalFrameworks: {
+        eyebrow: 'Global frameworks',
+        title: 'Confidence across international systems',
+        description: 'We integrate directly with world bodies and regional IP offices to deliver unified protection strategies tailored to your commercial objectives.'
+      },
+      deliverySteps: {
+        eyebrow: 'Delivery rhythm',
+        title: 'A disciplined sequence for international execution',
+        description: 'Transparent governance and dependable timelines ensure every filing, renewal, and enforcement action aligns with your risk appetite and growth trajectory.'
+      },
+      operatingPillars: {
+        eyebrow: 'Programme governance',
+        title: 'Partnerships designed for scale',
+        description: 'Stay audit-ready with programme management tools that keep leadership informed and empowered to allocate resources strategically.'
+      },
+      finalCta: {
+        eyebrow: 'Global reach',
+        title: 'Extend your IP protection with a single, accountable partner',
+        description: 'Engage our cross-border desk to coordinate filings, renewals, and enforcement activity across the jurisdictions that matter most to your enterprise.'
+      },
+      tabs: {
+        overview: 'Overview',
+        treaties: 'Treaties',
+        trademarks: 'Trademarks',
+        patents: 'Patents'
+      },
+      labels: {
+        ministry: 'Ministry',
+        officialWebsite: 'Official website',
+        capital: 'Capital',
+        protectionDuration: 'Protection Duration',
+        renewable: 'Renewable',
+        oppositionPeriod: 'Opposition Period',
+        classification: 'Classification',
+        examinationType: 'Examination Type',
+        pctRoute: 'PCT Route',
+        patentTypes: 'Patent Types'
+      },
+      treatyLabels: {
+        madrid: 'Madrid Protocol',
+        pct: 'PCT',
+        paris: 'Paris Convention',
+        trips: 'TRIPS',
+        gcc: 'GCC Trademark Law'
+      },
       details: {
         capital: 'Capital',
         ministry: 'Governing Authority',
@@ -1441,6 +1497,62 @@ export const translations = {
             label: 'تكليفات عابرة للحدود منفذة'
           }
         }
+      },
+      buttons: {
+        getInTouch: 'تواصل معنا',
+        ourServices: 'خدماتنا',
+        startMandate: 'ابدأ تكليفًا دوليًا',
+        seeOperation: 'اطلع على طريقة عملنا'
+      },
+      gccLandscape: {
+        eyebrow: 'المناطق الاستراتيجية',
+        title: 'مشهد الملكية الفكرية في دول مجلس التعاون الخليجي',
+        description: 'حماية شاملة للملكية الفكرية عبر جميع دول مجلس التعاون الخليجي الست مع معرفة متخصصة باللوائح المحلية والمعاهدات وآليات الإنفاذ.'
+      },
+      globalFrameworks: {
+        eyebrow: 'الأطر العالمية',
+        title: 'الثقة عبر الأنظمة الدولية',
+        description: 'نتكامل مباشرة مع الهيئات العالمية ومكاتب الملكية الفكرية الإقليمية لتقديم استراتيجيات حماية موحدة مصممة خصيصًا لأهدافك التجارية.'
+      },
+      deliverySteps: {
+        eyebrow: 'إيقاع التسليم',
+        title: 'تسلسل منضبط للتنفيذ الدولي',
+        description: 'الحوكمة الشفافة والجداول الزمنية الموثوقة تضمن توافق كل عملية تسجيل وتجديد وإجراء إنفاذ مع رغبتك في المخاطر ومسار نموك.'
+      },
+      operatingPillars: {
+        eyebrow: 'حوكمة البرنامج',
+        title: 'شراكات مصممة للنمو',
+        description: 'ابق جاهزًا للتدقيق مع أدوات إدارة البرامج التي تبقي القيادة مطلعة ومخولة لتخصيص الموارد بشكل استراتيجي.'
+      },
+      finalCta: {
+        eyebrow: 'الوصول العالمي',
+        title: 'وسّع حماية ملكيتك الفكرية مع شريك واحد مسؤول',
+        description: 'تعاون مع مكتبنا عبر الحدود لتنسيق التسجيلات والتجديدات ونشاط الإنفاذ عبر الولايات القضائية الأكثر أهمية لمؤسستك.'
+      },
+      tabs: {
+        overview: 'نظرة عامة',
+        treaties: 'المعاهدات',
+        trademarks: 'العلامات التجارية',
+        patents: 'براءات الاختراع'
+      },
+      labels: {
+        ministry: 'الوزارة',
+        officialWebsite: 'الموقع الرسمي',
+        capital: 'العاصمة',
+        protectionDuration: 'مدة الحماية',
+        renewable: 'قابل للتجديد',
+        oppositionPeriod: 'فترة المعارضة',
+        classification: 'التصنيف',
+        examinationType: 'نوع الفحص',
+        pctRoute: 'مسار PCT',
+        patentTypes: 'أنواع براءات الاختراع'
+      },
+      treatyLabels: {
+        madrid: 'بروتوكول مدريد',
+        pct: 'معاهدة التعاون بشأن البراءات',
+        paris: 'اتفاقية باريس',
+        trips: 'اتفاقية تريبس',
+        gcc: 'قانون العلامات التجارية لدول مجلس التعاون الخليجي'
       },
       details: {
         capital: 'العاصمة',

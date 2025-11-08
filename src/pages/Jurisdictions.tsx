@@ -420,7 +420,7 @@ const Jurisdictions = () => {
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center justify-center">
                 <Button asChild size="lg">
                   <Link to="/contact" className="flex w-full items-center justify-center gap-2 sm:w-auto">
-                    <span>Get In Touch</span>
+                    <span>{t('jurisdictions.buttons.getInTouch')}</span>
                     <ArrowRight className="h-5 w-5" />
                   </Link>
                 </Button>
@@ -429,7 +429,7 @@ const Jurisdictions = () => {
                   variant="secondary"
                   size="lg"
                 >
-                  <Link to="/services" className="flex w-full items-center justify-center sm:w-auto">Our Services</Link>
+                  <Link to="/services" className="flex w-full items-center justify-center sm:w-auto">{t('jurisdictions.buttons.ourServices')}</Link>
                 </Button>
               </div>
             </div>
@@ -439,10 +439,10 @@ const Jurisdictions = () => {
         <section className="section-spacing bg-white texture-blueprint" data-animate>
           <div className="container-responsive">
             <div className="section-heading">
-              <span className="section-eyebrow">Strategic regions</span>
-              <h2 className="section-title mt-6">GCC Intellectual Property Landscape</h2>
+              <span className="section-eyebrow">{t('jurisdictions.gccLandscape.eyebrow')}</span>
+              <h2 className="section-title mt-6">{t('jurisdictions.gccLandscape.title')}</h2>
               <p className="section-subtitle mt-6">
-                Comprehensive IP protection across all six Gulf Cooperation Council member states with specialized knowledge of local regulations, treaties, and enforcement mechanisms.
+                {t('jurisdictions.gccLandscape.description')}
               </p>
             </div>
             <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -464,7 +464,7 @@ const Jurisdictions = () => {
                           <div className="space-y-0.5 min-w-0">
                             <h3 className="text-base font-semibold tracking-tight truncate">{country.name}</h3>
                             <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/75 truncate">
-                              Capital • {country.info.capital}
+                              {t('jurisdictions.labels.capital')} • {country.info.capital}
                             </p>
                           </div>
                         </div>
@@ -488,7 +488,7 @@ const Jurisdictions = () => {
                               className="flex flex-col gap-1.5 rounded-xl border border-white/15 bg-white/8 p-2.5 backdrop-blur"
                             >
                               <p className="text-[9px] font-semibold uppercase tracking-[0.12em] text-white/70 leading-tight truncate">
-                                {treaty?.label}
+                                {t(`jurisdictions.treatyLabels.${key}`)}
                               </p>
                               <p className="text-xs font-semibold text-white leading-tight line-clamp-2">
                                 {country.treaties[key]}
@@ -511,7 +511,7 @@ const Jurisdictions = () => {
                                 className="flex h-9 w-full items-center justify-center gap-1 rounded-full border-2 border-gray-300/80 bg-white px-2 py-1.5 text-[8px] font-bold uppercase tracking-[0.06em] text-gray-700 shadow-sm transition-all hover:border-primary/60 hover:bg-primary/5 data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md"
                               >
                                 <tab.icon className="h-2.5 w-2.5 flex-shrink-0" />
-                                <span className="whitespace-nowrap leading-none">{tab.label}</span>
+                                <span className="whitespace-nowrap leading-none">{t(`jurisdictions.tabs.${tab.id}`)}</span>
                               </TabsTrigger>
                             );
                           })}
@@ -521,7 +521,7 @@ const Jurisdictions = () => {
                           <div className="flex flex-col gap-2.5 rounded-2xl border border-gray-200 bg-gray-50 p-3 min-h-[200px]">
                             <div className="flex flex-col gap-2.5">
                               <div className="space-y-1">
-                                <p className="text-[10px] font-bold uppercase tracking-wider text-gray-600">Ministry</p>
+                                <p className="text-[10px] font-bold uppercase tracking-wider text-gray-600">{t('jurisdictions.labels.ministry')}</p>
                                 <p className="text-xs font-semibold text-gray-900 leading-snug line-clamp-2">{country.info.ministry}</p>
                               </div>
                               <a
@@ -530,7 +530,7 @@ const Jurisdictions = () => {
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-primary hover:text-primary/80 transition-colors w-fit"
                               >
-                                Official website
+                                {t('jurisdictions.labels.officialWebsite')}
                                 <ArrowRight className="h-3.5 w-3.5 flex-shrink-0" />
                               </a>
                             </div>
@@ -543,7 +543,7 @@ const Jurisdictions = () => {
                             {TREATY_ITEMS.map((item) => (
                               <div key={item.key} className="flex flex-col gap-1.5 rounded-2xl border border-gray-200 bg-white p-2.5 shadow-sm">
                                 <p className="text-[10px] font-bold uppercase tracking-wider text-gray-600 leading-tight truncate">
-                                  {item.label}
+                                  {t(`jurisdictions.treatyLabels.${item.key}`)}
                                 </p>
                                 <p className="text-xs font-semibold text-gray-900 leading-snug line-clamp-2">
                                   {country.treaties[item.key]}
@@ -558,7 +558,10 @@ const Jurisdictions = () => {
                             {TRADEMARK_ITEMS.map((item) => (
                               <div key={item.key} className="flex flex-col gap-1.5 rounded-2xl border border-gray-200 bg-gray-50 p-2.5 shadow-sm">
                                 <p className="text-[10px] font-bold uppercase tracking-wider text-gray-600 leading-tight truncate">
-                                  {item.label}
+                                  {item.key === 'duration' ? t('jurisdictions.labels.protectionDuration') :
+                                   item.key === 'renewable' ? t('jurisdictions.labels.renewable') :
+                                   item.key === 'oppositionPeriod' ? t('jurisdictions.labels.oppositionPeriod') :
+                                   t('jurisdictions.labels.classification')}
                                 </p>
                                 <p className="text-xs font-semibold text-gray-900 leading-snug line-clamp-2">
                                   {country.trademarks[item.key]}
@@ -573,7 +576,10 @@ const Jurisdictions = () => {
                             {PATENT_ITEMS.map((item) => (
                               <div key={item.key} className="flex flex-col gap-1.5 rounded-2xl border border-gray-200 bg-white p-2.5 shadow-sm">
                                 <p className="text-[10px] font-bold uppercase tracking-wider text-gray-600 leading-tight truncate">
-                                  {item.label}
+                                  {item.key === 'duration' ? t('jurisdictions.labels.protectionDuration') :
+                                   item.key === 'examination' ? t('jurisdictions.labels.examinationType') :
+                                   item.key === 'pct' ? t('jurisdictions.labels.pctRoute') :
+                                   t('jurisdictions.labels.patentTypes')}
                                 </p>
                                 <p className="text-xs font-semibold text-gray-900 leading-snug line-clamp-2">
                                   {country.patents[item.key]}
@@ -594,10 +600,10 @@ const Jurisdictions = () => {
         <section className="section-spacing bg-gray-warm" data-animate>
           <div className="container-responsive">
             <div className="section-heading">
-              <span className="section-eyebrow">Global frameworks</span>
-              <h2 className="section-title text-navy-deep mt-6">Confidence across international systems</h2>
+              <span className="section-eyebrow">{t('jurisdictions.globalFrameworks.eyebrow')}</span>
+              <h2 className="section-title text-navy-deep mt-6">{t('jurisdictions.globalFrameworks.title')}</h2>
               <p className="section-subtitle mt-6">
-                We integrate directly with world bodies and regional offices, ensuring your IP assets remain compliant, enforceable, and optimised for expansion.
+                {t('jurisdictions.globalFrameworks.description')}
               </p>
             </div>
             <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 xl:grid-cols-3">
@@ -632,10 +638,10 @@ const Jurisdictions = () => {
         <section className="section-spacing bg-white" data-animate>
           <div className="container-responsive">
             <div className="section-heading">
-              <span className="section-eyebrow">Delivery rhythm</span>
-              <h2 className="section-title mt-6">A disciplined sequence for international execution</h2>
+              <span className="section-eyebrow">{t('jurisdictions.deliverySteps.eyebrow')}</span>
+              <h2 className="section-title mt-6">{t('jurisdictions.deliverySteps.title')}</h2>
               <p className="section-subtitle mt-6">
-                Transparent governance and dependable timelines keep stakeholders aligned from initial assessment through enforcement.
+                {t('jurisdictions.deliverySteps.description')}
               </p>
             </div>
             <ol className="timeline max-w-4xl mx-auto">
@@ -655,10 +661,10 @@ const Jurisdictions = () => {
         <section className="section-spacing bg-gray-warm" data-animate>
           <div className="container-responsive">
             <div className="section-heading">
-              <span className="section-eyebrow">Programme governance</span>
-              <h2 className="section-title mt-6">Partnerships designed for scale</h2>
+              <span className="section-eyebrow">{t('jurisdictions.operatingPillars.eyebrow')}</span>
+              <h2 className="section-title mt-6">{t('jurisdictions.operatingPillars.title')}</h2>
               <p className="section-subtitle mt-6">
-                Stay audit-ready with programme management that delivers clarity on spend, timelines, and risk posture.
+                {t('jurisdictions.operatingPillars.description')}
               </p>
             </div>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
@@ -679,17 +685,17 @@ const Jurisdictions = () => {
           <div className="relative z-10 mx-auto max-w-6xl px-6 md:px-8">
             <div className="cta-content">
               <div className="space-y-4">
-                <span className="text-xs font-semibold uppercase tracking-[0.3em] text-white/60">Global reach</span>
+                <span className="text-xs font-semibold uppercase tracking-[0.3em] text-white/60">{t('jurisdictions.finalCta.eyebrow')}</span>
                 <h2 className="text-2xl font-bold text-white sm:text-3xl md:text-4xl">
-                  Extend your IP protection with a single, accountable partner
+                  {t('jurisdictions.finalCta.title')}
                 </h2>
                 <p className="max-w-2xl text-sm text-white/75 sm:text-base">
-                  Engage our cross-border desk to coordinate filings, renewals, enforcement, and commercialisation strategies across every jurisdiction critical to your growth.
+                  {t('jurisdictions.finalCta.description')}
                 </p>
               </div>
               <div className="flex flex-col gap-4 sm:flex-row sm:gap-3">
                 <Button asChild size="lg" className="w-full bg-white text-navy-deep hover:bg-white/90 sm:w-auto">
-                  <Link to="/contact">Start an international mandate</Link>
+                  <Link to="/contact">{t('jurisdictions.buttons.startMandate')}</Link>
                 </Button>
                 <Button
                   asChild
@@ -697,7 +703,7 @@ const Jurisdictions = () => {
                   variant="outline"
                   className="w-full border-white bg-white/10 text-white hover:bg-white hover:text-navy-deep sm:w-auto"
                 >
-                  <Link to="/our-story">See how we operate</Link>
+                  <Link to="/our-story">{t('jurisdictions.buttons.seeOperation')}</Link>
                 </Button>
               </div>
             </div>
