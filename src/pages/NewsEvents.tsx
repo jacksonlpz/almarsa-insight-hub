@@ -34,6 +34,7 @@ type Section = {
 };
 
 type CountryData = {
+  id: string;
   country: string;
   Flag: ComponentType<SVGProps<SVGSVGElement>>;
   ministry: string;
@@ -42,6 +43,7 @@ type CountryData = {
 };
 
 function SectionCarousel({ items }: { items: SectionItem[] }) {
+  const { t } = useLanguage();
   const autoplay = useRef(
     Autoplay({
       delay: 4000,
@@ -92,7 +94,7 @@ function SectionCarousel({ items }: { items: SectionItem[] }) {
                           )}
                           {item.deadline && (
                             <span className="font-medium text-red-600 text-label-sm">
-                              ⏰ Objection deadline: {item.deadline}
+                              ⏰ {t("newsEvents.deadline")}: {item.deadline}
                             </span>
                           )}
                         </div>
@@ -119,6 +121,7 @@ function SectionCarousel({ items }: { items: SectionItem[] }) {
 
 const GCC_COUNTRIES: CountryData[] = [
   {
+    id: "bahrain",
     country: "Bahrain",
     Flag: BH,
     ministry: "Ministry of Industry and Commerce (MOIC)",
@@ -160,6 +163,7 @@ const GCC_COUNTRIES: CountryData[] = [
     website: "https://www.moic.gov.bh/en"
   },
   {
+    id: "qatar",
     country: "Qatar",
     Flag: QA,
     ministry: "Ministry of Commerce and Industry (MOCI)",
@@ -201,6 +205,7 @@ const GCC_COUNTRIES: CountryData[] = [
     website: "https://www.moci.gov.qa/en/"
   },
   {
+    id: "saudiArabia",
     country: "Saudi Arabia",
     Flag: SA,
     ministry: "Saudi Authority for Intellectual Property (SAIP)",
@@ -242,6 +247,7 @@ const GCC_COUNTRIES: CountryData[] = [
     website: "https://www.saip.gov.sa/en/"
   },
   {
+    id: "uae",
     country: "UAE",
     Flag: AE,
     ministry: "Ministry of Economy and Tourism",
@@ -283,6 +289,7 @@ const GCC_COUNTRIES: CountryData[] = [
     website: "https://www.moet.gov.ae/en/home"
   },
   {
+    id: "oman",
     country: "Oman",
     Flag: OM,
     ministry: "Ministry of Commerce, Industry & Investment Promotion (MOCIIP)",
@@ -315,6 +322,7 @@ const GCC_COUNTRIES: CountryData[] = [
     website: "https://tejarah.gov.om/en"
   },
   {
+    id: "kuwait",
     country: "Kuwait",
     Flag: KW,
     ministry: "Ministry of Commerce and Industry (MOCI)",
@@ -400,33 +408,34 @@ const NewsEvents = () => {
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="section-heading text-center mb-16">
               <div className="space-y-4">
-                <span className="section-eyebrow">Official Sources</span>
-                <h2 className="section-title">GCC Intellectual Property Updates</h2>
+                <span className="section-eyebrow">{t("newsEvents.sectionHeading.eyebrow")}</span>
+                <h2 className="section-title">{t("newsEvents.sectionHeading.title")}</h2>
               </div>
               <p className="section-subtitle mx-auto max-w-3xl">
-                Curated updates from official government ministries, trademark offices, and IP authorities across the Gulf region.
+                {t("newsEvents.sectionHeading.subtitle")}
               </p>
             </div>
 
             <div className="grid gap-6 md:grid-cols-2">
               {GCC_COUNTRIES.map((countryData) => {
                 const FlagIcon = countryData.Flag;
+                const localizedCountryName = t(`newsEvents.countries.${countryData.id}`);
 
                 return (
                   <Card
-                    key={countryData.country}
+                    key={countryData.id}
                     className="flex h-full flex-col overflow-hidden border-2 border-border transition-all duration-base ease-emphasis hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl"
                   >
                     <CardContent className="bg-white p-6">
                       <div className="flex items-center justify-between gap-4">
                         <div className="flex items-center gap-3">
                           <div className="flex items-center justify-center rounded-md border border-border/40 bg-muted/60 p-1.5 shadow-sm">
-                            <FlagIcon title={`${countryData.country} flag`} className="h-6 w-9" />
+                            <FlagIcon title={t("newsEvents.countryFlagAlt", { country: localizedCountryName })} className="h-6 w-9" />
                           </div>
-                          <h3 className="text-heading-lg font-semibold text-navy-deep md:text-display-sm">{countryData.country}</h3>
+                          <h3 className="text-heading-lg font-semibold text-navy-deep md:text-display-sm">{localizedCountryName}</h3>
                         </div>
                         <Badge variant="secondary" className="uppercase tracking-wide text-label-xs whitespace-nowrap">
-                          Latest Updates
+                          {t("newsEvents.badge.latest")}
                         </Badge>
                       </div>
                     </CardContent>
@@ -452,7 +461,7 @@ const NewsEvents = () => {
                                   rel="noopener noreferrer"
                                   className="inline-flex items-center gap-2 text-body font-semibold text-primary hover:underline"
                                 >
-                                  View Complete Archive
+                                  {t("newsEvents.completeArchive")}
                                   <ExternalLink className="h-4 w-4" />
                                 </a>
                               </div>

@@ -967,6 +967,24 @@ export const translations = {
       readMore: 'Read More',
       register: 'Register',
       deadline: 'Objection deadline',
+      sectionHeading: {
+        eyebrow: 'Official Sources',
+        title: 'GCC Intellectual Property Updates',
+        subtitle: 'Curated updates from official government ministries, trademark offices, and IP authorities across the Gulf region.'
+      },
+      badge: {
+        latest: 'Latest Updates'
+      },
+      completeArchive: 'View Complete Archive',
+      countryFlagAlt: '{country} flag',
+      countries: {
+        bahrain: 'Bahrain',
+        qatar: 'Qatar',
+        saudiArabia: 'Saudi Arabia',
+        uae: 'United Arab Emirates',
+        oman: 'Oman',
+        kuwait: 'Kuwait'
+      },
       hero: {
         eyebrow: 'GCC IP Intelligence',
         title: 'Industry Updates & Official Gazette Publications',
@@ -2070,6 +2088,24 @@ export const translations = {
       readMore: 'اقرأ المزيد',
       register: 'سجل',
       deadline: 'الموعد النهائي للاعتراض',
+      sectionHeading: {
+        eyebrow: 'مصادر رسمية',
+        title: 'تحديثات الملكية الفكرية في دول مجلس التعاون الخليجي',
+        subtitle: 'تحديثات منسقة من الوزارات الحكومية الرسمية ومكاتب العلامات التجارية والهيئات المختصة بالملكية الفكرية في منطقة الخليج.'
+      },
+      badge: {
+        latest: 'أحدث التحديثات'
+      },
+      completeArchive: 'عرض الأرشيف الكامل',
+      countryFlagAlt: 'علم {country}',
+      countries: {
+        bahrain: 'البحرين',
+        qatar: 'قطر',
+        saudiArabia: 'المملكة العربية السعودية',
+        uae: 'الإمارات العربية المتحدة',
+        oman: 'عُمان',
+        kuwait: 'الكويت'
+      },
       hero: {
         eyebrow: 'ذكاء الملكية الفكرية لدول مجلس التعاون الخليجي',
         title: 'تحديثات الصناعة ومنشورات الجريدة الرسمية',
