@@ -130,11 +130,11 @@ const InsightsForms = () => {
           <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8">
             <div className="mb-8 md:mb-12 space-y-3 text-center mx-auto max-w-3xl">
               <div className="space-y-3">
-                <span className="section-eyebrow">Country intelligence</span>
-                <h2 className="section-title">Country Guides</h2>
+                <span className="section-eyebrow">{t('insights.sections.countryIntelligence.eyebrow')}</span>
+                <h2 className="section-title">{t('insights.sections.countryIntelligence.title')}</h2>
               </div>
               <p className="section-subtitle">
-                Practical overviews of filing procedures, timelines, and requirements by country.
+                {t('insights.sections.countryIntelligence.subtitle')}
               </p>
             </div>
             <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -318,11 +318,11 @@ const InsightsForms = () => {
           <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8">
             <div className="mb-8 md:mb-12 space-y-3 text-center mx-auto max-w-3xl">
               <div className="space-y-3">
-                <span className="section-eyebrow">Legal Framework Repository</span>
-                <h2 className="section-title text-navy-deep">GCC IP Legislation & Regulatory Documents</h2>
+                <span className="section-eyebrow">{t('insights.sections.legalFramework.eyebrow')}</span>
+                <h2 className="section-title text-navy-deep">{t('insights.sections.legalFramework.title')}</h2>
               </div>
               <p className="section-subtitle">
-                Access comprehensive trademark, patent, and industrial design legislation across Kuwait, Bahrain, Qatar, Saudi Arabia, and the UAE.
+                {t('insights.sections.legalFramework.subtitle')}
               </p>
             </div>
             {filteredContent.length === 0 ? (
@@ -386,11 +386,11 @@ const InsightsForms = () => {
           <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8">
             <div className="mb-8 md:mb-12 space-y-3 text-center mx-auto max-w-3xl">
               <div className="space-y-3">
-                <span className="section-eyebrow">On-demand learning</span>
-                <h2 className="section-title text-navy-deep">IP Knowledge Center: learn, apply, protect</h2>
+                <span className="section-eyebrow">{t('insights.sections.onDemandLearning.eyebrow')}</span>
+                <h2 className="section-title text-navy-deep">{t('insights.sections.onDemandLearning.title')}</h2>
               </div>
               <p className="section-subtitle">
-                Short explainer modules with actionable guidance to help you understand intellectual property, trademarks, patents, and design rights.
+                {t('insights.sections.onDemandLearning.subtitle')}
               </p>
             </div>
             <div className="grid gap-5 md:grid-cols-3">
@@ -435,12 +435,12 @@ const InsightsForms = () => {
           <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 md:px-8">
             <div className="cta-content">
               <div className="space-y-3">
-                <span className="text-label-xs font-semibold uppercase tracking-widest text-white/60">Next steps</span>
+                <span className="text-label-xs font-semibold uppercase tracking-widest text-white/60">{t('insights.sections.nextSteps.eyebrow')}</span>
                 <h2 className="text-display-md font-heading font-semibold text-white sm:text-display-lg">
-                  Coordinate your next IP intelligence briefing
+                  {t('insights.sections.nextSteps.title')}
                 </h2>
                 <p className="max-w-2xl text-body sm:text-body text-white/75">
-                  Partner with our analysts to review upcoming filings, regional enforcement activity, or governance updates tailored to your organisation.
+                  {t('insights.sections.nextSteps.subtitle')}
                 </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row">
@@ -450,7 +450,7 @@ const InsightsForms = () => {
                   variant="outline"
                   className="border-white/40 text-navy-deep"
                 >
-                  <Link to="/news-events">Subscribe for intelligence updates</Link>
+                  <Link to="/news-events">{t('insights.sections.nextSteps.buttons.primary')}</Link>
                 </Button>
               </div>
             </div>
