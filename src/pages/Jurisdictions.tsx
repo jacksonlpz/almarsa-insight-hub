@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Info, FileText, Tag, Lightbulb } from "lucide-react";
 import { renderAlMarsaIcon } from "@/components/icons/al-marsa";
+import { AboutCard } from "@/components/ui/AboutCard";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import useScrollReveal from "@/hooks/useScrollReveal";
 import "@/styles/home.css";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -351,37 +353,37 @@ const Jurisdictions = () => {
           </div>
         </section>
 
-        <section className="section-spacing bg-gray-warm" data-animate>
+        <section className="section-spacing bg-white" data-animate>
           <div className="container-responsive">
-            <div className="section-heading">
-              <span className="section-eyebrow">{pageContent.globalFrameworks.eyebrow}</span>
-              <h2 className="section-title text-navy-deep mt-6">{pageContent.globalFrameworks.title}</h2>
-              <p className="section-subtitle mt-6">{pageContent.globalFrameworks.subtitle}</p>
-            </div>
-            <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 xl:grid-cols-3">
+            <SectionHeading
+              eyebrow={pageContent.globalFrameworks.eyebrow}
+              title={pageContent.globalFrameworks.title}
+              subtitle={pageContent.globalFrameworks.subtitle}
+              align="center"
+              className="max-w-3xl"
+            />
+            <div className="grid gap-12 lg:grid-cols-2 max-w-6xl mx-auto">
               {globalFrameworks.map((framework) => (
-                <Card
+                <AboutCard
                   key={framework.title}
-                  className="group rounded-2xl border border-border bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-xl"
+                  badge={pageContent.globalFrameworks.badge}
+                  title={framework.title}
+                  description={framework.description}
                 >
-                  <CardContent className="space-y-5 p-6 sm:p-7 lg:p-8">
-                    <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-all duration-300 group-hover:bg-primary group-hover:scale-110">
-                      {renderAlMarsaIcon(framework.icon, { className: "h-8 w-8 group-hover:text-white transition-colors", strokeWidth: 1.5 })}
+                  <div className="space-y-6">
+                    <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                      {renderAlMarsaIcon(framework.icon, { className: "h-8 w-8", strokeWidth: 1.5 })}
                     </div>
-                    <h3 className="text-lg font-semibold text-navy-deep">{framework.title}</h3>
-                    <p className="text-sm leading-relaxed text-muted-foreground">{framework.description}</p>
-                    <ul className="space-y-2 text-sm text-muted-foreground">
+                    <ul className="space-y-3 text-base text-muted-foreground">
                       {framework.highlights.map((item) => (
-                        <li key={item} className="flex items-center gap-2">
-                          <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-[11px] font-semibold uppercase text-primary">
-                            •
-                          </span>
-                          <span className="text-sm text-muted-foreground">{item}</span>
+                        <li key={item} className="flex items-start gap-3">
+                          <span className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary">•</span>
+                          <span>{item}</span>
                         </li>
                       ))}
                     </ul>
-                  </CardContent>
-                </Card>
+                  </div>
+                </AboutCard>
               ))}
             </div>
           </div>

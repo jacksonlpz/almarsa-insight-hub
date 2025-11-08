@@ -22,6 +22,8 @@ import {
   COUNTRY_GUIDES,
 } from "@/data/insightsResources";
 import { useLanguage } from "@/hooks/useLanguage";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { AboutCard } from "@/components/ui/AboutCard";
 
 const InsightsForms = () => {
   const { t, language } = useLanguage();
@@ -329,21 +331,21 @@ const InsightsForms = () => {
           </DialogContent>
         </Dialog>
 
-        <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-slate-50" data-animate>
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8">
-            <div className="mb-8 md:mb-12 space-y-3 text-center mx-auto max-w-3xl">
-              <div className="space-y-3">
-                <span className="section-eyebrow">{t('insights.legislation.eyebrow')}</span>
-                <h2 className="section-title text-navy-deep">{t('insights.legislation.title')}</h2>
-              </div>
-              <p className="section-subtitle">
-                {t('insights.legislation.description')}
-              </p>
-            </div>
+        <section className="section-spacing bg-white" data-animate>
+          <div className="container-responsive">
+            <SectionHeading
+              eyebrow={t('insights.legislation.eyebrow')}
+              title={t('insights.legislation.title')}
+              subtitle={t('insights.legislation.description')}
+              align="center"
+              className="max-w-3xl"
+            />
             {filteredContent.length === 0 ? (
-              <Card className="p-8 text-center text-muted-foreground">{t('insights.legislation.noResults')}</Card>
+              <div className="mt-12 text-center text-muted-foreground">
+                {t('insights.legislation.noResults')}
+              </div>
             ) : filteredContent && filteredContent.length > 0 ? (
-              <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              <div className="grid gap-12 lg:grid-cols-2 max-w-6xl mx-auto">
                 {filteredContent.map((insight) => {
                   const handleDownload = () => {
                     if ('pdfUrl' in insight && insight.pdfUrl) {
@@ -356,91 +358,98 @@ const InsightsForms = () => {
                     }
                   };
 
+                  const highlights = 'highlights' in insight ? insight.highlights : undefined;
+                  const actionLabel = 'pdfUrl' in insight ? t('insights.legislation.openPdf') : t('insights.legislation.view');
+
                   return (
-                    <Card
+                    <AboutCard
                       key={insight.title}
-                      className="group flex flex-col overflow-hidden border border-border bg-white shadow-lg transition-all duration-base ease-emphasis hover:-translate-y-1 hover:shadow-2xl cursor-pointer rounded-2xl"
+                      badge={t('insights.legislation.badge')}
+                      title={insight.title}
+                      description={insight.description}
                       onClick={handleDownload}
+                      className="cursor-pointer transition-transform duration-300 ease-out hover:-translate-y-1"
                     >
-                      <div className="relative h-24 flex-shrink-0 bg-gradient-to-br from-navy-deep via-navy-deep/60 to-primary/60">
-                        <div className="absolute inset-0 flex flex-col justify-between p-4 text-white">
-                          <div className="flex items-center justify-between gap-2">
-                            <span className="text-label-xs uppercase tracking-widest truncate">{insight.topic}</span>
-                            <Badge variant="secondary" className="flex-shrink-0 bg-white/20 px-2 py-0.5 text-label-xs uppercase tracking-wide text-white">
-                              {insight.category}
-                            </Badge>
+                      <div className="space-y-6">
+                        <div className="flex items-center gap-4">
+                          <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                            {renderAlMarsaIcon(insight.icon, { className: "h-7 w-7" })}
                           </div>
-                          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/15 text-white">
-                            {renderAlMarsaIcon(insight.icon, { className: "h-5 w-5" })}
+                          <span className="text-base font-semibold text-muted-foreground">{insight.topic}</span>
+                        </div>
+
+                        {highlights && highlights.length > 0 && (
+                          <ul className="list-disc space-y-2 pl-5 text-base text-muted-foreground">
+                            {highlights.map((item) => (
+                              <li key={item}>{item}</li>
+                            ))}
+                          </ul>
+                        )}
+
+                        <div className="flex items-center justify-between border-t border-border/50 pt-4 text-base text-muted-foreground">
+                          <span className="font-semibold text-primary">{insight.type}</span>
+                          <div className="flex items-center gap-2 text-primary">
+                            <span className="hidden sm:inline">{actionLabel}</span>
+                            <ArrowRight className="h-5 w-5" />
                           </div>
                         </div>
                       </div>
-                      <CardContent className="flex flex-1 flex-col gap-3 p-4">
-                        <h3 className="text-heading-sm font-semibold text-navy-deep leading-tight line-clamp-2 min-h-[2.5rem]">{insight.title}</h3>
-                        <p className="text-body-xs leading-relaxed text-muted-foreground line-clamp-3 flex-1">{insight.description}</p>
-                        <div className="flex items-center justify-between pt-2 border-t border-border/50">
-                          <span className="text-label-xs font-semibold text-primary uppercase tracking-wide">{insight.type}</span>
-                          <div className="flex items-center gap-1 text-body-xs text-primary">
-                            <span className="hidden sm:inline">{'pdfUrl' in insight ? t('insights.legislation.openPdf') : t('insights.legislation.view')}</span>
-                            <ArrowRight className="h-4 w-4" />
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
+                    </AboutCard>
                   );
                 })}
               </div>
             ) : (
-              <div className="text-center text-muted-foreground py-12">
+              <div className="mt-12 text-center text-muted-foreground">
                 {t('insights.legislation.loading')}
               </div>
             )}
           </div>
         </section>
-        <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-slate-50" data-animate>
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8">
-            <div className="mb-8 md:mb-12 space-y-3 text-center mx-auto max-w-3xl">
-              <div className="space-y-3">
-                <span className="section-eyebrow">{t('insights.learningModules.eyebrow')}</span>
-                <h2 className="section-title text-navy-deep">{t('insights.learningModules.title')}</h2>
-              </div>
-              <p className="section-subtitle">
-                {t('insights.learningModules.description')}
-              </p>
-            </div>
-            <div className="grid gap-5 md:grid-cols-3">
+        <section className="section-spacing bg-white" data-animate>
+          <div className="container-responsive">
+            <SectionHeading
+              eyebrow={t('insights.learningModules.eyebrow')}
+              title={t('insights.learningModules.title')}
+              subtitle={t('insights.learningModules.description')}
+              align="center"
+              className="max-w-3xl"
+            />
+            <div className="grid gap-12 lg:grid-cols-2 max-w-6xl mx-auto">
               {LEARNING_MODULES[language].map((module) => (
-                <Card
+                <AboutCard
                   key={module.title}
-                  className="group flex flex-col overflow-hidden border border-border bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl rounded-2xl"
+                  badge={t('insights.learningModules.badge')}
+                  title={module.title}
+                  description={module.summary}
                 >
-                  <div className="relative aspect-video w-full overflow-hidden flex-shrink-0 bg-muted">
-                    <iframe
-                      src={module.videoUrl}
-                      title={module.title}
-                      className="h-full w-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    />
+                  <div className="space-y-6">
+                    <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-muted">
+                      <iframe
+                        src={module.videoUrl}
+                        title={module.title}
+                        className="h-full w-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                      />
+                    </div>
+                    <div className="space-y-6">
+                      <div className="space-y-3">
+                        <p className="text-sm font-semibold uppercase tracking-wide text-primary/80">
+                          {t('insights.learningModules.howToPractice')}
+                        </p>
+                        <ul className="list-disc space-y-2 pl-5 text-base text-muted-foreground">
+                          {module.howTo.map((step) => (
+                            <li key={step}>{step}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="rounded-2xl border border-primary/15 bg-primary/5 p-4 text-base leading-relaxed text-muted-foreground">
+                        <span className="font-semibold text-primary">{t('insights.learningModules.didYouKnow')}</span>{' '}
+                        {module.didYouKnow}
+                      </div>
+                    </div>
                   </div>
-                  <CardContent className="flex flex-1 flex-col gap-4 p-4">
-                    <div className="space-y-2">
-                      <h3 className="text-heading-sm font-semibold text-navy-deep leading-tight line-clamp-2">{module.title}</h3>
-                      <p className="text-body-xs leading-relaxed text-muted-foreground line-clamp-2">{module.summary}</p>
-                    </div>
-                    <div className="space-y-2">
-                      <span className="text-label-xs font-semibold uppercase tracking-wide text-primary/70">{t('insights.learningModules.howToPractice')}</span>
-                      <ul className="list-disc space-y-1 pl-4 text-body-xs text-muted-foreground">
-                        {module.howTo.map((step, idx) => (
-                          <li key={step} className="line-clamp-2">{step}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="mt-auto rounded-xl border border-primary/15 bg-primary/5 p-3 text-body-xs text-muted-foreground">
-                      <span className="font-semibold text-primary">{t('insights.learningModules.didYouKnow')}</span> {module.didYouKnow}
-                    </div>
-                  </CardContent>
-                </Card>
+                </AboutCard>
               ))}
             </div>
           </div>
