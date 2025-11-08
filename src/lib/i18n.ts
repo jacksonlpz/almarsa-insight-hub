@@ -241,6 +241,34 @@ export const translations = {
       title: 'Get In Touch',
       subtitle: 'Contact Us',
       description: 'Reach out to discuss your IP protection needs',
+      hero: {
+        eyebrow: 'Get In Touch',
+        title: 'Expert IP Support Tailored to Your Needs',
+        subtitle: 'Connect with regionally focused professionals who coordinate filings, enforcement, and strategic advisory across the GCC.',
+        metrics: {
+          response: {
+            value: '24h',
+            label: 'Response time'
+          },
+          retention: {
+            value: '92%',
+            label: 'Client retention'
+          },
+          jurisdictions: {
+            value: '150+',
+            label: 'Jurisdictions covered'
+          }
+        },
+        whatToExpect: {
+          heading: 'What to Expect',
+          description: 'Dedicated engagement lead coordinating with our specialists for response within one business day.',
+          pillars: {
+            lead: 'Dedicated engagement lead',
+            confidential: 'Confidential handling',
+            multilingual: 'Multilingual regional support'
+          }
+        }
+      },
       form: {
         firstName: 'First Name',
         lastName: 'Last Name',
@@ -663,6 +691,34 @@ export const translations = {
       title: 'Insights & Forms',
       subtitle: 'Resources & Tools',
       description: 'Access our library of IP resources, guides, and downloadable forms',
+      hero: {
+        eyebrow: 'Insights & Resources',
+        title: 'Actionable IP Intelligence',
+        subtitle: 'Curated library of intelligence, templates, and analyst briefings for confident IP strategy across the GCC region.',
+        metrics: {
+          guides: {
+            value: 'GCC-focused',
+            label: 'Guides & Templates'
+          },
+          videos: {
+            value: 'Video explainers',
+            label: 'Learning Modules'
+          },
+          forms: {
+            value: 'Prompt follow-up',
+            label: 'Form Submissions'
+          }
+        },
+        quality: {
+          heading: 'Quality Assurance',
+          description: 'Materials written by IP professionals and reviewed regularly to reflect GCC, MENA, and international changes.',
+          features: {
+            categorized: 'Categorized content',
+            templates: 'Regional templates',
+            routing: 'Specialist routing'
+          }
+        }
+      },
       categories: {
         guides: 'Guides & Whitepapers',
         forms: 'Downloadable Forms',
@@ -955,6 +1011,34 @@ export const translations = {
       title: 'تواصل معنا',
       subtitle: 'اتصل بنا',
       description: 'تواصل معنا لمناقشة احتياجات حماية الملكية الفكرية الخاصة بك',
+      hero: {
+        eyebrow: 'تواصل معنا',
+        title: 'دعم خبير للملكية الفكرية مصمم لاحتياجاتك',
+        subtitle: 'تواصل مع متخصصين ذوي تركيز إقليمي ينسقون التسجيلات والإنفاذ والاستشارات الاستراتيجية عبر دول مجلس التعاون الخليجي.',
+        metrics: {
+          response: {
+            value: '24 ساعة',
+            label: 'وقت الاستجابة'
+          },
+          retention: {
+            value: '92%',
+            label: 'الاحتفاظ بالعملاء'
+          },
+          jurisdictions: {
+            value: '+150',
+            label: 'الولايات القضائية المشمولة'
+          }
+        },
+        whatToExpect: {
+          heading: 'ما يمكن توقعه',
+          description: 'قائد مشاركة مخصص ينسق مع متخصصينا للرد خلال يوم عمل واحد.',
+          pillars: {
+            lead: 'قائد مشاركة مخصص',
+            confidential: 'معالجة سرية',
+            multilingual: 'دعم إقليمي متعدد اللغات'
+          }
+        }
+      },
       form: {
         firstName: 'الاسم الأول',
         lastName: 'اسم العائلة',
@@ -1377,6 +1461,34 @@ export const translations = {
       title: 'الرؤى والنماذج',
       subtitle: 'الموارد والأدوات',
       description: 'الوصول إلى مكتبتنا من موارد الملكية الفكرية والأدلة والنماذج القابلة للتنزيل',
+      hero: {
+        eyebrow: 'الرؤى والموارد',
+        title: 'ذكاء قابل للتنفيذ في الملكية الفكرية',
+        subtitle: 'مكتبة منسقة من المعلومات والقوالب والإحاطات التحليلية لاستراتيجية واثقة للملكية الفكرية عبر منطقة دول مجلس التعاون الخليجي.',
+        metrics: {
+          guides: {
+            value: 'متخصص في دول الخليج',
+            label: 'الأدلة والقوالب'
+          },
+          videos: {
+            value: 'شروحات فيديو',
+            label: 'وحدات التعلم'
+          },
+          forms: {
+            value: 'متابعة سريعة',
+            label: 'تقديم النماذج'
+          }
+        },
+        quality: {
+          heading: 'ضمان الجودة',
+          description: 'مواد مكتوبة من قبل متخصصين في الملكية الفكرية ويتم مراجعتها بانتظام لتعكس التغييرات في دول مجلس التعاون الخليجي والشرق الأوسط وشمال أفريقيا والدولية.',
+          features: {
+            categorized: 'محتوى مصنف',
+            templates: 'قوالب إقليمية',
+            routing: 'توجيه متخصص'
+          }
+        }
+      },
       categories: {
         guides: 'الأدلة والمستندات البيضاء',
         forms: 'النماذج القابلة للتنزيل',

@@ -21,8 +21,11 @@ import {
   LEARNING_MODULES,
   COUNTRY_GUIDES,
 } from "@/data/insightsResources";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const InsightsForms = () => {
+  const { t } = useLanguage();
+
   usePageSEO({
     title: "Insights Library & IP Forms",
     description: "Access Al Marsa's downloadable IP templates, jurisdictional guides, and market analysis modules for brand and patent teams.",
@@ -56,13 +59,13 @@ const InsightsForms = () => {
               <div className="space-y-4">
                 <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-3 py-1.5 backdrop-blur-sm">
                   <div className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-                  <span className="text-label-xs font-semibold uppercase tracking-widest text-white/90">Insights & Resources</span>
+                  <span className="text-label-xs font-semibold uppercase tracking-widest text-white/90">{t('insights.hero.eyebrow')}</span>
                 </div>
                 <h1 className="hero-title text-white">
-                  Actionable IP Intelligence
+                  {t('insights.hero.title')}
                 </h1>
                 <p className="hero-subtitle mx-auto text-white/75">
-                  Curated library of intelligence, templates, and analyst briefings for confident IP strategy across the GCC region.
+                  {t('insights.hero.subtitle')}
                 </p>
               </div>
 
@@ -92,30 +95,30 @@ const InsightsForms = () => {
               <div className="rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
                 <div className="mb-3 flex items-center justify-center gap-2">
                   <div className="h-px w-6 bg-gradient-to-r from-transparent to-primary" />
-                  <span className="text-label-xs font-semibold uppercase tracking-wide text-primary">Quality Assurance</span>
+                  <span className="text-label-xs font-semibold uppercase tracking-wide text-primary">{t('insights.hero.quality.heading')}</span>
                   <div className="h-px w-6 bg-gradient-to-l from-transparent to-primary" />
                 </div>
                 <p className="mb-3 text-body-xs leading-relaxed text-white/75 md:text-body">
-                  Materials written by IP professionals and reviewed regularly to reflect GCC, MENA, and international changes.
+                  {t('insights.hero.quality.description')}
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-body-xs text-white/70">
                   <div className="flex items-center gap-2">
                     <div className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-primary/20">
                       <div className="h-1.5 w-1.5 rounded-full bg-primary" />
                     </div>
-                    <span>Categorized content</span>
+                    <span>{t('insights.hero.quality.features.categorized')}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-primary/20">
                       <div className="h-1.5 w-1.5 rounded-full bg-primary" />
                     </div>
-                    <span>Regional templates</span>
+                    <span>{t('insights.hero.quality.features.templates')}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-primary/20">
                       <div className="h-1.5 w-1.5 rounded-full bg-primary" />
                     </div>
-                    <span>Specialist routing</span>
+                    <span>{t('insights.hero.quality.features.routing')}</span>
                   </div>
                 </div>
               </div>
