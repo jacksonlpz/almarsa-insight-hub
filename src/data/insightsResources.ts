@@ -1,26 +1,47 @@
+import type { Language } from "@/lib/i18n";
+
 export type ResourceMetric = {
   value: string;
   label: string;
   icon: string;
 };
 
-export const RESOURCE_METRICS: ResourceMetric[] = [
-  {
-    value: "GCC-focused",
-    label: "Guides & templates",
-    icon: "advantage-insight" as const,
-  },
-  {
-    value: "Video explainers",
-    label: "Learning modules",
-    icon: "strategy" as const,
-  },
-  {
-    value: "Prompt follow-up",
-    label: "Form submissions",
-    icon: "defence" as const,
-  }
-];
+export const RESOURCE_METRICS: Record<Language, ResourceMetric[]> = {
+  en: [
+    {
+      value: "GCC-focused",
+      label: "Guides & templates",
+      icon: "advantage-insight" as const,
+    },
+    {
+      value: "Video explainers",
+      label: "Learning modules",
+      icon: "strategy" as const,
+    },
+    {
+      value: "Prompt follow-up",
+      label: "Form submissions",
+      icon: "defence" as const,
+    }
+  ],
+  ar: [
+    {
+      value: "تركيز على مجلس التعاون الخليجي",
+      label: "أدلة ونماذج",
+      icon: "advantage-insight" as const,
+    },
+    {
+      value: "شروحات فيديو",
+      label: "وحدات التعلم",
+      icon: "strategy" as const,
+    },
+    {
+      value: "متابعة فورية",
+      label: "نماذج مقدمة",
+      icon: "defence" as const,
+    }
+  ]
+};
 
 export type FeaturedResource = {
   title: string;
@@ -33,53 +54,102 @@ export type FeaturedResource = {
   pdfUrl: string;
 };
 
-export const FEATURED_RESOURCES: FeaturedResource[] = [
-  {
-    title: "Oman Industrial Design Law",
-    description:
-      "Complete legal framework governing industrial design protection in Oman.",
-    category: "Legal",
-    type: "PDF",
-    topic: "Industrial Design",
-    icon: "patent" as const,
-    highlights: [
-      "Comprehensive coverage of industrial design registration requirements.",
-      "Detailed procedural guidelines for Oman IP filings.",
-      "Protection duration, renewal terms, and enforcement provisions.",
-    ],
-    pdfUrl: "https://app.box.com/s/dyuat0ucmkh7tij1e5hb4wjwdbzixzjo",
-  },
-  {
-    title: "Oman Patent Law",
-    description:
-      "Comprehensive patent legislation and regulations for Oman jurisdiction.",
-    category: "Legal",
-    type: "PDF",
-    topic: "Patent Law",
-    icon: "patent" as const,
-    highlights: [
-      "Complete patent filing requirements and examination procedures.",
-      "Priority claims, novelty standards, and patentability criteria.",
-      "Patent term duration, licensing provisions, and infringement remedies.",
-    ],
-    pdfUrl: "https://app.box.com/s/dyuat0ucmkh7tij1e5hb4wjwdbzixzjo",
-  },
-  {
-    title: "Oman Trademark Law",
-    description:
-      "Official trademark law and procedural requirements for Oman trademark registration.",
-    category: "Legal",
-    type: "PDF",
-    topic: "Trademark Law",
-    icon: "trademark" as const,
-    highlights: [
-      "Trademark classification, examination, and opposition procedures.",
-      "Registration requirements, renewal terms, and use obligations.",
-      "Enforcement mechanisms and infringement remedies in Oman.",
-    ],
-    pdfUrl: "https://app.box.com/s/dyuat0ucmkh7tij1e5hb4wjwdbzixzjo",
-  }
-];
+export const FEATURED_RESOURCES: Record<Language, FeaturedResource[]> = {
+  en: [
+    {
+      title: "Oman Industrial Design Law",
+      description:
+        "Complete legal framework governing industrial design protection in Oman.",
+      category: "Legal",
+      type: "PDF",
+      topic: "Industrial Design",
+      icon: "patent" as const,
+      highlights: [
+        "Comprehensive coverage of industrial design registration requirements.",
+        "Detailed procedural guidelines for Oman IP filings.",
+        "Protection duration, renewal terms, and enforcement provisions.",
+      ],
+      pdfUrl: "https://app.box.com/s/dyuat0ucmkh7tij1e5hb4wjwdbzixzjo",
+    },
+    {
+      title: "Oman Patent Law",
+      description:
+        "Comprehensive patent legislation and regulations for Oman jurisdiction.",
+      category: "Legal",
+      type: "PDF",
+      topic: "Patent Law",
+      icon: "patent" as const,
+      highlights: [
+        "Complete patent filing requirements and examination procedures.",
+        "Priority claims, novelty standards, and patentability criteria.",
+        "Patent term duration, licensing provisions, and infringement remedies.",
+      ],
+      pdfUrl: "https://app.box.com/s/dyuat0ucmkh7tij1e5hb4wjwdbzixzjo",
+    },
+    {
+      title: "Oman Trademark Law",
+      description:
+        "Official trademark law and procedural requirements for Oman trademark registration.",
+      category: "Legal",
+      type: "PDF",
+      topic: "Trademark Law",
+      icon: "trademark" as const,
+      highlights: [
+        "Trademark classification, examination, and opposition procedures.",
+        "Registration requirements, renewal terms, and use obligations.",
+        "Enforcement mechanisms and infringement remedies in Oman.",
+      ],
+      pdfUrl: "https://app.box.com/s/dyuat0ucmkh7tij1e5hb4wjwdbzixzjo",
+    }
+  ],
+  ar: [
+    {
+      title: "قانون التصميم الصناعي في عُمان",
+      description:
+        "الإطار القانوني الكامل الذي ينظم حماية التصاميم الصناعية في سلطنة عُمان.",
+      category: "قانوني",
+      type: "ملف PDF",
+      topic: "التصميم الصناعي",
+      icon: "patent" as const,
+      highlights: [
+        "تغطية شاملة لمتطلبات تسجيل التصميم الصناعي.",
+        "إرشادات إجرائية مفصلة لطلبات الملكية الفكرية في عُمان.",
+        "مدة الحماية وشروط التجديد وأحكام الإنفاذ.",
+      ],
+      pdfUrl: "https://app.box.com/s/dyuat0ucmkh7tij1e5hb4wjwdbzixzjo",
+    },
+    {
+      title: "قانون براءات الاختراع في عُمان",
+      description:
+        "التشريعات واللوائح الشاملة الخاصة ببراءات الاختراع في سلطنة عُمان.",
+      category: "قانوني",
+      type: "ملف PDF",
+      topic: "قانون البراءات",
+      icon: "patent" as const,
+      highlights: [
+        "كامل متطلبات إيداع براءة الاختراع وإجراءات الفحص.",
+        "ادعاءات الأولوية ومعايير الجدة وقابلية الاختراع.",
+        "مدة البراءة وأحكام الترخيص ووسائل معالجة التعدي.",
+      ],
+      pdfUrl: "https://app.box.com/s/dyuat0ucmkh7tij1e5hb4wjwdbzixzjo",
+    },
+    {
+      title: "قانون العلامات التجارية في عُمان",
+      description:
+        "القانون الرسمي وإجراءات تسجيل العلامات التجارية في سلطنة عُمان.",
+      category: "قانوني",
+      type: "ملف PDF",
+      topic: "قانون العلامات التجارية",
+      icon: "trademark" as const,
+      highlights: [
+        "تصنيف العلامات وإجراءات الفحص والاعتراض.",
+        "متطلبات التسجيل وشروط التجديد والتزامات الاستخدام.",
+        "آليات الإنفاذ ووسائل الانتصاف من التعدي في عُمان.",
+      ],
+      pdfUrl: "https://app.box.com/s/dyuat0ucmkh7tij1e5hb4wjwdbzixzjo",
+    }
+  ]
+};
 
 export type InsightResource = {
   title: string;
@@ -91,125 +161,246 @@ export type InsightResource = {
   pdfUrl: string;
 };
 
-export const ALL_INSIGHTS: InsightResource[] = [
-  {
-    title: "Kuwait Industrial Design Law",
-    description: "Complete legal framework governing industrial design protection in Kuwait.",
-    category: "Legal",
-    type: "PDF",
-    topic: "Industrial Design",
-    icon: "patent" as const,
-    pdfUrl: "https://app.box.com/s/z4lkc0hnocaif6ugq0ebl53qtqo6uoqj",
-  },
-  {
-    title: "Kuwait Patent Law",
-    description: "Comprehensive patent legislation and regulations for Kuwait jurisdiction.",
-    category: "Legal",
-    type: "PDF",
-    topic: "Patent Law",
-    icon: "patent" as const,
-    pdfUrl: "https://app.box.com/s/lgbhury7k32scqasl357wty8pwp0sd54",
-  },
-  {
-    title: "Kuwait Trademark Law",
-    description: "Official trademark law and procedural requirements for Kuwait trademark registration.",
-    category: "Legal",
-    type: "PDF",
-    topic: "Trademark Law",
-    icon: "trademark" as const,
-    pdfUrl: "https://app.box.com/s/ga6nwfqhzjvm6tyjvu4lkyjrdxnig3n8",
-  },
-  {
-    title: "Bahrain Industrial Design Law",
-    description: "Complete legal framework governing industrial design protection in Bahrain.",
-    category: "Legal",
-    type: "PDF",
-    topic: "Industrial Design",
-    icon: "patent" as const,
-    pdfUrl: "https://app.box.com/s/5a0ktbgzhlsm9vt61lsg34jg3s000fa1",
-  },
-  {
-    title: "Bahrain Patent Law",
-    description: "Comprehensive patent legislation and regulations for Bahrain jurisdiction.",
-    category: "Legal",
-    type: "PDF",
-    topic: "Patent Law",
-    icon: "patent" as const,
-    pdfUrl: "https://app.box.com/s/sr40kml17wtqzeg7x72yv76okhqv8klf",
-  },
-  {
-    title: "Bahrain Trademark Law",
-    description: "Official trademark law and procedural requirements for Bahrain trademark registration.",
-    category: "Legal",
-    type: "PDF",
-    topic: "Trademark Law",
-    icon: "trademark" as const,
-    pdfUrl: "https://app.box.com/s/57obz1s7et6582she8mtvc9vs57g3riu",
-  },
-  {
-    title: "Qatar Industrial Design Law",
-    description: "Complete legal framework governing industrial design protection in Qatar.",
-    category: "Legal",
-    type: "PDF",
-    topic: "Industrial Design",
-    icon: "patent" as const,
-    pdfUrl: "https://app.box.com/s/t4562nx25ie0gssc0297uzeew81ww20d",
-  },
-  {
-    title: "Qatar Patent Law",
-    description: "Comprehensive patent legislation and regulations for Qatar jurisdiction.",
-    category: "Legal",
-    type: "PDF",
-    topic: "Patent Law",
-    icon: "patent" as const,
-    pdfUrl: "https://app.box.com/s/9du5aa5tdtlc14fr1863fvfg1fdtlc52",
-  },
-  {
-    title: "Qatar Trademark Law",
-    description: "Official trademark law and procedural requirements for Qatar trademark registration.",
-    category: "Legal",
-    type: "PDF",
-    topic: "Trademark Law",
-    icon: "trademark" as const,
-    pdfUrl: "https://app.box.com/s/k1gbqhk5o71k52nwmta3rqi1c9e10s0n",
-  },
-  {
-    title: "Saudi Arabia Industrial Design Law",
-    description: "Complete legal framework governing industrial design protection in Saudi Arabia.",
-    category: "Legal",
-    type: "PDF",
-    topic: "Industrial Design",
-    icon: "patent" as const,
-    pdfUrl: "https://app.box.com/s/sr40kml17wtqzeg7x72yv76okhqv8klf",
-  },
-  {
-    title: "United Arab Emirates Industrial Design Law",
-    description: "Complete legal framework governing industrial design protection in the UAE.",
-    category: "Legal",
-    type: "PDF",
-    topic: "Industrial Design",
-    icon: "patent" as const,
-    pdfUrl: "https://app.box.com/s/fwp2zjskgnanomebd81apummnlv5wk88",
-  },
-  {
-    title: "United Arab Emirates Patent Law",
-    description: "Comprehensive patent legislation and regulations for UAE jurisdiction.",
-    category: "Legal",
-    type: "PDF",
-    topic: "Patent Law",
-    icon: "patent" as const,
-    pdfUrl: "https://app.box.com/s/ampkce9rqlibhc3dhb680qmdesi0vz99",
-  },
-  {
-    title: "United Arab Emirates Trademark Law",
-    description: "Official trademark law and procedural requirements for UAE trademark registration.",
-    category: "Legal",
-    type: "PDF",
-    topic: "Trademark Law",
-    icon: "trademark" as const,
-    pdfUrl: "https://app.box.com/s/5clbaem72dfvlxox3e6nzr1db1vymlkh",
-  }
-];
+export const ALL_INSIGHTS: Record<Language, InsightResource[]> = {
+  en: [
+    {
+      title: "Kuwait Industrial Design Law",
+      description: "Complete legal framework governing industrial design protection in Kuwait.",
+      category: "Legal",
+      type: "PDF",
+      topic: "Industrial Design",
+      icon: "patent" as const,
+      pdfUrl: "https://app.box.com/s/z4lkc0hnocaif6ugq0ebl53qtqo6uoqj",
+    },
+    {
+      title: "Kuwait Patent Law",
+      description: "Comprehensive patent legislation and regulations for Kuwait jurisdiction.",
+      category: "Legal",
+      type: "PDF",
+      topic: "Patent Law",
+      icon: "patent" as const,
+      pdfUrl: "https://app.box.com/s/lgbhury7k32scqasl357wty8pwp0sd54",
+    },
+    {
+      title: "Kuwait Trademark Law",
+      description: "Official trademark law and procedural requirements for Kuwait trademark registration.",
+      category: "Legal",
+      type: "PDF",
+      topic: "Trademark Law",
+      icon: "trademark" as const,
+      pdfUrl: "https://app.box.com/s/ga6nwfqhzjvm6tyjvu4lkyjrdxnig3n8",
+    },
+    {
+      title: "Bahrain Industrial Design Law",
+      description: "Complete legal framework governing industrial design protection in Bahrain.",
+      category: "Legal",
+      type: "PDF",
+      topic: "Industrial Design",
+      icon: "patent" as const,
+      pdfUrl: "https://app.box.com/s/5a0ktbgzhlsm9vt61lsg34jg3s000fa1",
+    },
+    {
+      title: "Bahrain Patent Law",
+      description: "Comprehensive patent legislation and regulations for Bahrain jurisdiction.",
+      category: "Legal",
+      type: "PDF",
+      topic: "Patent Law",
+      icon: "patent" as const,
+      pdfUrl: "https://app.box.com/s/sr40kml17wtqzeg7x72yv76okhqv8klf",
+    },
+    {
+      title: "Bahrain Trademark Law",
+      description: "Official trademark law and procedural requirements for Bahrain trademark registration.",
+      category: "Legal",
+      type: "PDF",
+      topic: "Trademark Law",
+      icon: "trademark" as const,
+      pdfUrl: "https://app.box.com/s/57obz1s7et6582she8mtvc9vs57g3riu",
+    },
+    {
+      title: "Qatar Industrial Design Law",
+      description: "Complete legal framework governing industrial design protection in Qatar.",
+      category: "Legal",
+      type: "PDF",
+      topic: "Industrial Design",
+      icon: "patent" as const,
+      pdfUrl: "https://app.box.com/s/t4562nx25ie0gssc0297uzeew81ww20d",
+    },
+    {
+      title: "Qatar Patent Law",
+      description: "Comprehensive patent legislation and regulations for Qatar jurisdiction.",
+      category: "Legal",
+      type: "PDF",
+      topic: "Patent Law",
+      icon: "patent" as const,
+      pdfUrl: "https://app.box.com/s/9du5aa5tdtlc14fr1863fvfg1fdtlc52",
+    },
+    {
+      title: "Qatar Trademark Law",
+      description: "Official trademark law and procedural requirements for Qatar trademark registration.",
+      category: "Legal",
+      type: "PDF",
+      topic: "Trademark Law",
+      icon: "trademark" as const,
+      pdfUrl: "https://app.box.com/s/k1gbqhk5o71k52nwmta3rqi1c9e10s0n",
+    },
+    {
+      title: "Saudi Arabia Industrial Design Law",
+      description: "Complete legal framework governing industrial design protection in Saudi Arabia.",
+      category: "Legal",
+      type: "PDF",
+      topic: "Industrial Design",
+      icon: "patent" as const,
+      pdfUrl: "https://app.box.com/s/sr40kml17wtqzeg7x72yv76okhqv8klf",
+    },
+    {
+      title: "United Arab Emirates Industrial Design Law",
+      description: "Complete legal framework governing industrial design protection in the UAE.",
+      category: "Legal",
+      type: "PDF",
+      topic: "Industrial Design",
+      icon: "patent" as const,
+      pdfUrl: "https://app.box.com/s/fwp2zjskgnanomebd81apummnlv5wk88",
+    },
+    {
+      title: "United Arab Emirates Patent Law",
+      description: "Comprehensive patent legislation and regulations for UAE jurisdiction.",
+      category: "Legal",
+      type: "PDF",
+      topic: "Patent Law",
+      icon: "patent" as const,
+      pdfUrl: "https://app.box.com/s/ampkce9rqlibhc3dhb680qmdesi0vz99",
+    },
+    {
+      title: "United Arab Emirates Trademark Law",
+      description: "Official trademark law and procedural requirements for UAE trademark registration.",
+      category: "Legal",
+      type: "PDF",
+      topic: "Trademark Law",
+      icon: "trademark" as const,
+      pdfUrl: "https://app.box.com/s/5clbaem72dfvlxox3e6nzr1db1vymlkh",
+    }
+  ],
+  ar: [
+    {
+      title: "قانون التصميم الصناعي في الكويت",
+      description: "الإطار القانوني الكامل الذي ينظم حماية التصاميم الصناعية في دولة الكويت.",
+      category: "قانوني",
+      type: "ملف PDF",
+      topic: "التصميم الصناعي",
+      icon: "patent" as const,
+      pdfUrl: "https://app.box.com/s/z4lkc0hnocaif6ugq0ebl53qtqo6uoqj",
+    },
+    {
+      title: "قانون براءات الاختراع في الكويت",
+      description: "التشريعات واللوائح الشاملة الخاصة ببراءات الاختراع في دولة الكويت.",
+      category: "قانوني",
+      type: "ملف PDF",
+      topic: "قانون البراءات",
+      icon: "patent" as const,
+      pdfUrl: "https://app.box.com/s/lgbhury7k32scqasl357wty8pwp0sd54",
+    },
+    {
+      title: "قانون العلامات التجارية في الكويت",
+      description: "القانون الرسمي وإجراءات تسجيل العلامات التجارية في دولة الكويت.",
+      category: "قانوني",
+      type: "ملف PDF",
+      topic: "قانون العلامات التجارية",
+      icon: "trademark" as const,
+      pdfUrl: "https://app.box.com/s/ga6nwfqhzjvm6tyjvu4lkyjrdxnig3n8",
+    },
+    {
+      title: "قانون التصميم الصناعي في البحرين",
+      description: "الإطار القانوني الكامل الذي ينظم حماية التصاميم الصناعية في مملكة البحرين.",
+      category: "قانوني",
+      type: "ملف PDF",
+      topic: "التصميم الصناعي",
+      icon: "patent" as const,
+      pdfUrl: "https://app.box.com/s/5a0ktbgzhlsm9vt61lsg34jg3s000fa1",
+    },
+    {
+      title: "قانون براءات الاختراع في البحرين",
+      description: "التشريعات واللوائح الشاملة الخاصة ببراءات الاختراع في مملكة البحرين.",
+      category: "قانوني",
+      type: "ملف PDF",
+      topic: "قانون البراءات",
+      icon: "patent" as const,
+      pdfUrl: "https://app.box.com/s/sr40kml17wtqzeg7x72yv76okhqv8klf",
+    },
+    {
+      title: "قانون العلامات التجارية في البحرين",
+      description: "القانون الرسمي وإجراءات تسجيل العلامات التجارية في مملكة البحرين.",
+      category: "قانوني",
+      type: "ملف PDF",
+      topic: "قانون العلامات التجارية",
+      icon: "trademark" as const,
+      pdfUrl: "https://app.box.com/s/57obz1s7et6582she8mtvc9vs57g3riu",
+    },
+    {
+      title: "قانون التصميم الصناعي في قطر",
+      description: "الإطار القانوني الكامل الذي ينظم حماية التصاميم الصناعية في دولة قطر.",
+      category: "قانوني",
+      type: "ملف PDF",
+      topic: "التصميم الصناعي",
+      icon: "patent" as const,
+      pdfUrl: "https://app.box.com/s/t4562nx25ie0gssc0297uzeew81ww20d",
+    },
+    {
+      title: "قانون براءات الاختراع في قطر",
+      description: "التشريعات واللوائح الشاملة الخاصة ببراءات الاختراع في دولة قطر.",
+      category: "قانوني",
+      type: "ملف PDF",
+      topic: "قانون البراءات",
+      icon: "patent" as const,
+      pdfUrl: "https://app.box.com/s/9du5aa5tdtlc14fr1863fvfg1fdtlc52",
+    },
+    {
+      title: "قانون العلامات التجارية في قطر",
+      description: "القانون الرسمي وإجراءات تسجيل العلامات التجارية في دولة قطر.",
+      category: "قانوني",
+      type: "ملف PDF",
+      topic: "قانون العلامات التجارية",
+      icon: "trademark" as const,
+      pdfUrl: "https://app.box.com/s/k1gbqhk5o71k52nwmta3rqi1c9e10s0n",
+    },
+    {
+      title: "قانون التصميم الصناعي في المملكة العربية السعودية",
+      description: "الإطار القانوني الكامل الذي ينظم حماية التصاميم الصناعية في المملكة العربية السعودية.",
+      category: "قانوني",
+      type: "ملف PDF",
+      topic: "التصميم الصناعي",
+      icon: "patent" as const,
+      pdfUrl: "https://app.box.com/s/sr40kml17wtqzeg7x72yv76okhqv8klf",
+    },
+    {
+      title: "قانون التصميم الصناعي في دولة الإمارات العربية المتحدة",
+      description: "الإطار القانوني الكامل الذي ينظم حماية التصاميم الصناعية في دولة الإمارات العربية المتحدة.",
+      category: "قانوني",
+      type: "ملف PDF",
+      topic: "التصميم الصناعي",
+      icon: "patent" as const,
+      pdfUrl: "https://app.box.com/s/fwp2zjskgnanomebd81apummnlv5wk88",
+    },
+    {
+      title: "قانون براءات الاختراع في دولة الإمارات العربية المتحدة",
+      description: "التشريعات واللوائح الشاملة الخاصة ببراءات الاختراع في دولة الإمارات العربية المتحدة.",
+      category: "قانوني",
+      type: "ملف PDF",
+      topic: "قانون البراءات",
+      icon: "patent" as const,
+      pdfUrl: "https://app.box.com/s/ampkce9rqlibhc3dhb680qmdesi0vz99",
+    },
+    {
+      title: "قانون العلامات التجارية في دولة الإمارات العربية المتحدة",
+      description: "القانون الرسمي وإجراءات تسجيل العلامات التجارية في دولة الإمارات العربية المتحدة.",
+      category: "قانوني",
+      type: "ملف PDF",
+      topic: "قانون العلامات التجارية",
+      icon: "trademark" as const,
+      pdfUrl: "https://app.box.com/s/5clbaem72dfvlxox3e6nzr1db1vymlkh",
+    }
+  ]
+};
 
 export type LearningModule = {
   title: string;
@@ -219,51 +410,95 @@ export type LearningModule = {
   didYouKnow: string;
 };
 
-export const LEARNING_MODULES: LearningModule[] = [
-  {
-    title: "What is a Trademark? Protecting Your Brand Identity",
-    videoUrl: "https://www.youtube.com/embed/Lq4Bp4oSkj8?rel=0",
-    summary:
-      "Al Marsa’s explainer shows how trademarks serve as your brand’s legal fingerprint, the difference between patents and marks, and the variety of signals you can protect—from names and logos to sounds and motion marks.",
-    howTo: [
-      "List the brand elements you rely on (names, logos, slogans, sounds) and decide which should be filed as word, design, or non-traditional marks.",
-      "Run clearance searches and gather acceptable specimens that prove use before submitting an application to strengthen your examination footing.",
-      "Plan maintenance: calendar renewals, monitor use, and aim for incontestable status so protection endures alongside your brand growth."
-    ],
-    didYouKnow:
-      "Did you know? Unlike patents, trademarks can last indefinitely—so long as you keep using them and meeting renewal deadlines, they become compounding brand assets."
-  },
-  {
-    title: "Trademark Basics: 3 Steps to Secure Your Brand",
-    videoUrl: "https://www.youtube.com/embed/Cva5A5xu06g?rel=0",
-    summary:
-      "This Al Marsa primer walks through what can be trademarked, why distinctiveness matters, and the three foundational actions that keep imitators from eroding your brand value.",
-    howTo: [
-      "Audit the names, logos, slogans, colours, and packaging elements that make you recognisable and confirm each is distinctive rather than generic.",
-      "Search your trademark office database (such as USPTO.gov) to confirm the mark is available before you invest in marketing or filing fees.",
-      "Prepare a clean depiction of the mark, list the correct goods and services, and submit the application so protection is locked in early."
-    ],
-    didYouKnow:
-      "Did you know? A trademark becomes far harder to challenge once it is both registered and continuously used—verified protection keeps competitors from piggybacking on your reputation."
-  },
-  {
-    title: "Patent vs. Trademark vs. Copyright",
-    videoUrl: "https://www.youtube.com/embed/hfwbVpkEYtc?rel=0",
-    summary:
-      "Al Marsa compares the three pillars of intellectual property, clarifying how patents secure inventions, trademarks protect brand identity, and copyrights safeguard creative expression.",
-    howTo: [
-      "Classify each asset you own—technology, branding, or creative output—and map it to the correct IP right before investing in protection.",
-      "Track lifecycles: patents run roughly 20 years, trademarks last indefinitely with use, and copyrights follow the creator’s life plus 70 years in many jurisdictions.",
-      "Build a protection plan that layers these rights, ensuring inventions, brand touchpoints, and creative collateral each have coverage." 
-    ],
-    didYouKnow:
-      "Did you know? These rights complement rather than replace one another—many successful products rely on all three to protect functionality, market identity, and storytelling."
-  }
-];
+export const LEARNING_MODULES: Record<Language, LearningModule[]> = {
+  en: [
+    {
+      title: "What is a Trademark? Protecting Your Brand Identity",
+      videoUrl: "https://www.youtube.com/embed/Lq4Bp4oSkj8?rel=0",
+      summary:
+        "Al Marsa’s explainer shows how trademarks serve as your brand’s legal fingerprint, the difference between patents and marks, and the variety of signals you can protect—from names and logos to sounds and motion marks.",
+      howTo: [
+        "List the brand elements you rely on (names, logos, slogans, sounds) and decide which should be filed as word, design, or non-traditional marks.",
+        "Run clearance searches and gather acceptable specimens that prove use before submitting an application to strengthen your examination footing.",
+        "Plan maintenance: calendar renewals, monitor use, and aim for incontestable status so protection endures alongside your brand growth."
+      ],
+      didYouKnow:
+        "Did you know? Unlike patents, trademarks can last indefinitely—so long as you keep using them and meeting renewal deadlines, they become compounding brand assets."
+    },
+    {
+      title: "Trademark Basics: 3 Steps to Secure Your Brand",
+      videoUrl: "https://www.youtube.com/embed/Cva5A5xu06g?rel=0",
+      summary:
+        "This Al Marsa primer walks through what can be trademarked, why distinctiveness matters, and the three foundational actions that keep imitators from eroding your brand value.",
+      howTo: [
+        "Audit the names, logos, slogans, colours, and packaging elements that make you recognisable and confirm each is distinctive rather than generic.",
+        "Search your trademark office database (such as USPTO.gov) to confirm the mark is available before you invest in marketing or filing fees.",
+        "Prepare a clean depiction of the mark, list the correct goods and services, and submit the application so protection is locked in early."
+      ],
+      didYouKnow:
+        "Did you know? A trademark becomes far harder to challenge once it is both registered and continuously used—verified protection keeps competitors from piggybacking on your reputation."
+    },
+    {
+      title: "Patent vs. Trademark vs. Copyright",
+      videoUrl: "https://www.youtube.com/embed/hfwbVpkEYtc?rel=0",
+      summary:
+        "Al Marsa compares the three pillars of intellectual property, clarifying how patents secure inventions, trademarks protect brand identity, and copyrights safeguard creative expression.",
+      howTo: [
+        "Classify each asset you own—technology, branding, or creative output—and map it to the correct IP right before investing in protection.",
+        "Track lifecycles: patents run roughly 20 years, trademarks last indefinitely with use, and copyrights follow the creator’s life plus 70 years in many jurisdictions.",
+        "Build a protection plan that layers these rights, ensuring inventions, brand touchpoints, and creative collateral each have coverage."
+      ],
+      didYouKnow:
+        "Did you know? These rights complement rather than replace one another—many successful products rely on all three to protect functionality, market identity, and storytelling."
+    }
+  ],
+  ar: [
+    {
+      title: "ما هي العلامة التجارية؟ حماية هوية علامتك",
+      videoUrl: "https://www.youtube.com/embed/Lq4Bp4oSkj8?rel=0",
+      summary:
+        "يوضح هذا الشرح من المرسى كيف تعمل العلامات التجارية كبصمة قانونية لعلامتك، والفرق بين البراءات والعلامات، وأنواع الإشارات التي يمكنك حمايتها من الأسماء والشعارات إلى الأصوات والعلامات الحركية.",
+      howTo: [
+        "حدد عناصر العلامة التي تعتمد عليها (الأسماء، الشعارات، الشعارات اللفظية، الأصوات) وقرر أيها يجب إيداعه كعلامة لفظية أو شكلية أو غير تقليدية.",
+        "أجرِ عمليات بحث للتأكد من خلو السجلات واجمع نماذج استخدام مقبولة قبل تقديم الطلب لتعزيز موقفك أثناء الفحص.",
+        "ضع خطة للصيانة: جدول مواعيد التجديد، راقب الاستخدام، واستهدف حالة عدم القابلية للطعن حتى تستمر الحماية مع نمو علامتك."
+      ],
+      didYouKnow:
+        "هل كنت تعلم؟ بخلاف البراءات، يمكن للعلامات التجارية أن تدوم إلى أجل غير مسمى طالما استمرت في استخدامها والالتزام بمواعيد التجديد، فتتحول إلى أصول متراكمة للعلامة."
+    },
+    {
+      title: "أساسيات العلامات التجارية: 3 خطوات لتأمين علامتك",
+      videoUrl: "https://www.youtube.com/embed/Cva5A5xu06g?rel=0",
+      summary:
+        "يستعرض هذا الدليل من المرسى ما يمكن حمايته كعلامة تجارية، ولماذا تهم التميّز، وثلاث خطوات أساسية تمنع المقلدين من تقويض قيمة علامتك.",
+      howTo: [
+        "راجع الأسماء والشعارات والشعارات اللفظية والألوان وعناصر التغليف التي تميزك وتأكد من أن كل عنصر مميز وليس وصفياً.",
+        "ابحث في قاعدة بيانات مكتب العلامات التجارية (مثل USPTO.gov) للتحقق من توفر العلامة قبل الاستثمار في التسويق أو رسوم الإيداع.",
+        "جهز تمثيلاً واضحاً للعلامة، وأدرج السلع والخدمات الصحيحة، وقدّم الطلب لضمان تثبيت الحماية مبكراً."
+      ],
+      didYouKnow:
+        "هل كنت تعلم؟ تصبح العلامة التجارية أصعب بكثير في الطعن بمجرد تسجيلها واستخدامها بشكل مستمر—فالحماية الموثقة تمنع المنافسين من الاستفادة من سمعتك."
+    },
+    {
+      title: "براءة اختراع أم علامة تجارية أم حق نشر",
+      videoUrl: "https://www.youtube.com/embed/hfwbVpkEYtc?rel=0",
+      summary:
+        "يقارن المرسى بين الركائز الثلاث للملكية الفكرية، موضحاً كيف تحمي البراءات الابتكارات، وتحمي العلامات الهوية التجارية، وتصون حقوق النشر التعبير الإبداعي.",
+      howTo: [
+        "صنّف كل أصل تملكه—تقني أو علاماتي أو إبداعي—واربطه بحق الملكية الفكرية المناسب قبل الاستثمار في الحماية.",
+        "تابع دورات الحياة: تدوم البراءات نحو 20 عاماً، وتستمر العلامات مع الاستخدام، بينما تمتد حقوق النشر طوال حياة المؤلف زائد 70 عاماً في العديد من الولايات القضائية.",
+        "ابنِ خطة حماية تدمج هذه الحقوق معاً، لضمان تغطية الابتكارات ونقاط الاتصال بالعلامة والمواد الإبداعية على حد سواء."
+      ],
+      didYouKnow:
+        "هل كنت تعلم؟ تكمل هذه الحقوق بعضها البعض بدلاً من أن تحل محلها—فالعديد من المنتجات الناجحة تعتمد على الثلاثة لحماية الوظيفة والهوية السوقية والسرد القصصي."
+    }
+  ]
+};
 
 export type CountryGuideResource = {
   label: string;
   href: string;
+  type?: "trademark" | "patent" | "design";
 };
 
 export type CountryDetailedGuide = {
@@ -285,7 +520,8 @@ export type CountryGuide = {
   designGuide?: CountryDetailedGuide;
 };
 
-export const COUNTRY_GUIDES: CountryGuide[] = [
+export const COUNTRY_GUIDES: Record<Language, CountryGuide[]> = {
+  en: [
   {
     country: "United Arab Emirates",
     summary: "Trademark, patent, and industrial design filing sequences with milestone timelines across the Emirates.",
@@ -534,9 +770,9 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
       ]
     },
     resources: [
-      { label: "Trademark guide", href: "https://app.box.com/s/5clbaem72dfvlxox3e6nzr1db1vymlkh" },
-      { label: "Patent guide", href: "https://app.box.com/s/ampkce9rqlibhc3dhb680qmdesi0vz99" },
-      { label: "Design guide", href: "https://app.box.com/s/fwp2zjskgnanomebd81apummnlv5wk88" }
+      { label: "Trademark guide", href: "https://app.box.com/s/5clbaem72dfvlxox3e6nzr1db1vymlkh", type: "trademark" },
+      { label: "Patent guide", href: "https://app.box.com/s/ampkce9rqlibhc3dhb680qmdesi0vz99", type: "patent" },
+      { label: "Design guide", href: "https://app.box.com/s/fwp2zjskgnanomebd81apummnlv5wk88", type: "design" }
     ]
   },
   {
@@ -654,7 +890,7 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
       downloadHref: "https://app.box.com/s/sr40kml17wtqzeg7x72yv76okhqv8klf"
     },
     resources: [
-      { label: "Design guide", href: "https://app.box.com/s/sr40kml17wtqzeg7x72yv76okhqv8klf" }
+      { label: "Design guide", href: "https://app.box.com/s/sr40kml17wtqzeg7x72yv76okhqv8klf", type: "design" }
     ]
   },
   {
@@ -897,9 +1133,9 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
       downloadHref: "https://app.box.com/s/t4562nx25ie0gssc0297uzeew81ww20d"
     },
     resources: [
-      { label: "Trademark guide", href: "https://app.box.com/s/k1gbqhk5o71k52nwmta3rqi1c9e10s0n" },
-      { label: "Patent guide", href: "https://app.box.com/s/9du5aa5tdtlc14fr1863fvfg1fdtlc52" },
-      { label: "Design guide", href: "https://app.box.com/s/t4562nx25ie0gssc0297uzeew81ww20d" }
+      { label: "Trademark guide", href: "https://app.box.com/s/k1gbqhk5o71k52nwmta3rqi1c9e10s0n", type: "trademark" },
+      { label: "Patent guide", href: "https://app.box.com/s/9du5aa5tdtlc14fr1863fvfg1fdtlc52", type: "patent" },
+      { label: "Design guide", href: "https://app.box.com/s/t4562nx25ie0gssc0297uzeew81ww20d", type: "design" }
     ]
   },
   {
@@ -1226,9 +1462,9 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
       downloadHref: "https://app.box.com/s/5a0ktbgzhlsm9vt61lsg34jg3s000fa1"
     },
     resources: [
-      { label: "Trademark guide", href: "https://app.box.com/s/57obz1s7et6582she8mtvc9vs57g3riu" },
-      { label: "Patent guide", href: "https://app.box.com/s/sr40kml17wtqzeg7x72yv76okhqv8klf" },
-      { label: "Design guide", href: "https://app.box.com/s/5a0ktbgzhlsm9vt61lsg34jg3s000fa1" }
+      { label: "Trademark guide", href: "https://app.box.com/s/57obz1s7et6582she8mtvc9vs57g3riu", type: "trademark" },
+      { label: "Patent guide", href: "https://app.box.com/s/sr40kml17wtqzeg7x72yv76okhqv8klf", type: "patent" },
+      { label: "Design guide", href: "https://app.box.com/s/5a0ktbgzhlsm9vt61lsg34jg3s000fa1", type: "design" }
     ]
   },
   {
@@ -1659,9 +1895,9 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
       downloadHref: "https://app.box.com/s/dyuat0ucmkh7tij1e5hb4wjwdbzixzjo"
     },
     resources: [
-      { label: "Trademark guide", href: "https://app.box.com/s/dyuat0ucmkh7tij1e5hb4wjwdbzixzjo" },
-      { label: "Patent guide", href: "https://app.box.com/s/dyuat0ucmkh7tij1e5hb4wjwdbzixzjo" },
-      { label: "Design guide", href: "https://app.box.com/s/dyuat0ucmkh7tij1e5hb4wjwdbzixzjo" }
+      { label: "Trademark guide", href: "https://app.box.com/s/dyuat0ucmkh7tij1e5hb4wjwdbzixzjo", type: "trademark" },
+      { label: "Patent guide", href: "https://app.box.com/s/dyuat0ucmkh7tij1e5hb4wjwdbzixzjo", type: "patent" },
+      { label: "Design guide", href: "https://app.box.com/s/dyuat0ucmkh7tij1e5hb4wjwdbzixzjo", type: "design" }
     ]
   },
   {
@@ -1974,10 +2210,1386 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
       downloadHref: "https://app.box.com/s/z4lkc0hnocaif6ugq0ebl53qtqo6uoqj"
     },
     resources: [
-      { label: "Trademark guide", href: "https://app.box.com/s/ga6nwfqhzjvm6tyjvu4lkyjrdxnig3n8" },
-      { label: "Patent guide", href: "https://app.box.com/s/lgbhury7k32scqasl357wty8pwp0sd54" },
-      { label: "Design guide", href: "https://app.box.com/s/z4lkc0hnocaif6ugq0ebl53qtqo6uoqj" }
+      { label: "Trademark guide", href: "https://app.box.com/s/ga6nwfqhzjvm6tyjvu4lkyjrdxnig3n8", type: "trademark" },
+      { label: "Patent guide", href: "https://app.box.com/s/lgbhury7k32scqasl357wty8pwp0sd54", type: "patent" },
+      { label: "Design guide", href: "https://app.box.com/s/z4lkc0hnocaif6ugq0ebl53qtqo6uoqj", type: "design" }
     ]
   }
-];
+  ],
+  ar: [
+    {
+      country: "الإمارات العربية المتحدة",
+      summary: "جداول تقديم العلامات والبراءات والتصاميم الصناعية مع مراحل تنفيذ محددة عبر الإمارات.",
+      designGuide: {
+        title: "متطلبات تسجيل التصميم في دولة الإمارات",
+        updated: "أكتوبر 2025",
+        sections: [
+          {
+            heading: "طلبات التصميم — المستندات المطلوبة عند الإيداع",
+            points: [
+              "استكمال بيانات مقدم الطلب والمصمم بما في ذلك الاسم الكامل، العنوان المفصل، والجنسية.",
+              "تقديم عنوان التصميم مع الطلب الأولي.",
+              "إرفاق تمثيلات مرئية: نسخة واحدة للتصاميم ثنائية الأبعاد ونسخة لكل منظور للتصاميم ثلاثية الأبعاد."
+            ]
+          },
+          {
+            heading: "طلبات التصميم — خلال 90 يوماً",
+            points: [
+              "⚠️ المهلة البالغة 90 يوماً للمستندات الرسمية غير قابلة للتمديد إطلاقاً.",
+              "توكيل قانوني موثق.",
+              "مستخرج من السجل التجاري أو عقد التأسيس للمتقدمين من الشركات — موثق.",
+              "عقد التنازل موقع من المصمم عند اختلاف مقدم الطلب — موثق.",
+              "صورة مصدقة من مستند الأولوية عند المطالبة بالأولوية."
+            ]
+          },
+          {
+            heading: "طلبات تسجيل التنازل",
+            points: [
+              "توكيل قانوني منفذ من المتنازل إليه — موثق.",
+              "عقد التنازل موقع من الطرفين — موثق.",
+              "شهادة تأسيس للمتنازل إليه — موثقة."
+            ]
+          },
+          {
+            heading: "طلبات المستخدم أو اتفاقية الترخيص",
+            points: [
+              "توكيل قانوني منفذ من المرخص له — موثق.",
+              "اتفاقية الترخيص موقعة من الطرفين — موثقة."
+            ]
+          },
+          {
+            heading: "طلبات تغيير الاسم أو العنوان",
+            points: [
+              "توكيل قانوني بالاسم أو العنوان الجديد — موثق.",
+              "شهادة تثبت التغيير صادرة عن الجهة المحلية المختصة — موثقة."
+            ]
+          },
+          {
+            heading: "ملاحظات مهمة حول الإيداع",
+            points: [
+              "المرحلة الأولى (عند الإيداع): تقديم بيانات مقدم الطلب والمصمم، عنوان التصميم، والتمثيل المرئي.",
+              "المرحلة الثانية (خلال 90 يوماً): تقديم جميع المستندات القانونية الرسمية، والمستندات الداعمة، ووثائق الأولوية.",
+              "المهلة البالغة 90 يوماً غير قابلة للتمديد؛ التأخير يعرض الطلب للشطب، لذا يجب التخطيط للتوثيقات مسبقاً."
+            ]
+          },
+          {
+            heading: "إرشادات تمثيل التصميم",
+            points: [
+              "التصاميم ثنائية الأبعاد: تقديم نسخة واضحة واحدة تُظهر التصميم بالكامل.",
+              "التصاميم ثلاثية الأبعاد: تقديم مناظير كافية (أمامي، خلفي، جانبي، علوي، سفلي) لتمثيل التصميم بالكامل.",
+              "ضمان وضوح الصور وجودتها بما يكفي لأغراض الفحص."
+            ]
+          },
+          {
+            heading: "قائمة التحقق من المستندات",
+            points: [
+              "المستند | وقت التقديم | التوثيق",
+              "بيانات مقدم الطلب/المصمم | عند الإيداع | لا",
+              "عنوان التصميم | عند الإيداع | لا",
+              "التمثيل المرئي | عند الإيداع | لا",
+              "التوكيل القانوني | خلال 90 يوماً | نعم",
+              "مستخرج السجل التجاري | خلال 90 يوماً | نعم",
+              "عقد التنازل | خلال 90 يوماً | نعم",
+              "مستند الأولوية | خلال 90 يوماً | نسخة مصدقة"
+            ]
+          },
+          {
+            heading: "ملخص النقاط الرئيسية",
+            points: [
+              "عملية إيداع على مرحلتين بمهلة صارمة قدرها 90 يوماً للمستندات الرسمية.",
+              "المعلومات الأساسية مطلوبة عند الإيداع؛ المستندات الرسمية تُستكمل خلال 90 يوماً.",
+              "جميع المستندات القانونية يجب أن تكون موثقة، وأدلة الأولوية مصدقة.",
+              "من الضروري تقديم مناظير متعددة للتصاميم ثلاثية الأبعاد.",
+              "المهلة غير قابلة للتمديد وتتطلب تخطيطاً مسبقاً للمستندات الداعمة.",
+              "يجب المطالبة بالأولوية خلال 90 يوماً مع تقديم مستندات معتمدة."
+            ]
+          },
+          {
+            heading: "نظرة عامة على الجدول الزمني",
+            points: [
+              "المرحلة | الموعد النهائي",
+              "الإيداع الأولي (البنود 1، 2، 5) | تاريخ الإيداع",
+              "المستندات الرسمية (البنود 3، 4، 6، 7) | 90 يوماً من تاريخ الإيداع (صارم)"
+            ]
+          },
+          {
+            heading: "تواصل مع خبرائنا",
+            points: [
+              "للحصول على دعم في تسجيل تصاميم الإمارات وإجراءات الإيداع، يُرجى التواصل مع خبراء الملكية الفكرية لدينا."
+            ]
+          }
+        ],
+        downloadHref: "https://app.box.com/s/fwp2zjskgnanomebd81apummnlv5wk88"
+      },
+      trademarkGuide: {
+        title: "متطلبات تسجيل العلامات التجارية في دولة الإمارات",
+        updated: "أكتوبر 2025",
+        sections: [
+          {
+            heading: "معلومات مقدم الطلب",
+            points: [
+              "تقديم الاسم القانوني الكامل لمقدم الطلب.",
+              "إرفاق عنوان بريدي كامل يتضمن المبنى والمنطقة والمدينة والدولة.",
+              "لم تعد العناوين العامة مقبولة؛ يشترط مكتب العلامات التجارية الإماراتي تفاصيل العنوان الكامل."
+            ]
+          },
+          {
+            heading: "التوكيل القانوني",
+            points: [
+              "يجب تنفيذ التوكيل القانوني من قبل مقدم الطلب، وتوثيقه لدى كاتب العدل، وتقنينه حتى سفارة دولة الإمارات.",
+              "تقديم التوكيل المقنن مع الطلب أو تقديم تعهد بتسليم الأصل خلال 90 يوماً من الإيداع.",
+              "المهلة البالغة 90 يوماً لتسليم التوكيل المقنن غير قابلة للتمديد إطلاقاً."
+            ]
+          },
+          {
+            heading: "قائمة السلع والخدمات",
+            points: [
+              "تقديم وصف واضح للسلع و/أو الخدمات المطلوب حمايتها.",
+              "تصنيف السلع والخدمات وفق تصنيف نيس الدولي."
+            ]
+          },
+          {
+            heading: "مستند الأولوية (إن وجد)",
+            points: [
+              "تقديم نسخة مصدقة من طلب الأولوية؛ يُقبل إرسال نسخة ممسوحة عبر البريد الإلكتروني.",
+              "إرفاق ترجمة إنجليزية مبسطة إذا لم يكن مستند الأولوية باللغة الإنجليزية.",
+              "يجب المطالبة بالأولوية خلال ستة أشهر من تاريخ الإيداع الأول في دولة عضو باتفاقية باريس."
+            ]
+          },
+          {
+            heading: "ملخص النقاط الرئيسية",
+            points: [
+              "تفاصيل العنوان الكامل إلزامية لجميع المتقدمين.",
+              "يجب توثيق التوكيل وتقنينه حتى مستوى سفارة الإمارات.",
+              "تطبق مهلة سماح غير قابلة للتمديد قدرها 90 يوماً لتقديم التوكيلات المتأخرة.",
+              "يجب تقديم مطالبات الأولوية خلال ستة أشهر من الإيداع الأول.",
+              "يمكن إرسال مستندات الأولوية عبر البريد الإلكتروني كنسخ مصدقة."
+            ]
+          },
+          {
+            heading: "قائمة التحقق من المستندات",
+            points: [
+              "بيانات مقدم الطلب: الاسم الكامل والعنوان المفصل عند الإيداع.",
+              "التوكيل القانوني: موثق ومقنن، يقدم عند الإيداع أو خلال 90 يوماً.",
+              "قائمة السلع والخدمات: مواصفات مصنفة مطلوبة عند الإيداع.",
+              "مستند الأولوية: نسخة مصدقة مع ترجمة، يقدم خلال ستة أشهر من الإيداع الأول."
+            ]
+          },
+          {
+            heading: "دعم الخبراء",
+            points: [
+              "تواصل مع فريق خبراء الملكية الفكرية في المرسى للحصول على دعم مخصص في تسجيل العلامات التجارية بالإمارات."
+            ]
+          }
+        ]
+      },
+      patentGuide: {
+        title: "متطلبات تسجيل براءات الاختراع في دولة الإمارات",
+        updated: "أكتوبر 2025",
+        sections: [
+          {
+            heading: "طلبات البراءة",
+            points: [
+              "توكيل قانوني موثق.",
+              "مستخرج من السجل التجاري أو عقد التأسيس موثق.",
+              "عقد تنازل موقع من المخترع أو المصمم إذا كان مقدم الطلب مختلفاً، موثق.",
+              "نسخة مصدقة من مستند الأولوية عند المطالبة بها."
+            ]
+          },
+          {
+            heading: "طلبات التنازل",
+            points: [
+              "توكيل قانوني منفذ من المتنازل إليه، موثق.",
+              "عقد التنازل موقع من الطرفين، موثق.",
+              "شهادة تأسيس للمتنازل إليه، موثقة."
+            ]
+          },
+          {
+            heading: "اتفاقيات المستخدم أو الترخيص",
+            points: [
+              "توكيل قانوني منفذ من المرخص له، موثق.",
+              "اتفاقية الترخيص موقعة من الطرفين، موثقة."
+            ]
+          },
+          {
+            heading: "تغيير الاسم أو العنوان",
+            points: [
+              "توكيل قانوني بالاسم أو العنوان الجديد، موثق.",
+              "شهادة تثبت التغيير صادرة عن الجهة المحلية المختصة في موطن مقدم الطلب، موثقة."
+            ]
+          },
+          {
+            heading: "اتفاقيات الوكالة",
+            points: [
+              "توكيل قانوني موثق.",
+              "للتجار الأفراد: تقديم نسختين من الترخيص التجاري، وقيد السجل التجاري، واتفاقية الوكالة مقننة حتى سفارة الإمارات، وترجمة عربية موثقة عند الحاجة، وبطاقة تعريف الوكيل، وتوكيلات موثقة، وتصريحات.",
+              "للشركات: تقديم جميع مستندات التاجر الفرد إضافة إلى مستخرجات لجميع الشركاء أو شهادات تثبت الجنسية، ونسختين موثقتين من عقد التأسيس والنظام الأساسي."
+            ]
+          },
+          {
+            heading: "ملاحظات مهمة للتقديم",
+            points: [
+              "يجب تقديم المستندات الأصلية للتحقق ومقارنتها بالنسخ المرفوعة.",
+              "يجب تقديم الطلبات بنسختين مع وضع كل نسخة في ملف منفصل.",
+              "يتعين إكمال جميع إجراءات التوثيق بشكل صحيح، وتستلزم اتفاقيات الوكالة تقنيناً حتى سفارة الإمارات.",
+              "الوثائق غير العربية تحتاج إلى ترجمات عربية موثقة."
+            ]
+          },
+          {
+            heading: "قائمة التحقق من المستندات",
+            points: [
+              "طلبات البراءة: توكيل قانوني موثق، مستخرج السجل التجاري، عقد التنازل، ومستند الأولوية إن وجد.",
+              "التنازل: توكيل قانوني موثق، عقد تنازل، وشهادة تأسيس.",
+              "التراخيص: توكيل قانوني موثق واتفاقية ترخيص.",
+              "تغيير الاسم أو العنوان: توكيل قانوني موثق وشهادة تغيير رسمية.",
+              "اتفاقيات الوكالة: توكيل قانوني موثق، مستندات تجارية، واتفاقية وكالة مقننة."
+            ]
+          },
+          {
+            heading: "ملخص النقاط الرئيسية",
+            points: [
+              "جميع المستندات الرسمية تتطلب التوثيق.",
+              "يجب تقنين اتفاقيات الوكالة حتى سفارة الإمارات.",
+              "يجب إتاحة المستندات الأصلية للتحقق.",
+              "مطلوب تقديم نسختين منفصلتين لكل طلب.",
+              "على الشركات تقديم مستندات الشركاء بالإضافة إلى متطلبات الوكالة.",
+              "الوثائق غير العربية تحتاج إلى ترجمات عربية موثقة."
+            ]
+          },
+          {
+            heading: "دعم الخبراء",
+            points: [
+              "للحصول على المساعدة في إيداع براءات الاختراع في الإمارات وإجراءاتها، تواصل مع خبراء الملكية الفكرية في المرسى."
+            ]
+          }
+        ]
+      },
+      resources: [
+        { label: "دليل العلامات التجارية", href: "https://app.box.com/s/5clbaem72dfvlxox3e6nzr1db1vymlkh", type: "trademark" },
+        { label: "دليل البراءات", href: "https://app.box.com/s/ampkce9rqlibhc3dhb680qmdesi0vz99", type: "patent" },
+        { label: "دليل التصاميم", href: "https://app.box.com/s/fwp2zjskgnanomebd81apummnlv5wk88", type: "design" }
+      ]
+    },
+    {
+      country: "المملكة العربية السعودية",
+      summary: "نقاط إنفاذ للتصاميم الصناعية ومراحل التسجيل وفق مسارات هيئة الملكية الفكرية السعودية.",
+      designGuide: {
+        title: "متطلبات تسجيل العلامات التجارية في المملكة العربية السعودية",
+        updated: "أكتوبر 2025",
+        sections: [
+          {
+            heading: "طلبات العلامات/علامات الخدمات",
+            points: [
+              "توكيل قانوني باسم مقدم الطلب: نسخة ملونة ممسوحة تتضمن الاسم الكامل والعنوان مع وجوب التصديق بالأبوستيل أو التصديق لدى القنصلية السعودية.",
+              "قائمة السلع/الخدمات وفق تصنيف نيس الإصدار الثاني عشر لعام 2023.",
+              "تمثيل العلامة: صورة JPEG عالية الجودة.",
+              "مستند الأولوية (إن وُجد): نسخة ملونة أو إلكترونية تقدم خلال 6 أشهر من الإيداع الأجنبي مع ترجمة إنجليزية مبسطة إذا كان المستند بلغة أخرى."
+            ]
+          },
+          {
+            heading: "طلبات العلامات الجماعية وعلامات الجودة",
+            points: [
+              "توكيل قانوني باسم مقدم الطلب مع تصديق بالأبوستيل أو القنصلية السعودية.",
+              "قائمة السلع/الخدمات متوافقة مع تصنيف نيس الإصدار الثاني عشر (2023).",
+              "تمثيل العلامة: صورة JPEG عالية الجودة.",
+              "عقد التأسيس: نسختان مصدقتان مع تصديق بالأبوستيل أو القنصلية السعودية.",
+              "وثائق نظام الرقابة: نسختان مصدقتان تشمل إجراءات الفحص والشروط وطريقة الاستخدام مع التصديق المطلوب."
+            ]
+          },
+          {
+            heading: "طلبات التجديد",
+            points: [
+              "توكيل قانوني باسم المالك مطابق لسجلات السجل مع التصديق بالأبوستيل أو القنصلية السعودية.",
+              "نسخة من شهادة التسجيل عند عدم إدارة الملف عبر مكتبكم."
+            ]
+          },
+          {
+            heading: "طلبات التنازل",
+            points: [
+              "توكيل قانوني باسم المتنازل إليه مع العنوان الكامل والتصديق بالأبوستيل أو القنصلية السعودية.",
+              "عقد التنازل موقع من المتنازل مع التصديق المطلوب.",
+              "نسخ من شهادة التسجيل عند عدم إدارة الإيداع مباشرة."
+            ]
+          },
+          {
+            heading: "طلبات الاندماج",
+            points: [
+              "توكيل قانوني باسم المالك الجديد مع التفاصيل الكاملة والتصديق المطلوب.",
+              "مستند الاندماج: نسخة ملونة ممسوحة مع تصديق بالأبوستيل أو القنصلية السعودية.",
+              "نسخ شهادة التسجيل عند عدم إدارة الملفات داخلياً."
+            ]
+          },
+          {
+            heading: "طلبات الترخيص",
+            points: [
+              "توكيل قانوني باسم المرخص له مع التصديق بالأبوستيل أو القنصلية السعودية.",
+              "اتفاقية الترخيص موقعة من المرخِّص والمرخَّص له ومصدق عليها.",
+              "نسخ شهادة التسجيل عند وجود تعاملات خارجية."
+            ]
+          },
+          {
+            heading: "طلبات تغيير الاسم",
+            points: [
+              "توكيل قانوني باسم المالك الجديد يتضمن التفاصيل المحدثة مع التصديق المطلوب.",
+              "مستند تغيير الاسم: نسخة ملونة مصدقة.",
+              "نسخ شهادة التسجيل عند عدم إدارة الملف داخلياً."
+            ]
+          },
+          {
+            heading: "طلبات تغيير العنوان",
+            points: [
+              "توكيل قانوني باسم المالك مع العنوان الجديد والتصديق المطلوب.",
+              "نسخ شهادة التسجيل عند عدم إدارة الملف عبر مكتبكم."
+            ]
+          },
+          {
+            heading: "ملخص المتطلبات الرئيسية",
+            points: [
+              "جميع المستندات الرسمية تتطلب تصديق الأبوستيل أو القنصلية السعودية ويمكن تقديمها كنسخ ملونة ممسوحة.",
+              "يجب أن تكون بيانات مقدم الطلب أو المالك كاملة ودقيقة في جميع الطلبات.",
+              "تعتمد المملكة تصنيف نيس الإصدار الثاني عشر (2023) للسلع والخدمات.",
+              "يجب أن تكون صور العلامة بصيغة JPEG عالية الجودة وواضحة.",
+              "يجب تقديم مطالبات الأولوية خلال 6 أشهر مع مستندات مصدقة ومترجمة."
+            ]
+          },
+          {
+            heading: "قائمة التحقق من المستندات",
+            points: [
+              "طلبات العلامات/علامات الخدمات | التوكيل القانوني | قائمة السلع والخدمات، صورة العلامة، مستند الأولوية إن وجد | يلزم التصديق",
+              "طلبات العلامات الجماعية/علامات الجودة | التوكيل القانوني | قائمة السلع والخدمات، صورة العلامة، عقد التأسيس، وثائق نظام الرقابة | يلزم التصديق",
+              "طلبات التجديد | التوكيل القانوني | شهادة التسجيل | يلزم التصديق",
+              "طلبات التنازل | التوكيل القانوني (المتنازل إليه) | عقد التنازل، شهادة التسجيل | يلزم التصديق",
+              "طلبات الاندماج | التوكيل القانوني (المالك الجديد) | مستند الاندماج، شهادة التسجيل | يلزم التصديق",
+              "طلبات الترخيص | التوكيل القانوني (المرخص له) | اتفاقية الترخيص، شهادة التسجيل | يلزم التصديق",
+              "طلبات تغيير الاسم | التوكيل القانوني (الاسم الجديد) | مستند التغيير، شهادة التسجيل | يلزم التصديق",
+              "طلبات تغيير العنوان | التوكيل القانوني (المالك) | شهادة التسجيل | يلزم التصديق"
+            ]
+          },
+          {
+            heading: "ملاحظات مهمة",
+            points: [
+              "جميع التوكيلات تحتاج إلى تصديق الأبوستيل أو القنصلية السعودية.",
+              "تُقبل النسخ الملونة الممسوحة بشرط وضوح جميع التفاصيل.",
+              "شهادات التسجيل ضرورية للإجراءات اللاحقة عند إدارة الملفات خارجياً.",
+              "مطالبات الأولوية خاضعة لمهلة صارمة قدرها 6 أشهر من تاريخ الإيداع الأجنبي.",
+              "يجب الاعتماد على تصنيف نيس الإصدار الثاني عشر (2023) لوصف السلع والخدمات."
+            ]
+          },
+          {
+            heading: "دعم الخبراء",
+            points: [
+              "للمساعدة في تسجيل العلامات التجارية في المملكة العربية السعودية وإجراءاتها، تواصل مع خبراء الملكية الفكرية لدينا."
+            ]
+          }
+        ],
+        downloadHref: "https://app.box.com/s/sr40kml17wtqzeg7x72yv76okhqv8klf"
+      },
+      resources: [
+        { label: "دليل التصاميم", href: "https://app.box.com/s/sr40kml17wtqzeg7x72yv76okhqv8klf", type: "design" }
+      ]
+    },
+    {
+      country: "دولة قطر",
+      summary: "تحديثات الانضمام إلى مدريد، جداول الفحص، ومتطلبات المستندات للعلامات والبراءات والتصاميم.",
+      trademarkGuide: {
+        title: "متطلبات تسجيل العلامات التجارية في قطر",
+        updated: "أكتوبر 2025",
+        sections: [
+          {
+            heading: "طلبات العلامات/علامات الخدمات",
+            points: [
+              "توكيل قانوني مقنن حتى القنصلية القطرية في بلد مقدم الطلب.",
+              "مستندات تجارية تثبت حق مقدم الطلب في العلامة: وثيقة من غرفة التجارة، مستخرج السجل التجاري، أو مستند حكومي مؤهل.",
+              "يجب أن يثبت مقدم الطلب الفردي أنه يدير نشاطاً تجارياً أو يمتلك حقوقاً في العلامة."
+            ]
+          },
+          {
+            heading: "طلبات العلامات الجماعية",
+            points: [
+              "توكيل قانوني مقنن حتى القنصلية القطرية أو أي قنصلية عربية.",
+              "شهادة تأسيس أو مستخرج من السجل التجاري (صورة بسيطة مقبولة).",
+              "طبعات العلامة: خمس نسخ من العلامة.",
+              "قائمة السلع/الخدمات مع استبعاد عنصر واحد على الأقل من كل فئة؛ لا يُسمح بتغطية الفئة بالكامل.",
+              "بيانات مقدم الطلب: الاسم، العنوان، الجنسية، النشاط، الوضع القانوني، وطبيعة العمل.",
+              "نسخة من مستند الأولوية عند المطالبة بها."
+            ]
+          },
+          {
+            heading: "تجديد تسجيل العلامة/علامة الخدمة",
+            points: [
+              "توكيل قانوني مقنن حتى القنصلية القطرية أو أي قنصلية عربية إذا لم يكن مودعاً مسبقاً.",
+              "معلومات مقدم الطلب: الاسم، العنوان، النشاط، الجنسية، وطبيعة العمل.",
+              "رقم تسجيل العلامة القائم."
+            ]
+          },
+          {
+            heading: "طلبات التنازل",
+            points: [
+              "توكيل قانوني منفذ من المتنازل إليه ومقنن حتى القنصلية القطرية أو أي قنصلية عربية.",
+              "عقد تنازل موقع من الطرفين، موثق ومقنن حتى القنصلية القطرية.",
+              "شهادة تأسيس أو مستخرج سجل تجاري للمتنازل إليه (صورة بسيطة مقبولة)."
+            ]
+          },
+          {
+            heading: "طلبات المستخدم المسجل/اتفاقيات الترخيص",
+            points: [
+              "توكيل قانوني منفذ من المرخص له، مقنن حتى القنصلية القطرية أو أي قنصلية عربية.",
+              "اتفاقية الترخيص موقعة من الطرفين، موثقة ومقننة حتى القنصلية القطرية.",
+              "شهادة تأسيس أو مستخرج سجل تجاري للمستخدم المسجل (صورة بسيطة مقبولة)."
+            ]
+          },
+          {
+            heading: "طلبات تغيير الاسم/العنوان",
+            points: [
+              "توكيل قانوني بالاسم و/أو العنوان الجديد، مقنن حتى القنصلية القطرية أو أي قنصلية عربية.",
+              "شهادة رسمية تثبت التغيير."
+            ]
+          },
+          {
+            heading: "تعديل طلبات العلامات",
+            points: [
+              "توكيل قانوني مقنن حتى القنصلية القطرية أو أي قنصلية عربية ومختوم بختم الشركة.",
+              "شهادة موثقة تثبت التعديل."
+            ]
+          },
+          {
+            heading: "اتفاقيات الوكالة",
+            points: [
+              "توكيل قانوني مقنن حتى القنصلية القطرية أو أي قنصلية عربية.",
+              "اتفاقية وكالة موقعة من الأصيل والوكيل، مقننة حتى القنصلية القطرية.",
+              "يجب أن تتضمن الاتفاقية أسماء وجنسيات الأطراف، السلع/الخدمات المغطاة، الحقوق والالتزامات، التزامات الأصيل، وآلية توزيع الأرباح أو العمولات."
+            ]
+          },
+          {
+            heading: "ملخص المتطلبات الرئيسية",
+            points: [
+              "المسار الأساسي للتقنين عبر القنصلية القطرية؛ ويقبل التقنين عبر أي قنصلية عربية عند تعذر القنصلية القطرية.",
+              "لا يمكن تغطية جميع السلع/الخدمات في الفئة؛ يجب استبعاد بند واحد على الأقل.",
+              "يتعين على المتقدمين الأفراد تقديم إثبات نشاط تجاري يؤكد حقهم في العلامة.",
+              "طلبات العلامات الجماعية تتطلب خمس طبعات للعلامة وبيانات كاملة عن مقدم الطلب.",
+              "يجب تقنين الاتفاقيات والمستندات بالكامل قبل تقديمها."
+            ]
+          },
+          {
+            heading: "قائمة التحقق من المستندات",
+            points: [
+              "طلبات العلامات/علامات الخدمات | التوكيل القانوني | مستندات تجارية | تقنين القنصلية القطرية",
+              "طلبات العلامات الجماعية | التوكيل القانوني | شهادة التأسيس، خمس طبعات للعلامة، قائمة السلع، بيانات مقدم الطلب، مستند الأولوية إن وجد | تقنين القنصلية القطرية أو أي قنصلية عربية",
+              "طلبات التجديد | التوكيل القانوني (إن كان جديداً) | بيانات مقدم الطلب، رقم العلامة | تقنين القنصلية القطرية أو أي قنصلية عربية",
+              "طلبات التنازل | التوكيل القانوني (المتنازل إليه) | عقد التنازل، شهادة التأسيس | تقنين القنصلية القطرية أو أي قنصلية عربية",
+              "طلبات الترخيص | التوكيل القانوني (المرخص له) | اتفاقية الترخيص، شهادة التأسيس | تقنين القنصلية القطرية أو أي قنصلية عربية",
+              "طلبات تغيير الاسم/العنوان | التوكيل القانوني | شهادة التغيير الرسمية | تقنين القنصلية القطرية أو أي قنصلية عربية",
+              "طلبات التعديل | التوكيل القانوني (مختوم) | شهادة التعديل | تقنين القنصلية القطرية أو أي قنصلية عربية",
+              "اتفاقيات الوكالة | التوكيل القانوني | اتفاقية الوكالة ببيانات محددة | تقنين القنصلية القطرية أو أي قنصلية عربية"
+            ]
+          },
+          {
+            heading: "ملاحظات مهمة",
+            points: [
+              "يُقبل التقنين عبر قنصلية عربية عند تعذر خدمات القنصلية القطرية.",
+              "يجب استبعاد عنصر واحد على الأقل من كل فئة للالتزام بمتطلبات التغطية في قطر.",
+              "على المتقدمين الأفراد تقديم إثبات نشاط تجاري لتأكيد حقهم في التقديم.",
+              "خمس طبعات للعلامة شرط إلزامي لطلبات العلامات الجماعية.",
+              "تتطلب العقود والتراخيص والاتفاقيات توثيقاً وتقنيناً كاملاً، ويستلزم تعديل الطلبات توكيلاً مختوماً."
+            ]
+          },
+          {
+            heading: "تسلسل التقنين",
+            points: [
+              "التقنين المفضل: القنصلية القطرية ضمن ولاية مقدم الطلب.",
+              "التقنين البديل: أي قنصلية عربية عند تعذر القنصلية القطرية.",
+              "ينطبق ذلك على جميع التوكيلات، والعقود، والمستندات الرسمية المقدمة في قطر."
+            ]
+          },
+          {
+            heading: "دعم الخبراء",
+            points: [
+              "للحصول على دعم في تسجيل العلامات التجارية في قطر والإجراءات المرتبطة بها، يرجى التواصل مع خبراء الملكية الفكرية لدينا."
+            ]
+          }
+        ],
+        downloadHref: "https://app.box.com/s/k1gbqhk5o71k52nwmta3rqi1c9e10s0n"
+      },
+      patentGuide: {
+        title: "متطلبات تسجيل براءات الاختراع في قطر",
+        updated: "أكتوبر 2025",
+        sections: [
+          {
+            heading: "متطلبات إيداع طلبات البراءة",
+            points: [
+              "توكيل قانوني مقنن حتى القنصلية القطرية؛ يمكن تقديمه بعد الإيداع.",
+              "مواصفات براءة كاملة تتضمن الملخص والمطالبات باللغة الإنجليزية، مع إمكانية تقديم الترجمة العربية لاحقاً.",
+              "تقديم مجموعة كاملة من الرسومات الخاصة بالاختراع عند الحاجة."
+            ]
+          },
+          {
+            heading: "مرونة التقديم",
+            points: [
+              "المستندات المطلوبة عند الإيداع: المواصفات الكاملة باللغة الإنجليزية وجميع الرسومات.",
+              "المستندات التي يمكن تقديمها لاحقاً: التوكيل القانوني المقنن والترجمة العربية للمواصفات."
+            ]
+          },
+          {
+            heading: "ملخص المتطلبات الرئيسية",
+            points: [
+              "يجب تقنين التوكيل القانوني عبر القنصلية القطرية وفق الإجراءات المعتمدة.",
+              "يجب تقديم الملخص والمطالبات والمواصفات باللغة الإنجليزية مع استكمال الترجمة العربية لاحقاً.",
+              "يجب أن تتضمن الوثائق الفنية وصفاً كاملاً وملخصاً ومطالبات ورسومات توضح الاختراع."
+            ]
+          },
+          {
+            heading: "قائمة التحقق من المستندات",
+            points: [
+              "التوكيل القانوني | غير محدد | يقدم بعد الإيداع عند الحاجة | تقنين القنصلية القطرية",
+              "الملخص | إنجليزي وعربي | الإنجليزية عند الإيداع، العربية لاحقاً | لا",
+              "المطالبات | إنجليزي وعربي | الإنجليزية عند الإيداع، العربية لاحقاً | لا",
+              "المواصفات الكاملة | إنجليزي وعربي | الإنجليزية عند الإيداع، العربية لاحقاً | لا",
+              "الرسومات | غير محدد | تقدم مع الطلب عند الحاجة | لا"
+            ]
+          },
+          {
+            heading: "ملاحظات مهمة",
+            points: [
+              "تتيح المرونة في التقديم إيداع الطلب بسرعة مع استكمال المستندات الرسمية لاحقاً.",
+              "تعد المواصفات الإنجليزية شرطاً أساسياً عند الإيداع ويجب أن تكون كاملة.",
+              "تظل الترجمات العربية والتوكيل المقنن إلزامية رغم إمكانية تقديمها لاحقاً.",
+              "يجب إرفاق جميع الرسومات المتعلقة بالاختراع منذ البداية."
+            ]
+          },
+          {
+            heading: "استراتيجية الإيداع",
+            points: [
+              "متطلبات الإيداع الفورية: المواصفات الكاملة باللغة الإنجليزية وجميع الرسومات ذات الصلة.",
+              "المستندات اللاحقة: التوكيل القانوني المقنن عبر القنصلية القطرية والترجمة العربية للمواصفات."
+            ]
+          },
+          {
+            heading: "دعم الخبراء",
+            points: [
+              "للحصول على الدعم في تسجيل براءات الاختراع في قطر وإجراءات الإيداع، يرجى التواصل مع خبراء الملكية الفكرية لدينا."
+            ]
+          }
+        ],
+        downloadHref: "https://app.box.com/s/9du5aa5tdtlc14fr1863fvfg1fdtlc52"
+      },
+      designGuide: {
+        title: "متطلبات تسجيل التصاميم في قطر",
+        updated: "أكتوبر 2025",
+        sections: [
+          {
+            heading: "متطلبات إيداع طلبات التصميم",
+            points: [
+              "بيانات المالك: الاسم الكامل، العنوان التفصيلي، الجنسية، طبيعة النشاط، وأي بيانات ذات صلة.",
+              "تعريف التصميم: عنوان التصميم، تفاصيل التسجيل في بلد المنشأ، والإفصاح عن أي تسجيلات أخرى.",
+              "وصف التصميم: ملخص باللغة الإنجليزية يوضح خصائص التصميم."
+            ]
+          },
+          {
+            heading: "ملخص المتطلبات الرئيسية",
+            points: [
+              "يجب أن تتضمن معلومات المالك تفاصيل قانونية وتجارية كاملة.",
+              "يجب الإفصاح عن أي تسجيلات في بلد المنشأ أو دول أخرى لإثبات الحقوق السابقة.",
+              "تقديم وصف تقني باللغة الإنجليزية يبرز السمات المميزة للتصميم."
+            ]
+          },
+          {
+            heading: "قائمة التحقق من المستندات",
+            points: [
+              "بيانات المالك | الاسم، العنوان، الجنسية، طبيعة النشاط | إنجليزي",
+              "عنوان التصميم | الاسم الكامل للتصميم | إنجليزي",
+              "تفاصيل التسجيل | تسجيلات بلد المنشأ أو الدول الأخرى | إنجليزي",
+              "وصف التصميم | ملخص بالسمات المميزة | إنجليزي"
+            ]
+          },
+          {
+            heading: "ملاحظات مهمة",
+            points: [
+              "تعتمد حماية التصميم على إيداع إعلانات احترازية دون متطلبات تقنين رسمية.",
+              "اللغة الإنجليزية إلزامية لجميع المستندات المقدمة.",
+              "إثبات التسجيل في بلد المنشأ يعزز إثبات الملكية.",
+              "تعد بيانات المالك الكاملة ضرورية لتأكيد صحة الإيداع.",
+              "يجب أن يتوافق الوصف مع أي مواد مرئية مرفقة."
+            ]
+          },
+          {
+            heading: "اعتبارات الإيداع",
+            points: [
+              "التحضير قبل الإيداع: جمع سجل التسجيلات السابقة، التحقق من بيانات المالك، وصياغة وصف باللغة الإنجليزية.",
+              "إرشادات وصف التصميم: المحافظة على الدقة والاختصار، إبراز العناصر المميزة، استخدام لغة واضحة، ومطابقة الوصف مع التمثيل المرئي."
+            ]
+          },
+          {
+            heading: "دعم الخبراء",
+            points: [
+              "للحصول على دعم في تسجيل التصاميم في قطر وتقديم الإعلانات الاحترازية، يرجى التواصل مع خبراء الملكية الفكرية لدينا."
+            ]
+          }
+        ],
+        downloadHref: "https://app.box.com/s/t4562nx25ie0gssc0297uzeew81ww20d"
+      },
+      resources: [
+        { label: "دليل العلامات التجارية", href: "https://app.box.com/s/k1gbqhk5o71k52nwmta3rqi1c9e10s0n", type: "trademark" },
+        { label: "دليل البراءات", href: "https://app.box.com/s/9du5aa5tdtlc14fr1863fvfg1fdtlc52", type: "patent" },
+        { label: "دليل التصاميم", href: "https://app.box.com/s/t4562nx25ie0gssc0297uzeew81ww20d", type: "design" }
+      ]
+    },
+    {
+      country: "مملكة البحرين",
+      summary: "متطلبات الإيداع، الاعتراف بالأولوية، وجداول الفحص عبر سجلات الملكية الفكرية في البحرين.",
+      trademarkGuide: {
+        title: "متطلبات تسجيل العلامات التجارية في البحرين",
+        updated: "أكتوبر 2025",
+        sections: [
+          {
+            heading: "طلبات العلامات/علامات الخدمات الجديدة",
+            points: [
+              "توكيل قانوني موقّع من المفوض بالتوقيع لدى مقدم الطلب، مقنن حتى القنصلية البحرينية أو موثق بالأبوستيل.",
+              "تقديم مستند داعم واحد فقط: مستند أولوية مصدق، شهادة تأسيس مقننة، شهادة من مسجل الشركات، مستخرج من السجل التجاري، أو شهادة من غرفة التجارة.",
+              "تقديم بيانات مقدم الطلب كاملة بما في ذلك الاسم، العنوان، والمهنة.",
+              "توفير طبعات واضحة لكل علامة كما تم إيداعها.",
+              "إدراج أرقام الفئات الدولية مع وصف تفصيلي للسلع و/أو الخدمات."
+            ]
+          },
+          {
+            heading: "خيار الإيداع المتأخر",
+            points: [
+              "يمكن تقديم الطلبات دون مستندات مقننة بشرط تقديم جميع التصديقات المطلوبة خلال 90 يوماً من إخطار مكتب الملكية الصناعية بنتيجة الفحص."
+            ]
+          },
+          {
+            heading: "تجديد تسجيل العلامة",
+            points: [
+              "توكيل قانوني باسم مالك العلامة المسجل، مقنن حتى القنصلية البحرينية أو موثق بالأبوستيل."
+            ]
+          },
+          {
+            heading: "تسجيل التنازل",
+            points: [
+              "توكيل قانوني موقع من المفوض بالتوقيع لدى المتنازل إليه مع تقنين القنصلية البحرينية أو الأبوستيل.",
+              "عقد تنازل موقع من المتنازل والمتنازل إليه، مقنن حتى القنصلية البحرينية أو موثق بالأبوستيل."
+            ]
+          },
+          {
+            heading: "تسجيل تغيير الاسم و/أو العنوان",
+            points: [
+              "توكيل قانوني يتضمن الاسم أو العنوان الجديد، موثق أو مصدق بالأبوستيل.",
+              "شهادة رسمية تثبت التغيير، مقننة حتى القنصلية البحرينية أو موثقة بالأبوستيل."
+            ]
+          },
+          {
+            heading: "تسجيل اتفاقية الترخيص",
+            points: [
+              "توكيل قانوني من المالك وتوكيل منفصل من المرخص له، كل منهما مقنن حتى القنصلية البحرينية أو موثق بالأبوستيل.",
+              "اتفاقية الترخيص موقعة من الطرفين ومقننة حتى القنصلية البحرينية أو موثقة بالأبوستيل."
+            ]
+          },
+          {
+            heading: "تسجيل اتفاقية الرهن/الضمان",
+            points: [
+              "توكيل قانوني من المالك المسجل وتوكيل من الدائن المرتهن، كلاهما مقنن أو موثق بالأبوستيل.",
+              "اتفاقية حق الضمان (الرهن) مقننة حتى القنصلية البحرينية أو موثقة بالأبوستيل."
+            ]
+          },
+          {
+            heading: "تسجيل الاندماج",
+            points: [
+              "توكيل قانوني موقع من المفوض بالتوقيع لدى المالك الجديد مع التقنين المطلوب.",
+              "مستند اندماج مصدق وموثق حتى القنصلية البحرينية أو بالأبوستيل."
+            ]
+          },
+          {
+            heading: "ملخص المتطلبات الرئيسية",
+            points: [
+              "تقبل البحرين التقنين عبر القنصلية البحرينية أو توثيق الأبوستيل لجميع المستندات الرسمية.",
+              "تتطلب الطلبات الجديدة مستنداً مقنناً واحداً فقط من القائمة المعتمدة.",
+              "توفر مهلة سماح قدرها 90 يوماً بعد إخطار مكتب الملكية الصناعية لتقديم التصديقات، مما يسمح بالإيداع السريع.",
+              "تستلزم تسجيلات الترخيص والرهن تقديم توكيلين منفصلين.",
+              "يجب تصديق مستندات الاندماج قبل التقنين."
+            ]
+          },
+          {
+            heading: "قائمة التحقق من المستندات",
+            points: [
+              "طلب جديد | التوكيل القانوني (مقدم الطلب) | مستند داعم واحد، بيانات مقدم الطلب، طبعات العلامة، قائمة الفئات والسلع | القنصلية البحرينية أو الأبوستيل",
+              "التجديد | التوكيل القانوني (المالك) | لا يوجد | القنصلية البحرينية أو الأبوستيل",
+              "التنازل | التوكيل القانوني (المتنازل إليه) | عقد التنازل | القنصلية البحرينية أو الأبوستيل",
+              "تغيير الاسم/العنوان | التوكيل القانوني (البيانات الجديدة) | شهادة التغيير | القنصلية البحرينية أو الأبوستيل",
+              "اتفاقية الترخيص | التوكيل القانوني (المالك والمرخص له) | اتفاقية الترخيص | القنصلية البحرينية أو الأبوستيل",
+              "اتفاقية الضمان | التوكيل القانوني (المالك والدائن المرتهن) | اتفاقية الضمان | القنصلية البحرينية أو الأبوستيل",
+              "الاندماج | التوكيل القانوني (المالك الجديد) | مستند الاندماج المصدق | القنصلية البحرينية أو الأبوستيل"
+            ]
+          },
+          {
+            heading: "ملاحظات مهمة",
+            points: [
+              "يُقبل الأبوستيل كبديل لتقنين القنصلية.",
+              "يستفيد أعضاء اتفاقية لاهاي من الاكتفاء بالأبوستيل لتبسيط الإجراءات.",
+              "تسمح مهلة 90 يوماً بتقديم سريع بينما تكتمل إجراءات التقنين.",
+              "يجب تقديم مطالبات الأولوية خلال 6 أشهر عند الاقتضاء.",
+              "يتطلب كل تصميم ثلاث طبعات، ويجب توثيق التوكيلات.",
+              "تستلزم اتفاقيات الترخيص تقديم توكيلين.",
+              "لا يُطلب تقديم شهادة التأسيس إلا عند عدم المطالبة بالأولوية.",
+              "تستلزم تسجيلات التنازل تقديم مستندات من الطرفين.",
+              "يتطلب تغيير الاسم/العنوان شهادة من الجهة المختصة."
+            ]
+          },
+          {
+            heading: "دليل اختيار المستندات الداعمة",
+            points: [
+              "المتقدمون الذين يطالبون بالأولوية يجب أن يقدموا مستند الأولوية خلال 6 أشهر؛ ولا حاجة لشهادة التأسيس.",
+              "المتقدمون الذين لا يطالبون بالأولوية يعتمدون على شهادة تأسيس مقننة.",
+              "أعضاء اتفاقية لاهاي يمكنهم استخدام الأبوستيل فقط لتسريع المعالجة."
+            ]
+          },
+          {
+            heading: "دليل استراتيجية الإيداع",
+            points: [
+              "الإيداع القياسي: تقديم جميع المستندات الموثقة والمقننة كاملة.",
+              "الإيداع مع مهلة 90 يوماً: تقديم الطلب مع طبعات التصميم والبيانات الأساسية أثناء استكمال التوكيلات والمستندات."
+            ]
+          },
+          {
+            heading: "متطلبات تمثيل التصميم",
+            points: [
+              "تقديم ثلاث صور واضحة لكل تصميم باستخدام صور عالية الجودة أو رسومات مفصلة.",
+              "يجب أن تعرض الصور ذات العناصر المميزة ذاتها عبر جميع المناظير.",
+              "استخدام صور احترافية أو رسومات فنية لإبراز الخصائص الأساسية."
+            ]
+          },
+          {
+            heading: "دعم الخبراء",
+            points: [
+              "للمساعدة في تسجيل العلامات التجارية في البحرين وإجراءاتها، يرجى التواصل مع خبرائنا في الملكية الفكرية."
+            ]
+          }
+        ]
+      },
+      patentGuide: {
+        title: "متطلبات تسجيل براءات الاختراع في البحرين",
+        updated: "أكتوبر 2025",
+        sections: [
+          {
+            heading: "طلبات براءة الاختراع",
+            points: [
+              "توكيل قانوني موقع من المخترع أو الشركة، مقنن حتى القنصلية البحرينية أو موثق بالأبوستيل.",
+              "عقد تنازل موقع من المخترع إلى مقدم الطلب عند اختلاف الطرفين، مع التصديق المطلوب.",
+              "مواصفات براءة متكاملة باللغتين الإنجليزية والعربية.",
+              "نسخة مصدقة من مستند الأولوية خلال 12 شهراً من الإيداع الأول."
+            ]
+          },
+          {
+            heading: "التقديم عبر مراحل",
+            points: [
+              "الإيداع الكامل: تقديم جميع المستندات الموثقة والمقننة منذ البداية.",
+              "الإيداع بمهلة 3 أشهر: إمكانية تقديم الطلب مع مواصفات البراءة والرسومات، واستكمال التوكيل وعقد التنازل لاحقاً.",
+              "تمديد إضافي لمدة 90 يوماً: يسمح بالإيداع السريع باستخدام المواصفات ونسخة من طلب PCT أثناء تجهيز التصديقات.",
+              "نافذة ترجمة 4 أشهر: تقديم المواصفات باللغة الإنجليزية أولاً ثم استكمال الترجمة العربية."
+            ]
+          },
+          {
+            heading: "متطلبات صيغة المستند",
+            points: [
+              "يجب أن تكون مواصفات البراءة بصيغة Word (.doc أو .docx).",
+              "يمكن تقديم التوكيل وعقد التنازل والمستندات الداعمة بصيغة PDF ممسوحة.",
+              "يتطلب الإيداع الأولي مستندات باللغة الإنجليزية؛ أما المستند النهائي فيتضمن نسختين باللغتين الإنجليزية والعربية.",
+              "يمكن أن تبقى المستندات الداعمة بلغتها الأصلية شريطة توثيقها أو توثيق الأبوستيل."
+            ]
+          },
+          {
+            heading: "دعم الخبراء",
+            points: [
+              "للمساعدة في تسجيل براءات الاختراع في البحرين وإجراءاتها، يرجى التواصل مع خبراء الملكية الفكرية لدينا."
+            ]
+          }
+        ],
+        downloadHref: "/pdfs/bahrain-patent-law.pdf"
+      },
+      designGuide: {
+        title: "متطلبات تسجيل التصاميم الصناعية في البحرين",
+        updated: "أكتوبر 2025",
+        sections: [
+          {
+            heading: "طلبات التصميم الصناعي الجديدة",
+            points: [
+              "توكيل قانوني موقع من المفوض بالتوقيع لدى مقدم الطلب، موثق ومقنن حتى القنصلية البحرينية أو بالأبوستيل.",
+              "بيانات مقدم الطلب: الاسم الكامل، العنوان، الجنسية، وطبيعة النشاط.",
+              "مستند داعم: إما شهادة تأسيس مقننة عند عدم المطالبة بالأولوية أو مستند أولوية مقنن خلال 6 أشهر.",
+              "تمثيل التصميم: ثلاث نسخ لكل تصميم.",
+              "يُمكن لأعضاء اتفاقية لاهاي الاعتماد على الأبوستيل دون الحاجة لتقنين إضافي للتوكيلات والمستندات الداعمة."
+            ]
+          },
+          {
+            heading: "تسجيل التنازل",
+            points: [
+              "توكيل قانوني من المتنازل إليه، موثق ومقنن أو موثق بالأبوستيل.",
+              "عقد التنازل موقع من الطرفين مع نفس متطلبات التقنين."
+            ]
+          },
+          {
+            heading: "تسجيل تغيير الاسم و/أو العنوان",
+            points: [
+              "توكيل قانوني يتضمن التفاصيل الجديدة، موثق ومقنن أو موثق بالأبوستيل.",
+              "شهادة صادرة عن الجهة المختصة تثبت التغيير مع التقنين المطلوب."
+            ]
+          },
+          {
+            heading: "تسجيل اتفاقية الترخيص",
+            points: [
+              "توكيل قانوني من مالك التصميم وتوكيل منفصل من المرخص له، كل منهما مقنن أو موثق بالأبوستيل.",
+              "اتفاقية الترخيص موقعة من الطرفين ومقننة وفق المتطلبات."
+            ]
+          },
+          {
+            heading: "ملخص المتطلبات الرئيسية",
+            points: [
+              "يمكن إتمام التقنين عبر القنصلية البحرينية أو الأبوستيل لجميع الطلبات.",
+              "يجب تقديم مستند الأولوية خلال 6 أشهر عند المطالبة بالأولوية.",
+              "توجد مهلة سماح قدرها 90 يوماً لتقديم المستندات المقننة بعد الإيداع.",
+              "يستفيد أعضاء اتفاقية لاهاي من معالجة أسرع عبر الأبوستيل فقط.",
+              "يتطلب كل تصميم ثلاث طبعات، ويجب توثيق التوكيلات."
+            ]
+          },
+          {
+            heading: "قائمة التحقق من المستندات",
+            points: [
+              "طلب تصميم جديد | التوكيل القانوني (مقدم الطلب) | شهادة التأسيس أو مستند الأولوية، بيانات مقدم الطلب، ثلاث طبعات للتصميم | القنصلية البحرينية أو الأبوستيل | أعضاء لاهاي: الأبوستيل فقط",
+              "التنازل | التوكيل القانوني (المتنازل إليه) | عقد التنازل | القنصلية البحرينية أو الأبوستيل | توثيق مطلوب",
+              "تغيير الاسم/العنوان | التوكيل القانوني (بيانات جديدة) | شهادة التغيير | القنصلية البحرينية أو الأبوستيل | توثيق مطلوب",
+              "اتفاقية الترخيص | التوكيل القانوني (المالك والمرخص له) | اتفاقية الترخيص | القنصلية البحرينية أو الأبوستيل | توكيلان إلزاميان"
+            ]
+          },
+          {
+            heading: "ملاحظات مهمة",
+            points: [
+              "يُقبل الأبوستيل كبديل للتقنين القنصلي.",
+              "يستفيد أعضاء اتفاقية لاهاي من إجراءات مبسطة بالأبوستيل فقط.",
+              "تتيح مهلة 90 يوماً تقديماً سريعاً مع استكمال التقنين لاحقاً.",
+              "يجب تقديم مطالبات الأولوية خلال 6 أشهر.",
+              "من الضروري تقديم ثلاث تمثيلات لكل تصميم.",
+              "يجب توثيق التوكيلات في شؤون التصميم.",
+              "تستلزم اتفاقيات الترخيص وجود توكيلين.",
+              "يطلب تقديم شهادة التأسيس فقط عند عدم المطالبة بالأولوية.",
+              "يتطلب تسجيل التنازل تقديم مستندات من كلا الطرفين.",
+              "يلزم الحصول على شهادة من الجهة المختصة عند تغيير الاسم أو العنوان."
+            ]
+          },
+          {
+            heading: "دعم الخبراء",
+            points: [
+              "للمساعدة في تسجيل التصاميم الصناعية في البحرين وإجراءاتها، تواصل مع خبراء الملكية الفكرية لدينا."
+            ]
+          }
+        ],
+        downloadHref: "https://app.box.com/s/t4562nx25ie0gssc0297uzeew81ww20d"
+      },
+      resources: [
+        { label: "دليل العلامات التجارية", href: "https://app.box.com/s/57obz1s7et6582she8mtvc9vs57g3riu", type: "trademark" },
+        { label: "دليل البراءات", href: "https://app.box.com/s/sr40kml17wtqzeg7x72yv76okhqv8klf", type: "patent" },
+        { label: "دليل التصاميم", href: "https://app.box.com/s/5a0ktbgzhlsm9vt61lsg34jg3s000fa1", type: "design" }
+      ]
+    },
+    {
+      country: "سلطنة عُمان",
+      summary: "متطلبات الإيداع خطوة بخطوة مع نقاط تجديد لملفات عُمان.",
+      trademarkGuide: {
+        title: "متطلبات تسجيل العلامات التجارية في سلطنة عُمان",
+        updated: "أكتوبر 2025",
+        sections: [
+          {
+            heading: "طلبات العلامات/علامات الخدمات الجديدة",
+            points: [
+              "توكيل قانوني موقّع من المفوض بالتوقيع، موثق ومقنن بالأبوستيل أو قنصلية عُمان؛ يمكن لتوكيل واحد تغطية عدة طلبات لنفس مقدم الطلب.",
+              "بيانات مقدم الطلب: الاسم الكامل، الجنسية، العنوان التفصيلي، وطبيعة النشاط أو المهنة.",
+              "تمثيل العلامة: طبعة واضحة للعلامة مع المعنى أو الترجمة إن وجدت.",
+              "السلع والخدمات: قوائم محددة ضمن الفئات الدولية ذات الصلة؛ لا تُقبل عناوين الفئات أو الطلبات بدون تفصيل.",
+              "مستندات الشركات: نسخة بسيطة من شهادة التأسيس أو مستخرج السجل التجاري أو شهادة حسن السيرة مع ترجمة إنجليزية مبسطة عند الحاجة.",
+              "مستند الأولوية (إن وُجد): نسخة مصدقة مع ترجمة إنجليزية مبسطة."
+            ]
+          },
+          {
+            heading: "طلبات العلامات الجماعية",
+            points: [
+              "توكيل قانوني موثق ومقنن بالأبوستيل أو قنصلية عُمان.",
+              "مستندات الشركة: نسخة بسيطة من شهادة التأسيس أو مستخرج السجل التجاري أو شهادة حسن السيرة مع ترجمة إنجليزية عند الحاجة.",
+              "تمثيلات العلامة: عرض جميع العلامات في ورقة واحدة.",
+              "مستند الأولوية المصدق مع ترجمة إنجليزية مبسطة عند المطالبة."
+            ]
+          },
+          {
+            heading: "تجديد تسجيل العلامة",
+            points: [
+              "توكيل قانوني (إذا لم يكن مودعاً سابقاً) موثق ومقنن بالأبوستيل أو قنصلية عُمان.",
+              "بيانات التسجيل بما في ذلك رقم العلامة والفئة الدولية."
+            ]
+          },
+          {
+            heading: "تسجيل تغيير الاسم والعنوان",
+            points: [
+              "توكيل قانوني موثق ومقنن بالأبوستيل أو قنصلية عُمان.",
+              "شهادة تغيير أصلية أو مصدقة صادرة عن السجل التجاري مع ترجمة إنجليزية مبسطة."
+            ]
+          },
+          {
+            heading: "تسجيل التنازل",
+            points: [
+              "توكيل قانوني من المتنازل إليه مقنن بالأبوستيل أو قنصلية عُمان.",
+              "عقد تنازل موقع من الطرفين يتضمن رقم العلامة والفئة، موثق ومقنن وفق المتطلبات.",
+              "مستندات الشركة للمتنازل إليه: نسخة بسيطة من شهادة التأسيس أو مستخرج السجل التجاري أو شهادة حسن السيرة مع ترجمة إنجليزية.",
+              "بيانات المتنازل إليه: الاسم الكامل، العنوان، الجنسية، وطبيعة العمل."
+            ]
+          },
+          {
+            heading: "تسجيل اتفاقية الترخيص",
+            points: [
+              "توكيل قانوني موثق ومقنن بالأبوستيل أو قنصلية عُمان.",
+              "اتفاقية الترخيص موقعة من المرخِّص والمرخَّص له، موثقة ومقننة.",
+              "مستندات الشركة للمرخَّص له: نسخة بسيطة من شهادة التأسيس أو مستخرج السجل التجاري أو شهادة حسن السيرة مع ترجمة إنجليزية.",
+              "تقديم رقم التسجيل والفئة؛ تُسجل التراخيص على العلامات المسجلة فقط."
+            ]
+          },
+          {
+            heading: "تسجيل الاندماج",
+            points: [
+              "توكيل قانوني باسم الكيان المندمج، موثق ومقنن بالأبوستيل أو قنصلية عُمان.",
+              "مستند اندماج موقع من الطرفين مع ترجمة إنجليزية مبسطة إن لزم، موثق ومقنن.",
+            ]
+          },
+          {
+            heading: "تسجيل تغيير الاسم فقط",
+            points: [
+              "توكيل قانوني موثق ومقنن بالأبوستيل أو قنصلية عُمان.",
+              "شهادة تغيير اسم أصلية أو مصدقة صادرة عن السجل في بلد المنشأ مع ترجمة إنجليزية مبسطة."
+            ]
+          },
+          {
+            heading: "تسجيل تغيير العنوان فقط",
+            points: [
+              "توكيل قانوني (يُعفى إذا كان الوكيل مسجلاً مسبقاً) موثق ومقنن بالأبوستيل أو قنصلية عُمان.",
+              "شهادة تغيير عنوان أصلية أو مصدقة مع ترجمة إنجليزية مبسطة."
+            ]
+          },
+          {
+            heading: "ملخص المتطلبات الرئيسية",
+            points: [
+              "يمكن التقنين عبر الأبوستيل أو قنصلية عُمان حسب تفضيل مقدم الطلب.",
+              "مستندات الشركات (التأسيس، السجل التجاري، شهادة حسن السيرة) تحتاج فقط إلى نسخ بسيطة مع ترجمة إنجليزية مبسطة.",
+              "يمكن لتوكيل واحد مقنن تغطية عدة طلبات لنفس العميل مما يقلل التكاليف.",
+              "يجب ذكر السلع والخدمات بالتفصيل لكل فئة؛ تُرفض الأوصاف العامة.",
+              "تُسجل اتفاقيات الترخيص فقط على العلامات المسجلة.",
+              "تحتاج مستندات الأولوية والاندماج وشهادات التغيير إلى نسخ أصلية مع ترجمة إنجليزية مبسطة."
+            ]
+          },
+          {
+            heading: "قائمة التحقق من المستندات",
+            points: [
+              "طلب جديد | التوكيل القانوني (مقدم الطلب) | بيانات مقدم الطلب، طبعة العلامة، قائمة السلع/الخدمات، مستند تأسيس (نسخة بسيطة)، مستند الأولوية عند توفره | الأبوستيل أو قنصلية عُمان | السلع والخدمات محددة؛ توكيل واحد يمكن استخدامه لعدة طلبات",
+              "علامة جماعية | التوكيل القانوني (مقدم الطلب) | مستند تأسيس (نسخة بسيطة)، جميع العلامات في ورقة واحدة، مستند الأولوية إن وُجد | الأبوستيل أو قنصلية عُمان | تقديم كل العلامات معاً",
+              "تجديد | التوكيل القانوني (إن كان جديداً) | رقم التسجيل والفئة | الأبوستيل أو قنصلية عُمان | الاستغناء عن التوكيل إذا كان مودعاً",
+              "تغيير الاسم والعنوان | التوكيل القانوني | شهادة التغيير من السجل التجاري | الأبوستيل أو قنصلية عُمان | يتطلب نسخة أصلية أو مصدقة",
+              "التنازل | التوكيل القانوني (المتنازل إليه) | عقد التنازل، مستندات شركة المتنازل إليه (نسخة بسيطة)، بيانات المتنازل إليه | الأبوستيل أو قنصلية عُمان | يجب ذكر رقم العلامة والفئة",
+              "اتفاقية الترخيص | التوكيل القانوني | اتفاقية الترخيص، مستندات المرخَّص له (نسخة بسيطة)، رقم التسجيل والفئة | الأبوستيل أو قنصلية عُمان | للعلامات المسجلة فقط",
+              "الاندماج | التوكيل القانوني (الكيان الجديد) | مستند الاندماج | الأبوستيل أو قنصلية عُمان | يجب أن يعكس التوكيل الاسم الجديد",
+              "تغيير الاسم فقط | التوكيل القانوني | شهادة تغيير الاسم | الأبوستيل أو قنصلية عُمان | نسخة أصلية أو مصدقة",
+              "تغيير العنوان فقط | التوكيل القانوني (إذا لزم) | شهادة تغيير العنوان | الأبوستيل أو قنصلية عُمان | نسخة أصلية أو مصدقة"
+            ]
+          },
+          {
+            heading: "ملاحظات مهمة",
+            points: [
+              "يمكن استبدال تقنين القنصلية بالأبوستيل لجميع المستندات.",
+              "تحتاج مستندات الشركة إلى نسخ بسيطة فقط مع ترجمة إنجليزية عند الحاجة.",
+              "يتطلب عقد التنازل توقيع جميع المصممين عند اختلاف مقدم الطلب.",
+              "يجب أن تشمل تمثيلات التصميم عدة مناظير لإبراز جميع السمات.",
+              "يمكن المطالبة بالأولوية خلال 6 أشهر باستخدام مستندات مصدقة دون الحاجة للتقنين."
+            ]
+          },
+          {
+            heading: "قائمة التحقق من التصميم",
+            points: [
+              "مناظير التصميم | مطلوبة عند الإيداع | لا يلزم تقنين | لا ترجمة مطلوبة | صور أو رسومات احترافية",
+              "بيانات الإيداع | مطلوبة عند الإيداع | لا يلزم تقنين | لا ترجمة مطلوبة | بيانات الطلب الكاملة",
+              "التوكيل القانوني | مطلوبة عند الإيداع | الأبوستيل أو قنصلية عُمان | لا ترجمة مطلوبة | النسخة الأصلية",
+              "شهادة التأسيس/السجل التجاري/حسن السيرة | مطلوبة عند الإيداع | لا يلزم تقنين | ترجمة إنجليزية عند الحاجة | نسخة بسيطة",
+              "عقد التنازل | مطلوبة عند الإيداع | الأبوستيل أو قنصلية عُمان | لا ترجمة مطلوبة | النسخة الأصلية",
+              "مستند الأولوية (إن وُجد) | خلال 6 أشهر | لا يلزم تقنين | ترجمة إنجليزية عند الحاجة | نسخة مصدقة",
+              "ملخص التصميم | مطلوبة عند الإيداع | لا يلزم تقنين | لا ترجمة مطلوبة | وصف موجز للابتكار"
+            ]
+          },
+          {
+            heading: "ملاحظات إضافية",
+            points: [
+              "يجوز استخدام الأبوستيل بدلاً من التقنين القنصلي للمستندات التي تتطلب تصديقاً.",
+              "يجب تقديم التوكيل الأصلي؛ لا تُقبل النسخ.",
+              "عقد التنازل إلزامي عند اختلاف المصمم عن مقدم الطلب ويجب توثيقه وتقنينه.",
+              "ينبغي توفير صور عالية الجودة متعددة الزوايا.",
+              "تتطلب المستندات غير الإنجليزية ترجمات إنجليزية مبسطة.",
+              "مستند الأولوية يحتاج إلى تصديق فقط دون تقنين."
+            ]
+          },
+          {
+            heading: "إرشادات تمثيل التصميم",
+            points: [
+              "تضمين مناظير أمامية، خلفية، جانبية، علوية، سفلية، ومنظور ثلاثي الأبعاد عند الحاجة.",
+              "الحفاظ على مقياس وجودة وإضاءة موحدة لكل المناظير.",
+              "استخدام تصوير احترافي أو رسومات فنية لإبراز العناصر المميزة.",
+              "تقديم مناظير تفصيلية للميزات الفريدة."
+            ]
+          },
+          {
+            heading: "إرشادات ملخص التصميم",
+            points: [
+              "تلخيص عناصر الحداثة في 50–150 كلمة مع التركيز على السمات البصرية.",
+              "استخدام لغة وصفية موضوعية والابتعاد عن العبارات التسويقية.",
+              "إبراز العناصر التي تميز التصميم عن السابق."
+            ]
+          },
+          {
+            heading: "اختيار المستندات الداعمة",
+            points: [
+              "يمكن اختيار شهادة التأسيس أو مستخرج السجل التجاري أو شهادة حسن السيرة كإثبات للشخصية الاعتبارية.",
+              "تحتاج هذه المستندات إلى نسخ بسيطة وترجمة إنجليزية عند الضرورة.",
+              "لا يلزم تقنين للمستندات الداعمة للشركات."
+            ]
+          },
+          {
+            heading: "استراتيجية الإيداع",
+            points: [
+              "يمكن للمصمم الفردي الاعتماد على توكيله الخاص دون مستندات شركة أو عقد تنازل.",
+              "ينبغي على الشركات تجهيز شهادة التأسيس وعقد التنازل من كل مصمم لإثبات الملكية.",
+              "التخطيط لجدول التقنين بالأبوستيل أو القنصلية مسبقاً لتجنب التأخير، خاصة عند تعدد المستندات."
+            ]
+          },
+          {
+            heading: "متطلبات المطالبة بالأولوية",
+            points: [
+              "يجب المطالبة بالأولوية خلال 6 أشهر من تاريخ الإيداع الأول.",
+              "تقديم نسخة مصدقة من طلب الأولوية مع ترجمة إنجليزية مبسطة عند الحاجة.",
+              "لا يلزم تقنين مستند الأولوية."
+            ]
+          },
+          {
+            heading: "أخطاء شائعة يجب تجنبها",
+            points: [
+              "تقديم نسخة من التوكيل بدلاً من الأصل.",
+              "إغفال عقد التنازل عندما يختلف مقدم الطلب عن المصمم أو غياب توقيع المصممين.",
+              "تقديم مناظير تصميم غير كافية أو منخفضة الجودة.",
+              "تقنين مستندات الشركات رغم الاكتفاء بالنسخ البسيطة.",
+              "عدم إرفاق ملخص التصميم أو المطالبة بالأولوية بعد انتهاء المهلة."
+            ]
+          },
+          {
+            heading: "إجراءات التقنين",
+            points: [
+              "مسار الأبوستيل: توثيق التوكيل/عقد التنازل، الحصول على الأبوستيل، وإرسال الأصل إلى عُمان.",
+              "المسار القنصلي: توثيق المستندات، تصديق وزارة الخارجية في بلد المنشأ، تقنينها لدى القنصلية العُمانية، ثم إرسال الأصول.",
+              "لا تحتاج مستندات الشركات إلا إلى نسخ بسيطة مع الترجمات."
+            ]
+          },
+          {
+            heading: "مقارنة معالجة الطلب",
+            points: [
+              "يحتاج المصمم الفردي إلى توكيله ومستندات التصميم فقط، ما يقلل التكلفة والتعقيد.",
+              "يتعين على الشركات تقديم عقود تنازل موثقة ومستندات شركات، ما يزيد التعقيد لكنه يضمن ملكية الشركة."
+            ]
+          },
+          {
+            heading: "دعم الخبراء",
+            points: [
+              "للحصول على الدعم في تسجيل التصاميم الصناعية في عُمان وإجراءاتها، تواصل مع خبراء الملكية الفكرية لدينا."
+            ]
+          }
+        ],
+        downloadHref: "https://app.box.com/s/dyuat0ucmkh7tij1e5hb4wjwdbzixzjo"
+      },
+      resources: [
+        { label: "دليل العلامات التجارية", href: "https://app.box.com/s/dyuat0ucmkh7tij1e5hb4wjwdbzixzjo", type: "trademark" },
+        { label: "دليل البراءات", href: "https://app.box.com/s/dyuat0ucmkh7tij1e5hb4wjwdbzixzjo", type: "patent" },
+        { label: "دليل التصاميم", href: "https://app.box.com/s/dyuat0ucmkh7tij1e5hb4wjwdbzixzjo", type: "design" }
+      ]
+    },
+    {
+      country: "دولة الكويت",
+      summary: "نظرة شاملة على الإيداع تشمل التصنيفات وإجراءات الاعتراض وفترات الصيانة.",
+      trademarkGuide: {
+        title: "متطلبات تسجيل العلامات التجارية في الكويت",
+        updated: "أكتوبر 2025",
+        sections: [
+          {
+            heading: "طلبات العلامات/علامات الخدمات الجديدة",
+            points: [
+              "توكيل قانوني موقع من المفوض بالتوقيع لدى مقدم الطلب ومقنن حتى القنصلية الكويتية (لا يُقبل الأبوستيل).",
+              "مستند الأولوية (عند المطالبة): نسخة بسيطة تُقدّم خلال 6 أشهر من تاريخ الطلب الأساسي دون حاجة للتقنين."
+            ]
+          },
+          {
+            heading: "تجديد تسجيل العلامات",
+            points: [
+              "توكيل قانوني صادر عن المالك المسجل ومقنن حتى القنصلية الكويتية.",
+              "نسخة من شهادة التسجيل الكويتية."
+            ]
+          },
+          {
+            heading: "تسجيل التنازل",
+            points: [
+              "توكيل قانوني من المتنازل إليه مقنن حتى القنصلية الكويتية.",
+              "عقد تنازل موقع من المتنازل والمتنازل إليه ومقنن حتى القنصلية الكويتية.",
+              "نسخة من شهادة التسجيل الكويتية."
+            ]
+          },
+          {
+            heading: "تسجيل تغيير الاسم و/أو العنوان",
+            points: [
+              "توكيل قانوني بالاسم أو العنوان الجديد مقنن حتى القنصلية الكويتية.",
+              "شهادة رسمية تثبت التغيير مقننة حتى القنصلية الكويتية.",
+              "نسخة من شهادة التسجيل الكويتية."
+            ]
+          },
+          {
+            heading: "تسجيل الاندماج",
+            points: [
+              "توكيل قانوني موقع من المفوض بالتوقيع ومقنن حتى القنصلية الكويتية.",
+              "مستند اندماج موقع من الطرفين ومقنن حتى القنصلية الكويتية.",
+              "نسخة من شهادة التسجيل الكويتية."
+            ]
+          },
+          {
+            heading: "ملخص المتطلبات الرئيسية",
+            points: [
+              "التقنين عبر القنصلية الكويتية إلزامي لجميع التوكيلات والمستندات الخاصة بالتصرفات؛ لا يُقبل الأبوستيل.",
+              "يمكن تقديم مستندات الأولوية وشهادات التسجيل كنسخ بسيطة بدون تقنين.",
+              "يجب تقديم مطالبات الأولوية خلال 6 أشهر من تاريخ الطلب الأساسي.",
+              "تتطلب التصرفات بعد التسجيل توكيلاً مقنناً، ونسخة من شهادة التسجيل الكويتية، والمستند المقنن الخاص بالتصرف."
+            ]
+          },
+          {
+            heading: "قائمة التحقق من المستندات",
+            points: [
+              "طلبات العلامات الجديدة | التوكيل القانوني (مقدم الطلب) | مستند الأولوية عند المطالبة | التقنين عبر القنصلية الكويتية | مستند الأولوية نسخة بسيطة",
+              "طلبات التجديد | التوكيل القانوني (المالك) | شهادة التسجيل الكويتية | التقنين عبر القنصلية الكويتية | نسخة الشهادة كافية",
+              "تسجيل التنازل | التوكيل القانوني (المتنازل إليه) | عقد التنازل، نسخة شهادة التسجيل | التقنين عبر القنصلية الكويتية | العقد موقع من الطرفين",
+              "تغيير الاسم/العنوان | التوكيل القانوني (البيانات الجديدة) | شهادة تغيير رسمية، نسخة شهادة التسجيل | التقنين عبر القنصلية الكويتية | الشهادة صادرة عن جهة مختصة",
+              "تسجيل الاندماج | التوكيل القانوني | مستند الاندماج، نسخة شهادة التسجيل | التقنين عبر القنصلية الكويتية | المستند موقع من الطرفين"
+            ]
+          },
+          {
+            heading: "ملاحظات مهمة",
+            points: [
+              "التقنين القنصلي إلزامي؛ يُرفض استخدام الأبوستيل.",
+              "يجب أن تُنفذ توكيلات التنازل من قبل المتنازل إليه وليس المتنازل.",
+              "يجب أن تعكس توكيلات تغيير الاسم/العنوان البيانات المحدثة.",
+              "يجب أن تصدر شهادات التغيير عن جهات حكومية رسمية؛ لا تكفي إقرارات الشركة.",
+              "يجب أن تتضمن مستندات التصرف تفاصيل العلامة وتوقيعات جميع الأطراف."
+            ]
+          },
+          {
+            heading: "متطلبات التقنين",
+            points: [
+              "تتطلب التوكيلات وعقود التنازل ومستندات الاندماج وشهادات التغيير تقنين القنصلية الكويتية.",
+              "يمكن تقديم مستندات الأولوية وشهادات التسجيل الكويتية كنسخ بسيطة دون تقنين.",
+              "يتطلب مسار التقنين عادةً التوثيق، ثم تصديق وزارة الخارجية، ثم تقنين القنصلية الكويتية قبل التقديم."
+            ]
+          },
+          {
+            heading: "إرشادات خاصة بالمعاملات",
+            points: [
+              "التنازل: يجب أن يذكر العقد اسم العلامة ورقمها وفئتها، وأن يحمل توقيعات الطرفين وتقنين القنصلية الكويتية.",
+              "تغيير الاسم/العنوان: تقديم شهادة رسمية مقننة توضح البيانات القديمة والجديدة مع التوكيل المحدّث.",
+              "الاندماج: توفير مستند اندماج مقنن يحدد جميع الكيانات المندمجة والكيان الباقي مع تأكيد تاريخ النفاذ."
+            ]
+          },
+          {
+            heading: "توصيات استراتيجية الإيداع",
+            points: [
+              "استخدام توكيل مقنن واحد لتغطية طلبات متعددة لتقليل التكاليف.",
+              "تخصيص وقت كافٍ (3–4 أسابيع عادةً) لتقنين المستندات قبل المعاملات بعد التسجيل.",
+              "تحضير نسخ من شهادات التسجيل الكويتية مبكراً لتسريع إجراءات التنازل أو الاندماج أو التغيير."
+            ]
+          },
+          {
+            heading: "دعم الخبراء",
+            points: [
+              "للحصول على الدعم في تسجيل العلامات التجارية في الكويت وإجراءاتها، يرجى التواصل مع خبراء الملكية الفكرية لدينا."
+            ]
+          }
+        ],
+        downloadHref: "/pdfs/kuwait-trademark-law.pdf"
+      },
+      patentGuide: {
+        title: "متطلبات تسجيل براءات الاختراع في الكويت",
+        updated: "أكتوبر 2025",
+        sections: [
+          {
+            heading: "متطلبات الإيداع",
+            points: [
+              "توكيل قانوني موثق ومقنن حتى القنصلية الكويتية (لا يُقبل الأبوستيل).",
+              "مواصفات براءة كاملة باللغة الإنجليزية مع ترجمة عربية.",
+              "ملخص باللغتين العربية والإنجليزية.",
+              "مطالبات كاملة باللغتين العربية والإنجليزية.",
+              "رسومات براءة (إن وُجدت).",
+              "مستند أولوية (إن وُجد) مع ترجمة عربية.",
+              "اتفاقية PCT (إن انطبق) مع ترجمة عربية.",
+              "عقد تنازل من المخترعين إذا كان مقدم الطلب كياناً آخر."
+            ]
+          },
+          {
+            heading: "نظام التقديم",
+            points: [
+              "يُقبل الإيداع الأولي بالمواصفات والرسومات الإنجليزية مع توفير النسخ العربية خلال فترة محددة.",
+              "يمكن تقديم التوكيل القانوني خلال مهلة قصيرة بعد الإيداع بشرط استكمال التقنين قبل الفحص الرسمي." ]
+          },
+          {
+            heading: "ملخص المتطلبات",
+            points: [
+              "التقنين القنصلي إلزامي لجميع التوكيلات وعقود التنازل.",
+              "المواصفات والمطالبات والملخص يجب توفيرها باللغتين العربية والإنجليزية.",
+              "يتعين تقديم نسخة مصدقة من مستند الأولوية أو طلب PCT مع ترجمة عربية بسيطة." ]
+          },
+          {
+            heading: "قائمة التحقق",
+            points: [
+              "التوكيل القانوني | عند الإيداع أو خلال مهلة قصيرة | تقنين القنصلية الكويتية | لا ترجمة مطلوبة",
+              "المواصفات والمطالبات | عند الإيداع | لا تقنين | ترجمة عربية مطلوبة",
+              "الملخص | عند الإيداع | لا تقنين | ترجمة عربية",
+              "الرسومات | عند الإيداع | لا تقنين | لا ترجمة",
+              "مستند الأولوية | خلال 6 أشهر | لا تقنين | ترجمة عربية",
+              "مستند PCT | عند المطابقة | لا تقنين | ترجمة عربية",
+              "عقد التنازل | عند اختلاف المخترع | تقنين القنصلية الكويتية | لا ترجمة" ]
+          },
+          {
+            heading: "إرشادات قانونية",
+            points: [
+              "لا يُقبل الأبوستيل؛ يجب التقنين عبر القنصلية الكويتية.",
+              "يجب توفير الترجمات العربية للمستندات الفنية خلال الفترة المحددة.",
+              "ينبغي توفير مستندات الأولوية وPCT مبكراً لضمان قبول الطلب." ]
+          },
+          {
+            heading: "ملاحظات مهمة",
+            points: [
+              "التوكيل القانوني وعقود التنازل يجب أن تمر بسلسلة التقنين (توثيق، وزارة الخارجية، القنصلية الكويتية).",
+              "يجب الاحتفاظ بنسخ إضافية من المواصفات والمطالبات لإدراج التعديلات.",
+              "ينبغي الحصول على توقيع المخترعين على عقد التنازل مبكراً لتفادي أسئلة الملكية." ]
+          },
+          {
+            heading: "أخطاء شائعة",
+            points: [
+              "تقديم توكيلات مقننة بالأبوستيل بدلاً من القنصلية الكويتية.",
+              "إيداع مواصفات أو رسومات بدون ترجمة عربية.",
+              "إغفال تقديم مستندات PCT أو الأولوية عند الاقتضاء.",
+              "غياب عقد التنازل عند اختلاف مقدم الطلب عن المخترعين." ]
+          },
+          {
+            heading: "دعم الخبراء",
+            points: [
+              "للحصول على دعم في تسجيل براءات الاختراع بالكويت وإجراءاتها، تواصل مع خبراء الملكية الفكرية لدينا." ]
+          }
+        ],
+        downloadHref: "/pdfs/kuwait-patent-law.pdf"
+      },
+      designGuide: {
+        title: "متطلبات تسجيل التصاميم الصناعية في الكويت",
+        updated: "أكتوبر 2025",
+        sections: [
+          {
+            heading: "طلبات التصميم الصناعي الجديدة",
+            points: [
+              "توكيل قانوني موقع من المفوض بالتوقيع ومقنن حتى القنصلية الكويتية.",
+              "الشركات: تقديم مستخرج سجل تجاري مقنن أو عقد/نظام أساسي رسمي مقنن.",
+              "بيانات مقدم الطلب: الاسم الكامل، العنوان، الجنسية، وطبيعة النشاط.",
+              "تمثيلات التصميم: صورتان لكل تصميم أو نموذج توضح مناظير مختلفة."
+            ]
+          },
+          {
+            heading: "تسجيل التنازل",
+            points: [
+              "توكيل قانوني من المتنازل إليه مقنن حتى القنصلية الكويتية.",
+              "عقد تنازل موقع من الطرفين ومقنن حتى القنصلية الكويتية."
+            ]
+          },
+          {
+            heading: "تسجيل تغيير الاسم و/أو العنوان",
+            points: [
+              "توكيل قانوني بالبيانات الجديدة مقنن حتى القنصلية الكويتية.",
+              "شهادة تغيير مقننة حتى القنصلية الكويتية."
+            ]
+          },
+          {
+            heading: "تسجيل الاندماج",
+            points: [
+              "توكيل قانوني موقع من المفوض بالتوقيع للكيان الباقي ومقنن حتى القنصلية الكويتية.",
+              "مستند اندماج موقع من الطرفين ومقنن حتى القنصلية الكويتية."
+            ]
+          },
+          {
+            heading: "ملخص المتطلبات الرئيسية",
+            points: [
+              "يُعد التقنين عبر القنصلية الكويتية إلزامياً لجميع التوكيلات والمستندات؛ لا يُقبل الأبوستيل.",
+              "يجب تقديم تمثيلين كاملين لكل تصميم يوضحان عدة مناظير.",
+              "يتعين على الشركات تقنين مستخرجات السجل التجاري أو عقد/نظام التأسيس.",
+              "يجب عرض مناظير التصميم على أوراق بخطوط واضحة وتسمية كل منظور."
+            ]
+          },
+          {
+            heading: "قائمة التحقق من المستندات",
+            points: [
+              "طلبات التصميم الجديدة | التوكيل القانوني (مقدم الطلب) | مستندات الشركة المقننة (للشركات)، بيانات مقدم الطلب، تمثيلات التصميم | التقنين عبر القنصلية الكويتية | تقديم مناظير متعددة",
+              "تسجيل التنازل | التوكيل القانوني (المتنازل إليه) | عقد التنازل | التقنين عبر القنصلية الكويتية | توقيع الطرفين",
+              "تغيير الاسم/العنوان | التوكيل القانوني (البيانات الجديدة) | شهادة التغيير | التقنين عبر القنصلية الكويتية | يجب أن تعكس التوكيلات البيانات الجديدة",
+              "تسجيل الاندماج | التوكيل القانوني | مستند الاندماج | التقنين عبر القنصلية الكويتية | مستند موقع من جميع الأطراف"
+            ]
+          },
+          {
+            heading: "ملاحظات مهمة",
+            points: [
+              "يجب تقديم تمثيلين كاملين لكل تصميم مع إبراز المناظير المختلفة.",
+              "يلزم توضيح تسمية المناظير مثل منظور أمامي، جانبي، علوي، سفلي، ومنظور ثلاثي الأبعاد.",
+              "يجب أن تصدر التوكيلات الخاصة بالتنازل من المتنازل إليه وأن تتضمن التوكيلات الخاصة بالتغيير التفاصيل المحدّثة.",
+              "المستندات الناقصة في التسلسل القنصلي تُرفض.",
+            ]
+          },
+          {
+            heading: "إرشادات تمثيل التصميم",
+            points: [
+              "عرض الصور بشكل مستقيم على الورقة مع جمع المناظير ذات الصلة.",
+              "تضمين مناظير أمامية، جانبية، علوية، سفلية، ومناظير تفصيلية عند الحاجة.",
+              "استخدام صور أو رسومات عالية الدقة بمقياس متناسق."
+            ]
+          },
+          {
+            heading: "متطلبات مستندات الشركة",
+            points: [
+              "يجب أن تكون مستخرجات السجل التجاري حديثة ورسمية ومقننة حتى القنصلية الكويتية.",
+              "يتعين تقنين عقد التأسيس أو النظام الأساسي بالكامل.",
+              "المتقدمون الأفراد غير مطالبين بمستندات الشركة لكن يجب تقنين التوكيل." ]
+          },
+          {
+            heading: "استراتيجية الإيداع",
+            points: [
+              "يستفيد الأفراد من إجراءات مبسطة تتطلب توكيلاً مقنناً وتمثيلات للتصميم فقط.",
+              "يجب على الشركات تخصيص وقت إضافي لتقنين مستندات الشركة والتوكيلات.",
+              "التخطيط لفترة تجهيز 4–6 أسابيع لإتمام التقنين وإعداد ملفات التصميم." ]
+          },
+          {
+            heading: "أخطاء شائعة",
+            points: [
+              "تقديم مستندات مقننة بالأبوستيل بدلاً من القنصلية الكويتية.",
+              "إرفاق تمثيل واحد فقط أو إغفال المناظير المطلوبة.",
+              "عدم تقنين مستندات الشركة للمتقدمين من الشركات.",
+              "إهمال تسمية المناظير أو ترتيبها بشكل مائل على الأوراق." ]
+          },
+          {
+            heading: "دعم الخبراء",
+            points: [
+              "للمساعدة في تسجيل التصاميم الصناعية في الكويت وإجراءاتها، يرجى التواصل مع خبرائنا." ]
+          }
+        ],
+        downloadHref: "/pdfs/kuwait-design-law.pdf"
+      },
+      resources: [
+        { label: "دليل العلامات التجارية", href: "https://app.box.com/s/ga6nwfqhzjvm6tyjvu4lkyjrdxnig3n8", type: "trademark" },
+        { label: "دليل البراءات", href: "https://app.box.com/s/lgbhury7k32scqasl357wty8pwp0sd54", type: "patent" },
+        { label: "دليل التصاميم", href: "https://app.box.com/s/z4lkc0hnocaif6ugq0ebl53qtqo6uoqj", type: "design" }
+      ]
+    },
+  ]
+};
 

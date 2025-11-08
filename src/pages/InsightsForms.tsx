@@ -24,7 +24,7 @@ import {
 import { useLanguage } from "@/hooks/useLanguage";
 
 const InsightsForms = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   usePageSEO({
     title: "Insights Library & IP Forms",
@@ -38,11 +38,24 @@ const InsightsForms = () => {
   });
 
   useScrollReveal();
-  const [activeGuide, setActiveGuide] = useState<{ country: string; guide: CountryDetailedGuide; type: string } | null>(null);
+  const [activeGuide, setActiveGuide] = useState<{
+    country: string;
+    guide: CountryDetailedGuide;
+    type: "trademark" | "patent" | "design";
+  } | null>(null);
+
+  const guideTypeLabels = useMemo(
+    () => ({
+      trademark: language === "ar" ? "العلامات التجارية" : "Trademark",
+      patent: language === "ar" ? "براءات الاختراع" : "Patent",
+      design: language === "ar" ? "التصاميم الصناعية" : "Design",
+    }),
+    [language]
+  );
 
   const allContent = useMemo(
-    () => [...FEATURED_RESOURCES, ...ALL_INSIGHTS],
-    []
+    () => [...FEATURED_RESOURCES[language], ...ALL_INSIGHTS[language]],
+    [language]
   );
 
   const filteredContent = allContent;
@@ -71,7 +84,7 @@ const InsightsForms = () => {
 
               {/* Metrics Grid - Compact */}
               <div className="grid gap-3 sm:grid-cols-3 lg:gap-4">
-                {RESOURCE_METRICS.map((metric) => (
+                {RESOURCE_METRICS[language].map((metric) => (
                   <div
                     key={metric.label}
                     className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm transition-all duration-base ease-emphasis hover:border-white/20 hover:bg-white/10"
@@ -138,7 +151,7 @@ const InsightsForms = () => {
               </p>
             </div>
             <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-              {COUNTRY_GUIDES.map((guide) => (
+              {COUNTRY_GUIDES[language].map((guide) => (
                 <Card
                   key={guide.country}
                   className="group overflow-hidden rounded-2xl border border-border bg-white shadow-lg transition-all duration-base ease-emphasis hover:-translate-y-1 hover:shadow-2xl"
@@ -155,12 +168,9 @@ const InsightsForms = () => {
                     </div>
                     <div className="mt-auto space-y-1.5">
                       {guide.resources.map((resource) => {
-                        const labelLower = resource.label.toLowerCase();
-                        const hasTrademarkGuide = guide.trademarkGuide && labelLower.includes("trademark");
-                        const hasPatentGuide = guide.patentGuide && labelLower.includes("patent");
-                        const hasDesignGuide = guide.designGuide && labelLower.includes("design");
+                        const modalType = resource.type && guide[`${resource.type}Guide` as const];
 
-                        if (hasTrademarkGuide || hasPatentGuide || hasDesignGuide) {
+                        if (modalType) {
                           return (
                             <Button
                               key={`${guide.country}-${resource.label}`}
@@ -168,12 +178,12 @@ const InsightsForms = () => {
                               size="sm"
                               className="w-full justify-between rounded-full px-4 text-label-sm"
                               onClick={() => {
-                                if (hasTrademarkGuide) {
-                                  setActiveGuide({ country: guide.country, guide: guide.trademarkGuide!, type: "Trademark" });
-                                } else if (hasPatentGuide) {
-                                  setActiveGuide({ country: guide.country, guide: guide.patentGuide!, type: "Patent" });
-                                } else if (hasDesignGuide) {
-                                  setActiveGuide({ country: guide.country, guide: guide.designGuide!, type: "Design" });
+                                if (resource.type) {
+                                  setActiveGuide({
+                                    country: guide.country,
+                                    guide: guide[`${resource.type}Guide` as const]!,
+                                    type: resource.type,
+                                  });
                                 }
                               }}
                             >
@@ -222,7 +232,7 @@ const InsightsForms = () => {
                     <DialogTitle>
                       {t('insights.countryGuides.dialog.titlePattern')
                         .replace('{country}', activeGuide.country)
-                        .replace('{type}', activeGuide.type)}
+                        .replace('{type}', guideTypeLabels[activeGuide.type])}
                     </DialogTitle>
                     <DialogDescription>
                       {t('insights.countryGuides.dialog.descriptionPattern')
@@ -399,7 +409,7 @@ const InsightsForms = () => {
               </p>
             </div>
             <div className="grid gap-5 md:grid-cols-3">
-              {LEARNING_MODULES.map((module) => (
+              {LEARNING_MODULES[language].map((module) => (
                 <Card
                   key={module.title}
                   className="group flex flex-col overflow-hidden border border-border bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl rounded-2xl"
