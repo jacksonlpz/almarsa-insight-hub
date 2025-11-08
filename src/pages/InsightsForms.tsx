@@ -130,11 +130,11 @@ const InsightsForms = () => {
           <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8">
             <div className="mb-8 md:mb-12 space-y-3 text-center mx-auto max-w-3xl">
               <div className="space-y-3">
-                <span className="section-eyebrow">Country intelligence</span>
-                <h2 className="section-title">Country Guides</h2>
+                <span className="section-eyebrow">{t('insights.countryGuides.eyebrow')}</span>
+                <h2 className="section-title">{t('insights.countryGuides.title')}</h2>
               </div>
               <p className="section-subtitle">
-                Practical overviews of filing procedures, timelines, and requirements by country.
+                {t('insights.countryGuides.description')}
               </p>
             </div>
             <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -146,7 +146,7 @@ const InsightsForms = () => {
                   <CardContent className="flex flex-col gap-4 p-4">
                     <div className="space-y-3">
                       <Badge variant="outline" className="uppercase tracking-widest text-label-xs">
-                        Country guide
+                        {t('insights.countryGuides.badge')}
                       </Badge>
                       <div className="space-y-2">
                         <h3 className="text-heading-sm font-semibold text-navy-deep leading-tight">{guide.country}</h3>
@@ -219,10 +219,15 @@ const InsightsForms = () => {
               <div className="flex h-full flex-col overflow-hidden">
                 <div className="border-b border-border px-5 py-4">
                   <DialogHeader className="gap-2 text-left">
-                    <DialogTitle>{activeGuide.country} {activeGuide.type} Guide</DialogTitle>
+                    <DialogTitle>
+                      {t('insights.countryGuides.dialog.titlePattern')
+                        .replace('{country}', activeGuide.country)
+                        .replace('{type}', activeGuide.type)}
+                    </DialogTitle>
                     <DialogDescription>
-                      Updated {activeGuide.guide.updated}. A concise playbook covering filing cadence, procedural requirements, and
-                      post-registration upkeep within the {activeGuide.country}.
+                      {t('insights.countryGuides.dialog.descriptionPattern')
+                        .replace('{date}', activeGuide.guide.updated)
+                        .replace('{country}', activeGuide.country)}
                     </DialogDescription>
                   </DialogHeader>
                 </div>
@@ -290,8 +295,8 @@ const InsightsForms = () => {
                 </ScrollArea>
                 {activeGuide.guide.downloadHref && (
                   <div className="border-t border-border bg-muted/30 px-5 py-4">
-                    <Button 
-                      variant="outline" 
+                    <Button
+                      variant="outline"
                       className="w-full justify-center rounded-full"
                       onClick={() => {
                         const link = document.createElement('a');
@@ -305,7 +310,7 @@ const InsightsForms = () => {
                       }}
                     >
                       <Download className="mr-2 h-4 w-4" />
-                      Download full guide & checklist
+                      {t('insights.countryGuides.dialog.downloadButton')}
                     </Button>
                   </div>
                 )}
@@ -318,15 +323,15 @@ const InsightsForms = () => {
           <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8">
             <div className="mb-8 md:mb-12 space-y-3 text-center mx-auto max-w-3xl">
               <div className="space-y-3">
-                <span className="section-eyebrow">Legal Framework Repository</span>
-                <h2 className="section-title text-navy-deep">GCC IP Legislation & Regulatory Documents</h2>
+                <span className="section-eyebrow">{t('insights.legislation.eyebrow')}</span>
+                <h2 className="section-title text-navy-deep">{t('insights.legislation.title')}</h2>
               </div>
               <p className="section-subtitle">
-                Access comprehensive trademark, patent, and industrial design legislation across Kuwait, Bahrain, Qatar, Saudi Arabia, and the UAE.
+                {t('insights.legislation.description')}
               </p>
             </div>
             {filteredContent.length === 0 ? (
-              <Card className="p-8 text-center text-muted-foreground">No resources match your current filters.</Card>
+              <Card className="p-8 text-center text-muted-foreground">{t('insights.legislation.noResults')}</Card>
             ) : filteredContent && filteredContent.length > 0 ? (
               <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
                 {filteredContent.map((insight) => {
@@ -366,7 +371,7 @@ const InsightsForms = () => {
                         <div className="flex items-center justify-between pt-2 border-t border-border/50">
                           <span className="text-label-xs font-semibold text-primary uppercase tracking-wide">{insight.type}</span>
                           <div className="flex items-center gap-1 text-body-xs text-primary">
-                            <span className="hidden sm:inline">{'pdfUrl' in insight ? 'Open PDF' : 'View'}</span>
+                            <span className="hidden sm:inline">{'pdfUrl' in insight ? t('insights.legislation.openPdf') : t('insights.legislation.view')}</span>
                             <ArrowRight className="h-4 w-4" />
                           </div>
                         </div>
@@ -377,7 +382,7 @@ const InsightsForms = () => {
               </div>
             ) : (
               <div className="text-center text-muted-foreground py-12">
-                Loading resources...
+                {t('insights.legislation.loading')}
               </div>
             )}
           </div>
@@ -386,11 +391,11 @@ const InsightsForms = () => {
           <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8">
             <div className="mb-8 md:mb-12 space-y-3 text-center mx-auto max-w-3xl">
               <div className="space-y-3">
-                <span className="section-eyebrow">On-demand learning</span>
-                <h2 className="section-title text-navy-deep">IP Knowledge Center: learn, apply, protect</h2>
+                <span className="section-eyebrow">{t('insights.learningModules.eyebrow')}</span>
+                <h2 className="section-title text-navy-deep">{t('insights.learningModules.title')}</h2>
               </div>
               <p className="section-subtitle">
-                Short explainer modules with actionable guidance to help you understand intellectual property, trademarks, patents, and design rights.
+                {t('insights.learningModules.description')}
               </p>
             </div>
             <div className="grid gap-5 md:grid-cols-3">
@@ -414,7 +419,7 @@ const InsightsForms = () => {
                       <p className="text-body-xs leading-relaxed text-muted-foreground line-clamp-2">{module.summary}</p>
                     </div>
                     <div className="space-y-2">
-                      <span className="text-label-xs font-semibold uppercase tracking-wide text-primary/70">How to put this into practice</span>
+                      <span className="text-label-xs font-semibold uppercase tracking-wide text-primary/70">{t('insights.learningModules.howToPractice')}</span>
                       <ul className="list-disc space-y-1 pl-4 text-body-xs text-muted-foreground">
                         {module.howTo.map((step, idx) => (
                           <li key={step} className="line-clamp-2">{step}</li>
@@ -422,7 +427,7 @@ const InsightsForms = () => {
                       </ul>
                     </div>
                     <div className="mt-auto rounded-xl border border-primary/15 bg-primary/5 p-3 text-body-xs text-muted-foreground">
-                      <span className="font-semibold text-primary">Did you know?</span> {module.didYouKnow}
+                      <span className="font-semibold text-primary">{t('insights.learningModules.didYouKnow')}</span> {module.didYouKnow}
                     </div>
                   </CardContent>
                 </Card>
@@ -435,12 +440,12 @@ const InsightsForms = () => {
           <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 md:px-8">
             <div className="cta-content">
               <div className="space-y-3">
-                <span className="text-label-xs font-semibold uppercase tracking-widest text-white/60">Next steps</span>
+                <span className="text-label-xs font-semibold uppercase tracking-widest text-white/60">{t('insights.finalCta.eyebrow')}</span>
                 <h2 className="text-display-md font-heading font-semibold text-white sm:text-display-lg">
-                  Coordinate your next IP intelligence briefing
+                  {t('insights.finalCta.title')}
                 </h2>
                 <p className="max-w-2xl text-body sm:text-body text-white/75">
-                  Partner with our analysts to review upcoming filings, regional enforcement activity, or governance updates tailored to your organisation.
+                  {t('insights.finalCta.description')}
                 </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row">
@@ -450,7 +455,7 @@ const InsightsForms = () => {
                   variant="outline"
                   className="border-white/40 text-navy-deep"
                 >
-                  <Link to="/news-events">Subscribe for intelligence updates</Link>
+                  <Link to="/news-events">{t('insights.finalCta.button')}</Link>
                 </Button>
               </div>
             </div>

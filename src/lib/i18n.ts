@@ -719,6 +719,39 @@ export const translations = {
           }
         }
       },
+      countryGuides: {
+        eyebrow: 'Country intelligence',
+        title: 'Country Guides',
+        description: 'Practical overviews of filing procedures, timelines, and requirements by country.',
+        badge: 'Country guide',
+        dialog: {
+          titlePattern: '{country} {type} Guide',
+          descriptionPattern: 'Updated {date}. A concise playbook covering filing cadence, procedural requirements, and post-registration upkeep within the {country}.',
+          downloadButton: 'Download full guide & checklist'
+        }
+      },
+      legislation: {
+        eyebrow: 'Legal Framework Repository',
+        title: 'GCC IP Legislation & Regulatory Documents',
+        description: 'Access comprehensive trademark, patent, and industrial design legislation across Kuwait, Bahrain, Qatar, Saudi Arabia, and the UAE.',
+        noResults: 'No resources match your current filters.',
+        loading: 'Loading resources...',
+        openPdf: 'Open PDF',
+        view: 'View'
+      },
+      learningModules: {
+        eyebrow: 'On-demand learning',
+        title: 'IP Knowledge Center: learn, apply, protect',
+        description: 'Short explainer modules with actionable guidance to help you understand intellectual property, trademarks, patents, and design rights.',
+        howToPractice: 'How to put this into practice',
+        didYouKnow: 'Did you know?'
+      },
+      finalCta: {
+        eyebrow: 'Next steps',
+        title: 'Coordinate your next IP intelligence briefing',
+        description: 'Partner with our analysts to review upcoming filings, regional enforcement activity, or governance updates tailored to your organisation.',
+        button: 'Subscribe for intelligence updates'
+      },
       categories: {
         guides: 'Guides & Whitepapers',
         forms: 'Downloadable Forms',
@@ -1488,6 +1521,39 @@ export const translations = {
             routing: 'توجيه متخصص'
           }
         }
+      },
+      countryGuides: {
+        eyebrow: 'ذكاء الدول',
+        title: 'أدلة الدول',
+        description: 'نظرة عامة عملية على إجراءات التسجيل والجداول الزمنية والمتطلبات حسب الدولة.',
+        badge: 'دليل الدولة',
+        dialog: {
+          titlePattern: 'دليل {type} في {country}',
+          descriptionPattern: 'محدث في {date}. كتيب موجز يغطي إيقاع التسجيل والمتطلبات الإجرائية والصيانة اللاحقة للتسجيل في {country}.',
+          downloadButton: 'تحميل الدليل الكامل وقائمة المراجعة'
+        }
+      },
+      legislation: {
+        eyebrow: 'مستودع الإطار القانوني',
+        title: 'تشريعات ووثائق الملكية الفكرية لدول مجلس التعاون الخليجي',
+        description: 'الوصول إلى تشريعات شاملة للعلامات التجارية وبراءات الاختراع والتصاميم الصناعية عبر الكويت والبحرين وقطر والمملكة العربية السعودية والإمارات العربية المتحدة.',
+        noResults: 'لا توجد موارد تطابق مرشحاتك الحالية.',
+        loading: 'جارٍ تحميل الموارد...',
+        openPdf: 'فتح PDF',
+        view: 'عرض'
+      },
+      learningModules: {
+        eyebrow: 'التعلم عند الطلب',
+        title: 'مركز المعرفة بالملكية الفكرية: التعلم والتطبيق والحماية',
+        description: 'وحدات شرح قصيرة مع إرشادات قابلة للتنفيذ لمساعدتك على فهم الملكية الفكرية والعلامات التجارية وبراءات الاختراع وحقوق التصميم.',
+        howToPractice: 'كيفية وضع هذا موضع التنفيذ',
+        didYouKnow: 'هل تعلم؟'
+      },
+      finalCta: {
+        eyebrow: 'الخطوات التالية',
+        title: 'نسّق إحاطتك القادمة حول ذكاء الملكية الفكرية',
+        description: 'شارك مع محللينا لمراجعة التسجيلات القادمة أو نشاط الإنفاذ الإقليمي أو تحديثات الحوكمة المصممة لمؤسستك.',
+        button: 'اشترك للحصول على تحديثات الذكاء'
       },
       categories: {
         guides: 'الأدلة والمستندات البيضاء',
